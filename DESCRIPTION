@@ -1,0 +1,37 @@
+Package: shinymodels
+Version: 0.0.0.9000
+Title: shinymodels
+Description: Shiny app for tidymodels
+Authors@R: c(
+        person(
+          given = "Shisham",
+          family = "Adhikari",
+          email = "shisham.adhikari@rstudio.com",
+          role = c("aut" "cre")
+          ),
+        person(
+          given = "Max",
+          family = "Kuhn",
+          email = "max@rstudio.com",
+          comment = c(ORCID = "0000-0003-2402-136X"),
+          role = c("aut")
+          ),
+        person(
+          given = "Julia",
+          family = "Silge",
+          email = "julia.silge@rstudio.com",
+          role = c("aut"),
+          comment = c(ORCID = "0000-0002-3671-836X")
+        ),
+        person("RStudio", role = "cph")
+      )
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    spelling
+Language: en-US
+Imports: 
+    tune
