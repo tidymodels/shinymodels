@@ -7,7 +7,7 @@ Authors@R: c(
           given = "Shisham",
           family = "Adhikari",
           email = "shisham.adhikari@rstudio.com",
-          role = c("aut" "cre")
+          role = c("aut", "cre")
           ),
         person(
           given = "Max",
@@ -31,7 +31,10 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    spelling
+    spelling,
+    doMC
 Language: en-US
 Imports: 
-    tune
+    tidymodels,
+    tidyverse,
+    rules
