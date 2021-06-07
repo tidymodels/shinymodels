@@ -1,4 +1,4 @@
 library(testthat)
 library(shinymodels)
 
-test_check("shinymodels")
+#test_check("shinymodels")

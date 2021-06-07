@@ -32,9 +32,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     spelling,
-    doMC
+    doMC,
+    testthat (>= 3.0.0)
 Language: en-US
 Imports: 
     tidymodels,
     tidyverse,
-    rules
+    rules,
+    magrittr,
+    tune
+Config/testthat/edition: 3

@@ -8,7 +8,7 @@
 #' @examples
 #' plot_numeric_obs_pred()
 plot_numeric_obs_pred <- function(original_data, fit_resamples_obj){
-  y_name <- .get_tune_outcome_names(fit_resamples_obj)
+  y_name <- tune::.get_tune_outcome_names(fit_resamples_obj)
   holdout_predictions <-
     fit_resamples_obj %>%
     collect_predictions(summarize = TRUE) %>% # <- 1 row per training set row
