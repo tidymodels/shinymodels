@@ -1,18 +1,19 @@
-#' Predicted probability vs. true class function
+#' Visualizing predicted probability vs. true class for a model
 #'
-#' This function allows you to plot the predicted probabilities from your model
-#' against the observed/true class.
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @keywords predicted probabilities, true class
+#' This function allows you to plot the predicted probabilities from your tidymodels
+#' result against the observed/true class.
+#' @param object give the object you got using tidymodels::fit_resamples
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
+#' @return
 #' plot_twoclass_obs_pred()
 plot_twoclass_obs_pred <-
-  function(x, event_level = "first") {
-    prob_bins <- 0.025
-    y_name <- tune::.get_tune_outcome_names(x)
-    #If the levels are A and B, if you know the names of the levels, you can use !!()
-    sample_predictions <- augment(x)
+  function(object,
+           event_level = "first",
+           prob_bins = 0.025) {
+    y_name <- tune::.get_tune_outcome_names(object)
+    sample_predictions <- augment(object)
     our_factor <- sample_predictions[[y_name]]
     our_levels <- levels(our_factor)
     #remind Max to make a function here
@@ -28,46 +29,50 @@ plot_twoclass_obs_pred <-
       facet_wrap(~ Class,
                  labeller = labeller(Class = label_both),
                  ncol = 1) +
-      ggtitle("Predicted probabilities versus true class") +
-      xlim(0:1)
+      labs(title = "Predicted probabilities versus true class") +
+      lims(x = 0:1)
   }
 
 
-#' Confusion matrix function
+#' Visualizing the confusion matrix for a model
 #'
 #' This function allows you to plot the confusion matrix for your classification
 #' model
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @keywords confusion matrix
+#' @inheritParams plot_twoclass_obs_pred
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
+#' @return
 #' plot_twoclass_obs_pred()
-plot_twoclass_conf_mat <- function(x) {
-  y_name <- tune::.get_tune_outcome_names(x)
-  sample_predictions <- augment(x)
+plot_twoclass_conf_mat <- function(object) {
+  y_name <- tune::.get_tune_outcome_names(object)
+  sample_predictions <- augment(object)
   #plotting
   sample_predictions %>%
     conf_mat(truth = Class, estimate = .pred_class) %>%
     autoplot()
 }
 
-#' Predicted probability vs. numeric variable function
+#' Visualizing the predicted probability vs. a numeric variable for a model
 #'
-#' This function allows you to plot the predicted probabilities from your model
-#' against a numeric variable.
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @param col give the numerical column you want to plot
-#' @keywords predicted probabilities, numeric variable
+#' This function allows you to plot the predicted probabilities from your tidymodel
+#' result against a numeric variable.
+#' @inheritParams plot_twoclass_obs_pred
+#' @param numcol give the numerical column you want to plot
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
+#' @return
 #' plot_twoclass_pred_numcol()
 plot_twoclass_pred_numcol <-
-  function(x, col, event_level = "first") {
-    col <- enexpr(col)
-    prob_breaks <- (2:9) / 10
-    prob_eps <- 0.001
-    y_name <- tune::.get_tune_outcome_names(x)
-    sample_predictions <- augment(x)
+  function(object,
+           numcol,
+           event_level = "first",
+           prob_breaks = (2:9) / 10,
+           prob_eps = 0.001) {
+    col <- enexpr(numcol)
+    y_name <- tune::.get_tune_outcome_names(object)
+    sample_predictions <- augment(object)
     our_factor <- sample_predictions[[y_name]]
     our_levels <- levels(our_factor)
     #remind Max to make a function here
@@ -91,27 +96,31 @@ plot_twoclass_pred_numcol <-
       facet_wrap( ~ Class,
                   labeller = labeller(Class = label_both),
                   ncol = 1) +
-      ggtitle("Predicted probabilities versus numeric variable") +
+      labs(title = "Predicted probabilities versus numeric variable") +
       # We should make a custom transformation that handles probs at 0 and 1
       scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
   }
 
-#' Predicted probability vs. factor variable function
+#' Visualizing the predicted probability vs. a factor variable for a model
 #'
 #' This function allows you to plot the predicted probabilities from your model
 #' against a factor variable.
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @param col give the factor column you want to plot
-#' @keywords predicted probabilities, factor variable
+#' @inheritParams plot_twoclass_obs_pred
+#' @param factorcol give the factor column you want to plot
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
-#' plot_twoclass_pred_faccol()
-plot_twoclass_pred_faccol <-
-  function(x, col, event_level = "first") {
-    prob_breaks <- (2:9) / 10
-    prob_eps <- 0.001
-    y_name <- tune::.get_tune_outcome_names(x)
-    sample_predictions <- augment(x)
+#' @return
+#' plot_twoclass_pred_factorcol()
+plot_twoclass_pred_factorcol <-
+  function(object,
+           factorcol,
+           event_level = "first",
+           prob_breaks = (2:9) / 10,
+           prob_eps = 0.001) {
+    col <- enexpr(factorcol)
+    y_name <- tune::.get_tune_outcome_names(object)
+    sample_predictions <- augment(object)
     our_factor <- sample_predictions[[y_name]]
     our_levels <- levels(our_factor)
     #remind Max to make a function here
@@ -125,32 +134,34 @@ plot_twoclass_pred_faccol <-
       mutate(
         !!prob_name :=
           case_when(
-            !!prob_name > 1 - prob_eps ~ 1 - prob_eps,!!prob_name  <    prob_eps ~     prob_eps,
+            !!prob_name > 1 - prob_eps ~ 1 - prob_eps,
+            !!prob_name  <    prob_eps ~     prob_eps,
             TRUE ~ !!prob_name
           )
       ) %>%
       ggplot(aes(x = col, y = !!prob_name)) +
       geom_point() +
-      facet_wrap(~ Class,
-                 labeller = labeller(Class = label_both),
-                 ncol = 1) +
-      ggtitle("Predicted probabilities versus factor variable") +
+      facet_wrap( ~ Class,
+                  labeller = labeller(Class = label_both),
+                  ncol = 1) +
+      labs(title = "Predicted probabilities versus factor variable") +
       # We should make a custom transformation that handles probs at 0 and 1
       scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
   }
 
-#' roc curve function
+#' Visualizing the roc curve for a model
 #'
 #' This function allows you to plot the roc curve.
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @keywords roc curve
+#' @inheritParams plot_twoclass_obs_pred
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
+#' @return
 #' plot_twoclass_roc()
 plot_twoclass_roc <-
-  function(x, event_level = "first") {
-    y_name <- tune::.get_tune_outcome_names(x)
-    sample_predictions <- augment(x)
+  function(object, event_level = "first") {
+    y_name <- tune::.get_tune_outcome_names(object)
+    sample_predictions <- augment(object)
     our_factor <- sample_predictions[[y_name]]
     our_levels <- levels(our_factor)
     #remind Max to make a function here
@@ -165,18 +176,19 @@ plot_twoclass_roc <-
       autoplot()
   }
 
-#' pr curve function
+#' Visualizing the pr curve for a model
 #'
 #' This function allows you to plot the full precision recall curve.
-#' @param x give the object you got using tidymodels::fit_resamples
-#' @keywords pr curve
+#' @inheritParams plot_twoclass_obs_pred
+#' @keywords models, classes, classif, graphs
 #' @export
 #' @examples
+#' @return
 #' plot_twoclass_pr()
 plot_twoclass_pr <-
-  function(x, event_level = "first") {
-    y_name <- tune::.get_tune_outcome_names(x)
-    sample_predictions <- augment(x)
+  function(object, event_level = "first") {
+    y_name <- tune::.get_tune_outcome_names(object)
+    sample_predictions <- augment(object)
     our_factor <- sample_predictions[[y_name]]
     our_levels <- levels(our_factor)
     #remind Max to make a function here

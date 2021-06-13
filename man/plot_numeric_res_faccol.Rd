@@ -2,24 +2,22 @@
 % Please edit documentation in R/regression_diag_plots.R
 \name{plot_numeric_res_faccol}
 \alias{plot_numeric_res_faccol}
-\title{Residuals vs. factor column function}
+\title{Visualizing residuals vs. a factor column for a model}
 \usage{
-plot_numeric_res_faccol(original_data, fit_resamples_obj, fac_column)
+plot_numeric_res_faccol(original_data, object, factorcol)
 }
 \arguments{
-\item{original_data}{give the original dataset you used for modeling}
+\item{object}{give the object you got using tidymodels::fit_resamples}
 
-\item{fac_column}{give the factor column you want to plot against the residuals}
-
-\item{fit_samples_obj}{give the object you got using tidymodels::fit_resamples}
+\item{factorcol}{give the factor column you want to plot against the residuals}
+}
+\value{
+plot_numeric_res_factorcol()
 }
 \description{
-This function allows you to plot the residuals from your model against any of the factor column used for modeling.
+This function allows you to plot the residuals based on tidymodels result
+against any of the factor column used for modeling.
 }
-\examples{
-plot_numeric_res_faccol()
-}
-\keyword{column}
-\keyword{factor}
-\keyword{residuals}
-\keyword{vs.}
+\keyword{graphs}
+\keyword{models,}
+\keyword{regression,}

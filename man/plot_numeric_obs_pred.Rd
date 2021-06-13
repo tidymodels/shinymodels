@@ -2,21 +2,22 @@
 % Please edit documentation in R/regression_diag_plots.R
 \name{plot_numeric_obs_pred}
 \alias{plot_numeric_obs_pred}
-\title{Observed vs. predicted function}
+\title{Visualizing observed vs. predicted values for a model}
 \usage{
-plot_numeric_obs_pred(original_data, fit_resamples_obj)
+plot_numeric_obs_pred(original_data, object)
 }
 \arguments{
 \item{original_data}{give the original dataset you used for modeling}
 
-\item{fit_samples_obj}{give the object you got using tidymodels::fit_resamples}
+\item{object}{give the object you got using tidymodels::fit_resamples}
 }
-\description{
-This function allows you to plot the predicted values from your model against the observed/true values.
-}
-\examples{
+\value{
 plot_numeric_obs_pred()
 }
-\keyword{observed}
-\keyword{predicted}
-\keyword{vs.}
+\description{
+This function allows you to plot the predicted values based on your tidymodels
+results against the observed/true values.
+}
+\keyword{graphs}
+\keyword{models,}
+\keyword{regression,}
