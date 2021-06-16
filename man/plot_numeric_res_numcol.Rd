@@ -2,24 +2,22 @@
 % Please edit documentation in R/regression_diag_plots.R
 \name{plot_numeric_res_numcol}
 \alias{plot_numeric_res_numcol}
-\title{Residuals vs. numeric column function}
+\title{Visualizing residuals vs. a numeric column for a regression model}
 \usage{
-plot_numeric_res_numcol(original_data, fit_resamples_obj, num_column)
+plot_numeric_res_numcol(original_data, object, numcol)
 }
 \arguments{
-\item{original_data}{give the original dataset you used for modeling}
+\item{object}{give the object you got using tidymodels::fit_resamples}
 
-\item{num_column}{give the numerical column you want to plot against the residuals}
-
-\item{fit_samples_obj}{give the object you got using tidymodels::fit_resamples}
+\item{numcol}{give the numerical column you want to plot against the residuals}
 }
-\description{
-This function allows you to plot the residuals from your model against any of the numeric column used for modeling.
-}
-\examples{
+\value{
 plot_numeric_res_numcol()
 }
-\keyword{column}
-\keyword{numerical}
-\keyword{residuals}
-\keyword{vs.}
+\description{
+This function allows you to plot the residuals based on tidymodels result for
+a regression model against any of the numeric column used for modeling.
+}
+\keyword{graphs}
+\keyword{models,}
+\keyword{regression,}
