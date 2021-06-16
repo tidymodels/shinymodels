@@ -2,7 +2,7 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_pr}
 \alias{plot_twoclass_pr}
-\title{Visualizing the pr curve for a model}
+\title{Visualizing the pr curve for a classification model}
 \usage{
 plot_twoclass_pr(object, event_level = "first")
 }

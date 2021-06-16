@@ -2,7 +2,7 @@
 % Please edit documentation in R/regression_diag_plots.R
 \name{plot_numeric_res_pred}
 \alias{plot_numeric_res_pred}
-\title{Visualizing residuals vs. predicted values for a model}
+\title{Visualizing residuals vs. predicted values for a regression model}
 \usage{
 plot_numeric_res_pred(original_data, object)
 }
@@ -14,7 +14,7 @@ plot_numeric_res_pred()
 }
 \description{
 This function allows you to plot the predicted values based on your tidymodels
-result against the residuals.
+result for a regression model against the residuals.
 }
 \keyword{graphs}
 \keyword{models,}

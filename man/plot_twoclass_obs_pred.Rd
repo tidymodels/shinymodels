@@ -2,7 +2,8 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_obs_pred}
 \alias{plot_twoclass_obs_pred}
-\title{Visualizing predicted probability vs. true class for a model}
+\title{Visualizing predicted probability vs. true class for a two-class classification
+model}
 \usage{
 plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
 }
@@ -14,7 +15,7 @@ plot_twoclass_obs_pred()
 }
 \description{
 This function allows you to plot the predicted probabilities from your tidymodels
-result against the observed/true class.
+result for a two-class classification model against the observed/true class.
 }
 \keyword{classes,}
 \keyword{classif,}

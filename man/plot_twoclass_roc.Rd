@@ -2,7 +2,7 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_roc}
 \alias{plot_twoclass_roc}
-\title{Visualizing the roc curve for a model}
+\title{Visualizing the roc curve for a classification model}
 \usage{
 plot_twoclass_roc(object, event_level = "first")
 }
@@ -13,7 +13,7 @@ plot_twoclass_roc(object, event_level = "first")
 plot_twoclass_roc()
 }
 \description{
-This function allows you to plot the roc curve.
+This function allows you to plot the roc curve for your classification model.
 }
 \keyword{classes,}
 \keyword{classif,}

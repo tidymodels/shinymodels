@@ -2,7 +2,8 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_pred_factorcol}
 \alias{plot_twoclass_pred_factorcol}
-\title{Visualizing the predicted probability vs. a factor variable for a model}
+\title{Visualizing the predicted probability vs. a factor variable for a classification
+model}
 \usage{
 plot_twoclass_pred_factorcol(
   object,
@@ -21,8 +22,8 @@ plot_twoclass_pred_factorcol(
 plot_twoclass_pred_factorcol()
 }
 \description{
-This function allows you to plot the predicted probabilities from your model
-against a factor variable.
+This function allows you to plot the predicted probabilities from your
+tidymodels result for a two-class classification model against a factor variable.
 }
 \keyword{classes,}
 \keyword{classif,}

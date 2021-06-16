@@ -2,7 +2,7 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_conf_mat}
 \alias{plot_twoclass_conf_mat}
-\title{Visualizing the confusion matrix for a model}
+\title{Visualizing the confusion matrix for a classification model}
 \usage{
 plot_twoclass_conf_mat(object)
 }

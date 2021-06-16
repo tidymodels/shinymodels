@@ -2,7 +2,7 @@
 % Please edit documentation in R/regression_diag_plots.R
 \name{plot_numeric_obs_pred}
 \alias{plot_numeric_obs_pred}
-\title{Visualizing observed vs. predicted values for a model}
+\title{Visualizing observed vs. predicted values for a regression model}
 \usage{
 plot_numeric_obs_pred(original_data, object)
 }
@@ -16,7 +16,7 @@ plot_numeric_obs_pred()
 }
 \description{
 This function allows you to plot the predicted values based on your tidymodels
-results against the observed/true values.
+results for a regression model against the observed/true values.
 }
 \keyword{graphs}
 \keyword{models,}

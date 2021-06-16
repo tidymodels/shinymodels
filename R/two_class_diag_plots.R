@@ -1,7 +1,8 @@
-#' Visualizing predicted probability vs. true class for a model
+#' Visualizing predicted probability vs. true class for a two-class classification
+#' model
 #'
 #' This function allows you to plot the predicted probabilities from your tidymodels
-#' result against the observed/true class.
+#' result for a two-class classification model against the observed/true class.
 #' @param object give the object you got using tidymodels::fit_resamples
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -14,14 +15,7 @@ plot_twoclass_obs_pred <-
            prob_bins = 0.025) {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    our_factor <- sample_predictions[[y_name]]
-    our_levels <- levels(our_factor)
-    #remind Max to make a function here
-    if (event_level == "first") {
-      prob_name <- sym(paste(".pred_", our_levels[1]))
-    } else {
-      prob_name <- sym(paste(".pred_", our_levels[2]))
-    }
+    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
     sample_predictions %>%
       ggplot(aes(x = !!prob_name)) +
@@ -33,8 +27,7 @@ plot_twoclass_obs_pred <-
       lims(x = 0:1)
   }
 
-
-#' Visualizing the confusion matrix for a model
+#' Visualizing the confusion matrix for a classification model
 #'
 #' This function allows you to plot the confusion matrix for your classification
 #' model
@@ -53,10 +46,11 @@ plot_twoclass_conf_mat <- function(object) {
     autoplot()
 }
 
-#' Visualizing the predicted probability vs. a numeric variable for a model
+#' Visualizing the predicted probability vs. a numeric variable for a classification
+#' model
 #'
 #' This function allows you to plot the predicted probabilities from your tidymodel
-#' result against a numeric variable.
+#' result for a two-class classification model against a numeric variable.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol give the numerical column you want to plot
 #' @keywords models, classes, classif, graphs
@@ -73,14 +67,7 @@ plot_twoclass_pred_numcol <-
     col <- enexpr(numcol)
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    our_factor <- sample_predictions[[y_name]]
-    our_levels <- levels(our_factor)
-    #remind Max to make a function here
-    if (event_level == "first") {
-      prob_name <- sym(paste(".pred_", our_levels[1]))
-    } else {
-      prob_name <- sym(paste(".pred_", our_levels[2]))
-    }
+    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
     sample_predictions %>%
       mutate(
@@ -101,10 +88,11 @@ plot_twoclass_pred_numcol <-
       scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
   }
 
-#' Visualizing the predicted probability vs. a factor variable for a model
+#' Visualizing the predicted probability vs. a factor variable for a classification
+#' model
 #'
-#' This function allows you to plot the predicted probabilities from your model
-#' against a factor variable.
+#' This function allows you to plot the predicted probabilities from your
+#' tidymodels result for a two-class classification model against a factor variable.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param factorcol give the factor column you want to plot
 #' @keywords models, classes, classif, graphs
@@ -121,14 +109,7 @@ plot_twoclass_pred_factorcol <-
     col <- enexpr(factorcol)
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    our_factor <- sample_predictions[[y_name]]
-    our_levels <- levels(our_factor)
-    #remind Max to make a function here
-    if (event_level == "first") {
-      prob_name <- sym(paste(".pred_", our_levels[1]))
-    } else {
-      prob_name <- sym(paste(".pred_", our_levels[2]))
-    }
+    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
     sample_predictions %>%
       mutate(
@@ -149,9 +130,9 @@ plot_twoclass_pred_factorcol <-
       scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
   }
 
-#' Visualizing the roc curve for a model
+#' Visualizing the roc curve for a classification model
 #'
-#' This function allows you to plot the roc curve.
+#' This function allows you to plot the roc curve for your classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -162,21 +143,18 @@ plot_twoclass_roc <-
   function(object, event_level = "first") {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    our_factor <- sample_predictions[[y_name]]
-    our_levels <- levels(our_factor)
-    #remind Max to make a function here
-    if (event_level == "first") {
-      prob_name <- sym(paste(".pred_", our_levels[1]))
-    } else {
-      prob_name <- sym(paste(".pred_", our_levels[2]))
-    }
+    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
-    sample_predictions %>%
-      roc_curve(truth = Class,!!prob_name) %>%
-      autoplot()
+    res <- roc_curve(truth = Class,!!prob_name)
+    fifty <- res %>%
+      mutate(delta = abs(0.5 - .threshold)) %>%
+      arrange(delta) %>%
+      slice(1)
+    autoplot(res) +
+      geom_point(data = fifty, aes(x = 1 - specificity, y =  sensitivity))
   }
 
-#' Visualizing the pr curve for a model
+#' Visualizing the pr curve for a classification model
 #'
 #' This function allows you to plot the full precision recall curve.
 #' @inheritParams plot_twoclass_obs_pred
@@ -189,17 +167,13 @@ plot_twoclass_pr <-
   function(object, event_level = "first") {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    our_factor <- sample_predictions[[y_name]]
-    our_levels <- levels(our_factor)
-    #remind Max to make a function here
-    if (event_level == "first") {
-      prob_name <- sym(paste(".pred_", our_levels[1]))
-    } else {
-      prob_name <- sym(paste(".pred_", our_levels[2]))
-    }
+    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
-    sample_predictions %>%
-      pr_curve(truth = Class,!!prob_name) %>%
-      autoplot()
+    res <- pr_curve(truth = Class,!!prob_name)
+    fifty <- res %>%
+      mutate(delta = abs(0.5 - .threshold)) %>%
+      arrange(delta) %>%
+      slice(1)
+    autoplot(res) +
+      geom_point(data = fifty, aes(x = 1 - specificity, y =  sensitivity))
   }
-

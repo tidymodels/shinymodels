@@ -1,7 +1,7 @@
-#' Visualizing observed vs. predicted values for a model
+#' Visualizing observed vs. predicted values for a regression model
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
-#' results against the observed/true values.
+#' results for a regression model against the observed/true values.
 #' @param original_data give the original dataset you used for modeling
 #' @param object give the object you got using tidymodels::fit_resamples
 #' @keywords models, regression, graphs
@@ -25,10 +25,10 @@ plot_numeric_obs_pred <- function(original_data, object) {
     labs(title = "Observed vs predicted")
 }
 
-#' Visualizing residuals vs. predicted values for a model
+#' Visualizing residuals vs. predicted values for a regression model
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
-#' result against the residuals.
+#' result for a regression model against the residuals.
 #' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, regression, graphs
 #' @export
@@ -50,10 +50,10 @@ plot_numeric_res_pred <- function(original_data, object) {
     labs(title = "Residuals vs predicted")
 }
 
-#' Visualizing residuals vs. a numeric column for a model
+#' Visualizing residuals vs. a numeric column for a regression model
 #'
-#' This function allows you to plot the residuals based on tidymodels result
-#'  against any of the numeric column used for modeling.
+#' This function allows you to plot the residuals based on tidymodels result for
+#'  a regression model against any of the numeric column used for modeling.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol give the numerical column you want to plot against the residuals
 #' @keywords models, regression, graphs
@@ -77,10 +77,10 @@ plot_numeric_res_numcol <-
       labs(title = paste(numcol, " Vs. residual"))
   }
 
-#' Visualizing residuals vs. a factor column for a model
+#' Visualizing residuals vs. a factor column for a regression model
 #'
-#' This function allows you to plot the residuals based on tidymodels result
-#' against any of the factor column used for modeling.
+#' This function allows you to plot the residuals based on tidymodels result for
+#' a regression model against any of the factor column used for modeling.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param factorcol give the factor column you want to plot against the residuals
 #' @keywords models, regression, graphs

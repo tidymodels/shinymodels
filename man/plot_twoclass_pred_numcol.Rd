@@ -2,7 +2,8 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_pred_numcol}
 \alias{plot_twoclass_pred_numcol}
-\title{Visualizing the predicted probability vs. a numeric variable for a model}
+\title{Visualizing the predicted probability vs. a numeric variable for a classification
+model}
 \usage{
 plot_twoclass_pred_numcol(
   object,
@@ -22,7 +23,7 @@ plot_twoclass_pred_numcol()
 }
 \description{
 This function allows you to plot the predicted probabilities from your tidymodel
-result against a numeric variable.
+result for a two-class classification model against a numeric variable.
 }
 \keyword{classes,}
 \keyword{classif,}
