@@ -22,7 +22,7 @@ first_level <- function(data, event_level, y_name) {
 }
 
 
-#' Rwturns the name of predictions column for the first level variable
+#' Returns the name of predictions column for the first level variable
 #'
 #' This function takes the predictions object, event_level, and y_name as
 #'  arguments and returns the predictions column for the first level variable.

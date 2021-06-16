@@ -2,7 +2,7 @@
 % Please edit documentation in R/Misc.R
 \name{first_class_prob_name}
 \alias{first_class_prob_name}
-\title{Rwturns the name of predictions column for the first level variable}
+\title{Returns the name of predictions column for the first level variable}
 \usage{
 first_class_prob_name(predictions_obj, event_level, y_name)
 }
