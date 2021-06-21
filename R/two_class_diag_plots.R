@@ -15,7 +15,8 @@ plot_twoclass_obs_pred <-
            prob_bins = 0.025) {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
+    prob_name <-
+      first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
     sample_predictions %>%
       ggplot(aes(x = !!prob_name)) +
@@ -51,7 +52,9 @@ plot_twoclass_conf_mat <- function(object) {
 #'
 #' This function allows you to plot the predicted probabilities from your tidymodel
 #' result for a two-class classification model against a numeric variable.
-#' @inheritParams plot_twoclass_obs_pred
+#' @param dat give the dataframe obtained by merging the results from tuning functions
+#' with the original data
+#' @param y_name give the y/response variable for the model
 #' @param numcol give the numerical column you want to plot
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -59,17 +62,15 @@ plot_twoclass_conf_mat <- function(object) {
 #' @return
 #' plot_twoclass_pred_numcol()
 plot_twoclass_pred_numcol <-
-  function(object,
+  function(dat,
            numcol,
+           y_name,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
-    col <- enexpr(numcol)
-    y_name <- tune::.get_tune_outcome_names(object)
-    sample_predictions <- augment(object)
-    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
+    prob_name <- first_class_prob_name(dat, event_level, y_name)
     #plotting
-    sample_predictions %>%
+    dat %>%
       mutate(
         !!prob_name :=
           case_when(
@@ -77,15 +78,20 @@ plot_twoclass_pred_numcol <-
             !!prob_name  <    prob_eps ~     prob_eps,
             TRUE ~ !!prob_name
           )
-      ) %>%
-      ggplot(aes(x = col, y = !!prob_name)) +
-      geom_point() +
+      )
+    p <- ggplot(dat, aes(x = !!sym(numcol), y = !!prob_name)) +
+      geom_point(aes(customdata = .row, color = .color)) +
       facet_wrap( ~ Class,
                   labeller = labeller(Class = label_both),
                   ncol = 1) +
+      scale_color_identity() +
       labs(title = "Predicted probabilities versus numeric variable") +
-      # We should make a custom transformation that handles probs at 0 and 1
-      scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      theme_bw() +
+      # # We should make a custom transformation that handles probs at 0 and 1
+      scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
+      theme(legend.position = "none")
+    ggplotly(p) %>%
+      plotly::layout(dragmode = "select")
   }
 
 #' Visualizing the predicted probability vs. a factor variable for a classification
@@ -93,7 +99,7 @@ plot_twoclass_pred_numcol <-
 #'
 #' This function allows you to plot the predicted probabilities from your
 #' tidymodels result for a two-class classification model against a factor variable.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_twoclass_pred_numcol
 #' @param factorcol give the factor column you want to plot
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -101,17 +107,15 @@ plot_twoclass_pred_numcol <-
 #' @return
 #' plot_twoclass_pred_factorcol()
 plot_twoclass_pred_factorcol <-
-  function(object,
+  function(dat,
            factorcol,
+           y_name,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
-    col <- enexpr(factorcol)
-    y_name <- tune::.get_tune_outcome_names(object)
-    sample_predictions <- augment(object)
-    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
+    prob_name <- first_class_prob_name(dat, event_level, y_name)
     #plotting
-    sample_predictions %>%
+    dat %>%
       mutate(
         !!prob_name :=
           case_when(
@@ -119,15 +123,21 @@ plot_twoclass_pred_factorcol <-
             !!prob_name  <    prob_eps ~     prob_eps,
             TRUE ~ !!prob_name
           )
-      ) %>%
-      ggplot(aes(x = col, y = !!prob_name)) +
-      geom_point() +
+      )
+    p <- ggplot(dat, aes(x = !!prob_name, y = !!sym(factorcol))) +
+      geom_point(aes(customdata = .row, color = .color)) +
       facet_wrap( ~ Class,
                   labeller = labeller(Class = label_both),
                   ncol = 1) +
-      labs(title = "Predicted probabilities versus factor variable") +
-      # We should make a custom transformation that handles probs at 0 and 1
-      scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      scale_color_identity() +
+      labs(title = "Predicted probabilities versus factor variable",
+           y = factorcol) +
+      theme_bw() +
+      # # We should make a custom transformation that handles probs at 0 and 1
+      # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
+      theme(legend.position = "none")
+    ggplotly(p) %>%
+      plotly::layout(dragmode = "select")
   }
 
 #' Visualizing the roc curve for a classification model
@@ -143,9 +153,10 @@ plot_twoclass_roc <-
   function(object, event_level = "first") {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
+    prob_name <-
+      first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
-    res <- roc_curve(truth = Class,!!prob_name)
+    res <- roc_curve(truth = Class, !!prob_name)
     fifty <- res %>%
       mutate(delta = abs(0.5 - .threshold)) %>%
       arrange(delta) %>%
@@ -167,9 +178,10 @@ plot_twoclass_pr <-
   function(object, event_level = "first") {
     y_name <- tune::.get_tune_outcome_names(object)
     sample_predictions <- augment(object)
-    prob_name <- first_class_prob_name(sample_predictions, event_level, y_name)
+    prob_name <-
+      first_class_prob_name(sample_predictions, event_level, y_name)
     #plotting
-    res <- pr_curve(truth = Class,!!prob_name)
+    res <- pr_curve(truth = Class, !!prob_name)
     fifty <- res %>%
       mutate(delta = abs(0.5 - .threshold)) %>%
       arrange(delta) %>%

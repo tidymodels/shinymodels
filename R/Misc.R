@@ -2,15 +2,16 @@
 #'
 #' This function takes the data, event_level, and y_name as arguments and
 #' returns the first level in a classification data.
-#' @param data give the dataset you are trying find the first level for
+#' @param dat give the dataframe obtained by merging the results from tuning functions
+#' with the original data
 #' @param event_level give the original event level for the dataset
-#' @param y_name give the response variable for the dataset
+#' @param y_name give the response variable for the model
 #' @keywords models, classes, classif
 #' @export
 #' @examples
 #' @return
 #' first_level()
-first_level <- function(data, event_level, y_name) {
+first_level <- function(dat, event_level, y_name) {
   our_factor <- data[[y_name]]
   our_levels <- levels(our_factor)
   if (event_level == "first") {
@@ -26,17 +27,15 @@ first_level <- function(data, event_level, y_name) {
 #'
 #' This function takes the predictions object, event_level, and y_name as
 #'  arguments and returns the predictions column for the first level variable.
-#' @param predictions_object give the predictions object from tidymodels
-#' @param event_level give the original event level for the dataset
-#' @param y_name give the response variable for the dataset
+#' @inheritParams first_level
 #' @keywords models, classes, classif
 #' @export
 #' @examples
 #' @return
 #' first_class_prob_name ()
-first_class_prob_name <- function(predictions_obj, event_level, y_name) {
+first_class_prob_name <- function(dat, event_level, y_name) {
   return(sym(paste0(
     ".pred_",
-    first_level(sample_predictions, event_level, y_name)
+    first_level(dat, event_level, y_name)
   )))
 }

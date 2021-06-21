@@ -4,12 +4,13 @@
 \alias{plot_numeric_obs_pred}
 \title{Visualizing observed vs. predicted values for a regression model}
 \usage{
-plot_numeric_obs_pred(original_data, object)
+plot_numeric_obs_pred(dat, y_name)
 }
 \arguments{
-\item{original_data}{give the original dataset you used for modeling}
+\item{dat}{give the dataframe obtained by merging the results from tuning functions
+with the original data}
 
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{y_name}{give the y/response variable for the model}
 }
 \value{
 plot_numeric_obs_pred()

@@ -4,10 +4,7 @@
 \alias{plot_numeric_res_pred}
 \title{Visualizing residuals vs. predicted values for a regression model}
 \usage{
-plot_numeric_res_pred(original_data, object)
-}
-\arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+plot_numeric_res_pred(dat, y_name)
 }
 \value{
 plot_numeric_res_pred()

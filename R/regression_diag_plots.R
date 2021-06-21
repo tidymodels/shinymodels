@@ -2,27 +2,25 @@
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
 #' results for a regression model against the observed/true values.
-#' @param original_data give the original dataset you used for modeling
-#' @param object give the object you got using tidymodels::fit_resamples
+#' @param dat give the dataframe obtained by merging the results from tuning functions
+#' with the original data
+#' @param y_name give the y/response variable for the model
 #' @keywords models, regression, graphs
 #' @export
 #' @examples
 #' @return
 #' plot_numeric_obs_pred()
-plot_numeric_obs_pred <- function(original_data, object) {
-  y_name <- tune::.get_tune_outcome_names(object)
-  holdout_predictions <-
-    object %>%
-    collect_predictions(summarize = TRUE) %>% # <- 1 row per training set row
-    inner_join(original_data %>% add_rowindex() %>% select(-all_of(y_name)),
-               by = ".row") %>%
-    mutate(residual = !!sym(y_name) - .pred)
-  holdout_predictions %>%
-    ggplot(aes(x = !!sym(y_name), y = .pred)) +
-    geom_abline(lty = 2) +
-    geom_point(alpha = .3) +
+plot_numeric_obs_pred <- function(dat, y_name) {
+  p <- ggplot(dat, aes(x = !!sym(y_name), y = .pred)) +
+    geom_abline(lty = 2, col = "green") +
+    geom_point(aes(customdata = .row, color = .color)) +
+    scale_color_identity() +
     coord_obs_pred() +
-    labs(title = "Observed vs predicted")
+    labs(title = "Observed vs predicted") +
+    theme_bw() +
+    theme(legend.position = "none")
+  ggplotly(p) %>%
+    plotly::layout(dragmode = "select")
 }
 
 #' Visualizing residuals vs. predicted values for a regression model
@@ -35,19 +33,17 @@ plot_numeric_obs_pred <- function(original_data, object) {
 #' @examples
 #' @return
 #' plot_numeric_res_pred()
-plot_numeric_res_pred <- function(original_data, object) {
-  y_name <- .get_tune_outcome_names(object)
-  holdout_predictions <-
-    object %>%
-    collect_predictions(summarize = TRUE) %>% # <- 1 row per training set row
-    inner_join(original_data %>% add_rowindex() %>% select(-all_of(y_name)),
-               by = ".row") %>%
-    mutate(residual = !!sym(y_name) - .pred)
-  holdout_predictions %>%
-    ggplot(aes(x = .pred, y = residual)) +
-    geom_hline(yintercept = 0, lty = 2) +
-    geom_point(alpha = .3) +
-    labs(title = "Residuals vs predicted")
+plot_numeric_res_pred <- function(dat, y_name) {
+  p <- ggplot(dat, aes(x = !!sym(y_name), y = .residual)) +
+    geom_abline(lty = 2, col = "green") +
+    geom_point(aes(customdata = .row, color = .color)) +
+    scale_color_identity() +
+    coord_obs_pred() +
+    labs(title = "Residuals vs predicted") +
+    theme_bw() +
+    theme(legend.position = "none")
+  ggplotly(p) %>%
+    plotly::layout(dragmode = "select")
 }
 
 #' Visualizing residuals vs. a numeric column for a regression model
@@ -62,19 +58,17 @@ plot_numeric_res_pred <- function(original_data, object) {
 #' @return
 #' plot_numeric_res_numcol()
 plot_numeric_res_numcol <-
-  function(original_data, object, numcol) {
-    numcol <- enexpr(numcol)
-    y_name <- .get_tune_outcome_names(object)
-    holdout_predictions <-
-      object %>%
-      collect_predictions(summarize = TRUE) %>% # <- 1 row per training set row
-      inner_join(original_data %>% add_rowindex() %>% select(-all_of(y_name)),
-                 by = ".row") %>%
-      mutate(residual = !!sym(y_name) - .pred)
-    holdout_predictions %>%
-      ggplot(aes(x = !!numcol, y = residual)) +
-      geom_point(alpha = .3) +
-      labs(title = paste(numcol, " Vs. residual"))
+  function(dat, numcol, y_name) {
+    p <- ggplot(dat, aes(x = !!sym(numcol), y = .residual)) +
+      geom_abline(lty = 2, col = "green") +
+      geom_point(aes(customdata = .row, color = .color)) +
+      scale_color_identity() +
+      coord_obs_pred() +
+      labs(title = paste(numcol, " Vs. residual")) +
+      theme_bw() +
+      theme(legend.position = "none")
+    ggplotly(p) %>%
+      plotly::layout(dragmode = "select")
   }
 
 #' Visualizing residuals vs. a factor column for a regression model
@@ -88,19 +82,19 @@ plot_numeric_res_numcol <-
 #' @examples
 #' @return
 #' plot_numeric_res_factorcol()
-plot_numeric_res_faccol <-
-  function(original_data, object, factorcol) {
-    factorcol <- enexpr(factorcol)
-    y_name <- .get_tune_outcome_names(object)
-    holdout_predictions <-
-      object %>%
-      collect_predictions(summarize = TRUE) %>% # <- 1 row per training set row
-      inner_join(original_data %>% add_rowindex() %>% select(-all_of(y_name)),
-                 by = ".row") %>%
-      mutate(residual = !!sym(y_name) - .pred)
-    holdout_predictions %>%
-      ggplot(aes(y = reorder(!!factorcol, residual), x = residual)) +
+plot_numeric_res_factorcol <-
+  function(dat, factorcol, y_name) {
+    p <-
+      ggplot(dat, aes(y = reorder(!!sym(factorcol),.residual), x = .residual)) +
       geom_point(alpha = .3) +
+      geom_abline(lty = 2, col = "green") +
+      geom_point(aes(customdata = .row, color = .color)) +
+      scale_color_identity() +
+      coord_obs_pred() +
       labs(title = paste(factorcol, " Vs. residual"),
-           y = paste(factorcol))
+           y = factorcol) +
+      theme_bw() +
+      theme(legend.position = "none")
+    ggplotly(p) %>%
+      plotly::layout(dragmode = "select")
   }

@@ -6,17 +6,21 @@
 model}
 \usage{
 plot_twoclass_pred_numcol(
-  object,
+  dat,
   numcol,
+  y_name,
   event_level = "first",
   prob_breaks = (2:9)/10,
   prob_eps = 0.001
 )
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{dat}{give the dataframe obtained by merging the results from tuning functions
+with the original data}
 
 \item{numcol}{give the numerical column you want to plot}
+
+\item{y_name}{give the y/response variable for the model}
 }
 \value{
 plot_twoclass_pred_numcol()

@@ -4,11 +4,9 @@
 \alias{plot_numeric_res_numcol}
 \title{Visualizing residuals vs. a numeric column for a regression model}
 \usage{
-plot_numeric_res_numcol(original_data, object, numcol)
+plot_numeric_res_numcol(dat, numcol, y_name)
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
-
 \item{numcol}{give the numerical column you want to plot against the residuals}
 }
 \value{
