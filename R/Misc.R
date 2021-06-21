@@ -12,7 +12,7 @@
 #' @return
 #' first_level()
 first_level <- function(dat, event_level, y_name) {
-  our_factor <- data[[y_name]]
+  our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
   if (event_level == "first") {
     prob_name <- paste(our_levels[1])

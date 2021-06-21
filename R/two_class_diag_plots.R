@@ -88,7 +88,7 @@ plot_twoclass_pred_numcol <-
       labs(title = "Predicted probabilities versus numeric variable") +
       theme_bw() +
       # # We should make a custom transformation that handles probs at 0 and 1
-      scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
+      # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       theme(legend.position = "none")
     ggplotly(p) %>%
       plotly::layout(dragmode = "select")
