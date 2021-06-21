@@ -2,8 +2,8 @@
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
 #' results for a regression model against the observed/true values.
-#' @param dat give the dataframe obtained by merging the results from tuning functions
-#' with the original data
+#' @param dat give the data frame that has the original data and the results of
+#' collect_predictions()
 #' @param y_name give the y/response variable for the model
 #' @keywords models, regression, graphs
 #' @export

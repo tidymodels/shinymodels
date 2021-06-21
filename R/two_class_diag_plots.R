@@ -52,8 +52,8 @@ plot_twoclass_conf_mat <- function(object) {
 #'
 #' This function allows you to plot the predicted probabilities from your tidymodel
 #' result for a two-class classification model against a numeric variable.
-#' @param dat give the dataframe obtained by merging the results from tuning functions
-#' with the original data
+#' @param dat give the data frame that has the original data and the results of
+#' collect_predictions()
 #' @param y_name give the y/response variable for the model
 #' @param numcol give the numerical column you want to plot
 #' @keywords models, classes, classif, graphs
