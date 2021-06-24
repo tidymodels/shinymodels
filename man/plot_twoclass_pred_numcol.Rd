@@ -15,8 +15,8 @@ plot_twoclass_pred_numcol(
 )
 }
 \arguments{
-\item{dat}{give the dataframe obtained by merging the results from tuning functions
-with the original data}
+\item{dat}{give the data frame that has the original data and the results of
+collect_predictions()}
 
 \item{numcol}{give the numerical column you want to plot}
 

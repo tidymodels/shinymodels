@@ -2,9 +2,9 @@
 % Please edit documentation in R/Misc.R
 \name{first_level}
 \alias{first_level}
-\title{Rwturns the first level of a classification model}
+\title{Returns the first level of a classification model}
 \usage{
-first_level(dat, event_level, y_name)
+first_level(dat, event_level = c("first", "second"), y_name)
 }
 \arguments{
 \item{dat}{give the dataframe obtained by merging the results from tuning functions

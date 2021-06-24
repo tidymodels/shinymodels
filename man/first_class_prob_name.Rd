@@ -15,7 +15,7 @@ with the original data}
 \item{y_name}{give the response variable for the model}
 }
 \value{
-first_class_prob_name ()
+first_class_prob_name()
 }
 \description{
 This function takes the predictions object, event_level, and y_name as

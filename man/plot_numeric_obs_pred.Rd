@@ -7,8 +7,8 @@
 plot_numeric_obs_pred(dat, y_name)
 }
 \arguments{
-\item{dat}{give the dataframe obtained by merging the results from tuning functions
-with the original data}
+\item{dat}{give the data frame that has the original data and the results of
+collect_predictions()}
 
 \item{y_name}{give the y/response variable for the model}
 }
