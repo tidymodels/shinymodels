@@ -41,7 +41,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
   )))
 }
 
-#' Turns fit_resamples() output into an object that can be used as an input to the Shiny app
+#' Extracts data from objects to use in a shiny app. 
 #'
 #' This function joins the result of fit_resamples() to the original dataset
 #' to give a dataframe that can be a Shiny input.
