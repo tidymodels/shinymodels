@@ -2,7 +2,7 @@ library(testthat)
 library(shinymodels)
 
 data("twoclass_ad_data_boost_res")
-data(ad_data)
+data(ad_data, package = "modeldata")
 
 preds <- organize_data(ad_data_boost_res, ad_data)
 
