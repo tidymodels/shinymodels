@@ -4,7 +4,7 @@
 #' returns the first level in a classification data.
 #' @param dat give the dataframe obtained by merging the results from tuning functions
 #' with the original data
-#' @param event_level give the original event level for the dataset
+#' @param event_level A single character value for the level corresponding to the event.
 #' @param y_name give the response variable for the model
 #' @keywords models, classes, classif
 #' @export
