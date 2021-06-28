@@ -1,6 +1,6 @@
 #' Returns the first level of a classification model
 #'
-#' This function takes the data, event_level, and y_name as arguments and
+#' This function takes the data, `event_level`, and `y_name` as arguments and
 #' returns the first level in a classification data.
 #' @param dat give the dataframe obtained by merging the results from tuning functions
 #' with the original data
