@@ -2,7 +2,7 @@
 % Please edit documentation in R/Misc.R
 \name{organize_data}
 \alias{organize_data}
-\title{Turns fit_resamples() output into an object that can be used as an input to the Shiny app}
+\title{Extracts data from objects to use in a shiny app.}
 \usage{
 organize_data(res_object, original_data)
 }

@@ -10,7 +10,7 @@ first_level(dat, event_level = c("first", "second"), y_name)
 \item{dat}{give the dataframe obtained by merging the results from tuning functions
 with the original data}
 
-\item{event_level}{give the original event level for the dataset}
+\item{event_level}{A single character value for the level corresponding to the event.}
 
 \item{y_name}{give the response variable for the model}
 }
@@ -18,7 +18,7 @@ with the original data}
 first_level()
 }
 \description{
-This function takes the data, event_level, and y_name as arguments and
+This function takes the data, \code{event_level}, and \code{y_name} as arguments and
 returns the first level in a classification data.
 }
 \keyword{classes,}

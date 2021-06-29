@@ -25,7 +25,7 @@ test_that("can accurately organize data", {
   spline_res <- fit_resamples(lin_mod, spline_rec, folds, control = control)
 
   preds <- tune::collect_predictions(spline_res, summarize = TRUE) %>%
-    mutate(.residual = mpg - .pred) %>%
+    dplyr::mutate(.residual = mpg - .pred) %>%
     inner_join(mtcars %>% add_rowindex() %>% select(-mpg), by = ".row")
 
   expect_equal(organize_data(spline_res, mtcars), preds)

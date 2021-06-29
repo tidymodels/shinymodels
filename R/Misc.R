@@ -47,7 +47,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
   )))
 }
 
-#' Extracts data from objects to use in a shiny app. 
+#' Extracts data from objects to use in a shiny app.
 #'
 #' This function joins the result of fit_resamples() to the original dataset
 #' to give a dataframe that can be a Shiny input.
@@ -67,7 +67,7 @@ organize_data <- function(res_object, original_data) {
       tune::collect_predictions(res_object, summarize = TRUE)
     if (is.numeric(original_data[[y_name]]) == TRUE) {
       sample_predictions <- sample_predictions %>%
-        mutate(.residual = !!rlang::sym(y_name) - .pred)
+        dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
     }
     preds <- sample_predictions  %>%
       dplyr::inner_join(original_data %>%

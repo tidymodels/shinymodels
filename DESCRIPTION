@@ -1,7 +1,7 @@
 Package: shinymodels
 Version: 0.0.0.9000
 Title: shinymodels
-Description: Shiny app for tidymodels
+Description: Shiny app for tidymodels.
 Authors@R: c(
         person(
           given = "Shisham",
@@ -38,6 +38,11 @@ Language: en-US
 Imports: 
     tune,
     parsnip,
+    yardstick,
+    tidymodels,
+    broom,
+    glue,
+    stats,
     ggplot2,
     rlang,
     dplyr,

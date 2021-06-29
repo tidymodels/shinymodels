@@ -10,7 +10,7 @@ first_class_prob_name(dat, event_level, y_name)
 \item{dat}{give the dataframe obtained by merging the results from tuning functions
 with the original data}
 
-\item{event_level}{give the original event level for the dataset}
+\item{event_level}{A single character value for the level corresponding to the event.}
 
 \item{y_name}{give the response variable for the model}
 }

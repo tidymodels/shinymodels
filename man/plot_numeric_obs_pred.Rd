@@ -13,7 +13,7 @@ collect_predictions()}
 \item{y_name}{give the y/response variable for the model}
 }
 \value{
-plot_numeric_obs_pred()
+A ggplot2::ggplot object.
 }
 \description{
 This function allows you to plot the predicted values based on your tidymodels
