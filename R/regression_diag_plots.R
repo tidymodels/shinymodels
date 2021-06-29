@@ -8,7 +8,7 @@
 #' @keywords models, regression, graphs
 #' @export
 #' @return
-#' plot_numeric_obs_pred()
+#' A ggplot object. 
 plot_numeric_obs_pred <- function(dat, y_name) {
   p <- ggplot(dat, aes(x = !!sym(y_name), y = .pred)) +
     geom_abline(lty = 2, col = "green") +

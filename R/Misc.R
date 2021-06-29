@@ -1,10 +1,10 @@
 #' Returns the first level of a classification model
 #'
-#' This function takes the data, event_level, and y_name as arguments and
+#' This function takes the data, `event_level`, and `y_name` as arguments and
 #' returns the first level in a classification data.
 #' @param dat give the dataframe obtained by merging the results from tuning functions
 #' with the original data
-#' @param event_level give the original event level for the dataset
+#' @param event_level A single character value for the level corresponding to the event.
 #' @param y_name give the response variable for the model
 #' @keywords models, classes, classif
 #' @export
@@ -47,7 +47,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
   )))
 }
 
-#' Turns fit_resamples() output into an object that can be used as an input to the Shiny app
+#' Extracts data from objects to use in a shiny app. 
 #'
 #' This function joins the result of fit_resamples() to the original dataset
 #' to give a dataframe that can be a Shiny input.

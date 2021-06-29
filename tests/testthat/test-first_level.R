@@ -1,7 +1,6 @@
 library(testthat)
 library(shinymodels)
 
-
 test_that("can find first level", {
   skip_on_cran()
   data("twoclass_ad_data_boost_res")
