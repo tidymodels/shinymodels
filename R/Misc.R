@@ -8,19 +8,26 @@
 #' @param y_name give the response variable for the model
 #' @keywords models, classes, classif
 #' @export
-#' @examples
 #' @return
 #' first_level()
 first_level <- function(dat, event_level=c("first", "second"), y_name) {
   event_level <- rlang::arg_match(event_level)
+  if (!y_name %in% colnames(dat)) {
+    rlang::abort(glue::glue("'{y_name}' is not a column in the dataset"))
+  }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
-  if (event_level == "first") {
-    prob_name <- paste(our_levels[1])
-  } else if (event_level == "second"){
-    prob_name <- paste(our_levels[2])
+  if (length(our_levels)==2){
+    if (event_level == "first") {
+      prob_name <- our_levels[1]
+    } else if (event_level == "second"){
+      prob_name <- our_levels[2]
+    }
+    return(prob_name)
   }
-  return(prob_name)
+  else {
+    rlang::abort("first_level() can only be used for a two-class variable")
+  }
 }
 
 
@@ -31,11 +38,10 @@ first_level <- function(dat, event_level=c("first", "second"), y_name) {
 #' @inheritParams first_level
 #' @keywords models, classes, classif
 #' @export
-#' @examples
 #' @return
 #' first_class_prob_name()
 first_class_prob_name <- function(dat, event_level, y_name) {
-  return(sym(paste0(
+  return(rlang::sym(paste0(
     ".pred_",
     first_level(dat, event_level, y_name)
   )))
@@ -49,19 +55,28 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 #' @param original_data give the original dataset
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
-#' @examples
 #' @return
 #' organize_data()
 organize_data <- function(res_object, original_data) {
-  y_name <- .get_tune_outcome_names(res_object)
-  sample_predictions <-
-    collect_predictions(res_object, summarize = TRUE)
-  if (is.numeric(original_data[[y_name]]) == TRUE) {
-    sample_predictions <- sample_predictions %>%
-      mutate(.residual = !!sym(y_name) - .pred)
+  if ("tune_results" %in% class(res_object)){
+    y_name <- tune::.get_tune_outcome_names(res_object)
+    if (!(y_name %in% names(original_data))) {
+      rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
+    }
+    sample_predictions <-
+      tune::collect_predictions(res_object, summarize = TRUE)
+    if (is.numeric(original_data[[y_name]]) == TRUE) {
+      sample_predictions <- sample_predictions %>%
+        mutate(.residual = !!rlang::sym(y_name) - .pred)
+    }
+    preds <- sample_predictions  %>%
+      dplyr::inner_join(original_data %>%
+                          parsnip::add_rowindex() %>%
+                          dplyr::select(-!!rlang::sym(y_name)),
+                        by = ".row")
+    return(preds)
   }
-  preds <- sample_predictions  %>%
-    inner_join(original_data %>% add_rowindex() %>% select(-!!sym(y_name)),
-               by = ".row")
-  return(preds)
+  else{
+    rlang::abort("No `collect_predictions()` exists for this type of object")
+  }
 }

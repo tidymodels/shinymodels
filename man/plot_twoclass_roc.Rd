@@ -8,6 +8,8 @@ plot_twoclass_roc(object, event_level = "first")
 }
 \arguments{
 \item{object}{give the object you got using tidymodels::fit_resamples}
+
+\item{event_level}{give the desired event level for the dataset}
 }
 \value{
 plot_twoclass_roc()

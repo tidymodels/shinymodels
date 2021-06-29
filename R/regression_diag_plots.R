@@ -7,7 +7,6 @@
 #' @param y_name give the y/response variable for the model
 #' @keywords models, regression, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_numeric_obs_pred()
 plot_numeric_obs_pred <- function(dat, y_name) {
@@ -17,7 +16,6 @@ plot_numeric_obs_pred <- function(dat, y_name) {
     scale_color_identity() +
     coord_obs_pred() +
     labs(title = "Observed vs predicted") +
-    theme_bw() +
     theme(legend.position = "none")
   ggplotly(p) %>%
     plotly::layout(dragmode = "select")
@@ -27,10 +25,9 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
 #' result for a regression model against the residuals.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_numeric_obs_pred
 #' @keywords models, regression, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_numeric_res_pred()
 plot_numeric_res_pred <- function(dat, y_name) {
@@ -40,7 +37,6 @@ plot_numeric_res_pred <- function(dat, y_name) {
     scale_color_identity() +
     coord_obs_pred() +
     labs(title = "Residuals vs predicted") +
-    theme_bw() +
     theme(legend.position = "none")
   ggplotly(p) %>%
     plotly::layout(dragmode = "select")
@@ -50,11 +46,10 @@ plot_numeric_res_pred <- function(dat, y_name) {
 #'
 #' This function allows you to plot the residuals based on tidymodels result for
 #'  a regression model against any of the numeric column used for modeling.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_numeric_obs_pred
 #' @param numcol give the numerical column you want to plot against the residuals
 #' @keywords models, regression, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_numeric_res_numcol()
 plot_numeric_res_numcol <-
@@ -65,7 +60,6 @@ plot_numeric_res_numcol <-
       scale_color_identity() +
       coord_obs_pred() +
       labs(title = paste(numcol, " Vs. residual")) +
-      theme_bw() +
       theme(legend.position = "none")
     ggplotly(p) %>%
       plotly::layout(dragmode = "select")
@@ -75,11 +69,10 @@ plot_numeric_res_numcol <-
 #'
 #' This function allows you to plot the residuals based on tidymodels result for
 #' a regression model against any of the factor column used for modeling.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_numeric_obs_pred
 #' @param factorcol give the factor column you want to plot against the residuals
 #' @keywords models, regression, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_numeric_res_factorcol()
 plot_numeric_res_factorcol <-
@@ -93,7 +86,6 @@ plot_numeric_res_factorcol <-
       coord_obs_pred() +
       labs(title = paste(factorcol, " Vs. residual"),
            y = factorcol) +
-      theme_bw() +
       theme(legend.position = "none")
     ggplotly(p) %>%
       plotly::layout(dragmode = "select")

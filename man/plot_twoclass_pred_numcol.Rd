@@ -21,6 +21,12 @@ collect_predictions()}
 \item{numcol}{give the numerical column you want to plot}
 
 \item{y_name}{give the y/response variable for the model}
+
+\item{event_level}{give the desired event level for the dataset}
+
+\item{prob_breaks}{give the breaks for scale_y_continuous()}
+
+\item{prob_eps}{give the threshold to break prob_name}
 }
 \value{
 plot_twoclass_pred_numcol()

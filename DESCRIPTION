@@ -36,11 +36,15 @@ Suggests:
     testthat (>= 3.0.0)
 Language: en-US
 Imports: 
-    tidymodels,
-    tidyverse,
-    rules,
-    magrittr,
-    tune
+    tune,
+    parsnip,
+    ggplot2,
+    rlang,
+    dplyr,
+    plotly,
+    shiny,
+    modeldata,
+    magrittr
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)

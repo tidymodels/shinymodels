@@ -4,9 +4,10 @@
 #' This function allows you to plot the predicted probabilities from your tidymodels
 #' result for a two-class classification model against the observed/true class.
 #' @param object give the object you got using tidymodels::fit_resamples
+#' @param event_level give the desired event level for the dataset
+#' @param prob_bins give the desired binwidth for histogram
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_obs_pred()
 plot_twoclass_obs_pred <-
@@ -35,7 +36,6 @@ plot_twoclass_obs_pred <-
 #' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_obs_pred()
 plot_twoclass_conf_mat <- function(object) {
@@ -52,13 +52,15 @@ plot_twoclass_conf_mat <- function(object) {
 #'
 #' This function allows you to plot the predicted probabilities from your tidymodel
 #' result for a two-class classification model against a numeric variable.
+#' @inheritParams plot_twoclass_obs_pred
 #' @param dat give the data frame that has the original data and the results of
 #' collect_predictions()
 #' @param y_name give the y/response variable for the model
 #' @param numcol give the numerical column you want to plot
+#' @param prob_breaks give the breaks for scale_y_continuous()
+#' @param prob_eps give the threshold to break prob_name
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_pred_numcol()
 plot_twoclass_pred_numcol <-
@@ -86,7 +88,6 @@ plot_twoclass_pred_numcol <-
                   ncol = 1) +
       scale_color_identity() +
       labs(title = "Predicted probabilities versus numeric variable") +
-      theme_bw() +
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       theme(legend.position = "none")
@@ -99,11 +100,11 @@ plot_twoclass_pred_numcol <-
 #'
 #' This function allows you to plot the predicted probabilities from your
 #' tidymodels result for a two-class classification model against a factor variable.
+#' @inheritParams plot_twoclass_obs_pred
 #' @inheritParams plot_twoclass_pred_numcol
 #' @param factorcol give the factor column you want to plot
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_pred_factorcol()
 plot_twoclass_pred_factorcol <-
@@ -132,7 +133,6 @@ plot_twoclass_pred_factorcol <-
       scale_color_identity() +
       labs(title = "Predicted probabilities versus factor variable",
            y = factorcol) +
-      theme_bw() +
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       theme(legend.position = "none")
@@ -146,7 +146,6 @@ plot_twoclass_pred_factorcol <-
 #' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_roc()
 plot_twoclass_roc <-
@@ -171,7 +170,6 @@ plot_twoclass_roc <-
 #' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
-#' @examples
 #' @return
 #' plot_twoclass_pr()
 plot_twoclass_pr <-

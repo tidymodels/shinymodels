@@ -9,6 +9,10 @@ plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
 }
 \arguments{
 \item{object}{give the object you got using tidymodels::fit_resamples}
+
+\item{event_level}{give the desired event level for the dataset}
+
+\item{prob_bins}{give the desired binwidth for histogram}
 }
 \value{
 plot_twoclass_obs_pred()

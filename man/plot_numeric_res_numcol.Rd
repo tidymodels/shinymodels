@@ -7,7 +7,12 @@
 plot_numeric_res_numcol(dat, numcol, y_name)
 }
 \arguments{
+\item{dat}{give the data frame that has the original data and the results of
+collect_predictions()}
+
 \item{numcol}{give the numerical column you want to plot against the residuals}
+
+\item{y_name}{give the y/response variable for the model}
 }
 \value{
 plot_numeric_res_numcol()

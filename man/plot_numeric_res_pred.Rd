@@ -6,6 +6,12 @@
 \usage{
 plot_numeric_res_pred(dat, y_name)
 }
+\arguments{
+\item{dat}{give the data frame that has the original data and the results of
+collect_predictions()}
+
+\item{y_name}{give the y/response variable for the model}
+}
 \value{
 plot_numeric_res_pred()
 }
