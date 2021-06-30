@@ -32,8 +32,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
     spelling,
-    doMC,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    covr
 Language: en-US
 Imports: 
     tune,
