@@ -4,15 +4,18 @@
 \alias{plot_numeric_res_numcol}
 \title{Visualizing residuals vs. a numeric column for a regression model}
 \usage{
-plot_numeric_res_numcol(original_data, object, numcol)
+plot_numeric_res_numcol(dat, numcol, y_name)
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{dat}{The data frame that has the original data and the results of
+\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
 
-\item{numcol}{give the numerical column you want to plot against the residuals}
+\item{numcol}{The numerical column you want to plot against the residuals.}
+
+\item{y_name}{The y/response variable for the model.}
 }
 \value{
-plot_numeric_res_numcol()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the residuals based on tidymodels result for

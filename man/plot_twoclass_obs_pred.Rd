@@ -8,10 +8,14 @@ model}
 plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
+
+\item{event_level}{The desired event level for the dataset.}
+
+\item{prob_bins}{The desired \code{binwidth} for histogram.}
 }
 \value{
-plot_twoclass_obs_pred()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the predicted probabilities from your tidymodels

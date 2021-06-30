@@ -9,6 +9,25 @@ NULL
 
 
 #' @importFrom tune .get_tune_outcome_names collect_predictions
+#' @importFrom stats reorder
+#' @importFrom broom augment
+#' @import yardstick
 #' @import dplyr
 #' @import ggplot2
 #' @import rlang
+#' @import utils
+
+# ------------------------------------------------------------------------------
+
+utils::globalVariables(
+  c(
+    ".color",
+    ".pred",
+    ".pred_class",
+    ".residual",
+    ".threshold",
+    ":=",
+    "Class",
+    "delta"
+  )
+)

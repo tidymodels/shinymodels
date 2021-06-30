@@ -4,13 +4,16 @@
 \alias{plot_numeric_res_pred}
 \title{Visualizing residuals vs. predicted values for a regression model}
 \usage{
-plot_numeric_res_pred(original_data, object)
+plot_numeric_res_pred(dat, y_name)
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{dat}{The data frame that has the original data and the results of
+\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
+
+\item{y_name}{The y/response variable for the model.}
 }
 \value{
-plot_numeric_res_pred()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the predicted values based on your tidymodels

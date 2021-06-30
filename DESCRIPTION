@@ -1,7 +1,7 @@
 Package: shinymodels
 Version: 0.0.0.9000
 Title: shinymodels
-Description: Shiny app for tidymodels
+Description: Shiny app for tidymodels.
 Authors@R: c(
         person(
           given = "Shisham",
@@ -27,7 +27,7 @@ Authors@R: c(
       )
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
+LazyData: false
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
@@ -36,9 +36,20 @@ Suggests:
     testthat (>= 3.0.0)
 Language: en-US
 Imports: 
+    tune,
+    parsnip,
+    yardstick,
     tidymodels,
-    tidyverse,
-    rules,
-    magrittr,
-    tune
+    broom,
+    glue,
+    stats,
+    ggplot2,
+    rlang,
+    dplyr,
+    plotly,
+    shiny,
+    modeldata,
+    magrittr
 Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)

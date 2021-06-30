@@ -2,22 +2,23 @@
 % Please edit documentation in R/Misc.R
 \name{first_level}
 \alias{first_level}
-\title{Rwturns the first level of a classification model}
+\title{Returns the first level of a classification model}
 \usage{
-first_level(data, event_level, y_name)
+first_level(dat, event_level = c("first", "second"), y_name)
 }
 \arguments{
-\item{data}{give the dataset you are trying find the first level for}
+\item{dat}{The dataframe obtained by merging the results from tuning functions
+with the original data}
 
-\item{event_level}{give the original event level for the dataset}
+\item{event_level}{A single character value for the level corresponding to the event.}
 
-\item{y_name}{give the response variable for the dataset}
+\item{y_name}{The response variable for the model.}
 }
 \value{
-first_level()
+A string.
 }
 \description{
-This function takes the data, event_level, and y_name as arguments and
+This function takes the data, \code{event_level}, and \code{y_name} as arguments and
 returns the first level in a classification data.
 }
 \keyword{classes,}

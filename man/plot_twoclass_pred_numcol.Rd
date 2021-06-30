@@ -6,23 +6,33 @@
 model}
 \usage{
 plot_twoclass_pred_numcol(
-  object,
+  dat,
   numcol,
+  y_name,
   event_level = "first",
   prob_breaks = (2:9)/10,
   prob_eps = 0.001
 )
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{dat}{The data frame that has the original data and the results of
+\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
 
-\item{numcol}{give the numerical column you want to plot}
+\item{numcol}{The numerical column you want to plot.}
+
+\item{y_name}{The y/response variable for the model.}
+
+\item{event_level}{The desired event level for the dataset.}
+
+\item{prob_breaks}{The breaks for \code{\link[ggplot2:scale_continuous]{ggplot2::scale_y_continuous()}}.}
+
+\item{prob_eps}{The threshold to break prob_name.}
 }
 \value{
-plot_twoclass_pred_numcol()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the predicted probabilities from your tidymodel
+This function allows you to plot the predicted probabilities from your tidymodels
 result for a two-class classification model against a numeric variable.
 }
 \keyword{classes,}

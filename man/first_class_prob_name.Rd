@@ -4,17 +4,18 @@
 \alias{first_class_prob_name}
 \title{Returns the name of predictions column for the first level variable}
 \usage{
-first_class_prob_name(predictions_obj, event_level, y_name)
+first_class_prob_name(dat, event_level, y_name)
 }
 \arguments{
-\item{event_level}{give the original event level for the dataset}
+\item{dat}{The dataframe obtained by merging the results from tuning functions
+with the original data}
 
-\item{y_name}{give the response variable for the dataset}
+\item{event_level}{A single character value for the level corresponding to the event.}
 
-\item{predictions_object}{give the predictions object from tidymodels}
+\item{y_name}{The response variable for the model.}
 }
 \value{
-first_class_prob_name ()
+A symbol.
 }
 \description{
 This function takes the predictions object, event_level, and y_name as
