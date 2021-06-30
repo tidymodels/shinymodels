@@ -15,3 +15,19 @@ NULL
 #' @import dplyr
 #' @import ggplot2
 #' @import rlang
+#' @import utils
+
+# ------------------------------------------------------------------------------
+
+utils::globalVariables(
+  c(
+    ".color",
+    ".pred",
+    ".pred_class",
+    ".residual",
+    ".threshold",
+    ":=",
+    "Class",
+    "delta"
+  )
+)

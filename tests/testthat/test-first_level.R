@@ -17,7 +17,7 @@ test_that("can find first level", {
   expect_error(first_level(preds, "first", "Potato"),
                "'Potato' is not a column in the dataset")
   expect_error(first_level(preds, first, "Class"),
-               "object 'first' not found")
+               "`event_level` must be a character vector")
   expect_error(first_level(preds, 1, "Class"),
                "`event_level` must be a character vector")
   expect_error(first_level(preds, "first", Class),
