@@ -7,14 +7,14 @@
 plot_twoclass_conf_mat(object)
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
 }
 \value{
-plot_twoclass_obs_pred()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the confusion matrix for your classification
-model
+model.
 }
 \keyword{classes,}
 \keyword{classif,}

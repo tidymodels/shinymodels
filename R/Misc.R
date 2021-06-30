@@ -2,14 +2,14 @@
 #'
 #' This function takes the data, `event_level`, and `y_name` as arguments and
 #' returns the first level in a classification data.
-#' @param dat give the dataframe obtained by merging the results from tuning functions
+#' @param dat The dataframe obtained by merging the results from tuning functions
 #' with the original data
 #' @param event_level A single character value for the level corresponding to the event.
-#' @param y_name give the response variable for the model
+#' @param y_name The response variable for the model.
 #' @keywords models, classes, classif
 #' @export
 #' @return
-#' first_level()
+#' A string.
 first_level <- function(dat, event_level=c("first", "second"), y_name) {
   event_level <- rlang::arg_match(event_level)
   if (!y_name %in% colnames(dat)) {
@@ -39,7 +39,7 @@ first_level <- function(dat, event_level=c("first", "second"), y_name) {
 #' @keywords models, classes, classif
 #' @export
 #' @return
-#' first_class_prob_name()
+#' A symbol.
 first_class_prob_name <- function(dat, event_level, y_name) {
   return(rlang::sym(paste0(
     ".pred_",
@@ -49,14 +49,14 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 
 #' Extracts data from objects to use in a shiny app.
 #'
-#' This function joins the result of fit_resamples() to the original dataset
+#' This function joins the result of [tune::fit_resamples()]  to the original dataset
 #' to give a dataframe that can be a Shiny input.
-#' @param res_object give the fit_resamples() result
-#' @param original_data give the original dataset
+#' @param res_object The [tune::fit_resamples()] result.
+#' @param original_data The original dataset.
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
-#' organize_data()
+#' A data frame.
 organize_data <- function(res_object, original_data) {
   if ("tune_results" %in% class(res_object)){
     y_name <- tune::.get_tune_outcome_names(res_object)

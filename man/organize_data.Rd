@@ -7,15 +7,15 @@
 organize_data(res_object, original_data)
 }
 \arguments{
-\item{res_object}{give the fit_resamples() result}
+\item{res_object}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
 
-\item{original_data}{give the original dataset}
+\item{original_data}{The original dataset.}
 }
 \value{
-organize_data()
+A data frame.
 }
 \description{
-This function joins the result of fit_resamples() to the original dataset
+This function joins the result of \code{\link[tune:fit_resamples]{tune::fit_resamples()}}  to the original dataset
 to give a dataframe that can be a Shiny input.
 }
 \keyword{classes,}

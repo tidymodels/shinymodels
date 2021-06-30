@@ -2,13 +2,13 @@
 #'
 #' This function allows you to plot the predicted values based on your tidymodels
 #' results for a regression model against the observed/true values.
-#' @param dat give the data frame that has the original data and the results of
-#' collect_predictions()
-#' @param y_name give the y/response variable for the model
+#' @param dat The data frame that has the original data and the results of
+#' [tune::collect_predictions()].
+#' @param y_name The y/response variable for the model.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
-#' A ggplot2::ggplot object.
+#' A [ggplot2::ggplot()] object.
 plot_numeric_obs_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
@@ -29,7 +29,7 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 #' @keywords models, regression, graphs
 #' @export
 #' @return
-#' plot_numeric_res_pred()
+#' A [ggplot2::ggplot()] object.
 plot_numeric_res_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .residual)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
@@ -47,11 +47,11 @@ plot_numeric_res_pred <- function(dat, y_name) {
 #' This function allows you to plot the residuals based on tidymodels result for
 #'  a regression model against any of the numeric column used for modeling.
 #' @inheritParams plot_numeric_obs_pred
-#' @param numcol give the numerical column you want to plot against the residuals
+#' @param numcol The numerical column you want to plot against the residuals.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
-#' plot_numeric_res_numcol()
+#' A [ggplot2::ggplot()] object.
 plot_numeric_res_numcol <-
   function(dat, numcol, y_name) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
@@ -70,11 +70,11 @@ plot_numeric_res_numcol <-
 #' This function allows you to plot the residuals based on tidymodels result for
 #' a regression model against any of the factor column used for modeling.
 #' @inheritParams plot_numeric_obs_pred
-#' @param factorcol give the factor column you want to plot against the residuals
+#' @param factorcol The factor column you want to plot against the residuals.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
-#' plot_numeric_res_factorcol()
+#' A [ggplot2::ggplot()] object.
 plot_numeric_res_factorcol <-
   function(dat, factorcol, y_name) {
     p <-

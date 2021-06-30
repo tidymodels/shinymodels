@@ -7,15 +7,15 @@
 plot_numeric_res_factorcol(dat, factorcol, y_name)
 }
 \arguments{
-\item{dat}{give the data frame that has the original data and the results of
-collect_predictions()}
+\item{dat}{The data frame that has the original data and the results of
+\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
 
-\item{factorcol}{give the factor column you want to plot against the residuals}
+\item{factorcol}{The factor column you want to plot against the residuals.}
 
-\item{y_name}{give the y/response variable for the model}
+\item{y_name}{The y/response variable for the model.}
 }
 \value{
-plot_numeric_res_factorcol()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the residuals based on tidymodels result for

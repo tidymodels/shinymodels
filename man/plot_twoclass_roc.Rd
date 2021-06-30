@@ -2,20 +2,20 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_roc}
 \alias{plot_twoclass_roc}
-\title{Visualizing the roc curve for a classification model}
+\title{Visualizing the ROC curve for a classification model}
 \usage{
 plot_twoclass_roc(object, event_level = "first")
 }
 \arguments{
-\item{object}{give the object you got using tidymodels::fit_resamples}
+\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
 
-\item{event_level}{give the desired event level for the dataset}
+\item{event_level}{The desired event level for the dataset.}
 }
 \value{
-plot_twoclass_roc()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the roc curve for your classification model.
+This function allows you to plot the ROC curve for your classification model.
 }
 \keyword{classes,}
 \keyword{classif,}

@@ -15,21 +15,21 @@ plot_twoclass_pred_factorcol(
 )
 }
 \arguments{
-\item{dat}{give the data frame that has the original data and the results of
-collect_predictions()}
+\item{dat}{The data frame that has the original data and the results of
+\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
 
-\item{factorcol}{give the factor column you want to plot}
+\item{factorcol}{The factor column you want to plot.}
 
-\item{y_name}{give the y/response variable for the model}
+\item{y_name}{The y/response variable for the model.}
 
-\item{event_level}{give the desired event level for the dataset}
+\item{event_level}{The desired event level for the dataset.}
 
-\item{prob_breaks}{give the breaks for scale_y_continuous()}
+\item{prob_breaks}{The breaks for \code{\link[ggplot2:scale_continuous]{ggplot2::scale_y_continuous()}}.}
 
-\item{prob_eps}{give the threshold to break prob_name}
+\item{prob_eps}{The threshold to break prob_name.}
 }
 \value{
-plot_twoclass_pred_factorcol()
+A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
 This function allows you to plot the predicted probabilities from your
