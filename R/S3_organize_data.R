@@ -9,13 +9,13 @@
 #' @export
 #' @return
 #' A data frame.
-organize_data <- function(object, original_data, ...) {
+organize_data <- function(object, ...) {
   UseMethod("organize_data")
 }
 
 #' @export
 #' @rdname organize_data
-organize_data.default <- function(x, original_data, ...) {
+organize_data.default <- function(x,  ...) {
   rlang::abort("No `organize_data()` exists for this type of object.")
 }
 
@@ -23,17 +23,9 @@ organize_data.default <- function(x, original_data, ...) {
 #' @rdname organize_data
 organize_data.tune_results <-
   function(x,
-           summarize = FALSE,
-           parameters = NULL,
            ...) {
-    if (!inherits(x, "tune_results")) {
-      rlang::abort(
-        paste0(
-          "`x` should be an object produced by one of the `tune_*()` functions,",
-          "`fit_resamples()` or `last_fit()`."
-        )
-      )
-    }
+    #TODO
+    original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
         paste0(
@@ -57,28 +49,43 @@ organize_data.tune_results <-
                           parsnip::add_rowindex() %>%
                           dplyr::select(-!!rlang::sym(y_name)),
                         by = ".row")
-    return(preds)
+    app_type <- get_app_type(original_data[[y_name]])
+    new_shiny_data(preds, y_name, app_type)
   }
 # ------------------------------------------------------------------------------
 
-#' @export
-#' @rdname organize_data
-organize_data.tune_race <- function(x, original_data, ...) {
-  y_name <- tune::.get_tune_outcome_names(x)
-  if (!(y_name %in% names(original_data))) {
-    rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
+new_shiny_data <- function(predictions, y_name, subclass){
+  if (!inherits(predictions, "data.frame")){
+    rlang::abort("predictions should be a data frame")
   }
-  sample_predictions <-
-    tune::collect_metrics(x, summarize = TRUE)
-  if (is.numeric(original_data[[y_name]]) == TRUE) {
-    sample_predictions <- sample_predictions %>%
-      dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
+  if(nrow(predictions) == 0){
+    rlang::abort("there should be at least one row of predictions")
   }
-  preds <- sample_predictions  %>%
-    dplyr::inner_join(original_data %>%
-                        parsnip::add_rowindex() %>%
-                        dplyr::select(-!!rlang::sym(y_name)),
-                      by = ".row")
-  return(preds)
+  #check to see if the right prediction columns are there
+  #TODO
+  #Think about other ways things could go wrong
+  if (!is.character(y_name)){
+    rlang::abort("y_name should be a character string")
+  }
+  res <- list(predictions=predictions, y_name=y_name)
+  structure(res, class=c(paste0(subclass, "_shiny_data"), "shiny_data"))
+}
+# ------------------------------------------------------------------------------
+get_app_type <- function(y){
+  if (is.numeric(y)){
+    res <- "reg"
+  }
+  else if (is.factor(y)){
+    if (nlevels(y)==2){
+      res <- "two_cls"
+    }
+    else{
+      res <- "multi_cls"
+    }
+  }
+  else{
+    rlang::abort("outcome should be factor or numeric")
+  }
+  res
 }
 # ------------------------------------------------------------------------------
