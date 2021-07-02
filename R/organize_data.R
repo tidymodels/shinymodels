@@ -3,13 +3,13 @@
 #'
 #' This function joins the result of [tune::fit_resamples()]  to the original dataset
 #' to give a dataframe that can be a Shiny input.
-#' @param object The [tune::fit_resamples()] result.
-#' @param original_data The original dataset.
+#' @param x The [tune::fit_resamples()] result.
+#' @param ... Other parameters not currently used.
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
 #' A data frame.
-organize_data <- function(object, ...) {
+organize_data <- function(x, ...) {
   UseMethod("organize_data")
 }
 
@@ -94,10 +94,12 @@ get_app_type <- function(y){
 }
 # ------------------------------------------------------------------------------
 
-#' Returns the class, app_type, y_name, and nrows of an object of shiny_data class
+#' Returns the class, app type, y name, and number of rows of an object of
+#' `shiny_data` class
 #'
 #' This is a print method for a shiny_data class
 #' @param x an object of class shiny_data
+#' @param ... Other parameters not currently used
 #' @export
 print.shiny_data <- function(x, ...) {
   string <- paste(

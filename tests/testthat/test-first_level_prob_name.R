@@ -7,7 +7,8 @@ test_that("can find the correct first level .pred name", {
   data("twoclass_ad_data_boost_res")
   data(ad_data, package = "modeldata")
 
-  preds <- organize_data(ad_data_boost_res, ad_data)
+  org <- organize_data(ad_data_boost_res)
+  preds <- org$predictions
 
   expect_equal(first_class_prob_name(preds, "first", "Class"), quote(.pred_Impaired))
   expect_equal(first_class_prob_name(preds, "second", "Class"), quote(.pred_Control))
