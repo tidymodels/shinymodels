@@ -2,6 +2,7 @@
 
 S3method(organize_data,default)
 S3method(organize_data,tune_results)
+S3method(print,shiny_data)
 export("%>%")
 export(first_class_prob_name)
 export(first_level)

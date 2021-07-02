@@ -21,19 +21,25 @@ test_that("can accurately organize data", {
     set_engine("lm")
 
   control <- control_resamples(save_pred = TRUE)
+  control_no_pred <- control_resamples(save_pred = FALSE)
 
   spline_res <- fit_resamples(lin_mod, spline_rec, folds, control = control)
+  spline_res_no_pred <- fit_resamples(lin_mod, spline_rec, folds, control = control_no_pred)
 
-  preds <- tune::collect_predictions(spline_res, summarize = TRUE) %>%
-    dplyr::mutate(.residual = mpg - .pred) %>%
-    inner_join(mtcars %>% add_rowindex() %>% select(-mpg), by = ".row")
-
-  expect_equal(organize_data(spline_res, mtcars), preds)
-  expect_equal(colnames(organize_data(spline_res, mtcars)[2]), "mpg")
-  expect_equal(".residual" %in% colnames(organize_data(spline_res, mtcars)), TRUE)
-  expect_error(organize_data(lin_mod, mtcars),
-               "No `collect_predictions\\(\\)` exists for this type of object")
-  expect_error(organize_data(spline_res, as.data.frame(longley)),
-               "'mpg' is not a column in the orignal data")
+  expect_equal(is.list(organize_data(spline_res)), TRUE)
+  expect_equal(".pred" %in% names(organize_data(spline_res)$predictions), TRUE)
+  expect_equal(".residual" %in% names(organize_data(spline_res)$predictions), TRUE)
+  expect_equal(length(organize_data(spline_res)), 2)
+  expect_equal(nrow(organize_data(spline_res)$predictions), nrow(mtcars))
+  expect_equal(attr(organize_data(spline_res), "y_name"), "mpg")
+  expect_equal(attr(organize_data(spline_res), "nrows_preds"), 32)
+  expect_equal(".pred" %in% names(organize_data(spline_res)$predictions), TRUE)
+  expect_error(organize_data(lin_mod),
+               "No `organize_data\\(\\)` exists for this type of object.")
+  expect_error(organize_data(spline_res_no_pred),
+               paste0(
+                 "The `.predictions` column does not exist. ",
+                 "Refit with the control argument `save_pred = TRUE` to save predictions."
+               ))
 })
 

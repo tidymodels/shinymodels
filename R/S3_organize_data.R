@@ -68,7 +68,11 @@ new_shiny_data <- function(predictions, y_name, subclass){
     rlang::abort("y_name should be a character string")
   }
   res <- list(predictions=predictions, y_name=y_name)
-  structure(res, class=c(paste0(subclass, "_shiny_data"), "shiny_data"))
+  result <- structure(res, class=c(paste0(subclass, "_shiny_data"), "shiny_data"))
+  attr(result, "app_type") <- subclass
+  attr(result, "y_name") <- y_name
+  attr(result, "nrows_preds") <- nrow(predictions)
+  result
 }
 # ------------------------------------------------------------------------------
 get_app_type <- function(y){
@@ -89,3 +93,19 @@ get_app_type <- function(y){
   res
 }
 # ------------------------------------------------------------------------------
+
+#' Returns the class, app_type, y_name, and nrows of an object of shiny_data class
+#'
+#' This is a print method for a shiny_data class
+#' @param x an object of class shiny_data
+#' @export
+print.shiny_data <- function(x, ...) {
+  string <- paste(
+    paste("class:", paste(attr(x, "class"), collapse = ", ")),
+    paste("app_type:", attr(x, "app_type")),
+    paste("y_name:", attr(x, "y_name")),
+    paste("nrows:", attr(x, "nrows_preds")),
+    sep = "\n"
+  )
+  cat(string)
+}

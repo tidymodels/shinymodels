@@ -9,9 +9,9 @@ Extracts data from objects to use in a shiny app.}
 \usage{
 organize_data(object, ...)
 
-\method{organize_data}{default}(x, original_data, ...)
+\method{organize_data}{default}(x, ...)
 
-\method{organize_data}{tune_results}(x, summarize = FALSE, parameters = NULL, ...)
+\method{organize_data}{tune_results}(x, ...)
 }
 \arguments{
 \item{object}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
