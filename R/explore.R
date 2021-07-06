@@ -40,7 +40,7 @@ organize_data.tune_results <-
     }
     sample_predictions <-
       tune::collect_predictions(x, summarize = TRUE)
-    if (is.numeric(original_data[[y_name]]) == TRUE) {
+    if (is.numeric(original_data[[y_name]])) {
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
     }
