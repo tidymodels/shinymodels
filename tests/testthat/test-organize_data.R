@@ -17,8 +17,8 @@ test_that("can accurately organize data", {
   expect_equal(".residual" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
   expect_equal(length(organize_data(mtcars_spline_res)), 2)
   expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), nrow(mtcars))
-  expect_equal(attr(organize_data(mtcars_spline_res), "y_name"), "mpg")
-  expect_equal(attr(organize_data(mtcars_spline_res), "nrows_preds"), 32)
+  expect_equal(organize_data(mtcars_spline_res)$y_name, "mpg")
+  expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), 32)
   expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
   expect_error(
     organize_data(lin_mod),

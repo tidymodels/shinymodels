@@ -71,8 +71,6 @@ new_shiny_data <- function(predictions, y_name, subclass) {
   res <- list(predictions = predictions, y_name = y_name)
   result <- structure(res, class = c(paste0(subclass, "_shiny_data"), "shiny_data"))
   attr(result, "app_type") <- subclass
-  attr(result, "y_name") <- y_name
-  attr(result, "nrows_preds") <- nrow(predictions)
   result
 }
 # ------------------------------------------------------------------------------
@@ -106,8 +104,8 @@ print.shiny_data <- function(x, ...) {
   string <- paste(
     paste("class:", paste(attr(x, "class"), collapse = ", ")),
     paste("app_type:", attr(x, "app_type")),
-    paste("y_name:", attr(x, "y_name")),
-    paste("nrows:", attr(x, "nrows_preds")),
+    paste("y_name:", x$y_name),
+    paste("nrows:", nrow(x$predictions)),
     sep = "\n"
   )
   cat(string)
