@@ -12,6 +12,7 @@
 plot_numeric_obs_pred <- function(dat, y_name, cols) {
   expr <- rlang::enquo(cols)
   pos <- tidyselect::eval_select(expr, data = dat)
+  var <- rlang::set_names(dat[pos], names(pos))
    p <- ggplot2::ggplot(dat, ggplot2::aes(
     x = !!rlang::sym(y_name),
     y = .pred
@@ -22,7 +23,7 @@ plot_numeric_obs_pred <- function(dat, y_name, cols) {
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "pos") %>%
+  plotly::ggplotly(p, tooltip = var) %>%
     plotly::layout(dragmode = "select")
 }
 
