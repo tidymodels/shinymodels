@@ -20,12 +20,15 @@ test_that("can accurately organize data", {
   expect_equal(attr(organize_data(mtcars_spline_res), "y_name"), "mpg")
   expect_equal(attr(organize_data(mtcars_spline_res), "nrows_preds"), 32)
   expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
-  expect_error(organize_data(lin_mod),
-               "No `organize_data\\(\\)` exists for this type of object.")
-  expect_error(organize_data(dplyr::select(mtcars_spline_res, -.predictions)),
-               paste0(
-                 "The `.predictions` column does not exist. ",
-                 "Refit with the control argument `save_pred = TRUE` to save predictions."
-               ))
+  expect_error(
+    organize_data(lin_mod),
+    "No `organize_data\\(\\)` exists for this type of object."
+  )
+  expect_error(
+    organize_data(dplyr::select(mtcars_spline_res, -.predictions)),
+    paste0(
+      "The `.predictions` column does not exist. ",
+      "Refit with the control argument `save_pred = TRUE` to save predictions."
+    )
+  )
 })
-

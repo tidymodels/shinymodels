@@ -10,17 +10,17 @@
 #' @export
 #' @return
 #' A string.
-first_level <- function(dat, event_level=c("first", "second"), y_name) {
+first_level <- function(dat, event_level = c("first", "second"), y_name) {
   event_level <- rlang::arg_match(event_level)
   if (!y_name %in% colnames(dat)) {
     rlang::abort(glue::glue("'{y_name}' is not a column in the dataset"))
   }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
-  if (length(our_levels)==2){
+  if (length(our_levels) == 2) {
     if (event_level == "first") {
       prob_name <- our_levels[1]
-    } else if (event_level == "second"){
+    } else if (event_level == "second") {
       prob_name <- our_levels[2]
     }
     return(prob_name)

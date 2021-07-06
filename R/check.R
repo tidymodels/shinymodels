@@ -12,4 +12,3 @@
 # if (!(y_name %in% names(original_data))) {
 #   rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
 # }
-

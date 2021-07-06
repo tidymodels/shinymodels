@@ -15,7 +15,7 @@ organize_data <- function(x, ...) {
 
 #' @export
 #' @rdname organize_data
-organize_data.default <- function(x,  ...) {
+organize_data.default <- function(x, ...) {
   rlang::abort("No `organize_data()` exists for this type of object.")
 }
 
@@ -24,7 +24,7 @@ organize_data.default <- function(x,  ...) {
 organize_data.tune_results <-
   function(x,
            ...) {
-    #TODO
+    # TODO
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
@@ -44,50 +44,51 @@ organize_data.tune_results <-
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
     }
-    preds <- sample_predictions  %>%
+    preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex() %>%
-                          dplyr::select(-!!rlang::sym(y_name)),
-                        by = ".row")
+        parsnip::add_rowindex() %>%
+        dplyr::select(-!!rlang::sym(y_name)),
+      by = ".row"
+      )
     app_type <- get_app_type(original_data[[y_name]])
     new_shiny_data(preds, y_name, app_type)
   }
 # ------------------------------------------------------------------------------
 
-new_shiny_data <- function(predictions, y_name, subclass){
-  if (!inherits(predictions, "data.frame")){
+new_shiny_data <- function(predictions, y_name, subclass) {
+  if (!inherits(predictions, "data.frame")) {
     rlang::abort("predictions should be a data frame")
   }
-  if(nrow(predictions) == 0){
+  if (nrow(predictions) == 0) {
     rlang::abort("there should be at least one row of predictions")
   }
-  #check to see if the right prediction columns are there
-  #TODO
-  #Think about other ways things could go wrong
-  if (!is.character(y_name)){
+  # check to see if the right prediction columns are there
+  # TODO
+  # Think about other ways things could go wrong
+  if (!is.character(y_name)) {
     rlang::abort("y_name should be a character string")
   }
-  res <- list(predictions=predictions, y_name=y_name)
-  result <- structure(res, class=c(paste0(subclass, "_shiny_data"), "shiny_data"))
+  res <- list(predictions = predictions, y_name = y_name)
+  result <- structure(res, class = c(paste0(subclass, "_shiny_data"), "shiny_data"))
   attr(result, "app_type") <- subclass
   attr(result, "y_name") <- y_name
   attr(result, "nrows_preds") <- nrow(predictions)
   result
 }
 # ------------------------------------------------------------------------------
-get_app_type <- function(y){
-  if (is.numeric(y)){
+get_app_type <- function(y) {
+  if (is.numeric(y)) {
     res <- "reg"
   }
-  else if (is.factor(y)){
-    if (nlevels(y)==2){
+  else if (is.factor(y)) {
+    if (nlevels(y) == 2) {
       res <- "two_cls"
     }
-    else{
+    else {
       res <- "multi_cls"
     }
   }
-  else{
+  else {
     rlang::abort("outcome should be factor or numeric")
   }
   res
