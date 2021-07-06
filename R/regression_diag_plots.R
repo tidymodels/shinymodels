@@ -9,7 +9,7 @@
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_obs_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
+plot_numeric_obs_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
@@ -17,7 +17,7 @@ plot_numeric_obs_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = tooltip) %>%
+  plotly::ggplotly(p) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -30,7 +30,7 @@ plot_numeric_obs_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_res_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
+plot_numeric_res_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .residual)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
@@ -38,7 +38,7 @@ plot_numeric_res_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Residuals vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip=tooltip) %>%
+  plotly::ggplotly(p) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -53,7 +53,7 @@ plot_numeric_res_pred <- function(dat, y_name, tooltip=c("x", "gear", "hp")) {
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_numcol <-
-  function(dat, numcol, y_name, tooltip=c("x", "gear", "hp")) {
+  function(dat, numcol, y_name) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
@@ -61,7 +61,7 @@ plot_numeric_res_numcol <-
       tune::coord_obs_pred() +
       ggplot2::labs(title = paste(numcol, " Vs. residual")) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip=tooltip) %>%
+    plotly::ggplotly(p) %>%
       plotly::layout(dragmode = "select")
   }
 
@@ -76,7 +76,7 @@ plot_numeric_res_numcol <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_factorcol <-
-  function(dat, factorcol, y_name, tooltip=c("x", "gear", "hp")) {
+  function(dat, factorcol, y_name) {
     p <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(!!rlang::sym(factorcol),.residual), x = .residual)) +
       ggplot2::geom_point(alpha = .3) +
@@ -87,6 +87,6 @@ plot_numeric_res_factorcol <-
       ggplot2::labs(title = paste(factorcol, " Vs. residual"),
            y = factorcol) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip=tooltip) %>%
+    plotly::ggplotly(p) %>%
       plotly::layout(dragmode = "select")
   }
