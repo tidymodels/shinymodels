@@ -4,7 +4,7 @@
 \alias{plot_numeric_obs_pred}
 \title{Visualizing observed vs. predicted values for a regression model}
 \usage{
-plot_numeric_obs_pred(dat, y_name)
+plot_numeric_obs_pred(dat, y_name, cols)
 }
 \arguments{
 \item{dat}{The data frame that has the original data and the results of

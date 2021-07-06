@@ -9,15 +9,20 @@
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_obs_pred <- function(dat, y_name) {
-  p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .pred)) +
+plot_numeric_obs_pred <- function(dat, y_name, cols) {
+  expr <- rlang::enquo(cols)
+  pos <- tidyselect::eval_select(expr, data = dat)
+   p <- ggplot2::ggplot(dat, ggplot2::aes(
+    x = !!rlang::sym(y_name),
+    y = .pred
+  )) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p) %>%
+  plotly::ggplotly(p, tooltip = "pos") %>%
     plotly::layout(dragmode = "select")
 }
 
