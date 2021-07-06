@@ -7,33 +7,28 @@ tidymodels_prefer()
 test_that("can accurately organize data", {
   skip_on_cran()
   data("reg_mtcars_spline_res")
-  data(mtcars)
-  data(longley)
-
-  set.seed(6735)
-  folds <- vfold_cv(mtcars, v = 5)
-
-  spline_rec <- recipe(mpg ~ ., data = mtcars) %>%
-    step_ns(disp) %>%
-    step_ns(wt)
 
   lin_mod <- linear_reg() %>%
-    set_engine("lm")
+    set_engine("lm") %>%
+    fit(mpg ~ ., data = mtcars)
 
-  control <- control_resamples(save_pred = TRUE)
-
-  spline_res <- fit_resamples(lin_mod, spline_rec, folds, control = control)
-
-  preds <- tune::collect_predictions(spline_res, summarize = TRUE) %>%
-    dplyr::mutate(.residual = mpg - .pred) %>%
-    inner_join(mtcars %>% add_rowindex() %>% select(-mpg), by = ".row")
-
-  expect_equal(organize_data(spline_res, mtcars), preds)
-  expect_equal(colnames(organize_data(spline_res, mtcars)[2]), "mpg")
-  expect_equal(".residual" %in% colnames(organize_data(spline_res, mtcars)), TRUE)
-  expect_error(organize_data(lin_mod, mtcars),
-               "No `collect_predictions\\(\\)` exists for this type of object")
-  expect_error(organize_data(spline_res, as.data.frame(longley)),
-               "'mpg' is not a column in the orignal data")
+  expect_equal(is.list(organize_data(mtcars_spline_res)), TRUE)
+  expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
+  expect_equal(".residual" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
+  expect_equal(length(organize_data(mtcars_spline_res)), 2)
+  expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), nrow(mtcars))
+  expect_equal(organize_data(mtcars_spline_res)$y_name, "mpg")
+  expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), 32)
+  expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
+  expect_error(
+    organize_data(lin_mod),
+    "No `organize_data\\(\\)` exists for this type of object."
+  )
+  expect_error(
+    organize_data(dplyr::select(mtcars_spline_res, -.predictions)),
+    paste0(
+      "The `.predictions` column does not exist. ",
+      "Refit with the control argument `save_pred = TRUE` to save predictions."
+    )
+  )
 })
-
