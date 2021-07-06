@@ -14,7 +14,8 @@ coverage](https://codecov.io/gh/adhikars11/shinymodels/branch/main/graph/badge.s
 [![R-CMD-check](https://github.com/adhikars11/shinymodels/workflows/R-CMD-check/badge.svg)](https://github.com/adhikars11/shinymodels/actions)
 <!-- badges: end -->
 
-The goal of shinymodels is to …
+The goal of shinymodels is to launch a Shiny app given a {tidymodels} object.
+The main goal is to make it easier to explore {tidymodels} results. 
 
 ## Installation
 
