@@ -9,6 +9,3 @@
 #' @return a fit_resample() object
 #' @keywords datasets
 NULL
-
-
-

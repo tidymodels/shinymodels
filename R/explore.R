@@ -15,7 +15,7 @@ organize_data <- function(x, ...) {
 
 #' @export
 #' @rdname organize_data
-organize_data.default <- function(x,  ...) {
+organize_data.default <- function(x, ...) {
   rlang::abort("No `organize_data()` exists for this type of object.")
 }
 
@@ -24,7 +24,7 @@ organize_data.default <- function(x,  ...) {
 organize_data.tune_results <-
   function(x,
            ...) {
-    #TODO
+    # TODO
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
@@ -44,11 +44,12 @@ organize_data.tune_results <-
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
     }
-    preds <- sample_predictions  %>%
+    preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex() %>%
-                          dplyr::select(-!!rlang::sym(y_name)),
-                        by = ".row")
+        parsnip::add_rowindex() %>%
+        dplyr::select(-!!rlang::sym(y_name)),
+      by = ".row"
+      )
     app_type <- get_app_type(original_data[[y_name]])
     new_shiny_data(preds, y_name, app_type)
   }

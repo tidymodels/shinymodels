@@ -10,17 +10,17 @@
 #' @export
 #' @return
 #' A string.
-first_level <- function(dat, event_level=c("first", "second"), y_name) {
+first_level <- function(dat, event_level = c("first", "second"), y_name) {
   event_level <- rlang::arg_match(event_level)
   if (!y_name %in% colnames(dat)) {
     rlang::abort(glue::glue("'{y_name}' is not a column in the dataset"))
   }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
-  if (length(our_levels)==2){
+  if (length(our_levels) == 2) {
     if (event_level == "first") {
       prob_name <- our_levels[1]
-    } else if (event_level == "second"){
+    } else if (event_level == "second") {
       prob_name <- our_levels[2]
     }
     return(prob_name)
@@ -58,7 +58,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 #' @return
 #' A data frame.
 organize_data <- function(res_object, original_data) {
-  if ("tune_results" %in% class(res_object)){
+  if ("tune_results" %in% class(res_object)) {
     y_name <- tune::.get_tune_outcome_names(res_object)
     if (!(y_name %in% names(original_data))) {
       rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
@@ -69,14 +69,15 @@ organize_data <- function(res_object, original_data) {
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
     }
-    preds <- sample_predictions  %>%
+    preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex() %>%
-                          dplyr::select(-!!rlang::sym(y_name)),
-                        by = ".row")
+        parsnip::add_rowindex() %>%
+        dplyr::select(-!!rlang::sym(y_name)),
+      by = ".row"
+      )
     return(preds)
   }
-  else{
+  else {
     rlang::abort("No `collect_predictions()` exists for this type of object")
   }
 }
