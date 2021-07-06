@@ -104,7 +104,7 @@ get_app_type <- function(y) {
 #' @export
 print.shiny_data <- function(x, ...) {
   string <- paste(
-    paste("class:", paste(attr(x, "class"), collapse = ", ")),
+    paste("classes: ", paste0(class(x), collapse = ", ")),
     paste("app_type:", attr(x, "app_type")),
     paste("y_name:", attr(x, "y_name")),
     paste("nrows:", attr(x, "nrows_preds")),
