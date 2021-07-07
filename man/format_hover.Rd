@@ -7,12 +7,12 @@
 format_hover(x, ...)
 }
 \arguments{
-\item{x}{.hover column from a \code{\link[=organize_data]{organize_data()}} result}
+\item{x}{A data frame with columns to be displayed in the hover.}
 
 \item{...}{Other parameters not currently used.}
 }
 \value{
-A string.
+A character vector.
 }
 \description{
 This function takes .hover argument and returns the output that can
