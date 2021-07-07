@@ -2,7 +2,7 @@
 #'
 #' This function takes data, `event_level`, and `y_name` as arguments and
 #' returns the first level in a classification data.
-#' @param dat The dataframe obtained by merging the results from tuning functions
+#' @param dat The data frame obtained by merging the results from tuning functions
 #' with the original data
 #' @param event_level A single character value for the level corresponding to the event.
 #' @param y_name The response variable for the model.
@@ -33,7 +33,7 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
 
 #' Returns the name of predictions column for the first level variable
 #'
-#' This function takes predictions object, event_level, and y_name as
+#' This function takes prediction data, the event level, and the outcome name as
 #'  arguments and returns the predictions column for the first level variable.
 #' @inheritParams first_level
 #' @keywords models, classes, classif
@@ -49,10 +49,11 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 
 #' Returns the hover columns to be displayed in interactive plots
 #'
-#' This function takes .hover argument and returns the output that can
+#' This function takes `.hover` argument and returns the output that can
 #' be used as a test aesthetics in a [ggplot2::ggplot()] object to customize tooltip.
 #' @param x A data frame with columns to be displayed in the hover.
-#' @param ... Other parameters not currently used.
+#' @param ... Arguments pass to [format()] to the column(s) selected to be seen
+#' in the hover/tooltip.
 #' @keywords models
 #' @export
 #' @return
