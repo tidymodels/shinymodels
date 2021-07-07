@@ -103,7 +103,7 @@ get_app_type <- function(y) {
 #' @param x an object of class shiny_data
 #' @param ... Other parameters not currently used
 #' @export
-print.shiny_data <- function(x, cols = NULL, ...) {
+print.shiny_data <- function(x, ...) {
   string <- paste(
     paste("classes: ", paste0(class(x), collapse = ", ")),
     paste("app_type:", attr(x, "app_type")),

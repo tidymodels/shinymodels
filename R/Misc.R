@@ -52,6 +52,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 #' This function takes .hover argument and returns the output that can
 #' be used as a test aesthetics in a [ggplot2::ggplot()] object to customize tooltip.
 #' @param x .hover column from a [shinymodels::organize_data()] result
+#' @param ... Other parameters not currently used.
 #' @keywords models
 #' @export
 #' @return

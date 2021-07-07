@@ -8,6 +8,8 @@ format_hover(x, ...)
 }
 \arguments{
 \item{x}{.hover column from a \code{\link[=organize_data]{organize_data()}} result}
+
+\item{...}{Other parameters not currently used.}
 }
 \value{
 A string.

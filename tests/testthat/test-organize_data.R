@@ -20,6 +20,10 @@ test_that("can accurately organize data", {
   expect_equal(organize_data(mtcars_spline_res)$y_name, "mpg")
   expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), 32)
   expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
+  expect_equal(is.character(organize_data(mtcars_spline_res, c(mpg, .pred))$predictions$.hover), TRUE)
+  expect_equal(length(organize_data(mtcars_spline_res, c(mpg, .pred))$predictions$.hover), 32)
+  expect_error(organize_data(mtcars_spline_res, "mpl"),
+               "Column `mpl` doesn't exist.")
   expect_error(
     organize_data(lin_mod),
     "No `organize_data\\(\\)` exists for this type of object."

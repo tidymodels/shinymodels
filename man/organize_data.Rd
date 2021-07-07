@@ -4,7 +4,7 @@
 \alias{organize_data}
 \alias{organize_data.default}
 \alias{organize_data.tune_results}
-\title{Extract data from objects to use in a shiny app.}
+\title{Extract data from objects to use in a shiny app}
 \usage{
 organize_data(x, cols = NULL, ...)
 
