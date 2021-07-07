@@ -9,13 +9,14 @@ format_hover(x, ...)
 \arguments{
 \item{x}{A data frame with columns to be displayed in the hover.}
 
-\item{...}{Other parameters not currently used.}
+\item{...}{Arguments pass to \code{\link[=format]{format()}} to the column(s) selected to be seen
+in the hover/tooltip.}
 }
 \value{
 A character vector.
 }
 \description{
-This function takes .hover argument and returns the output that can
+This function takes \code{.hover} argument and returns the output that can
 be used as a test aesthetics in a \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object to customize tooltip.
 }
 \keyword{models}

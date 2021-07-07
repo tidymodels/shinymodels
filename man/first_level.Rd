@@ -7,7 +7,7 @@
 first_level(dat, event_level = c("first", "second"), y_name)
 }
 \arguments{
-\item{dat}{The dataframe obtained by merging the results from tuning functions
+\item{dat}{The data frame obtained by merging the results from tuning functions
 with the original data}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
