@@ -7,20 +7,22 @@
 \title{explore()
 Given an object of class \code{shiny_data}, lanches a shiny app}
 \usage{
-organize_data(x, ...)
+organize_data(x, cols = c(mpg, .pred), ...)
 
-\method{organize_data}{default}(x, ...)
+\method{organize_data}{default}(x, cols = c(mpg, .pred), ...)
 
-\method{organize_data}{tune_results}(x, ...)
+\method{organize_data}{tune_results}(x, cols = c(mpg, .pred), ...)
 
-organize_data(x, ...)
+organize_data(x, cols = c(mpg, .pred), ...)
 
-\method{organize_data}{default}(x, ...)
+\method{organize_data}{default}(x, cols = c(mpg, .pred), ...)
 
-\method{organize_data}{tune_results}(x, ...)
+\method{organize_data}{tune_results}(x, cols = c(mpg, .pred), ...)
 }
 \arguments{
 \item{x}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
+
+\item{cols}{The columns to display while hovering.}
 
 \item{...}{Other parameters not currently used.}
 }

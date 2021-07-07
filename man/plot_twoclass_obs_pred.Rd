@@ -18,7 +18,7 @@ plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the predicted probabilities from your tidymodels
+This function plots the predicted probabilities from your tidymodels
 result for a two-class classification model against the observed/true class.
 }
 \keyword{classes,}

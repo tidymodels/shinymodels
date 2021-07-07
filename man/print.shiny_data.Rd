@@ -5,7 +5,7 @@
 \title{Returns the class, app type, y name, and number of rows of an object of
 \code{shiny_data} class}
 \usage{
-\method{print}{shiny_data}(x, ...)
+\method{print}{shiny_data}(x, cols = c(mpg, .pred), ...)
 }
 \arguments{
 \item{x}{an object of class shiny_data}

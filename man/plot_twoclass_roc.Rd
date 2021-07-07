@@ -15,7 +15,7 @@ plot_twoclass_roc(object, event_level = "first")
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the ROC curve for your classification model.
+This function plots the ROC curve for your classification model.
 }
 \keyword{classes,}
 \keyword{classif,}

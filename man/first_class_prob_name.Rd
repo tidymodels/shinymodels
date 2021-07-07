@@ -18,7 +18,7 @@ with the original data}
 A symbol.
 }
 \description{
-This function takes the predictions object, event_level, and y_name as
+This function takes predictions object, event_level, and y_name as
 arguments and returns the predictions column for the first level variable.
 }
 \keyword{classes,}

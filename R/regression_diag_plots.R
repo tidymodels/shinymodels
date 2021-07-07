@@ -1,6 +1,6 @@
 #' Visualizing observed vs. predicted values for a regression model
 #'
-#' This function allows you to plot the predicted values based on your tidymodels
+#' This function plots the predicted values based on your tidymodels
 #' results for a regression model against the observed/true values.
 #' @param dat The data frame that has the original data and the results of
 #' [tune::collect_predictions()].
@@ -12,18 +12,20 @@
 plot_numeric_obs_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
-    ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
+    ggplot2::geom_point(ggplot2::aes(customdata = .row,
+                                     color = .color,
+                                     text = sprintf(.hover))) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p) %>%
+  plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
 }
 
 #' Visualizing residuals vs. predicted values for a regression model
 #'
-#' This function allows you to plot the predicted values based on your tidymodels
+#' This function plots the predicted values based on your tidymodels
 #' result for a regression model against the residuals.
 #' @inheritParams plot_numeric_obs_pred
 #' @keywords models, regression, graphs
@@ -44,7 +46,7 @@ plot_numeric_res_pred <- function(dat, y_name) {
 
 #' Visualizing residuals vs. a numeric column for a regression model
 #'
-#' This function allows you to plot the residuals based on tidymodels result for
+#' This function plots the residuals based on tidymodels result for
 #'  a regression model against any of the numeric column used for modeling.
 #' @inheritParams plot_numeric_obs_pred
 #' @param numcol The numerical column you want to plot against the residuals.
@@ -67,7 +69,7 @@ plot_numeric_res_numcol <-
 
 #' Visualizing residuals vs. a factor column for a regression model
 #'
-#' This function allows you to plot the residuals based on tidymodels result for
+#' This function plots the residuals based on tidymodels result for
 #' a regression model against any of the factor column used for modeling.
 #' @inheritParams plot_numeric_obs_pred
 #' @param factorcol The factor column you want to plot against the residuals.

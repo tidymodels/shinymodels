@@ -13,7 +13,7 @@ plot_twoclass_conf_mat(object)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the confusion matrix for your classification
+This function plots the confusion matrix for your classification
 model.
 }
 \keyword{classes,}

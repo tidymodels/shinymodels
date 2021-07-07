@@ -18,7 +18,7 @@ plot_numeric_res_numcol(dat, numcol, y_name)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the residuals based on tidymodels result for
+This function plots the residuals based on tidymodels result for
 a regression model against any of the numeric column used for modeling.
 }
 \keyword{graphs}

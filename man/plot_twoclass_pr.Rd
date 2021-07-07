@@ -15,7 +15,7 @@ plot_twoclass_pr(object, event_level = "first")
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the full precision recall curve.
+This function plots the full precision recall curve.
 }
 \keyword{classes,}
 \keyword{classif,}

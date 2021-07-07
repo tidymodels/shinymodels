@@ -32,7 +32,7 @@ plot_twoclass_pred_factorcol(
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the predicted probabilities from your
+This function plots the predicted probabilities from your
 tidymodels result for a two-class classification model against a factor variable.
 }
 \keyword{classes,}

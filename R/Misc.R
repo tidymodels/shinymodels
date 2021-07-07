@@ -1,6 +1,6 @@
 #' Returns the first level of a classification model
 #'
-#' This function takes the data, `event_level`, and `y_name` as arguments and
+#' This function takes data, `event_level`, and `y_name` as arguments and
 #' returns the first level in a classification data.
 #' @param dat The dataframe obtained by merging the results from tuning functions
 #' with the original data
@@ -33,7 +33,7 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
 
 #' Returns the name of predictions column for the first level variable
 #'
-#' This function takes the predictions object, event_level, and y_name as
+#' This function takes predictions object, event_level, and y_name as
 #'  arguments and returns the predictions column for the first level variable.
 #' @inheritParams first_level
 #' @keywords models, classes, classif
@@ -45,4 +45,19 @@ first_class_prob_name <- function(dat, event_level, y_name) {
     ".pred_",
     first_level(dat, event_level, y_name)
   )))
+}
+
+#' Returns the hover columns to be displayed in interactive plots
+#'
+#' This function takes .hover argument and returns the output that can
+#' be used as a test aesthetics in a [ggplot2::ggplot()] object to customize tooltip.
+#' @param x .hover column from a [shinymodels::organize_data()] result
+#' @keywords models
+#' @export
+#' @return
+#' A string.
+format_hover <- function(x, ...) {
+  x <- format(x, ...) # x is now a matrix
+  # # This returns a string
+  apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }

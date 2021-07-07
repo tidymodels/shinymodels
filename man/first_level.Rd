@@ -18,7 +18,7 @@ with the original data}
 A string.
 }
 \description{
-This function takes the data, \code{event_level}, and \code{y_name} as arguments and
+This function takes data, \code{event_level}, and \code{y_name} as arguments and
 returns the first level in a classification data.
 }
 \keyword{classes,}

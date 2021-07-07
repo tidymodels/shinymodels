@@ -16,7 +16,7 @@ plot_numeric_obs_pred(dat, y_name)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the predicted values based on your tidymodels
+This function plots the predicted values based on your tidymodels
 results for a regression model against the observed/true values.
 }
 \keyword{graphs}
