@@ -83,9 +83,11 @@ plot_twoclass_pred_numcol <-
           )
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
-      ggplot2::geom_point(ggplot2::aes(customdata = .row,
-                                       color = .color,
-                                       text = .hover)) +
+      ggplot2::geom_point(ggplot2::aes(
+        customdata = .row,
+        color = .color,
+        text = .hover
+      )) +
       ggplot2::facet_wrap(~Class,
         labeller = ggplot2::labeller(Class = ggplot2::label_both),
         ncol = 1
@@ -130,9 +132,11 @@ plot_twoclass_pred_factorcol <-
           )
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
-      ggplot2::geom_point(ggplot2::aes(customdata = .row,
-                                       color = .color,
-                                       text = .hover)) +
+      ggplot2::geom_point(ggplot2::aes(
+        customdata = .row,
+        color = .color,
+        text = .hover
+      )) +
       ggplot2::facet_wrap(~Class,
         labeller = ggplot2::labeller(Class = ggplot2::label_both),
         ncol = 1
@@ -145,7 +149,7 @@ plot_twoclass_pred_factorcol <-
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip="text") %>%
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
   }
 

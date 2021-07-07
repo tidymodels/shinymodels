@@ -47,7 +47,9 @@ test_that("can add hover column", {
   expect_equal(is.character(org$predictions$.hover), TRUE)
   expect_equal(length(org$predictions$.hover), 32)
   expect_equal(org$predictions$.hover[[1]], "mpg: 21.0<br>.pred: 20.98")
-  expect_error(organize_data(mtcars_spline_res, c("mpg", "mpl")),
-               "Column `mpl` doesn't exist.")
+  expect_error(
+    organize_data(mtcars_spline_res, c("mpg", "mpl")),
+    "Column `mpl` doesn't exist."
+  )
   expect_equal(org_null$predictions$.hover[[1]], "mpg: 21.0")
 })

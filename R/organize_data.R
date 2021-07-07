@@ -35,6 +35,7 @@ organize_data.tune_results <-
       )
     }
     y_name <- tune::.get_tune_outcome_names(x)
+    output_var <- rlang::sym(y_name)
     if (!(y_name %in% names(original_data))) {
       rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
     }
@@ -42,17 +43,18 @@ organize_data.tune_results <-
       tune::collect_predictions(x, summarize = TRUE)
     if (is.numeric(original_data[[y_name]]) == TRUE) {
       sample_predictions <- sample_predictions %>%
-        dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
+        dplyr::mutate(.residual = !!output_var - .pred)
     }
     preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex() %>%
-                          dplyr::select(-!!rlang::sym(y_name)),
-                        by = ".row")
-    if (rlang::is_null(cols)){
+        parsnip::add_rowindex() %>%
+        dplyr::select(-!!output_var),
+      by = ".row"
+      )
+    if (rlang::is_null(cols)) {
       expr <- rlang::enquo(y_name)
     }
-    else{
+    else {
       expr <- rlang::enquo(cols)
     }
     pos <- tidyselect::eval_select(expr, data = preds)
