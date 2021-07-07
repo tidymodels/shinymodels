@@ -25,7 +25,6 @@ organize_data.tune_results <-
   function(x,
            cols = NULL,
            ...) {
-    expr <- rlang::enquo(cols)
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
@@ -50,6 +49,12 @@ organize_data.tune_results <-
                           parsnip::add_rowindex() %>%
                           dplyr::select(-!!rlang::sym(y_name)),
                         by = ".row")
+    if (rlang::is_null(cols)){
+      expr <- rlang::enquo(y_name)
+    }
+    else{
+      expr <- rlang::enquo(cols)
+    }
     pos <- tidyselect::eval_select(expr, data = preds)
     var <- rlang::set_names(preds[pos], names(pos))
     preds$.hover <- format_hover(var, ...)

@@ -84,7 +84,8 @@ plot_numeric_res_numcol <-
 plot_numeric_res_factorcol <-
   function(dat, factorcol, y_name) {
     p <-
-      ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(!!rlang::sym(factorcol), .residual), x = .residual)) +
+      ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(!!rlang::sym(factorcol),
+                                                           .residual), x = .residual)) +
       ggplot2::geom_point(alpha = .3) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(customdata = .row,

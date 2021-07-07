@@ -20,10 +20,6 @@ test_that("can accurately organize data", {
   expect_equal(organize_data(mtcars_spline_res)$y_name, "mpg")
   expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), 32)
   expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
-  expect_equal(is.character(organize_data(mtcars_spline_res, c(mpg, .pred))$predictions$.hover), TRUE)
-  expect_equal(length(organize_data(mtcars_spline_res, c(mpg, .pred))$predictions$.hover), 32)
-  expect_error(organize_data(mtcars_spline_res, "mpl"),
-               "Column `mpl` doesn't exist.")
   expect_error(
     organize_data(lin_mod),
     "No `organize_data\\(\\)` exists for this type of object."
@@ -35,4 +31,23 @@ test_that("can accurately organize data", {
       "Refit with the control argument `save_pred = TRUE` to save predictions."
     )
   )
+})
+
+
+
+test_that("can add hover column", {
+  skip_on_cran()
+  data("reg_mtcars_spline_res")
+
+  lin_mod <- linear_reg() %>%
+    set_engine("lm") %>%
+    fit(mpg ~ ., data = mtcars)
+  org <- organize_data(mtcars_spline_res, c("mpg", ".pred"))
+  org_null <- organize_data(mtcars_spline_res)
+  expect_equal(is.character(org$predictions$.hover), TRUE)
+  expect_equal(length(org$predictions$.hover), 32)
+  expect_equal(org$predictions$.hover[[1]], "mpg: 21.0<br>.pred: 20.98")
+  expect_error(organize_data(mtcars_spline_res, c("mpg", "mpl")),
+               "Column `mpl` doesn't exist.")
+  expect_equal(org_null$predictions$.hover[[1]], "mpg: 21.0")
 })
