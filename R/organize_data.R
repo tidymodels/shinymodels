@@ -1,8 +1,7 @@
-#' organize_data()
-#' Extracts data from objects to use in a shiny app.
+#' Extract data from objects to use in a shiny app
 #'
-#' This function joins the result of [tune::fit_resamples()]  to the original dataset
-#' to give a dataframe that can be a Shiny input.
+#' This function joins the result of [tune::fit_resamples()]  to the original
+#' dataset to give a dataframe that can be an input for a Shiny app.
 #' @param x The [tune::fit_resamples()] result.
 #' @param cols The columns to display while hovering.
 #' @param ... Other parameters not currently used.
@@ -10,13 +9,13 @@
 #' @export
 #' @return
 #' A data frame.
-organize_data <- function(x, cols = c(mpg, .pred), ...) {
+organize_data <- function(x, cols = NULL, ...) {
   UseMethod("organize_data")
 }
 
 #' @export
 #' @rdname organize_data
-organize_data.default <- function(x, cols = c(mpg, .pred), ...) {
+organize_data.default <- function(x, cols = NULL, ...) {
   rlang::abort("No `organize_data()` exists for this type of object.")
 }
 
@@ -24,7 +23,7 @@ organize_data.default <- function(x, cols = c(mpg, .pred), ...) {
 #' @rdname organize_data
 organize_data.tune_results <-
   function(x,
-           cols = c(mpg, .pred),
+           cols = NULL,
            ...) {
     expr <- rlang::enquo(cols)
     original_data <- x$splits[[1]]$data
@@ -53,10 +52,7 @@ organize_data.tune_results <-
                         by = ".row")
     pos <- tidyselect::eval_select(expr, data = preds)
     var <- rlang::set_names(preds[pos], names(pos))
-    var <- var %>%
-      dplyr::mutate(.hover = format_hover(var))
-    preds <- preds %>%
-      dplyr::inner_join(var)
+    preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
     new_shiny_data(preds, y_name, app_type)
   }
@@ -107,7 +103,7 @@ get_app_type <- function(y) {
 #' @param x an object of class shiny_data
 #' @param ... Other parameters not currently used
 #' @export
-print.shiny_data <- function(x, cols = c(mpg, .pred), ...) {
+print.shiny_data <- function(x, cols = NULL, ...) {
   string <- paste(
     paste("classes: ", paste0(class(x), collapse = ", ")),
     paste("app_type:", attr(x, "app_type")),

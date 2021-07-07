@@ -57,7 +57,8 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 #' @return
 #' A string.
 format_hover <- function(x, ...) {
-  x <- format(x, ...) # x is now a matrix
+  x <- as.data.frame(x)
+  x <- format(x, digits = 3, ...) # x is now a matrix
   # # This returns a string
   apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }

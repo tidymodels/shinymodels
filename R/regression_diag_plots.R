@@ -14,7 +14,7 @@ plot_numeric_obs_pred <- function(dat, y_name) {
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(customdata = .row,
                                      color = .color,
-                                     text = sprintf(.hover))) +
+                                     text = .hover)) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs predicted") +
@@ -35,12 +35,14 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 plot_numeric_res_pred <- function(dat, y_name) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(y_name), y = .residual)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
-    ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
+    ggplot2::geom_point(ggplot2::aes(customdata = .row,
+                                     color = .color,
+                                     text = .hover)) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Residuals vs predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p) %>%
+  plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -58,12 +60,14 @@ plot_numeric_res_numcol <-
   function(dat, numcol, y_name) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
-      ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
+      ggplot2::geom_point(ggplot2::aes(customdata = .row,
+                                       color = .color,
+                                       text = .hover)) +
       ggplot2::scale_color_identity() +
       tune::coord_obs_pred() +
       ggplot2::labs(title = paste(numcol, " Vs. residual")) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p) %>%
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
   }
 
@@ -83,7 +87,9 @@ plot_numeric_res_factorcol <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(!!rlang::sym(factorcol), .residual), x = .residual)) +
       ggplot2::geom_point(alpha = .3) +
       ggplot2::geom_abline(lty = 2, col = "green") +
-      ggplot2::geom_point(ggplot2::aes(customdata = .row, color = .color)) +
+      ggplot2::geom_point(ggplot2::aes(customdata = .row,
+                                       color = .color,
+                                       text = .hover)) +
       ggplot2::scale_color_identity() +
       tune::coord_obs_pred() +
       ggplot2::labs(
@@ -91,6 +97,6 @@ plot_numeric_res_factorcol <-
         y = factorcol
       ) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p) %>%
+    plotly::ggplotly(p, tooltip="text") %>%
       plotly::layout(dragmode = "select")
   }
