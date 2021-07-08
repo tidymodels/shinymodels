@@ -30,6 +30,7 @@ utils::globalVariables(
     ":=",
     "Class",
     "delta",
-    ".hover"
+    ".hover",
+    ".outcome"
   )
 )

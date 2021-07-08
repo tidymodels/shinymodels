@@ -1,17 +1,16 @@
 #' Visualizing observed vs. predicted values for a regression model
 #'
-#' This function plots the predicted values based on your tidymodels
-#' results for a regression model against the observed/true values.
-#' @param dat The data frame that has the original data and the results of
-#' [tune::collect_predictions()].
+#' This function plots the predicted values based on {tidymodels}
+#' results for a regression model against the observed values.
+#' @param dat The predictions data frame in the [shinymodels::organize_data()]
+#' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_obs_pred <- function(dat, y_name) {
-  output_var <- rlang::sym(y_name)
-  p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!output_var, y = .pred)) +
+  p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
       customdata = .row,
@@ -20,7 +19,7 @@ plot_numeric_obs_pred <- function(dat, y_name) {
     )) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
-    ggplot2::labs(title = "Observed vs. predicted") +
+    ggplot2::labs(title = "Observed vs. predicted", x = y_name) +
     ggplot2::theme(legend.position = "none")
   plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
@@ -28,16 +27,15 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 
 #' Visualizing residuals vs. predicted values for a regression model
 #'
-#' This function plots the predicted values based on your tidymodels
-#' result for a regression model against the residuals.
+#' This function plots the predicted values against the residuals for a
+#' regression model in {tidymodels}.
 #' @inheritParams plot_numeric_obs_pred
 #' @keywords models, regression, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_pred <- function(dat, y_name) {
-  output_var <- rlang::sym(y_name)
-  p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!output_var, y = .residual)) +
+  p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .residual)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
       customdata = .row,
@@ -54,10 +52,10 @@ plot_numeric_res_pred <- function(dat, y_name) {
 
 #' Visualizing residuals vs. a numeric column for a regression model
 #'
-#' This function plots the residuals based on tidymodels result for
-#'  a regression model against any of the numeric column used for modeling.
+#' This function plots the residuals against a numeric column
+#' for a regression model in {tidymodels}.
 #' @inheritParams plot_numeric_obs_pred
-#' @param numcol The numerical column you want to plot against the residuals.
+#' @param numcol The numerical column to plot against the residuals.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
@@ -81,10 +79,10 @@ plot_numeric_res_numcol <-
 
 #' Visualizing residuals vs. a factor column for a regression model
 #'
-#' This function plots the residuals based on tidymodels result for
-#' a regression model against any of the factor column used for modeling.
+#' This function plots the residuals against a factor column
+#' for a regression model in {tidymodels}.
 #' @inheritParams plot_numeric_obs_pred
-#' @param factorcol The factor column you want to plot against the residuals.
+#' @param factorcol The factor column to plot against the residuals.
 #' @keywords models, regression, graphs
 #' @export
 #' @return

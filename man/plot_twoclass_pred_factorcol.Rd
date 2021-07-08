@@ -2,7 +2,7 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_pred_factorcol}
 \alias{plot_twoclass_pred_factorcol}
-\title{Visualizing the predicted probability vs. a factor variable for a classification
+\title{Visualizing the predicted probabilities vs. a factor variable for a classification
 model}
 \usage{
 plot_twoclass_pred_factorcol(
@@ -15,25 +15,25 @@ plot_twoclass_pred_factorcol(
 )
 }
 \arguments{
-\item{dat}{The data frame that has the original data and the results of
-\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
+result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{factorcol}{The factor column you want to plot.}
+\item{factorcol}{The factor column to plot against the predicted probabilities.}
 
 \item{y_name}{The y/response variable for the model.}
 
-\item{event_level}{The desired event level for the dataset.}
+\item{event_level}{A single character value for the level corresponding to the event.}
 
 \item{prob_breaks}{The breaks for \code{\link[ggplot2:scale_continuous]{ggplot2::scale_y_continuous()}}.}
 
-\item{prob_eps}{The threshold to break prob_name.}
+\item{prob_eps}{The threshold to break \code{prob_name}.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the predicted probabilities from your
-tidymodels result for a two-class classification model against a factor variable.
+This function plots the predicted probabilities against a factor column
+for a two-class classification model in {tidymodels}.
 }
 \keyword{classes,}
 \keyword{classif,}

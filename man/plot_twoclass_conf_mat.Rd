@@ -4,17 +4,17 @@
 \alias{plot_twoclass_conf_mat}
 \title{Visualizing the confusion matrix for a classification model}
 \usage{
-plot_twoclass_conf_mat(object)
+plot_twoclass_conf_mat(dat)
 }
 \arguments{
-\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
+result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the confusion matrix for your classification
-model.
+This function plots the confusion matrix for a classification model.
 }
 \keyword{classes,}
 \keyword{classif,}

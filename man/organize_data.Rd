@@ -6,25 +6,27 @@
 \alias{organize_data.tune_results}
 \title{Extract data from objects to use in a shiny app}
 \usage{
-organize_data(x, cols = NULL, ...)
+organize_data(x, hover_cols = NULL, ...)
 
-\method{organize_data}{default}(x, cols = NULL, ...)
+\method{organize_data}{default}(x, hover_cols = NULL, ...)
 
-\method{organize_data}{tune_results}(x, cols = NULL, ...)
+\method{organize_data}{tune_results}(x, hover_cols = NULL, ...)
 }
 \arguments{
 \item{x}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
 
-\item{cols}{The columns to display while hovering.}
+\item{hover_cols}{The columns to display while hovering.}
 
 \item{...}{Other parameters not currently used.}
 }
 \value{
-A data frame.
+A list with elements data frame and character vector. The data frame includes
+an outcome variable \code{.outcome}, a prediction variable \code{.pred}, and hovering
+columns \code{.hover}.
 }
 \description{
 This function joins the result of \code{\link[tune:fit_resamples]{tune::fit_resamples()}}  to the original
-dataset to give a dataframe that can be an input for a Shiny app.
+dataset to give a list that can be an input for the Shiny app.
 }
 \keyword{classes,}
 \keyword{classif}

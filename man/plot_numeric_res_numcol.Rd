@@ -7,10 +7,10 @@
 plot_numeric_res_numcol(dat, numcol, y_name)
 }
 \arguments{
-\item{dat}{The data frame that has the original data and the results of
-\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
+result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{numcol}{The numerical column you want to plot against the residuals.}
+\item{numcol}{The numerical column to plot against the residuals.}
 
 \item{y_name}{The y/response variable for the model.}
 }
@@ -18,8 +18,8 @@ plot_numeric_res_numcol(dat, numcol, y_name)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the residuals based on tidymodels result for
-a regression model against any of the numeric column used for modeling.
+This function plots the residuals against a numeric column
+for a regression model in {tidymodels}.
 }
 \keyword{graphs}
 \keyword{models,}

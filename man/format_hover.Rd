@@ -9,7 +9,7 @@ format_hover(x, ...)
 \arguments{
 \item{x}{A data frame with columns to be displayed in the hover.}
 
-\item{...}{Arguments pass to \code{\link[=format]{format()}} to the column(s) selected to be seen
+\item{...}{Arguments passed to \code{\link[=format]{format()}} to the column(s) selected to be seen
 in the hover/tooltip.}
 }
 \value{

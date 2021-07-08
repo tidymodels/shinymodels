@@ -5,12 +5,15 @@
 \title{Visualizing predicted probability vs. true class for a two-class classification
 model}
 \usage{
-plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
+plot_twoclass_obs_pred(dat, y_name, event_level = "first", prob_bins = 0.025)
 }
 \arguments{
-\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
+result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{event_level}{The desired event level for the dataset.}
+\item{y_name}{The y/response variable for the model.}
+
+\item{event_level}{A single character value for the level corresponding to the event.}
 
 \item{prob_bins}{The desired \code{binwidth} for histogram.}
 }
@@ -18,8 +21,8 @@ plot_twoclass_obs_pred(object, event_level = "first", prob_bins = 0.025)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the predicted probabilities from your tidymodels
-result for a two-class classification model against the observed/true class.
+This function plots the predicted probabilities against the observed class
+for a two-class classification model in {tidymodels}.
 }
 \keyword{classes,}
 \keyword{classif,}

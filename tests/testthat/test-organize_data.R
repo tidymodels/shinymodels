@@ -12,14 +12,15 @@ test_that("can accurately organize data", {
     set_engine("lm") %>%
     fit(mpg ~ ., data = mtcars)
 
-  expect_equal(is.list(organize_data(mtcars_spline_res)), TRUE)
-  expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
-  expect_equal(".residual" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
-  expect_equal(length(organize_data(mtcars_spline_res)), 2)
-  expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), nrow(mtcars))
-  expect_equal(organize_data(mtcars_spline_res)$y_name, "mpg")
-  expect_equal(nrow(organize_data(mtcars_spline_res)$predictions), 32)
-  expect_equal(".pred" %in% names(organize_data(mtcars_spline_res)$predictions), TRUE)
+  org <- organize_data(mtcars_spline_res, c("mpg", ".pred"))
+
+  expect_equal(is.list(org), TRUE)
+  expect_equal(".outcome" %in% names(org$predictions), TRUE)
+  expect_equal(".pred" %in% names(org$predictions), TRUE)
+  expect_equal(".residual" %in% names(org$predictions), TRUE)
+  expect_equal(length(org), 2)
+  expect_equal(nrow(org$predictions), 32)
+  expect_equal(org$y_name, "mpg")
   expect_error(
     organize_data(lin_mod),
     "No `organize_data\\(\\)` exists for this type of object."
@@ -42,8 +43,10 @@ test_that("can add hover column", {
   lin_mod <- linear_reg() %>%
     set_engine("lm") %>%
     fit(mpg ~ ., data = mtcars)
+
   org <- organize_data(mtcars_spline_res, c("mpg", ".pred"))
   org_null <- organize_data(mtcars_spline_res)
+
   expect_equal(is.character(org$predictions$.hover), TRUE)
   expect_equal(length(org$predictions$.hover), 32)
   expect_equal(org$predictions$.hover[[1]], "mpg: 21.0<br>.pred: 20.98")
