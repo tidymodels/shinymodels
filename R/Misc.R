@@ -1,11 +1,8 @@
 #' Returns the first level of a classification model
 #'
-#' This function takes the data, `event_level`, and `y_name` as arguments and
+#' This function takes data, `event_level` and `y_name`, as arguments and
 #' returns the first level in a classification data.
-#' @param dat The dataframe obtained by merging the results from tuning functions
-#' with the original data
-#' @param event_level A single character value for the level corresponding to the event.
-#' @param y_name The response variable for the model.
+#' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif
 #' @export
 #' @return
@@ -33,9 +30,9 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
 
 #' Returns the name of predictions column for the first level variable
 #'
-#' This function takes the predictions object, event_level, and y_name as
+#' This function takes prediction data, the event level, and the outcome name as
 #'  arguments and returns the predictions column for the first level variable.
-#' @inheritParams first_level
+#' @inheritParams plot_twoclass_obs_pred
 #' @keywords models, classes, classif
 #' @export
 #' @return
@@ -45,4 +42,22 @@ first_class_prob_name <- function(dat, event_level, y_name) {
     ".pred_",
     first_level(dat, event_level, y_name)
   )))
+}
+
+#' Returns the hover columns to be displayed in interactive plots
+#'
+#' This function takes `.hover` argument and returns the output that can
+#' be used as a test aesthetics in a [ggplot2::ggplot()] object to customize tooltip.
+#' @param x A data frame with columns to be displayed in the hover.
+#' @param ... Arguments passed to [format()] to the column(s) selected to be seen
+#' in the hover/tooltip.
+#' @keywords models
+#' @export
+#' @return
+#' A character vector.
+format_hover <- function(x, ...) {
+  x <- as.data.frame(x)
+  x <- format(x, digits = 3, ...) # x is now a matrix
+  # # This returns a string
+  apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }

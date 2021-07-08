@@ -1,21 +1,23 @@
-#' organize_data()
-#' Extracts data from objects to use in a shiny app.
+#' Extract data from objects to use in a shiny app
 #'
-#' This function joins the result of [tune::fit_resamples()]  to the original dataset
-#' to give a dataframe that can be a Shiny input.
+#' This function joins the result of [tune::fit_resamples()]  to the original
+#' dataset to give a list that can be an input for the Shiny app.
 #' @param x The [tune::fit_resamples()] result.
+#' @param hover_cols The columns to display while hovering.
 #' @param ... Other parameters not currently used.
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
-#' A data frame.
-organize_data <- function(x, ...) {
+#' A list with elements data frame and character vector. The data frame includes
+#'  an outcome variable `.outcome`, a prediction variable `.pred`, and hovering
+#'  columns `.hover`.
+organize_data <- function(x, hover_cols = NULL, ...) {
   UseMethod("organize_data")
 }
 
 #' @export
 #' @rdname organize_data
-organize_data.default <- function(x, ...) {
+organize_data.default <- function(x, hover_cols = NULL, ...) {
   rlang::abort("No `organize_data()` exists for this type of object.")
 }
 
@@ -23,8 +25,8 @@ organize_data.default <- function(x, ...) {
 #' @rdname organize_data
 organize_data.tune_results <-
   function(x,
+           hover_cols = NULL,
            ...) {
-    # TODO
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
@@ -38,18 +40,28 @@ organize_data.tune_results <-
     if (!(y_name %in% names(original_data))) {
       rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
     }
+    rn_lst <- list(.outcome = y_name)
     sample_predictions <-
-      tune::collect_predictions(x, summarize = TRUE)
-    if (is.numeric(original_data[[y_name]]) == TRUE) {
+      tune::collect_predictions(x, summarize = TRUE) %>%
+      rename(!!!rn_lst)
+    if (is.numeric(sample_predictions$.outcome)) {
       sample_predictions <- sample_predictions %>%
-        dplyr::mutate(.residual = !!rlang::sym(y_name) - .pred)
+        dplyr::mutate(.residual = .outcome - .pred)
     }
-    preds <- sample_predictions %>%
+    preds <- sample_predictions  %>%
       dplyr::inner_join(original_data %>%
-        parsnip::add_rowindex() %>%
-        dplyr::select(-!!rlang::sym(y_name)),
+        parsnip::add_rowindex(),
       by = ".row"
       )
+    if (rlang::is_null(hover_cols)) {
+      expr <- rlang::enquo(y_name)
+    }
+    else {
+      expr <- rlang::enquo(hover_cols)
+    }
+    pos <- tidyselect::eval_select(expr, data = preds)
+    var <- rlang::set_names(preds[pos], names(pos))
+    preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
     new_shiny_data(preds, y_name, app_type)
   }
@@ -62,9 +74,9 @@ new_shiny_data <- function(predictions, y_name, subclass) {
   if (nrow(predictions) == 0) {
     rlang::abort("there should be at least one row of predictions")
   }
-  # check to see if the right prediction columns are there
-  # TODO
-  # Think about other ways things could go wrong
+  if (!(y_name %in% names(predictions))) {
+    rlang::abort(glue::glue("'{y_name}' should be a column in the predictions"))
+  }
   if (!is.character(y_name)) {
     rlang::abort("y_name should be a character string")
   }
@@ -93,7 +105,7 @@ get_app_type <- function(y) {
 }
 # ------------------------------------------------------------------------------
 
-#' Returns the class, app type, y name, and number of rows of an object of
+#' Returns the class, app type, y name, and the number of rows of an object of
 #' `shiny_data` class
 #'
 #' This is a print method for a shiny_data class

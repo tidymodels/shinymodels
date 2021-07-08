@@ -7,8 +7,8 @@
 plot_numeric_res_pred(dat, y_name)
 }
 \arguments{
-\item{dat}{The data frame that has the original data and the results of
-\code{\link[tune:collect_predictions]{tune::collect_predictions()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{y_name}{The y/response variable for the model.}
 }
@@ -16,8 +16,8 @@ plot_numeric_res_pred(dat, y_name)
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the predicted values based on your tidymodels
-result for a regression model against the residuals.
+This function plots the predicted values against the residuals based on
+{tidymodels} results for a regression model.
 }
 \keyword{graphs}
 \keyword{models,}

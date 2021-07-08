@@ -2,7 +2,7 @@
 % Please edit documentation in R/organize_data.R
 \name{print.shiny_data}
 \alias{print.shiny_data}
-\title{Returns the class, app type, y name, and number of rows of an object of
+\title{Returns the class, app type, y name, and the number of rows of an object of
 \code{shiny_data} class}
 \usage{
 \method{print}{shiny_data}(x, ...)

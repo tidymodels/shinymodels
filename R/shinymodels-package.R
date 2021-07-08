@@ -16,6 +16,7 @@ NULL
 #' @import ggplot2
 #' @import rlang
 #' @import utils
+#' @importFrom tidyselect eval_select
 
 # ------------------------------------------------------------------------------
 
@@ -28,6 +29,8 @@ utils::globalVariables(
     ".threshold",
     ":=",
     "Class",
-    "delta"
+    "delta",
+    ".hover",
+    ".outcome"
   )
 )

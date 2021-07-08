@@ -4,18 +4,21 @@
 \alias{plot_twoclass_pr}
 \title{Visualizing the PR curve for a classification model}
 \usage{
-plot_twoclass_pr(object, event_level = "first")
+plot_twoclass_pr(dat, y_name, event_level = "first")
 }
 \arguments{
-\item{object}{The object you got using \code{\link[tune:fit_resamples]{tune::fit_resamples()}}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{event_level}{The desired event level for the dataset.}
+\item{y_name}{The y/response variable for the model.}
+
+\item{event_level}{A single character value for the level corresponding to the event.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function allows you to plot the full precision recall curve.
+This function plots the full precision recall curve.
 }
 \keyword{classes,}
 \keyword{classif,}

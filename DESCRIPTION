@@ -36,20 +36,21 @@ Suggests:
     covr
 Language: en-US
 Imports: 
-    tune,
-    parsnip,
-    yardstick,
-    tidymodels,
     broom,
-    glue,
-    stats,
-    ggplot2,
-    rlang,
     dplyr,
-    plotly,
-    shiny,
+    ggplot2,
+    glue,
+    magrittr,
     modeldata,
-    magrittr
+    parsnip,
+    plotly,
+    rlang,
+    shiny,
+    stats,
+    tidymodels,
+    tidyselect,
+    tune,
+    yardstick
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)

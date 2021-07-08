@@ -7,18 +7,18 @@
 first_level(dat, event_level = c("first", "second"), y_name)
 }
 \arguments{
-\item{dat}{The dataframe obtained by merging the results from tuning functions
-with the original data}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 
-\item{y_name}{The response variable for the model.}
+\item{y_name}{The y/response variable for the model.}
 }
 \value{
 A string.
 }
 \description{
-This function takes the data, \code{event_level}, and \code{y_name} as arguments and
+This function takes data, \code{event_level} and \code{y_name}, as arguments and
 returns the first level in a classification data.
 }
 \keyword{classes,}

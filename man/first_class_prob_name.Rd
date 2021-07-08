@@ -7,18 +7,18 @@
 first_class_prob_name(dat, event_level, y_name)
 }
 \arguments{
-\item{dat}{The dataframe obtained by merging the results from tuning functions
-with the original data}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 
-\item{y_name}{The response variable for the model.}
+\item{y_name}{The y/response variable for the model.}
 }
 \value{
 A symbol.
 }
 \description{
-This function takes the predictions object, event_level, and y_name as
+This function takes prediction data, the event level, and the outcome name as
 arguments and returns the predictions column for the first level variable.
 }
 \keyword{classes,}
