@@ -2,7 +2,7 @@
 #'
 #' This function plots the predicted values based on {tidymodels}
 #' results for a regression model against the observed values.
-#' @param dat The predictions data frame in the [shinymodels::organize_data()]
+#' @param dat The predictions data frame in the [organize_data()]
 #' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
 #' @keywords models, regression, graphs
