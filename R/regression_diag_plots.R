@@ -1,7 +1,7 @@
 #' Visualizing observed vs. predicted values for a regression model
 #'
-#' This function plots the predicted values based on {tidymodels}
-#' results for a regression model against the observed values.
+#' This function plots the predicted values against the observed values based on
+#'  {tidymodels} results for a regression model.
 #' @param dat The predictions data frame in the [shinymodels::organize_data()]
 #' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
@@ -27,8 +27,8 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 
 #' Visualizing residuals vs. predicted values for a regression model
 #'
-#' This function plots the predicted values against the residuals for a
-#' regression model in {tidymodels}.
+#' This function plots the predicted values against the residuals based on
+#' {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @keywords models, regression, graphs
 #' @export
@@ -52,8 +52,8 @@ plot_numeric_res_pred <- function(dat, y_name) {
 
 #' Visualizing residuals vs. a numeric column for a regression model
 #'
-#' This function plots the residuals against a numeric column
-#' for a regression model in {tidymodels}.
+#' This function plots the residuals against a numeric column based on
+#'  {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param numcol The numerical column to plot against the residuals.
 #' @keywords models, regression, graphs
@@ -79,8 +79,8 @@ plot_numeric_res_numcol <-
 
 #' Visualizing residuals vs. a factor column for a regression model
 #'
-#' This function plots the residuals against a factor column
-#' for a regression model in {tidymodels}.
+#' This function plots the residuals against a factor column based on
+#'  {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param factorcol The factor column to plot against the residuals.
 #' @keywords models, regression, graphs

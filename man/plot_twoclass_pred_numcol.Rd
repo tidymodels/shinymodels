@@ -2,8 +2,8 @@
 % Please edit documentation in R/two_class_diag_plots.R
 \name{plot_twoclass_pred_numcol}
 \alias{plot_twoclass_pred_numcol}
-\title{Visualizing the predicted probabilities vs. a numeric column for a classification
-model}
+\title{Visualizing the predicted probabilities vs. a numeric column for a
+classification model}
 \usage{
 plot_twoclass_pred_numcol(
   dat,
@@ -32,8 +32,8 @@ result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the predicted probabilities against a numeric column
-for a two-class classification model in {tidymodels}.
+This function plots the predicted probabilities against a numeric column based
+on {tidymodels} results for a two-class classification model.
 }
 \keyword{classes,}
 \keyword{classif,}

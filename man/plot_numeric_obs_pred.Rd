@@ -16,8 +16,8 @@ result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the predicted values based on {tidymodels}
-results for a regression model against the observed values.
+This function plots the predicted values against the observed values based on
+{tidymodels} results for a regression model.
 }
 \keyword{graphs}
 \keyword{models,}

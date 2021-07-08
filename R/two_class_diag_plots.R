@@ -1,8 +1,8 @@
 #' Visualizing predicted probability vs. true class for a two-class classification
 #' model
 #'
-#' This function plots the predicted probabilities against the observed class
-#' for a two-class classification model in {tidymodels}.
+#' This function plots the predicted probabilities against the observed class based on
+#'  {tidymodels} results for a two-class classification model.
 #' @param dat The predictions data frame in the [shinymodels::organize_data()]
 #' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
@@ -46,11 +46,11 @@ plot_twoclass_conf_mat <- function(dat) {
     ggplot2::autoplot()
 }
 
-#' Visualizing the predicted probabilities vs. a numeric column for a classification
-#' model
+#' Visualizing the predicted probabilities vs. a numeric column for a
+#' classification model
 #'
-#' This function plots the predicted probabilities against a numeric column
-#' for a two-class classification model in {tidymodels}.
+#' This function plots the predicted probabilities against a numeric column based
+#' on {tidymodels} results for a two-class classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
 #' @param prob_breaks The breaks for [ggplot2::scale_y_continuous()].
@@ -99,8 +99,8 @@ plot_twoclass_pred_numcol <-
 #' Visualizing the predicted probabilities vs. a factor variable for a classification
 #' model
 #'
-#' This function plots the predicted probabilities against a factor column
-#' for a two-class classification model in {tidymodels}.
+#' This function plots the predicted probabilities against a factor column based on
+#' {tidymodels} results for a two-class classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @inheritParams plot_twoclass_pred_numcol
 #' @param factorcol The factor column to plot against the predicted probabilities.

@@ -32,8 +32,8 @@ result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
 }
 \description{
-This function plots the predicted probabilities against a factor column
-for a two-class classification model in {tidymodels}.
+This function plots the predicted probabilities against a factor column based on
+{tidymodels} results for a two-class classification model.
 }
 \keyword{classes,}
 \keyword{classif,}
