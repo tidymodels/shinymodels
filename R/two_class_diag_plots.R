@@ -3,7 +3,7 @@
 #'
 #' This function plots the predicted probabilities against the observed class
 #' for a two-class classification model in {tidymodels}.
-#' @param dat The predictions data frame in the [shinymodels::organize_data()]
+#' @param dat The predictions data frame in the [organize_data()]
 #' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
 #' @param event_level A single character value for the level corresponding to the event.
