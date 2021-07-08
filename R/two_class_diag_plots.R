@@ -53,7 +53,7 @@ plot_twoclass_conf_mat <- function(dat) {
 #' for a two-class classification model in {tidymodels}.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
-#' @param prob_breaks The breaks for [ggplot2::scale_y_continuous()].
+#' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
 #' @export
