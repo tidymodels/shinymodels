@@ -7,8 +7,8 @@
 first_level(dat, event_level = c("first", "second"), y_name)
 }
 \arguments{
-\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
-result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 

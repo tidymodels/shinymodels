@@ -2,9 +2,9 @@
 #' model
 #'
 #' This function plots the predicted probabilities against the observed class based on
-#'  {tidymodels} results for a two-class classification model.
-#' @param dat The predictions data frame in the [shinymodels::organize_data()]
-#' result. Following variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
+#' {tidymodels} results for a two-class classification model.
+#' @param dat The predictions data frame in the [organize_data()] result. Following
+#'  variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
 #' @param event_level A single character value for the level corresponding to the event.
 #' @param prob_bins The desired `binwidth` for histogram.
@@ -53,8 +53,8 @@ plot_twoclass_conf_mat <- function(dat) {
 #' on {tidymodels} results for a two-class classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
-#' @param prob_breaks The breaks for [ggplot2::scale_y_continuous()].
-#' @param prob_eps The threshold to break `prob_name`.
+#' @param prob_breaks A vector to use for breaks in the probability levels.
+#' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return

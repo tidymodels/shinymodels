@@ -7,8 +7,8 @@
 plot_numeric_obs_pred(dat, y_name)
 }
 \arguments{
-\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
-result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{y_name}{The y/response variable for the model.}
 }

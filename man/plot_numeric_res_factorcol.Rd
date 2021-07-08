@@ -7,8 +7,8 @@
 plot_numeric_res_factorcol(dat, factorcol, y_name)
 }
 \arguments{
-\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
-result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{factorcol}{The factor column to plot against the residuals.}
 

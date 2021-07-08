@@ -7,8 +7,8 @@
 plot_twoclass_conf_mat(dat)
 }
 \arguments{
-\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
-result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.

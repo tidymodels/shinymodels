@@ -15,8 +15,8 @@ plot_twoclass_pred_factorcol(
 )
 }
 \arguments{
-\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}}
-result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
+\item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
+variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{factorcol}{The factor column to plot against the predicted probabilities.}
 
@@ -24,9 +24,9 @@ result. Following variables are required: \code{.outcome}, \code{.pred}, \code{.
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 
-\item{prob_breaks}{The breaks for \code{\link[ggplot2:scale_continuous]{ggplot2::scale_y_continuous()}}.}
+\item{prob_breaks}{A vector to use for breaks in the probability levels.}
 
-\item{prob_eps}{The threshold to break \code{prob_name}.}
+\item{prob_eps}{A small numerical constant to prevent division by zero.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
