@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Visualizing residuals vs. predicted values for a regression model — plot_numeric_res_pred" />
-<meta property="og:description" content="This function allows you to plot the predicted values based on your tidymodels
-result for a regression model against the residuals." />
+<meta property="og:description" content="This function plots the predicted values against the residuals based on
+tidymodels results for a regression model." />
 
 
 
@@ -110,8 +110,8 @@ result for a regression model against the residuals." />
     </div>
 
     <div class="ref-description">
-    <p>This function allows you to plot the predicted values based on your tidymodels
-result for a regression model against the residuals.</p>
+    <p>This function plots the predicted values against the residuals based on
+tidymodels results for a regression model.</p>
     </div>
 
     <pre class="usage"><span class='fu'>plot_numeric_res_pred</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>y_name</span><span class='op'>)</span></pre>
@@ -121,8 +121,8 @@ result for a regression model against the residuals.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dat</th>
-      <td><p>The data frame that has the original data and the results of
-<code><a href='https://tune.tidymodels.org/reference/collect_predictions.html'>tune::collect_predictions()</a></code>.</p></td>
+      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
+variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
     </tr>
     <tr>
       <th>y_name</th>

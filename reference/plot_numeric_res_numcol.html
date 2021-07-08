@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Visualizing residuals vs. a numeric column for a regression model — plot_numeric_res_numcol" />
-<meta property="og:description" content="This function allows you to plot the residuals based on tidymodels result for
-a regression model against any of the numeric column used for modeling." />
+<meta property="og:description" content="This function plots the residuals against a numeric column based on
+tidymodels results for a regression model." />
 
 
 
@@ -110,8 +110,8 @@ a regression model against any of the numeric column used for modeling." />
     </div>
 
     <div class="ref-description">
-    <p>This function allows you to plot the residuals based on tidymodels result for
-a regression model against any of the numeric column used for modeling.</p>
+    <p>This function plots the residuals against a numeric column based on
+tidymodels results for a regression model.</p>
     </div>
 
     <pre class="usage"><span class='fu'>plot_numeric_res_numcol</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>numcol</span>, <span class='va'>y_name</span><span class='op'>)</span></pre>
@@ -121,12 +121,12 @@ a regression model against any of the numeric column used for modeling.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dat</th>
-      <td><p>The data frame that has the original data and the results of
-<code><a href='https://tune.tidymodels.org/reference/collect_predictions.html'>tune::collect_predictions()</a></code>.</p></td>
+      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
+variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
     </tr>
     <tr>
       <th>numcol</th>
-      <td><p>The numerical column you want to plot against the residuals.</p></td>
+      <td><p>The numerical column to plot against the residuals.</p></td>
     </tr>
     <tr>
       <th>y_name</th>

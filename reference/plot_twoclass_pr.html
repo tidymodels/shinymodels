@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Visualizing the PR curve for a classification model — plot_twoclass_pr" />
-<meta property="og:description" content="This function allows you to plot the full precision recall curve." />
+<meta property="og:description" content="This function plots the full precision recall curve." />
 
 
 
@@ -109,21 +109,26 @@
     </div>
 
     <div class="ref-description">
-    <p>This function allows you to plot the full precision recall curve.</p>
+    <p>This function plots the full precision recall curve.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_twoclass_pr</span><span class='op'>(</span><span class='va'>object</span>, event_level <span class='op'>=</span> <span class='st'>"first"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_twoclass_pr</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>y_name</span>, event_level <span class='op'>=</span> <span class='st'>"first"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>object</th>
-      <td><p>The object you got using <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code>.</p></td>
+      <th>dat</th>
+      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
+variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
+    </tr>
+    <tr>
+      <th>y_name</th>
+      <td><p>The y/response variable for the model.</p></td>
     </tr>
     <tr>
       <th>event_level</th>
-      <td><p>The desired event level for the dataset.</p></td>
+      <td><p>A single character value for the level corresponding to the event.</p></td>
     </tr>
     </table>
 

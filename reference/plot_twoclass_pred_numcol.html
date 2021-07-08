@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualizing the predicted probability vs. a numeric variable for a classification
-model — plot_twoclass_pred_numcol • shinymodels</title>
+<title>Visualizing the predicted probabilities vs. a numeric column for a
+classification model — plot_twoclass_pred_numcol • shinymodels</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,10 @@ model — plot_twoclass_pred_numcol • shinymodels</title>
 
 
 
-<meta property="og:title" content="Visualizing the predicted probability vs. a numeric variable for a classification
-model — plot_twoclass_pred_numcol" />
-<meta property="og:description" content="This function allows you to plot the predicted probabilities from your tidymodels
-result for a two-class classification model against a numeric variable." />
+<meta property="og:title" content="Visualizing the predicted probabilities vs. a numeric column for a
+classification model — plot_twoclass_pred_numcol" />
+<meta property="og:description" content="This function plots the predicted probabilities against a numeric column based
+on tidymodels results for a two-class classification model." />
 
 
 
@@ -106,21 +106,21 @@ result for a two-class classification model against a numeric variable." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Visualizing the predicted probability vs. a numeric variable for a classification
-model</h1>
+    <h1>Visualizing the predicted probabilities vs. a numeric column for a
+classification model</h1>
     
     <div class="hidden name"><code>plot_twoclass_pred_numcol.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function allows you to plot the predicted probabilities from your tidymodels
-result for a two-class classification model against a numeric variable.</p>
+    <p>This function plots the predicted probabilities against a numeric column based
+on tidymodels results for a two-class classification model.</p>
     </div>
 
     <pre class="usage"><span class='fu'>plot_twoclass_pred_numcol</span><span class='op'>(</span>
   <span class='va'>dat</span>,
-  <span class='va'>numcol</span>,
   <span class='va'>y_name</span>,
+  <span class='va'>numcol</span>,
   event_level <span class='op'>=</span> <span class='st'>"first"</span>,
   prob_breaks <span class='op'>=</span> <span class='op'>(</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>10</span>,
   prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>
@@ -131,28 +131,28 @@ result for a two-class classification model against a numeric variable.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>dat</th>
-      <td><p>The data frame that has the original data and the results of
-<code><a href='https://tune.tidymodels.org/reference/collect_predictions.html'>tune::collect_predictions()</a></code>.</p></td>
-    </tr>
-    <tr>
-      <th>numcol</th>
-      <td><p>The numerical column you want to plot.</p></td>
+      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
+variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
     </tr>
     <tr>
       <th>y_name</th>
       <td><p>The y/response variable for the model.</p></td>
     </tr>
     <tr>
+      <th>numcol</th>
+      <td><p>The numerical column to plot against the predicted probabilities.</p></td>
+    </tr>
+    <tr>
       <th>event_level</th>
-      <td><p>The desired event level for the dataset.</p></td>
+      <td><p>A single character value for the level corresponding to the event.</p></td>
     </tr>
     <tr>
       <th>prob_breaks</th>
-      <td><p>The breaks for <code><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>ggplot2::scale_y_continuous()</a></code>.</p></td>
+      <td><p>A vector to use for breaks in the probability levels.</p></td>
     </tr>
     <tr>
       <th>prob_eps</th>
-      <td><p>The threshold to break prob_name.</p></td>
+      <td><p>A small numerical constant to prevent division by zero.</p></td>
     </tr>
     </table>
 

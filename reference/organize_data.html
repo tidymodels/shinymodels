@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>explore()
-Given an object of class shiny_data, lanches a shiny app — organize_data • shinymodels</title>
+<title>Extract data from objects to use in a shiny app — organize_data • shinymodels</title>
 
 
 <!-- jquery -->
@@ -40,12 +39,9 @@ Given an object of class shiny_data, lanches a shiny app — organize_data • s
 
 
 
-<meta property="og:title" content="explore()
-Given an object of class shiny_data, lanches a shiny app — organize_data" />
-<meta property="og:description" content="This function joins the result of tune::fit_resamples()  to the original dataset
-to give a dataframe that can be a Shiny input.
-This function joins the result of tune::fit_resamples()  to the original dataset
-to give a dataframe that can be a Shiny input." />
+<meta property="og:title" content="Extract data from objects to use in a shiny app — organize_data" />
+<meta property="og:description" content="This function joins the result of tune::fit_resamples()  to the original
+dataset to give a list that can be an input for the Shiny app." />
 
 
 
@@ -108,34 +104,23 @@ to give a dataframe that can be a Shiny input." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>explore()
-Given an object of class <code>shiny_data</code>, lanches a shiny app</h1>
+    <h1>Extract data from objects to use in a shiny app</h1>
     
     <div class="hidden name"><code>organize_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function joins the result of <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code>  to the original dataset
-to give a dataframe that can be a Shiny input.</p>
-<p>This function joins the result of <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code>  to the original dataset
-to give a dataframe that can be a Shiny input.</p>
+    <p>This function joins the result of <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code>  to the original
+dataset to give a list that can be an input for the Shiny app.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for default</span>
-<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
+<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
 
 <span class='co'># S3 method for tune_results</span>
-<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for tune_results</span>
-<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+<span class='fu'>organize_data</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -145,6 +130,10 @@ to give a dataframe that can be a Shiny input.</p>
       <td><p>The <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code> result.</p></td>
     </tr>
     <tr>
+      <th>hover_cols</th>
+      <td><p>The columns to display while hovering.</p></td>
+    </tr>
+    <tr>
       <th>...</th>
       <td><p>Other parameters not currently used.</p></td>
     </tr>
@@ -152,8 +141,9 @@ to give a dataframe that can be a Shiny input.</p>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A data frame.</p>
-<p>A data frame.</p>
+    <p>A list with elements data frame and character vector. The data frame includes
+an outcome variable <code>.outcome</code>, a prediction variable <code>.pred</code>, and hovering
+columns <code>.hover</code>.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
