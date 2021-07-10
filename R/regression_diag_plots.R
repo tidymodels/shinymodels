@@ -61,7 +61,7 @@ plot_numeric_res_pred <- function(dat, y_name) {
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_numcol <-
-  function(dat, numcol, y_name) {
+  function(dat, y_name, numcol) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
@@ -88,7 +88,7 @@ plot_numeric_res_numcol <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_factorcol <-
-  function(dat, factorcol, y_name) {
+  function(dat, y_name, factorcol) {
     p <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(
         !!rlang::sym(factorcol),

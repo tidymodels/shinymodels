@@ -23,7 +23,7 @@ plot_twoclass_obs_pred <-
     dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~Class,
+      ggplot2::facet_wrap(~Class, #TODO
         labeller = ggplot2::labeller(Class = ggplot2::label_both),
         ncol = 1
       ) +
@@ -110,8 +110,8 @@ plot_twoclass_pred_numcol <-
 #' A [ggplot2::ggplot()] object.
 plot_twoclass_pred_factorcol <-
   function(dat,
-           factorcol,
            y_name,
+           factorcol,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
@@ -161,7 +161,7 @@ plot_twoclass_roc <-
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::roc_curve(dat, truth = Class,!!prob_name)
+    res <- yardstick::roc_curve(dat, truth = !!sym(y_name), !!prob_name)
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
@@ -169,8 +169,8 @@ plot_twoclass_roc <-
     ggplot2::autoplot(res) +
       ggplot2::geom_point(data = fifty,
                           ggplot2::aes(
-                            x = 1 - yardstick::specificity,
-                            y = yardstick::sensitivity
+                            x = 1 - as.numeric(yardstick::specificity),
+                            y = as.numeric(yardstick::sensitivity)
                           ))
   }
 
@@ -187,7 +187,7 @@ plot_twoclass_pr <-
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::pr_curve(dat, truth = Class, !!prob_name)
+    res <- yardstick::pr_curve(dat, truth = !!sym(y_name), !!prob_name)
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
@@ -195,7 +195,7 @@ plot_twoclass_pr <-
     ggplot2::autoplot(res) +
       ggplot2::geom_point(data = fifty,
                           ggplot2::aes(
-                            x = 1 - yardstick::specificity,
-                            y = yardstick::sensitivity
+                            x = 1 - as.numeric(yardstick::specificity),
+                            y = as.numeric(yardstick::sensitivity)
                           ))
   }
