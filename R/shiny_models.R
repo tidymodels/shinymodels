@@ -26,9 +26,9 @@ shiny_models.reg_shiny_data <-
     preds <- x$predictions
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
-      plotly::plotlyOutput("resid_vs_pred"),
-      plotly::plotlyOutput("resid_vs_numcol"),
-      plotly::plotlyOutput("resid_vs_factorcol")
+      plotly::plotlyOutput("resid_vs_pred")
+      # plotly::plotlyOutput("resid_vs_numcol"),
+      # plotly::plotlyOutput("resid_vs_factorcol")
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
@@ -76,8 +76,8 @@ shiny_models.two_cls_shiny_data <-
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
       plotly::plotlyOutput("conf_mat"),
-      plotly::plotlyOutput("pred_vs_numcol"),
-      plotly::plotlyOutput("pred_vs_factorcol"),
+      # plotly::plotlyOutput("pred_vs_numcol"),
+      # plotly::plotlyOutput("pred_vs_factorcol"),
       plotly::plotlyOutput("roc_curve"),
       plotly::plotlyOutput("pr_curve")
     )
