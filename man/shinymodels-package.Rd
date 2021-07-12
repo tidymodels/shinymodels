@@ -6,7 +6,7 @@
 \alias{shinymodels-package}
 \title{shinymodels: shinymodels}
 \description{
-Shiny app for tidymodels.
+A package that launches a Shiny app for {tidymodels} results.
 }
 \author{
 \strong{Maintainer}: Shisham Adhikari \email{shisham.adhikari@rstudio.com}

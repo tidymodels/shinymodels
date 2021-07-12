@@ -8,20 +8,20 @@
 #' @param ... Other parameters not currently used.
 #' @export
 
-shinymodels <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  UseMethod("shinymodels")
+launch <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+  UseMethod("launch")
 }
 
 #' @export
-#' @rdname shinymodels
-shinymodels.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  rlang::abort("No `shinymodels()` exists for this type of object.")
+#' @rdname launch
+launch.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+  rlang::abort("No `launch()` exists for this type of object.")
 }
 
 
 #' @export
-#' @rdname shinymodels
-shinymodels.reg_shiny_data <-
+#' @rdname launch
+launch.reg_shiny_data <-
   function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
@@ -69,8 +69,8 @@ shinymodels.reg_shiny_data <-
 
 
 #' @export
-#' @rdname shinymodels
-shinymodels.two_cls_shiny_data <-
+#' @rdname launch
+launch.two_cls_shiny_data <-
   function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
