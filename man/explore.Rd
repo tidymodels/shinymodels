@@ -4,18 +4,21 @@
 \alias{explore}
 \alias{explore.default}
 \alias{explore.tune_results}
-\title{Launches shiny application based on data from objects}
+\title{Launches shiny application based on data from \code{\link[tune:fit_resamples]{tune::fit_resamples()}}}
 \usage{
-explore(x, hover_cols = NULL, ...)
+explore(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{explore}{default}(x, hover_cols = NULL, ...)
+\method{explore}{default}(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{explore}{tune_results}(x, hover_cols = NULL, hover_only, ...)
+\method{explore}{tune_results}(x, hover_cols = NULL, hover_only = NULL, ...)
 }
 \arguments{
 \item{x}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
 
 \item{hover_cols}{The columns to display while hovering in the Shiny app.}
+
+\item{hover_only}{A Boolean to turn on and off hovering in the interactive
+plots.}
 
 \item{...}{Other parameters not currently used.}
 }

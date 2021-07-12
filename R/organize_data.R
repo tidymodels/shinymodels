@@ -48,7 +48,7 @@ organize_data.tune_results <-
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = .outcome - .pred)
     }
-    preds <- sample_predictions  %>%
+    preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
         parsnip::add_rowindex(),
       by = ".row"

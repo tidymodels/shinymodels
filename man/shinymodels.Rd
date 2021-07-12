@@ -7,18 +7,21 @@
 \alias{shinymodels.two_cls_shiny_data}
 \title{Internal function to run shiny application on an object of \code{shiny_data} class}
 \usage{
-shinymodels(x, hover_only = NULL, ...)
+shinymodels(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{shinymodels}{default}(x, hover_cols = NULL, ...)
+\method{shinymodels}{default}(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{shinymodels}{reg_shiny_data}(x, hover_only, ...)
+\method{shinymodels}{reg_shiny_data}(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{shinymodels}{two_cls_shiny_data}(x, hover_only, ...)
+\method{shinymodels}{two_cls_shiny_data}(x, hover_cols = NULL, hover_only = NULL, ...)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
 
-\item{hover_only}{The Boolean to turn on and off the hover instead of selected}
+\item{hover_cols}{The columns to display while hovering in the Shiny app.}
+
+\item{hover_only}{A Boolean to turn on and off hovering in the interactive
+plots}
 
 \item{...}{Other parameters not currently used.}
 }

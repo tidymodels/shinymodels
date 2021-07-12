@@ -2,17 +2,19 @@
 #'
 #' This function takes the [organize_data()] result to launch a Shiny app.
 #' @param x The [organize_data()] result.
-#' @param hover_only The Boolean to turn on and off the hover instead of selected
+#' @param hover_cols The columns to display while hovering in the Shiny app.
+#' @param hover_only A Boolean to turn on and off hovering in the interactive
+#' plots
 #' @param ... Other parameters not currently used.
 #' @export
 
-shinymodels <- function(x, hover_only = NULL, ...) {
+shinymodels <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
   UseMethod("shinymodels")
 }
 
 #' @export
 #' @rdname shinymodels
-shinymodels.default <- function(x, hover_cols = NULL, ...) {
+shinymodels.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
   rlang::abort("No `shinymodels()` exists for this type of object.")
 }
 
@@ -20,14 +22,14 @@ shinymodels.default <- function(x, hover_cols = NULL, ...) {
 #' @export
 #' @rdname shinymodels
 shinymodels.reg_shiny_data <-
-  function(x,
-           hover_only,
-           ...) {
+  function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
-    ui <- shiny::fluidPage(plotly::plotlyOutput("obs_vs_pred"),
-                           plotly::plotlyOutput("resid_vs_pred"),
-                           plotly::plotlyOutput("resid_vs_numcol"),
-                           plotly::plotlyOutput("resid_vs_factorcol"))
+    ui <- shiny::fluidPage(
+      plotly::plotlyOutput("obs_vs_pred"),
+      plotly::plotlyOutput("resid_vs_pred"),
+      plotly::plotlyOutput("resid_vs_numcol"),
+      plotly::plotlyOutput("resid_vs_factorcol")
+    )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
       shiny::observe({
@@ -39,7 +41,7 @@ shinymodels.reg_shiny_data <-
           current <- shiny::isolate(selected_rows())
           selected_rows(unique(c(current, new)))
         }
-        else{
+        else {
           # clear the selected rows when a double-click occurs
           selected_rows(NULL)
         }
@@ -50,7 +52,7 @@ shinymodels.reg_shiny_data <-
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_numeric_obs_pred(preds_dat(), ".outcome")
       })
-      output$resid_vs_pred <-  plotly::renderPlotly({
+      output$resid_vs_pred <- plotly::renderPlotly({
         plot_numeric_res_pred(preds_dat(), ".outcome")
       })
       # output$resid_vs_numcol <-  plotly::renderPlotly({
@@ -69,16 +71,16 @@ shinymodels.reg_shiny_data <-
 #' @export
 #' @rdname shinymodels
 shinymodels.two_cls_shiny_data <-
-  function(x,
-           hover_only,
-           ...) {
+  function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
-    ui <- shiny::fluidPage(plotly::plotlyOutput("obs_vs_pred"),
-                           plotly::plotlyOutput("conf_mat"),
-                           plotly::plotlyOutput("pred_vs_numcol"),
-                           plotly::plotlyOutput("pred_vs_factorcol"),
-                           plotly::plotlyOutput("roc_curve"),
-                           plotly::plotlyOutput("pr_curve"))
+    ui <- shiny::fluidPage(
+      plotly::plotlyOutput("obs_vs_pred"),
+      plotly::plotlyOutput("conf_mat"),
+      plotly::plotlyOutput("pred_vs_numcol"),
+      plotly::plotlyOutput("pred_vs_factorcol"),
+      plotly::plotlyOutput("roc_curve"),
+      plotly::plotlyOutput("pr_curve")
+    )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
       shiny::observe({
@@ -90,13 +92,13 @@ shinymodels.two_cls_shiny_data <-
           current <- shiny::isolate(selected_rows())
           selected_rows(unique(c(current, new)))
         }
-        else{
+        else {
           # clear the selected rows when a double-click occurs
           selected_rows(NULL)
         }
       })
       preds_dat <- shiny::reactive({
-        dplyr:: mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
+        dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_twoclass_obs_pred(preds_dat(), ".outcome")
@@ -114,7 +116,7 @@ shinymodels.two_cls_shiny_data <-
         plot_twoclass_roc(preds_dat(), ".outcome")
       })
       output$pr_curve <- plotly::renderPlotly({
-        plot_twoclass_pr(preds_dat(),  ".outcome")
+        plot_twoclass_pr(preds_dat(), ".outcome")
       })
     }
     shiny::shinyApp(ui, server)
