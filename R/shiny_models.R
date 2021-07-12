@@ -1,6 +1,6 @@
 #'  Internal function to run shiny application on an object of `shiny_data` class
 #'
-#' This function takes the [organize_data()] result to launch a Shiny app.
+#' This function takes the [organize_data()] result to shiny_models a Shiny app.
 #' @param x The [organize_data()] result.
 #' @param hover_cols The columns to display while hovering in the Shiny app.
 #' @param hover_only A Boolean to turn on and off hovering in the interactive
@@ -8,20 +8,20 @@
 #' @param ... Other parameters not currently used.
 #' @export
 
-launch <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  UseMethod("launch")
+shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+  UseMethod("shiny_models")
 }
 
 #' @export
-#' @rdname launch
-launch.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  rlang::abort("No `launch()` exists for this type of object.")
+#' @rdname shiny_models
+shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+  rlang::abort("No `shiny_models()` exists for this type of object.")
 }
 
 
 #' @export
-#' @rdname launch
-launch.reg_shiny_data <-
+#' @rdname shiny_models
+shiny_models.reg_shiny_data <-
   function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
@@ -69,8 +69,8 @@ launch.reg_shiny_data <-
 
 
 #' @export
-#' @rdname launch
-launch.two_cls_shiny_data <-
+#' @rdname shiny_models
+shiny_models.two_cls_shiny_data <-
   function(x, hover_cols = NULL, hover_only = NULL, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
