@@ -53,16 +53,16 @@ shinymodels.reg_shiny_data <-
       output$resid_vs_pred <-  plotly::renderPlotly({
         plot_numeric_res_pred(preds_dat(), ".outcome")
       })
-      output$resid_vs_numcol <-  plotly::renderPlotly({
-        plot_numeric_res_numcol(preds_dat(), ".outcome", "hp")
-      })
-      output$resid_vs_factorcol <-  plotly::renderPlotly({
-        plot_numeric_res_factorcol(preds_dat() %>%
-                                     dplyr::mutate(am = as.factor(am))
-                                   ,".outcome", "am")
-      })
+      # output$resid_vs_numcol <-  plotly::renderPlotly({
+      #   plot_numeric_res_numcol(preds_dat(), ".outcome", "hp")
+      # })
+      # output$resid_vs_factorcol <-  plotly::renderPlotly({
+      #   plot_numeric_res_factorcol(preds_dat() %>%
+      #                                dplyr::mutate(am = as.factor(am))
+      #                              ,".outcome", "am")
+      # })
     }
-    shinyApp(ui, server)
+    shiny::shinyApp(ui, server)
   }
 
 
@@ -74,11 +74,11 @@ shinymodels.two_cls_shiny_data <-
            ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(plotly::plotlyOutput("obs_vs_pred"),
-                    plotly::plotlyOutput("conf_mat"),
-                    plotly::plotlyOutput("pred_vs_numcol"),
-                    plotly::plotlyOutput("pred_vs_factorcol"),
-                    plotly::plotlyOutput("roc_curve"),
-                    plotly::plotlyOutput("pr_curve"))
+                           plotly::plotlyOutput("conf_mat"),
+                           plotly::plotlyOutput("pred_vs_numcol"),
+                           plotly::plotlyOutput("pred_vs_factorcol"),
+                           plotly::plotlyOutput("roc_curve"),
+                           plotly::plotlyOutput("pr_curve"))
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
       shiny::observe({
@@ -96,7 +96,7 @@ shinymodels.two_cls_shiny_data <-
         }
       })
       preds_dat <- shiny::reactive({
-       dplyr:: mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
+        dplyr:: mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_twoclass_obs_pred(preds_dat(), ".outcome")
@@ -104,12 +104,12 @@ shinymodels.two_cls_shiny_data <-
       output$conf_mat <- plotly::renderPlotly({
         plot_twoclass_conf_mat(preds_dat())
       })
-      output$pred_vs_numcol <- plotly::renderPlotly({
-        plot_twoclass_pred_numcol(preds_dat(), ".outcome", "p_tau")
-      })
-      output$pred_vs_factorcol <- plotly::renderPlotly({
-        plot_twoclass_pred_factorcol(preds_dat(), ".outcome", "Genotype")
-      })
+      # output$pred_vs_numcol <- plotly::renderPlotly({
+      #   plot_twoclass_pred_numcol(preds_dat(), ".outcome", "p_tau")
+      # })
+      # output$pred_vs_factorcol <- plotly::renderPlotly({
+      #   plot_twoclass_pred_factorcol(preds_dat(), ".outcome", "Genotype")
+      # })
       output$roc_curve <- plotly::renderPlotly({
         plot_twoclass_roc(preds_dat(), ".outcome")
       })
@@ -117,5 +117,5 @@ shinymodels.two_cls_shiny_data <-
         plot_twoclass_pr(preds_dat(),  ".outcome")
       })
     }
-    shinyApp(ui, server)
+    shiny::shinyApp(ui, server)
   }

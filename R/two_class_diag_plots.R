@@ -24,8 +24,8 @@ plot_twoclass_obs_pred <-
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_wrap(~Class, #TODO
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(Class = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
@@ -84,8 +84,8 @@ plot_twoclass_pred_numcol <-
         text = .hover
       )) +
       ggplot2::facet_wrap(~Class,
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(Class = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
@@ -133,8 +133,8 @@ plot_twoclass_pred_factorcol <-
         text = .hover
       )) +
       ggplot2::facet_wrap(~Class,
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(Class = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
@@ -169,8 +169,8 @@ plot_twoclass_roc <-
     ggplot2::autoplot(res) +
       ggplot2::geom_point(data = fifty,
                           ggplot2::aes(
-                            x = 1 - as.numeric(yardstick::specificity),
-                            y = as.numeric(yardstick::sensitivity)
+                            x = 1 - specificity,
+                            y = sensitivity
                           ))
   }
 
@@ -195,7 +195,7 @@ plot_twoclass_pr <-
     ggplot2::autoplot(res) +
       ggplot2::geom_point(data = fifty,
                           ggplot2::aes(
-                            x = 1 - as.numeric(yardstick::specificity),
-                            y = as.numeric(yardstick::sensitivity)
+                            x = 1 - recall,
+                            y = precision
                           ))
   }

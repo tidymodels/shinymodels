@@ -4,15 +4,15 @@
 \alias{plot_numeric_res_factorcol}
 \title{Visualizing residuals vs. a factor column for a regression model}
 \usage{
-plot_numeric_res_factorcol(dat, factorcol, y_name)
+plot_numeric_res_factorcol(dat, y_name, factorcol)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
 variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{factorcol}{The factor column to plot against the residuals.}
-
 \item{y_name}{The y/response variable for the model.}
+
+\item{factorcol}{The factor column to plot against the residuals.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.

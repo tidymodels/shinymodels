@@ -23,6 +23,7 @@ explore.default <- function(x, hover_cols = NULL, ...) {
 #' @rdname explore
 explore.tune_results <-
   function(x,
+
            hover_cols = NULL,
            hover_only,
            ...) {

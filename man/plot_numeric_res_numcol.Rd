@@ -4,15 +4,15 @@
 \alias{plot_numeric_res_numcol}
 \title{Visualizing residuals vs. a numeric column for a regression model}
 \usage{
-plot_numeric_res_numcol(dat, numcol, y_name)
+plot_numeric_res_numcol(dat, y_name, numcol)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
 variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{numcol}{The numerical column to plot against the residuals.}
-
 \item{y_name}{The y/response variable for the model.}
+
+\item{numcol}{The numerical column to plot against the residuals.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
