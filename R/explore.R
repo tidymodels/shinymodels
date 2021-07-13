@@ -11,7 +11,7 @@
 #' @keywords models, regression, graphs, classes, classif
 #' @export
 
-explore <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+explore <- function(x, ...) {
   UseMethod("explore")
 }
 
