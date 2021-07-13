@@ -17,7 +17,7 @@ explore <- function(x, ...) {
 
 #' @export
 #' @rdname explore
-explore.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
+explore.default <- function(x, ...) {
   rlang::abort("No `explore()` exists for this type of object.")
 }
 
