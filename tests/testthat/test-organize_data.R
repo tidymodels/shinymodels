@@ -40,18 +40,14 @@ test_that("can add hover column", {
   skip_on_cran()
   data("reg_mtcars_spline_res")
 
-  lin_mod <- linear_reg() %>%
-    set_engine("lm") %>%
-    fit(mpg ~ ., data = mtcars)
-
-  org <- organize_data(mtcars_spline_res, c("mpg", ".pred"))
+  org <- organize_data(mtcars_spline_res, hover_cols = c("mpg", ".pred"))
   org_null <- organize_data(mtcars_spline_res)
 
   expect_equal(is.character(org$predictions$.hover), TRUE)
   expect_equal(length(org$predictions$.hover), 32)
   expect_equal(org$predictions$.hover[[1]], "mpg: 21.0<br>.pred: 20.98")
   expect_error(
-    organize_data(mtcars_spline_res, c("mpg", "mpl")),
+    organize_data(mtcars_spline_res, hover_cols = c("mpg", "mpl")),
     "Column `mpl` doesn't exist."
   )
   expect_equal(org_null$predictions$.hover[[1]], "mpg: 21.0")

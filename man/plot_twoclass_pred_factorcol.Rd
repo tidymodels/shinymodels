@@ -7,8 +7,8 @@ model}
 \usage{
 plot_twoclass_pred_factorcol(
   dat,
-  factorcol,
   y_name,
+  factorcol,
   event_level = "first",
   prob_breaks = (2:9)/10,
   prob_eps = 0.001
@@ -18,9 +18,9 @@ plot_twoclass_pred_factorcol(
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
 variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
-\item{factorcol}{The factor column to plot against the predicted probabilities.}
-
 \item{y_name}{The y/response variable for the model.}
+
+\item{factorcol}{The factor column to plot against the predicted probabilities.}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 

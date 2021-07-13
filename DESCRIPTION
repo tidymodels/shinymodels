@@ -1,7 +1,7 @@
 Package: shinymodels
 Version: 0.0.0.9000
 Title: shinymodels
-Description: Shiny app for tidymodels.
+Description: A package that launches a Shiny app for 'tidymodels' results.
 Authors@R: c(
         person(
           given = "Shisham",
@@ -36,9 +36,9 @@ Suggests:
     covr
 Language: en-US
 Imports: 
+    generics (>= 0.1.0),
     broom,
     dplyr,
-    ggplot2,
     glue,
     magrittr,
     modeldata,
@@ -53,4 +53,7 @@ Imports:
     yardstick
 Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    ggplot2
+Remotes:  
+    r-lib/generics

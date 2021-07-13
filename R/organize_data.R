@@ -27,6 +27,7 @@ organize_data.tune_results <-
   function(x,
            hover_cols = NULL,
            ...) {
+    hover_expr <- rlang::enquo(hover_cols)
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
       rlang::abort(
@@ -48,19 +49,17 @@ organize_data.tune_results <-
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = .outcome - .pred)
     }
-    preds <- sample_predictions  %>%
+    preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
         parsnip::add_rowindex(),
       by = ".row"
       )
-    if (rlang::is_null(hover_cols)) {
-      expr <- rlang::enquo(y_name)
+    if (quo_is_null(hover_expr)) {
+      var <- preds %>% dplyr::select(dplyr::all_of(y_name))
+    } else {
+      pos <- tidyselect::eval_select(hover_expr, data = preds)
+      var <- rlang::set_names(preds[pos], names(pos))
     }
-    else {
-      expr <- rlang::enquo(hover_cols)
-    }
-    pos <- tidyselect::eval_select(expr, data = preds)
-    var <- rlang::set_names(preds[pos], names(pos))
     preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
     new_shiny_data(preds, y_name, app_type)
