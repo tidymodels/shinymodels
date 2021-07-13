@@ -51,8 +51,8 @@ organize_data.tune_results <-
     }
     preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex(),
-                        by = ".row"
+        parsnip::add_rowindex(),
+      by = ".row"
       )
     if (quo_is_null(hover_expr)) {
       var <- preds %>% dplyr::select(dplyr::all_of(y_name))

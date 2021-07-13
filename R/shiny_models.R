@@ -7,6 +7,7 @@
 #' plots
 #' @param ... Other parameters not currently used.
 #' @export
+#' @keywords internal
 
 shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
   UseMethod("shiny_models")

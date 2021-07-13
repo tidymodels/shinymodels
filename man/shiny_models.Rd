@@ -28,3 +28,4 @@ plots}
 \description{
 This function takes the \code{\link[=organize_data]{organize_data()}} result to shiny_models a Shiny app.
 }
+\keyword{internal}
