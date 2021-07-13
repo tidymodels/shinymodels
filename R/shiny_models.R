@@ -50,10 +50,10 @@ shiny_models.reg_shiny_data <-
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_numeric_obs_pred(preds_dat(), ".outcome")
+        plot_numeric_obs_pred(preds_dat(), x$y_name)
       })
       output$resid_vs_pred <- plotly::renderPlotly({
-        plot_numeric_res_pred(preds_dat(), ".outcome")
+        plot_numeric_res_pred(preds_dat(), x$y_name)
       })
       # output$resid_vs_numcol <-  plotly::renderPlotly({
       #   plot_numeric_res_numcol(preds_dat(), ".outcome", "hp")
@@ -101,7 +101,7 @@ shiny_models.two_cls_shiny_data <-
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_twoclass_obs_pred(preds_dat(), ".outcome")
+        plot_twoclass_obs_pred(preds_dat(), x$y_name)
       })
       output$conf_mat <- plotly::renderPlotly({
         plot_twoclass_conf_mat(preds_dat())
