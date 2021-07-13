@@ -18,7 +18,7 @@ test_that("can accurately organize data", {
   expect_equal(".outcome" %in% names(org$predictions), TRUE)
   expect_equal(".pred" %in% names(org$predictions), TRUE)
   expect_equal(".residual" %in% names(org$predictions), TRUE)
-  expect_equal(length(org), 2)
+  expect_equal(length(org), 5)
   expect_equal(nrow(org$predictions), 32)
   expect_equal(org$y_name, "mpg")
   expect_error(

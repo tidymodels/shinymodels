@@ -63,11 +63,13 @@ shiny_models.reg_shiny_data <-
         if (length(num_columns)==0){
           NULL
         }
-        selectInput(
-          inputId = "num_value_col",
-          label = "Numeric Columns",
-          choices = unique(c("None Selected" = "", num_columns))
-        )
+        else{
+          selectInput(
+            inputId = "num_value_col",
+            label = "Numeric Columns",
+            choices = unique(c("None Selected" = "", num_columns))
+          )
+        }
       }) # num_column_choice
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
@@ -78,11 +80,13 @@ shiny_models.reg_shiny_data <-
         if(length(fac_columns)==0){
           NULL
         }
-        selectInput(
-          inputId = "factor_value_col",
-          label = "Factor Columns",
-          choices = unique(c("None Selected" = "", fac_columns))
-        )
+        else{
+          selectInput(
+            inputId = "factor_value_col",
+            label = "Factor Columns",
+            choices = unique(c("None Selected" = "", fac_columns))
+          )
+        }
       }) # factor_column_choice
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
@@ -138,11 +142,13 @@ shiny_models.two_cls_shiny_data <-
         if (length(num_columns)==0){
           NULL
         }
-        selectInput(
-          inputId = "num_value_col",
-          label = "Numeric Columns",
-          choices = unique(c("None Selected" = "", num_columns))
-        )
+        else{
+          selectInput(
+            inputId = "num_value_col",
+            label = "Numeric Columns",
+            choices = unique(c("None Selected" = "", num_columns))
+          )
+        }
       }) # num_column_choice
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
@@ -153,11 +159,13 @@ shiny_models.two_cls_shiny_data <-
         if(length(fac_columns)==0){
           NULL
         }
-        selectInput(
-          inputId = "factor_value_col",
-          label = "Factor Columns",
-          choices = unique(c("None Selected" = "", fac_columns))
-        )
+        else{
+          selectInput(
+            inputId = "factor_value_col",
+            label = "Factor Columns",
+            choices = unique(c("None Selected" = "", fac_columns))
+          )
+        }
       }) # factor_column_choice
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
