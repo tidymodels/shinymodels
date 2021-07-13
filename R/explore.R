@@ -3,7 +3,7 @@
 #' This function takes the data based on [tune::fit_resamples()] results to
 #' launch a Shiny app. This function normally does not return; interrupt R
 #' to stop the app (usually by pressing Ctrl+C or Esc).
-#' @param x The [tune::fit_resamples()] result.
+#' @param x An object produced by [tune::fit_resamples()], [tune::last_fit()], or one of the `tune_*()` functions (e.g. [tune::tune_grid()]).
 #' @param hover_cols The columns to display while hovering in the Shiny app.
 #' @param hover_only A Boolean to turn on and off hovering in the interactive
 #' plots.
