@@ -114,10 +114,10 @@ shiny_models.two_cls_shiny_data <-
       #   plot_twoclass_pred_factorcol(preds_dat(), ".outcome", "Genotype")
       # })
       output$roc_curve <- plotly::renderPlotly({
-        plot_twoclass_roc(preds_dat(), ".outcome")
+        plot_twoclass_roc(preds_dat(), x$y_name)
       })
       output$pr_curve <- plotly::renderPlotly({
-        plot_twoclass_pr(preds_dat(), ".outcome")
+        plot_twoclass_pr(preds_dat(), x$y_name)
       })
     }
     shiny::shinyApp(ui, server)
