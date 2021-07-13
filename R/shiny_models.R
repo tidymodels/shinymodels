@@ -27,9 +27,11 @@ shiny_models.reg_shiny_data <-
     preds <- x$predictions
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
-      plotly::plotlyOutput("resid_vs_pred")
-      # plotly::plotlyOutput("resid_vs_numcol"),
-      # plotly::plotlyOutput("resid_vs_factorcol")
+      plotly::plotlyOutput("resid_vs_pred"),
+      uiOutput("get_numcol_names"),
+      plotly::plotlyOutput("resid_vs_numcol"),
+      uiOutput("get_factorcol_names"),
+      plotly::plotlyOutput("resid_vs_factorcol")
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
@@ -56,14 +58,36 @@ shiny_models.reg_shiny_data <-
       output$resid_vs_pred <- plotly::renderPlotly({
         plot_numeric_res_pred(preds_dat(), x$y_name)
       })
-      # output$resid_vs_numcol <-  plotly::renderPlotly({
-      #   plot_numeric_res_numcol(preds_dat(), ".outcome", "hp")
-      # })
-      # output$resid_vs_factorcol <-  plotly::renderPlotly({
-      #   plot_numeric_res_factorcol(preds_dat() %>%
-      #                                dplyr::mutate(am = as.factor(am))
-      #                              ,".outcome", "am")
-      # })
+      output$get_numcol_names <- renderUI({
+        num_columns <- x$num_cols
+        if (length(num_columns)==0){
+          NULL
+        }
+        selectInput(
+          inputId = "num_value_col",
+          label = "Numeric Columns",
+          choices = unique(c("None Selected" = "", num_columns))
+        )
+      }) # num_column_choice
+      output$resid_vs_numcol <- plotly::renderPlotly({
+        req(input$num_value_col)
+        plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col)
+      })
+      output$get_factorcol_names <- renderUI({
+        fac_columns <- x$fac_cols
+        if(length(fac_columns)==0){
+          NULL
+        }
+        selectInput(
+          inputId = "factor_value_col",
+          label = "Factor Columns",
+          choices = unique(c("None Selected" = "", fac_columns))
+        )
+      }) # factor_column_choice
+      output$resid_vs_factorcol <- plotly::renderPlotly({
+        req(input$factor_value_col)
+        plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col)
+      })
     }
     shiny::shinyApp(ui, server)
   }
@@ -77,8 +101,10 @@ shiny_models.two_cls_shiny_data <-
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
       plotly::plotlyOutput("conf_mat"),
-      # plotly::plotlyOutput("pred_vs_numcol"),
-      # plotly::plotlyOutput("pred_vs_factorcol"),
+      uiOutput("get_numcol_names"),
+      plotly::plotlyOutput("pred_vs_numcol"),
+      uiOutput("get_factorcol_names"),
+      plotly::plotlyOutput("pred_vs_factorcol"),
       plotly::plotlyOutput("roc_curve"),
       plotly::plotlyOutput("pr_curve")
     )
@@ -107,12 +133,36 @@ shiny_models.two_cls_shiny_data <-
       output$conf_mat <- plotly::renderPlotly({
         plot_twoclass_conf_mat(preds_dat())
       })
-      # output$pred_vs_numcol <- plotly::renderPlotly({
-      #   plot_twoclass_pred_numcol(preds_dat(), ".outcome", "p_tau")
-      # })
-      # output$pred_vs_factorcol <- plotly::renderPlotly({
-      #   plot_twoclass_pred_factorcol(preds_dat(), ".outcome", "Genotype")
-      # })
+      output$get_numcol_names <- renderUI({
+        num_columns <- x$num_cols
+        if (length(num_columns)==0){
+          NULL
+        }
+        selectInput(
+          inputId = "num_value_col",
+          label = "Numeric Columns",
+          choices = unique(c("None Selected" = "", num_columns))
+        )
+      }) # num_column_choice
+      output$pred_vs_numcol <- plotly::renderPlotly({
+        req(input$num_value_col)
+        plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col)
+      })
+      output$get_factorcol_names <- renderUI({
+        fac_columns <- x$fac_cols
+        if(length(fac_columns)==0){
+          NULL
+        }
+        selectInput(
+          inputId = "factor_value_col",
+          label = "Factor Columns",
+          choices = unique(c("None Selected" = "", fac_columns))
+        )
+      }) # factor_column_choice
+      output$pred_vs_factorcol <- plotly::renderPlotly({
+        req(input$factor_value_col)
+        plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col)
+      })
       output$roc_curve <- plotly::renderPlotly({
         plot_twoclass_roc(preds_dat(), x$y_name)
       })
