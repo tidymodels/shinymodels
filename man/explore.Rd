@@ -6,21 +6,21 @@
 \alias{explore.tune_results}
 \title{Launches shiny application based on data from \code{\link[tune:fit_resamples]{tune::fit_resamples()}}}
 \usage{
-explore(x, hover_cols = NULL, hover_only = NULL, ...)
+explore(x, ...)
 
-\method{explore}{default}(x, hover_cols = NULL, hover_only = NULL, ...)
+\method{explore}{default}(x, ...)
 
 \method{explore}{tune_results}(x, hover_cols = NULL, hover_only = NULL, ...)
 }
 \arguments{
-\item{x}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}
+\item{x}{An object produced by \code{\link[tune:fit_resamples]{tune::fit_resamples()}}, \code{\link[tune:last_fit]{tune::last_fit()}}, or one of the \verb{tune_*()} functions (e.g. \code{\link[tune:tune_grid]{tune::tune_grid()}}).}
+
+\item{...}{Other parameters not currently used.}
 
 \item{hover_cols}{The columns to display while hovering in the Shiny app.}
 
 \item{hover_only}{A Boolean to turn on and off hovering in the interactive
 plots.}
-
-\item{...}{Other parameters not currently used.}
 }
 \description{
 This function takes the data based on \code{\link[tune:fit_resamples]{tune::fit_resamples()}} results to
