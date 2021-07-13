@@ -28,6 +28,6 @@ explore.tune_results <-
            hover_cols = NULL,
            hover_only = NULL,
            ...) {
-    dat <- organize_data(x, hover_cols, ...)
+    dat <- organize_data(x, hover_cols = hover_cols, ...)
     shiny_models(dat, hover_only)
   }
