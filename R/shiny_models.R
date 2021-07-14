@@ -35,20 +35,25 @@ shiny_models.reg_shiny_data <-
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
-      shiny::observe({
-        new <- c(
-          plotly::event_data("plotly_click")$customdata,
-          plotly::event_data("plotly_selected")$customdata
-        )
-        if (length(new)) {
-          current <- shiny::isolate(selected_rows())
-          selected_rows(unique(c(current, new)))
-        }
-        else {
-          # clear the selected rows when a double-click occurs
-          selected_rows(NULL)
-        }
-      })
+      if (isTRUE(hover_only)) {
+        selected_rows(NULL)
+      }
+      else {
+        shiny::observe({
+          new <- c(
+            plotly::event_data("plotly_click")$customdata,
+            plotly::event_data("plotly_selected")$customdata
+          )
+          if (length(new)) {
+            current <- shiny::isolate(selected_rows())
+            selected_rows(unique(c(current, new)))
+          }
+          else {
+            # clear the selected rows when a double-click occurs
+            selected_rows(NULL)
+          }
+        })
+      }
       preds_dat <- shiny::reactive({
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
@@ -60,10 +65,10 @@ shiny_models.reg_shiny_data <-
       })
       output$get_numcol_names <- renderUI({
         num_columns <- x$num_cols
-        if (length(num_columns)==0){
+        if (length(num_columns) == 0) {
           NULL
         }
-        else{
+        else {
           selectInput(
             inputId = "num_value_col",
             label = "Numeric Columns",
@@ -77,10 +82,10 @@ shiny_models.reg_shiny_data <-
       })
       output$get_factorcol_names <- renderUI({
         fac_columns <- x$fac_cols
-        if(length(fac_columns)==0){
+        if (length(fac_columns) == 0) {
           NULL
         }
-        else{
+        else {
           selectInput(
             inputId = "factor_value_col",
             label = "Factor Columns",
@@ -114,20 +119,25 @@ shiny_models.two_cls_shiny_data <-
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
-      shiny::observe({
-        new <- c(
-          plotly::event_data("plotly_click")$customdata,
-          plotly::event_data("plotly_selected")$customdata
-        )
-        if (length(new)) {
-          current <- shiny::isolate(selected_rows())
-          selected_rows(unique(c(current, new)))
-        }
-        else {
-          # clear the selected rows when a double-click occurs
-          selected_rows(NULL)
-        }
-      })
+      if (isTRUE(hover_only)) {
+        selected_rows(NULL)
+      }
+      else {
+        shiny::observe({
+          new <- c(
+            plotly::event_data("plotly_click")$customdata,
+            plotly::event_data("plotly_selected")$customdata
+          )
+          if (length(new)) {
+            current <- shiny::isolate(selected_rows())
+            selected_rows(unique(c(current, new)))
+          }
+          else {
+            # clear the selected rows when a double-click occurs
+            selected_rows(NULL)
+          }
+        })
+      }
       preds_dat <- shiny::reactive({
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
@@ -139,10 +149,10 @@ shiny_models.two_cls_shiny_data <-
       })
       output$get_numcol_names <- renderUI({
         num_columns <- x$num_cols
-        if (length(num_columns)==0){
+        if (length(num_columns) == 0) {
           NULL
         }
-        else{
+        else {
           selectInput(
             inputId = "num_value_col",
             label = "Numeric Columns",
@@ -156,10 +166,10 @@ shiny_models.two_cls_shiny_data <-
       })
       output$get_factorcol_names <- renderUI({
         fac_columns <- x$fac_cols
-        if(length(fac_columns)==0){
+        if (length(fac_columns) == 0) {
           NULL
         }
-        else{
+        else {
           selectInput(
             inputId = "factor_value_col",
             label = "Factor Columns",

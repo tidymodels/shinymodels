@@ -20,6 +20,7 @@ test_that("can accurately organize data", {
   expect_equal(".residual" %in% names(org$predictions), TRUE)
   expect_equal(is.character(org$num_cols), TRUE)
   expect_equal(is.character(org$fac_cols), TRUE)
+  expect_equal(org$fac_cols, character(0))
   expect_equal(sum(length(org$num_cols), length(org$fac_cols)), length(colnames(mtcars)))
   expect_equal("mpg" %in% org$num_cols, TRUE)
   expect_equal(org$app_type, "reg")

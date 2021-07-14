@@ -20,7 +20,7 @@ organize_data(x, hover_cols = NULL, ...)
 \item{...}{Other parameters not currently used.}
 }
 \value{
-A list with elements data frame and character vector. The data frame includes
+A list with elements data frame and character vectors. The data frame includes
 an outcome variable \code{.outcome}, a prediction variable \code{.pred}, and hovering
 columns \code{.hover}.
 }

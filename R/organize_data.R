@@ -8,7 +8,7 @@
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
-#' A list with elements data frame and character vector. The data frame includes
+#' A list with elements data frame and character vectors. The data frame includes
 #'  an outcome variable `.outcome`, a prediction variable `.pred`, and hovering
 #'  columns `.hover`.
 organize_data <- function(x, hover_cols = NULL, ...) {
