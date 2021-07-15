@@ -7,7 +7,7 @@
 \usage{
 \method{explore}{default}(x, ...)
 
-\method{explore}{tune_results}(x, hover_cols = NULL, hover_only = c("TRUE", "FALSE"), ...)
+\method{explore}{tune_results}(x, hover_cols = NULL, hover_only = FALSE, ...)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
@@ -17,7 +17,7 @@
 \item{hover_cols}{The columns to display while hovering in the Shiny app.}
 
 \item{hover_only}{A Boolean to turn on and off hovering in the interactive
-plots}
+plots; the default option is FALSE, it is recommended to use TRUE for a big data.}
 }
 \description{
 This function takes the data based on \code{\link[tune:fit_resamples]{tune::fit_resamples()}} results to

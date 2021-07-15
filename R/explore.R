@@ -19,8 +19,8 @@ explore.default <- function(x, ...) {
 explore.tune_results <-
   function(x,
            hover_cols = NULL,
-           hover_only = c("TRUE", "FALSE"),
+           hover_only = FALSE,
            ...) {
     dat <- organize_data(x, hover_cols = {{ hover_cols }}, ...)
-    shiny_models(dat, hover_only)
+    shiny_models(dat, hover_only = hover_only)
   }

@@ -4,7 +4,7 @@
 #' @param x The [organize_data()] result.
 #' @param hover_cols The columns to display while hovering in the Shiny app.
 #' @param hover_only A Boolean to turn on and off hovering in the interactive
-#' plots
+#' plots; the default option is FALSE, it is recommended to use TRUE for a big data.
 #' @param ... Other parameters not currently used.
 #' @export
 #' @keywords internal
@@ -23,8 +23,7 @@ shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
 #' @export
 #' @rdname shiny_models
 shiny_models.reg_shiny_data <-
-  function(x, hover_cols = NULL, hover_only = c("TRUE", "FALSE"), ...) {
-    hover_only <- rlang::arg_match(hover_only)
+  function(x, hover_cols = NULL, hover_only = FALSE, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
@@ -36,7 +35,7 @@ shiny_models.reg_shiny_data <-
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
-      if (hover_only == "TRUE") {
+      if (hover_only) {
         selected_rows(NULL)
       }
       else {
@@ -106,8 +105,7 @@ shiny_models.reg_shiny_data <-
 #' @export
 #' @rdname shiny_models
 shiny_models.two_cls_shiny_data <-
-  function(x, hover_cols = NULL, hover_only = c("TRUE", "FALSE"), ...) {
-    hover_only <- rlang::arg_match(hover_only)
+  function(x, hover_cols = NULL, hover_only = FALSE, ...) {
     preds <- x$predictions
     ui <- shiny::fluidPage(
       plotly::plotlyOutput("obs_vs_pred"),
@@ -121,7 +119,7 @@ shiny_models.two_cls_shiny_data <-
     )
     server <- function(input, output, session) {
       selected_rows <- shiny::reactiveVal()
-      if (hover_only == "TRUE") {
+      if (hover_only) {
         selected_rows(NULL)
       }
       else {
