@@ -7,7 +7,7 @@
 \usage{
 \method{explore}{default}(x, ...)
 
-\method{explore}{tune_results}(x, hover_cols = NULL, hover_only = NULL, ...)
+\method{explore}{tune_results}(x, hover_cols = NULL, hover_only = c("TRUE", "FALSE"), ...)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}

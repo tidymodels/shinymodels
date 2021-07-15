@@ -89,11 +89,13 @@ new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_c
   if (!is.character(factor_cols)) {
     rlang::abort("factor_cols should be a character string")
   }
-  res <- list(predictions = predictions,
-              y_name = y_name,
-              app_type = subclass,
-              num_cols = numeric_cols,
-              fac_cols = factor_cols)
+  res <- list(
+    predictions = predictions,
+    y_name = y_name,
+    app_type = subclass,
+    num_cols = numeric_cols,
+    fac_cols = factor_cols
+  )
   result <- structure(res, class = c(paste0(subclass, "_shiny_data"), "shiny_data"))
   result
 }

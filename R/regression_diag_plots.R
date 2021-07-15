@@ -43,8 +43,10 @@ plot_numeric_res_pred <- function(dat, y_name) {
       text = .hover
     )) +
     ggplot2::scale_color_identity() +
-    ggplot2::labs(title = "Residuals vs. predicted",
-                  x = "Predicted", y = "Residual") +
+    ggplot2::labs(
+      title = "Residuals vs. predicted",
+      x = "Predicted", y = "Residual"
+    ) +
     ggplot2::theme(legend.position = "none")
   plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
