@@ -9,8 +9,10 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
   org$predictions$.color <- "black"
   expect_error(
     plot_twoclass_obs_pred(org, org$y_name),
-    "`data` must be a data frame, or other object coercible by `fortify()`,
-    not an S3 object with class reg_shiny_data/shiny_data"
+    expect_error(
+      plot_numeric_obs_pred(org, org$y_name),
+      "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class two_cls_shiny_data/shiny_data"
+    )
   )
   expect_error(
     plot_twoclass_obs_pred(org$predictions, y_name),
@@ -34,8 +36,7 @@ test_that("can accurately plot confusion matrix plot", {
 
   expect_error(
     plot_twoclass_conf_mat(org),
-    "no applicable method for 'conf_mat' applied to an object of class
-    'c('two_cls_shiny_data', 'shiny_data')' "
+   "no applicable method for 'conf_mat' applied to an object of class"
   )
   b <- plot_twoclass_conf_mat(org$predictions)
   expect_snapshot(plotly::plotly_json(b, jsonedit=FALSE))
@@ -114,7 +115,7 @@ test_that("can accurately plot the ROC curve", {
     plot_twoclass_roc(org$predictions, y_name),
     "object 'y_name' not found"
   )
-  e <- plot_twoclass_roc(org$predictions, org$y_name,"AXL")
+  e <- plot_twoclass_roc(org$predictions, org$y_name)
   expect_snapshot(plotly::plotly_json(e, jsonedit=FALSE))
 })
 
@@ -137,6 +138,6 @@ test_that("can accurately plot the PR curve", {
     plot_twoclass_pr(org$predictions, "mpg"),
     "'mpg' is not a column in the dataset"
   )
-  f <- plot_twoclass_pr(org$predictions, org$y_name,"AXL")
+  f <- plot_twoclass_pr(org$predictions, org$y_name)
   expect_snapshot(plotly::plotly_json(f, jsonedit=FALSE))
 })
