@@ -11,9 +11,9 @@ shiny_models(x, hover_cols = NULL, hover_only = NULL, ...)
 
 \method{shiny_models}{default}(x, hover_cols = NULL, hover_only = NULL, ...)
 
-\method{shiny_models}{reg_shiny_data}(x, hover_cols = NULL, hover_only = NULL, ...)
+\method{shiny_models}{reg_shiny_data}(x, hover_cols = NULL, hover_only = FALSE, ...)
 
-\method{shiny_models}{two_cls_shiny_data}(x, hover_cols = NULL, hover_only = NULL, ...)
+\method{shiny_models}{two_cls_shiny_data}(x, hover_cols = NULL, hover_only = FALSE, ...)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
@@ -21,7 +21,7 @@ shiny_models(x, hover_cols = NULL, hover_only = NULL, ...)
 \item{hover_cols}{The columns to display while hovering in the Shiny app.}
 
 \item{hover_only}{A Boolean to turn on and off hovering in the interactive
-plots}
+plots; the default option is FALSE, it is recommended to use TRUE for a big data.}
 
 \item{...}{Other parameters not currently used.}
 }

@@ -8,7 +8,7 @@
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
-#' A list with elements data frame and character vector. The data frame includes
+#' A list with elements data frame and character vectors. The data frame includes
 #'  an outcome variable `.outcome`, a prediction variable `.pred`, and hovering
 #'  columns `.hover`.
 organize_data <- function(x, hover_cols = NULL, ...) {
@@ -49,6 +49,10 @@ organize_data.tune_results <-
       sample_predictions <- sample_predictions %>%
         dplyr::mutate(.residual = .outcome - .pred)
     }
+    num_cols <- vapply(original_data, is.numeric, logical(1))
+    num_col_names <- names(num_cols)[num_cols]
+    fac_cols <- vapply(original_data, is.factor, logical(1))
+    fac_col_names <- names(fac_cols)[fac_cols]
     preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
         parsnip::add_rowindex(),
@@ -62,11 +66,11 @@ organize_data.tune_results <-
     }
     preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
-    new_shiny_data(preds, y_name, app_type)
+    new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names)
   }
 # ------------------------------------------------------------------------------
 
-new_shiny_data <- function(predictions, y_name, subclass) {
+new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols) {
   if (!inherits(predictions, "data.frame")) {
     rlang::abort("predictions should be a data frame")
   }
@@ -79,9 +83,20 @@ new_shiny_data <- function(predictions, y_name, subclass) {
   if (!is.character(y_name)) {
     rlang::abort("y_name should be a character string")
   }
-  res <- list(predictions = predictions, y_name = y_name)
+  if (!is.character(numeric_cols)) {
+    rlang::abort("numeric_cols should be a character string")
+  }
+  if (!is.character(factor_cols)) {
+    rlang::abort("factor_cols should be a character string")
+  }
+  res <- list(
+    predictions = predictions,
+    y_name = y_name,
+    app_type = subclass,
+    num_cols = numeric_cols,
+    fac_cols = factor_cols
+  )
   result <- structure(res, class = c(paste0(subclass, "_shiny_data"), "shiny_data"))
-  attr(result, "app_type") <- subclass
   result
 }
 # ------------------------------------------------------------------------------
