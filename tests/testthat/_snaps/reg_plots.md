@@ -1,7 +1,7 @@
 # can accurately plot numeric observed vs. predicted plot
 
     Code
-      plotly::plotly_json(a, jsonedit = FALSE)
+      make_clean_snapshot(a)
     Output
       {
         "data": [
@@ -190,33 +190,15 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative",
-          "dragmode": "select"
+          "barmode": "relative"
         },
         "config": {
           "doubleClick": "reset",
           "showSendToCloud": false
         },
         "source": "A",
-        "attrs": {
-          "76102dcf17e6": {
-            "intercept": {},
-            "slope": {},
-            "type": "scatter"
-          },
-          "7610772a1488": {
-            "x": {},
-            "y": {},
-            "customdata": {},
-            "colour": {},
-            "text": {}
-          }
-        },
-        "cur_data": "76102dcf17e6",
-        "visdat": {
-          "76102dcf17e6": ["function (y) ", "x"],
-          "7610772a1488": ["function (y) ", "x"]
-        },
+        "cur_data": "env-name",
+        "attrs": [],
         "highlight": {
           "on": "plotly_click",
           "persistent": false,
@@ -235,7 +217,7 @@
 # can accurately plot numeric residuals vs. predicted plot
 
     Code
-      plotly::plotly_json(b, jsonedit = FALSE)
+      make_clean_snapshot(b)
     Output
       {
         "data": [
@@ -420,32 +402,15 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative",
-          "dragmode": "select"
+          "barmode": "relative"
         },
         "config": {
           "doubleClick": "reset",
           "showSendToCloud": false
         },
         "source": "A",
-        "attrs": {
-          "7610659048eb": {
-            "yintercept": {},
-            "type": "scatter"
-          },
-          "761063a37064": {
-            "x": {},
-            "y": {},
-            "customdata": {},
-            "colour": {},
-            "text": {}
-          }
-        },
-        "cur_data": "7610659048eb",
-        "visdat": {
-          "7610659048eb": ["function (y) ", "x"],
-          "761063a37064": ["function (y) ", "x"]
-        },
+        "cur_data": "env-name",
+        "attrs": [],
         "highlight": {
           "on": "plotly_click",
           "persistent": false,
@@ -464,7 +429,7 @@
 # can accurately plot numeric residuals vs. a numeric column plot
 
     Code
-      plotly::plotly_json(c, jsonedit = FALSE)
+      make_clean_snapshot(c)
     Output
       {
         "data": [
@@ -649,33 +614,15 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative",
-          "dragmode": "select"
+          "barmode": "relative"
         },
         "config": {
           "doubleClick": "reset",
           "showSendToCloud": false
         },
         "source": "A",
-        "attrs": {
-          "76102d8e0cad": {
-            "intercept": {},
-            "slope": {},
-            "type": "scatter"
-          },
-          "761048e24938": {
-            "x": {},
-            "y": {},
-            "customdata": {},
-            "colour": {},
-            "text": {}
-          }
-        },
-        "cur_data": "76102d8e0cad",
-        "visdat": {
-          "76102d8e0cad": ["function (y) ", "x"],
-          "761048e24938": ["function (y) ", "x"]
-        },
+        "cur_data": "env-name",
+        "attrs": [],
         "highlight": {
           "on": "plotly_click",
           "persistent": false,
@@ -694,7 +641,7 @@
 # can accurately plot numeric residuals vs. a factor column plot
 
     Code
-      plotly::plotly_json(d, jsonedit = FALSE)
+      make_clean_snapshot(d)
     Output
       {
         "data": [
@@ -903,38 +850,15 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative",
-          "dragmode": "select"
+          "barmode": "relative"
         },
         "config": {
           "doubleClick": "reset",
           "showSendToCloud": false
         },
         "source": "A",
-        "attrs": {
-          "761045109cdb": {
-            "x": {},
-            "y": {},
-            "type": "scatter"
-          },
-          "761045aa1149": {
-            "intercept": {},
-            "slope": {}
-          },
-          "76102054f35a": {
-            "x": {},
-            "y": {},
-            "customdata": {},
-            "colour": {},
-            "text": {}
-          }
-        },
-        "cur_data": "761045109cdb",
-        "visdat": {
-          "761045109cdb": ["function (y) ", "x"],
-          "761045aa1149": ["function (y) ", "x"],
-          "76102054f35a": ["function (y) ", "x"]
-        },
+        "cur_data": "env-name",
+        "attrs": [],
         "highlight": {
           "on": "plotly_click",
           "persistent": false,
