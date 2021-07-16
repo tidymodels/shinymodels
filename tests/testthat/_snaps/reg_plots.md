@@ -199,12 +199,12 @@
         },
         "source": "A",
         "attrs": {
-          "731322ce23c": {
+          "76102dcf17e6": {
             "intercept": {},
             "slope": {},
             "type": "scatter"
           },
-          "731350b8d241": {
+          "7610772a1488": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -212,10 +212,10 @@
             "text": {}
           }
         },
-        "cur_data": "731322ce23c",
+        "cur_data": "76102dcf17e6",
         "visdat": {
-          "731322ce23c": ["function (y) ", "x"],
-          "731350b8d241": ["function (y) ", "x"]
+          "76102dcf17e6": ["function (y) ", "x"],
+          "7610772a1488": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -429,11 +429,11 @@
         },
         "source": "A",
         "attrs": {
-          "73135ef78489": {
+          "7610659048eb": {
             "yintercept": {},
             "type": "scatter"
           },
-          "73134c1e6f14": {
+          "761063a37064": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -441,10 +441,10 @@
             "text": {}
           }
         },
-        "cur_data": "73135ef78489",
+        "cur_data": "7610659048eb",
         "visdat": {
-          "73135ef78489": ["function (y) ", "x"],
-          "73134c1e6f14": ["function (y) ", "x"]
+          "7610659048eb": ["function (y) ", "x"],
+          "761063a37064": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -658,12 +658,12 @@
         },
         "source": "A",
         "attrs": {
-          "73133d808b74": {
+          "76102d8e0cad": {
             "intercept": {},
             "slope": {},
             "type": "scatter"
           },
-          "731342438c37": {
+          "761048e24938": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -671,10 +671,10 @@
             "text": {}
           }
         },
-        "cur_data": "73133d808b74",
+        "cur_data": "76102d8e0cad",
         "visdat": {
-          "73133d808b74": ["function (y) ", "x"],
-          "731342438c37": ["function (y) ", "x"]
+          "76102d8e0cad": ["function (y) ", "x"],
+          "761048e24938": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -912,16 +912,16 @@
         },
         "source": "A",
         "attrs": {
-          "731369d7aadf": {
+          "761045109cdb": {
             "x": {},
             "y": {},
             "type": "scatter"
           },
-          "73134e134cc2": {
+          "761045aa1149": {
             "intercept": {},
             "slope": {}
           },
-          "731355147c99": {
+          "76102054f35a": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -929,11 +929,11 @@
             "text": {}
           }
         },
-        "cur_data": "731369d7aadf",
+        "cur_data": "761045109cdb",
         "visdat": {
-          "731369d7aadf": ["function (y) ", "x"],
-          "73134e134cc2": ["function (y) ", "x"],
-          "731355147c99": ["function (y) ", "x"]
+          "761045109cdb": ["function (y) ", "x"],
+          "761045aa1149": ["function (y) ", "x"],
+          "76102054f35a": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",

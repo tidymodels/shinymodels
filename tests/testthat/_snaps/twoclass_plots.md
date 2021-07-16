@@ -1,3 +1,366 @@
+# can accurately plot numeric observed vs. predicted plot
+
+    Code
+      plotly::plotly_json(a, jsonedit = FALSE)
+    Output
+      {
+        "data": [
+          {
+            "orientation": "v",
+            "width": [null, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.0249999999999999, 0.025, 0.0249999999999999, 0.025, 0.025, 0.0249999999999999, 0.025, 0.0249999999999999, 0.0250000000000001, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, null],
+            "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "x": [null, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975, null],
+            "y": [1, 0, 0, 1, 0, 1, 3, 1, 0, 1, 0, 0, 0, 0, 1, 2, 2, 2, 6, 6, 2, 6, 2, 5, 3, 3, 1, 5, 6, 2, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0],
+            "text": ["count:  1<br />.pred_Impaired: 0.000", "count:  0<br />.pred_Impaired: 0.025", "count:  0<br />.pred_Impaired: 0.050", "count:  1<br />.pred_Impaired: 0.075", "count:  0<br />.pred_Impaired: 0.100", "count:  1<br />.pred_Impaired: 0.125", "count:  3<br />.pred_Impaired: 0.150", "count:  1<br />.pred_Impaired: 0.175", "count:  0<br />.pred_Impaired: 0.200", "count:  1<br />.pred_Impaired: 0.225", "count:  0<br />.pred_Impaired: 0.250", "count:  0<br />.pred_Impaired: 0.275", "count:  0<br />.pred_Impaired: 0.300", "count:  0<br />.pred_Impaired: 0.325", "count:  1<br />.pred_Impaired: 0.350", "count:  2<br />.pred_Impaired: 0.375", "count:  2<br />.pred_Impaired: 0.400", "count:  2<br />.pred_Impaired: 0.425", "count:  6<br />.pred_Impaired: 0.450", "count:  6<br />.pred_Impaired: 0.475", "count:  2<br />.pred_Impaired: 0.500", "count:  6<br />.pred_Impaired: 0.525", "count:  2<br />.pred_Impaired: 0.550", "count:  5<br />.pred_Impaired: 0.575", "count:  3<br />.pred_Impaired: 0.600", "count:  3<br />.pred_Impaired: 0.625", "count:  1<br />.pred_Impaired: 0.650", "count:  5<br />.pred_Impaired: 0.675", "count:  6<br />.pred_Impaired: 0.700", "count:  2<br />.pred_Impaired: 0.725", "count:  2<br />.pred_Impaired: 0.750", "count:  1<br />.pred_Impaired: 0.775", "count:  1<br />.pred_Impaired: 0.800", "count:  0<br />.pred_Impaired: 0.825", "count:  1<br />.pred_Impaired: 0.850", "count:  0<br />.pred_Impaired: 0.875", "count:  0<br />.pred_Impaired: 0.900", "count:  0<br />.pred_Impaired: 0.925", "count:  0<br />.pred_Impaired: 0.950", "count:  0<br />.pred_Impaired: 0.975", "count:  0<br />.pred_Impaired: 1.000"],
+            "type": "bar",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(89,89,89,1)",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(255,255,255,1)"
+              }
+            },
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          },
+          {
+            "orientation": "v",
+            "width": [null, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.0249999999999999, 0.025, 0.0249999999999999, 0.025, 0.025, 0.0249999999999999, 0.025, 0.0249999999999999, 0.0250000000000001, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, 0.0249999999999999, null],
+            "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "x": [null, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25, 0.275, 0.3, 0.325, 0.35, 0.375, 0.4, 0.425, 0.45, 0.475, 0.5, 0.525, 0.55, 0.575, 0.6, 0.625, 0.65, 0.675, 0.7, 0.725, 0.75, 0.775, 0.8, 0.825, 0.85, 0.875, 0.9, 0.925, 0.95, 0.975, null],
+            "y": [2, 14, 15, 19, 16, 14, 18, 11, 12, 4, 8, 6, 4, 6, 5, 4, 4, 1, 3, 3, 3, 0, 1, 4, 1, 2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+            "text": ["count:  2<br />.pred_Impaired: 0.000", "count: 14<br />.pred_Impaired: 0.025", "count: 15<br />.pred_Impaired: 0.050", "count: 19<br />.pred_Impaired: 0.075", "count: 16<br />.pred_Impaired: 0.100", "count: 14<br />.pred_Impaired: 0.125", "count: 18<br />.pred_Impaired: 0.150", "count: 11<br />.pred_Impaired: 0.175", "count: 12<br />.pred_Impaired: 0.200", "count:  4<br />.pred_Impaired: 0.225", "count:  8<br />.pred_Impaired: 0.250", "count:  6<br />.pred_Impaired: 0.275", "count:  4<br />.pred_Impaired: 0.300", "count:  6<br />.pred_Impaired: 0.325", "count:  5<br />.pred_Impaired: 0.350", "count:  4<br />.pred_Impaired: 0.375", "count:  4<br />.pred_Impaired: 0.400", "count:  1<br />.pred_Impaired: 0.425", "count:  3<br />.pred_Impaired: 0.450", "count:  3<br />.pred_Impaired: 0.475", "count:  3<br />.pred_Impaired: 0.500", "count:  0<br />.pred_Impaired: 0.525", "count:  1<br />.pred_Impaired: 0.550", "count:  4<br />.pred_Impaired: 0.575", "count:  1<br />.pred_Impaired: 0.600", "count:  2<br />.pred_Impaired: 0.625", "count:  0<br />.pred_Impaired: 0.650", "count:  1<br />.pred_Impaired: 0.675", "count:  0<br />.pred_Impaired: 0.700", "count:  0<br />.pred_Impaired: 0.725", "count:  0<br />.pred_Impaired: 0.750", "count:  0<br />.pred_Impaired: 0.775", "count:  1<br />.pred_Impaired: 0.800", "count:  0<br />.pred_Impaired: 0.825", "count:  0<br />.pred_Impaired: 0.850", "count:  0<br />.pred_Impaired: 0.875", "count:  0<br />.pred_Impaired: 0.900", "count:  0<br />.pred_Impaired: 0.925", "count:  0<br />.pred_Impaired: 0.950", "count:  0<br />.pred_Impaired: 0.975", "count:  0<br />.pred_Impaired: 1.000"],
+            "type": "bar",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(89,89,89,1)",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(255,255,255,1)"
+              }
+            },
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y2",
+            "hoverinfo": "text",
+            "frame": null
+          }
+        ],
+        "layout": {
+          "margin": {
+            "t": 52.5296803652968,
+            "r": 7.30593607305936,
+            "b": 37.2602739726027,
+            "l": 37.2602739726027
+          },
+          "plot_bgcolor": "rgba(235,235,235,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
+          "font": {
+            "color": "rgba(0,0,0,1)",
+            "family": "",
+            "size": 14.6118721461187
+          },
+          "title": {
+            "text": "Predicted probabilities vs. true class",
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 17.5342465753425
+            },
+            "x": 0,
+            "xref": "paper"
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y2",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "annotations": [
+            {
+              "text": ".pred_Impaired",
+              "x": 0.5,
+              "y": -0.0337029789084584,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "top",
+              "annotationType": "axis"
+            },
+            {
+              "text": "count",
+              "x": -0.0337029789084584,
+              "y": 0.5,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -90,
+              "xanchor": "right",
+              "yanchor": "center",
+              "annotationType": "axis"
+            },
+            {
+              "text": "Class: Impaired",
+              "x": 0.5,
+              "y": 1,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            },
+            {
+              "text": "Class: Control",
+              "x": 0.5,
+              "y": 0.471732985431616,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            }
+          ],
+          "yaxis": {
+            "domain": [0.528267014568384, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.95, 19.95],
+            "tickmode": "array",
+            "ticktext": ["0", "5", "10", "15"],
+            "tickvals": [0, 5, 10, 15],
+            "categoryorder": "array",
+            "categoryarray": ["0", "5", "10", "15"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0.528267014568384,
+              "y1": 1
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 1,
+              "ysizemode": "pixel"
+            },
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 0.471732985431616
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 0.471732985431616,
+              "ysizemode": "pixel"
+            }
+          ],
+          "yaxis2": {
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.95, 19.95],
+            "tickmode": "array",
+            "ticktext": ["0", "5", "10", "15"],
+            "tickvals": [0, 5, 10, 15],
+            "categoryorder": "array",
+            "categoryarray": ["0", "5", "10", "15"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "domain": [0, 0.471732985431616],
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
+        },
+        "config": {
+          "doubleClick": "reset",
+          "showSendToCloud": false
+        },
+        "source": "A",
+        "attrs": {
+          "75fe7229cbad": {
+            "x": {},
+            "type": "bar"
+          }
+        },
+        "cur_data": "75fe7229cbad",
+        "visdat": {
+          "75fe7229cbad": ["function (y) ", "x"]
+        },
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
+
 # can accurately plot confusion matrix plot
 
     Code
@@ -158,7 +521,7 @@
         },
         "source": "A",
         "attrs": {
-          "74e83ed9e18d": {
+          "75e699816d0": {
             "xmin": {},
             "xmax": {},
             "ymin": {},
@@ -166,9 +529,9 @@
             "type": "scatter"
           }
         },
-        "cur_data": "74e83ed9e18d",
+        "cur_data": "75e699816d0",
         "visdat": {
-          "74e83ed9e18d": ["function (y) ", "x"]
+          "75e699816d0": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -535,7 +898,7 @@
         },
         "source": "A",
         "attrs": {
-          "72ea434d35e7": {
+          "75e6797bfa6f": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -544,9 +907,9 @@
             "type": "scatter"
           }
         },
-        "cur_data": "72ea434d35e7",
+        "cur_data": "75e6797bfa6f",
         "visdat": {
-          "72ea434d35e7": ["function (y) ", "x"]
+          "75e6797bfa6f": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -913,7 +1276,7 @@
         },
         "source": "A",
         "attrs": {
-          "72ea2fcfa8fc": {
+          "75e67cf29209": {
             "x": {},
             "y": {},
             "customdata": {},
@@ -922,9 +1285,9 @@
             "type": "scatter"
           }
         },
-        "cur_data": "72ea2fcfa8fc",
+        "cur_data": "75e67cf29209",
         "visdat": {
-          "72ea2fcfa8fc": ["function (y) ", "x"]
+          "75e67cf29209": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -1146,25 +1509,25 @@
         },
         "source": "A",
         "attrs": {
-          "74e86416a942": {
+          "75e6fba015a": {
             "x": {},
             "y": {},
             "type": "scatter"
           },
-          "74e8bc25f64": {
+          "75e67caec3c6": {
             "intercept": {},
             "slope": {}
           },
-          "74e8604a444": {
+          "75e635b73c1d": {
             "x": {},
             "y": {}
           }
         },
-        "cur_data": "74e86416a942",
+        "cur_data": "75e6fba015a",
         "visdat": {
-          "74e86416a942": ["function (y) ", "x"],
-          "74e8bc25f64": ["function (y) ", "x"],
-          "74e8604a444": ["function (y) ", "x"]
+          "75e6fba015a": ["function (y) ", "x"],
+          "75e67caec3c6": ["function (y) ", "x"],
+          "75e635b73c1d": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",
@@ -1368,20 +1731,20 @@
         },
         "source": "A",
         "attrs": {
-          "74e86400d433": {
+          "75e6153076d1": {
             "x": {},
             "y": {},
             "type": "scatter"
           },
-          "74e8726b938f": {
+          "75e620c89e35": {
             "x": {},
             "y": {}
           }
         },
-        "cur_data": "74e86400d433",
+        "cur_data": "75e6153076d1",
         "visdat": {
-          "74e86400d433": ["function (y) ", "x"],
-          "74e8726b938f": ["function (y) ", "x"]
+          "75e6153076d1": ["function (y) ", "x"],
+          "75e620c89e35": ["function (y) ", "x"]
         },
         "highlight": {
           "on": "plotly_click",

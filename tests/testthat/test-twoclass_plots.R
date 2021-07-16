@@ -9,10 +9,7 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
   org$predictions$.color <- "black"
   expect_error(
     plot_twoclass_obs_pred(org, org$y_name),
-    expect_error(
-      plot_numeric_obs_pred(org, org$y_name),
-      "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class two_cls_shiny_data/shiny_data"
-    )
+    "'Class' is not a column in the dataset"
   )
   expect_error(
     plot_twoclass_obs_pred(org$predictions, y_name),
