@@ -19,7 +19,7 @@ plot_numeric_obs_pred <- function(dat, y_name) {
     )) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
-    ggplot2::labs(title = "Observed vs. predicted", x = y_name, y = "Predicted") +
+    ggplot2::labs(title = "Observed vs Predicted", x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
   plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
@@ -44,7 +44,7 @@ plot_numeric_res_pred <- function(dat, y_name) {
     )) +
     ggplot2::scale_color_identity() +
     ggplot2::labs(
-      title = "Residuals vs. predicted",
+      title = "Residuals vs Predicted",
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
@@ -72,7 +72,7 @@ plot_numeric_res_numcol <-
         text = .hover
       )) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste(numcol, " vs. residual")) +
+      ggplot2::labs(title = paste("Residuals vs ", numcol)) +
       ggplot2::theme(legend.position = "none")
     plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
@@ -104,7 +104,7 @@ plot_numeric_res_factorcol <-
       )) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
-        title = paste(factorcol, " vs. residual"),
+        title = paste("Residuals vs ", factorcol),
         y = factorcol
       ) +
       ggplot2::theme(legend.position = "none")
