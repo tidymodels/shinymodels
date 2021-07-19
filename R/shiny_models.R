@@ -18,4 +18,3 @@ shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
 shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
   rlang::abort("No `shiny_models()` exists for this type of object.")
 }
-

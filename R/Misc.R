@@ -61,3 +61,4 @@ format_hover <- function(x, ...) {
   # # This returns a string
   apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }
+

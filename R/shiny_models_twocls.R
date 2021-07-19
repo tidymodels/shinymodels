@@ -11,15 +11,17 @@ shiny_models.two_cls_shiny_data <-
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
     ui <- shiny::fluidPage(theme = 'style.css',
+                           shinyjs::useShinyjs(),
                            #Navbar structure for UI
-                           navbarPage(
-                             "Welcome to Shinymodels!", theme = shinythemes::shinytheme("lumen"),
+                           navbarPage("Welcome to Shinymodels!",
+                             theme = shinythemes::shinytheme("flatly"),
                              tabPanel(
                                "Static Plots",
                                fluid = TRUE,
                                icon = icon("chart-bar"),
                                # Sidebar layout with a input and output definitions
                                sidebarLayout(
+                                 div(id = "Sidebar",
                                  shiny::sidebarPanel(
                                    shiny::checkboxGroupInput(
                                      "plots1",
@@ -31,9 +33,13 @@ shiny_models.two_cls_shiny_data <-
                                        "PR curve" = "pr"
                                      ),
                                      selected = "obs_vs_pred"
-                                   )
+                                   ),
+                                   width = 3
+                                 )
                                  ),
-                                 shiny::mainPanel(shiny::fluidRow(shiny::uiOutput("plot_list1"))
+                                 shiny::mainPanel(shiny::fluidRow(
+                                   actionButton("toggleSidebar", "toggle"),
+                                   shiny::uiOutput("plot_list1"))
                                  )
                                )
                              ),
@@ -43,34 +49,41 @@ shiny_models.two_cls_shiny_data <-
                                icon = icon("chart-line"),
                                # Sidebar layout with a input and output definitions
                                sidebarLayout(
+                                 div(id = "Sidebar",
                                  shiny::sidebarPanel(
-                                   shiny::checkboxGroupInput(
+                                   fluidRow(
+                                   column(4, shiny::checkboxGroupInput(
                                      "plots2",
                                      "Select interactive plot(s) to diagnose:",
                                      choices = list(
                                        "Predicted probabilities vs A numeric column" = "pred_vs_numcol",
                                        "Predicted probabilities vs A factor column" = "pred_vs_factorcol"
                                      ),
-                                     selected = "pred_vs_numcol"
-                                   ),
-                                   if (length(num_columns) == 0) {
-                                     NULL
-                                   }
-                                   else {
-                                     shiny::selectInput(inputId = "num_value_col",
-                                                        label = "Numeric Columns",
-                                                        choices = unique(c("None Selected" = "", num_columns)))
-                                   },
-                                   if (length(fac_columns) == 0) {
-                                     NULL
-                                   }
-                                   else {
-                                     shiny::selectInput(inputId = "factor_value_col",
-                                                        label = "Factor Columns",
-                                                        choices = unique(c("None Selected" = "", fac_columns)))
-                                   }
-                                 ),
-                                 shiny::mainPanel(shiny::fluidRow(shiny::uiOutput("plot_list2"))
+                                     selected = NULL
+                                   )),
+                                   shiny::helpText("Select column(s) to create plots"),
+                                    if (length(num_columns) == 0) {
+                                      shiny::helpText("No numeric column to display")
+                                    }
+                                    else {
+                                      column(4, shiny::selectInput(inputId = "num_value_col",
+                                                         label = "Numeric Columns",
+                                                         choices = unique(c("None Selected" = "", num_columns))))
+                                    },
+                                    if (length(fac_columns) == 0) {
+                                      shiny::helpText("No factor column to display")
+                                    }
+                                    else {
+                                      column(4, shiny::selectInput(inputId = "factor_value_col",
+                                                         label = "Factor Columns",
+                                                         choices = unique(c("None Selected" = "", fac_columns))
+                                      ))}
+                                  ),
+                                  width = 2.5
+                               )),
+                                 shiny::mainPanel(
+                                   actionButton("toggleSidebar", "toggle"),
+                                   shiny::fluidRow(shiny::uiOutput("plot_list2"))
                                  )
                                )
                              )
@@ -78,7 +91,10 @@ shiny_models.two_cls_shiny_data <-
     )
 
     server <- function(input, output, session) {
-      selected_rows <- shiny::reactiveVal()
+      observeEvent(input$toggleSidebar, {
+        shinyjs::toggle(id = "Sidebar")
+      })
+       selected_rows <- shiny::reactiveVal()
       if (hover_only) {
         selected_rows(NULL)
       }
@@ -143,7 +159,7 @@ shiny_models.two_cls_shiny_data <-
       output$plot_list1 <- shiny::renderUI({
         plot_output_list1 <- lapply(input$plots1,
                                     function(plotname) {
-                                      plotly::plotlyOutput(plotname) ##TODO wrap the plotOutput in column to render side-by-side
+                                      column(6, plotly::plotlyOutput(plotname)) ##TODO wrap the plotOutput in column to render side-by-side
                                     })
 
         # Convert the list to a tagList - this is necessary for the list of items
@@ -153,7 +169,7 @@ shiny_models.two_cls_shiny_data <-
       output$plot_list2 <- shiny::renderUI({
         plot_output_list2 <- lapply(input$plots2,
                                     function(plotname) {
-                                      plotly::plotlyOutput(plotname) ##TODO wrap the plotOutput in column to render side-by-side
+                                      column(6, plotly::plotlyOutput(plotname)) ##wrapped in column to render side-by-side
                                     })
 
         # Convert the list to a tagList - this is necessary for the list of items
