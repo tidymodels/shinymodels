@@ -107,7 +107,7 @@ shiny_models.reg_shiny_data <-
       output$plot_list <- shiny::renderUI({
         plot_output_list <- lapply(input$plots,
                                    function(plotname) {
-                                     plotly::plotlyOutput(plotname) ##TODO wrap the plotOutput in column to render side-by-side
+                                     plotly::plotlyOutput(plotname) ##if desired, wrap in column to render side-by-side
                                    })
 
         # Convert the list to a tagList - this is necessary for the list of items
