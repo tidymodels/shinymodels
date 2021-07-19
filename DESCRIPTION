@@ -46,6 +46,7 @@ Imports:
     plotly,
     rlang,
     shiny,
+    shinythemes,
     stats,
     tidymodels,
     tidyselect,

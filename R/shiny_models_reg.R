@@ -11,39 +11,43 @@ shiny_models.reg_shiny_data <-
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
     ui <- shiny::fluidPage(
-      shiny::headerPanel("Welcome to Shinymodels!"),
-      shiny::sidebarPanel(
-        shiny::checkboxGroupInput(
-          "plots",
-          "Select plots to diagnose:",
-          choices = list("Observed vs. Predicted" = "obs_vs_pred",
-                         "Residuals vs Predicted" = "resid_vs_pred",
-                         "Residuals vs A numeric column" = "resid_vs_numcol",
-                         "Residuals vs A factor column" = "resid_vs_factorcol"),
-          selected = "obs_vs_pred"
-        ),
-        if (length(num_columns) == 0) {
-          NULL
-        }
-        else {
-          shiny::selectInput(
-            inputId = "num_value_col",
-            label = "Numeric Columns",
-            choices = unique(c("None Selected" = "", num_columns))
-          )
-        },
-        if (length(fac_columns) == 0) {
-          NULL
-        }
-        else {
-          shiny::selectInput(
-            inputId = "factor_value_col",
-            label = "Factor Columns",
-            choices = unique(c("None Selected" = "", fac_columns))
-          )
-        }),
-      shiny::mainPanel(
-        shiny::fluidRow(shiny::uiOutput("plot_list"))
+      theme = 'style.css',
+      #Navbar structure for UI
+      navbarPage(
+        "Welcome to Shinymodels!",
+        theme = shinythemes::shinytheme("lumen"),
+        sidebarLayout(
+          shiny::sidebarPanel(
+            shiny::checkboxGroupInput(
+              "plots",
+              "Select plots to diagnose:",
+              choices = list(
+                "Observed vs. Predicted" = "obs_vs_pred",
+                "Residuals vs Predicted" = "resid_vs_pred",
+                "Residuals vs A numeric column" = "resid_vs_numcol",
+                "Residuals vs A factor column" = "resid_vs_factorcol"
+              ),
+              selected = "obs_vs_pred"
+            ),
+            if (length(num_columns) == 0) {
+              NULL
+            }
+            else {
+              shiny::selectInput(inputId = "num_value_col",
+                                 label = "Numeric Columns",
+                                 choices = unique(c("None Selected" = "", num_columns)))
+            },
+            if (length(fac_columns) == 0) {
+              NULL
+            }
+            else {
+              shiny::selectInput(inputId = "factor_value_col",
+                                 label = "Factor Columns",
+                                 choices = unique(c("None Selected" = "", fac_columns)))
+            }
+          ),
+          shiny::mainPanel(shiny::fluidRow(shiny::uiOutput("plot_list")))
+        )
       )
     )
 
@@ -54,10 +58,8 @@ shiny_models.reg_shiny_data <-
       }
       else {
         shiny::observe({
-          new <- c(
-            #TODO not sure if we need this plotly::event_data("plotly_click")$customdata,
-            plotly::event_data("plotly_selected")$customdata
-          )
+          new <- c(#TODO not sure if we need this plotly::event_data("plotly_click")$customdata,
+            plotly::event_data("plotly_selected")$customdata)
           if (length(new)) {
             current <- shiny::isolate(selected_rows())
             selected_rows(unique(c(current, new)))
@@ -89,7 +91,7 @@ shiny_models.reg_shiny_data <-
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
         req(preds_dat())
-        if ("resid_vs_numcol" %in% input$plots){
+        if ("resid_vs_numcol" %in% input$plots) {
           plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col)
         }
       })
@@ -97,7 +99,7 @@ shiny_models.reg_shiny_data <-
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         req(preds_dat())
-        if ("resid_vs_factorcol" %in% input$plots){
+        if ("resid_vs_factorcol" %in% input$plots) {
           plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col)
         }
       })

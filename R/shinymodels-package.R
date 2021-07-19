@@ -13,6 +13,7 @@ NULL
 #' @importFrom broom augment
 #' @import yardstick
 #' @import shiny
+#' @import shinythemes
 #' @import dplyr
 #' @import ggplot2
 #' @import rlang
