@@ -23,7 +23,7 @@ shiny_models.two_cls_shiny_data <-
                                  shiny::sidebarPanel(
                                    shiny::checkboxGroupInput(
                                      "plots1",
-                                     "Select static plots to diagnose:",
+                                     "Select static plot(s) to diagnose:",
                                      choices = list(
                                        "Predicted probabilities vs True class" = "obs_vs_pred",
                                        "Confusion Matrix" = "conf_mat",
@@ -46,7 +46,7 @@ shiny_models.two_cls_shiny_data <-
                                shiny::sidebarPanel(
                                  shiny::checkboxGroupInput(
                                    "plots2",
-                                   "Select interactive plots to diagnose:",
+                                   "Select interactive plot(s) to diagnose:",
                                    choices = list(
                                      "Predicted probabilities vs A numeric column" = "pred_vs_numcol",
                                      "Predicted probabilities vs A factor column" = "pred_vs_factorcol"

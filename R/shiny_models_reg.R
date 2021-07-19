@@ -20,7 +20,7 @@ shiny_models.reg_shiny_data <-
           shiny::sidebarPanel(
             shiny::checkboxGroupInput(
               "plots",
-              "Select plots to diagnose:",
+              "Select plot(s) to diagnose:",
               choices = list(
                 "Observed vs. Predicted" = "obs_vs_pred",
                 "Residuals vs Predicted" = "resid_vs_pred",
