@@ -44,7 +44,8 @@ shiny_models.reg_shiny_data <-
               shiny::selectInput(inputId = "factor_value_col",
                                  label = "Factor Columns",
                                  choices = unique(c("None Selected" = "", fac_columns)))
-            }
+            },
+            shiny::helpText("Select column(s) to create plots")
           ),
           shiny::mainPanel(shiny::fluidRow(shiny::uiOutput("plot_list")))
         )
