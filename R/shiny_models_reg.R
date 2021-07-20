@@ -18,44 +18,59 @@ shiny_models.reg_shiny_data <-
         "Welcome to Shinymodels!",
         theme = shinythemes::shinytheme("flatly"),
         sidebarLayout(
-          div(id = "Sidebar",
-          shiny::sidebarPanel(
-            fluidRow(
-              column(4,
-                     shiny::checkboxGroupInput(
-                "plots",
-                "Select plot(s) to diagnose:",
-                choices = list(
-                  "Observed vs. Predicted" = "obs_vs_pred",
-                  "Residuals vs Predicted" = "resid_vs_pred",
-                  "Residuals vs A numeric column" = "resid_vs_numcol",
-                  "Residuals vs A factor column" = "resid_vs_factorcol"
+          div(
+            id = "Sidebar",
+            shiny::sidebarPanel(
+              fluidRow(
+                column(
+                  4,
+                  shiny::checkboxGroupInput(
+                    "plots",
+                    "Select plot(s) to diagnose:",
+                    choices = list(
+                      "Observed vs. Predicted" = "obs_vs_pred",
+                      "Residuals vs Predicted" = "resid_vs_pred",
+                      "Residuals vs A numeric column" = "resid_vs_numcol",
+                      "Residuals vs A factor column" = "resid_vs_factorcol"
+                    ),
+                    selected = "obs_vs_pred"
+                  )
                 ),
-                selected = "obs_vs_pred"
-              )),
-              shiny::helpText("Select column(s) to create plots"),
-                column(3,
-                       if (length(num_columns) == 0) {
-                         shiny::helpText("No numeric column to display")
-                       }
-                       else {
-                       shiny::selectInput(inputId = "num_value_col",
-                                   label = "Numeric Columns",
-                                   choices = unique(c("None Selected" = "", num_columns)))}),
-                column(3,
-                       if (length(fac_columns) == 0) {
-                         shiny::helpText("No factor column to display")
-                       }
-                       else {
-                       shiny::selectInput(inputId = "factor_value_col",
-                                   label = "Factor Columns",
-                                   choices = unique(c("None Selected" = "", fac_columns)))})
-            ),
-            width = 2.5
-          )),
+                shiny::helpText("Select column(s) to create plots"),
+                column(
+                  3,
+                  if (length(num_columns) == 0) {
+                    shiny::helpText("No numeric column to display")
+                  }
+                  else {
+                    shiny::selectInput(
+                      inputId = "num_value_col",
+                      label = "Numeric Columns",
+                      choices = unique(c("None Selected" = "", num_columns))
+                    )
+                  }
+                ),
+                column(
+                  3,
+                  if (length(fac_columns) == 0) {
+                    shiny::helpText("No factor column to display")
+                  }
+                  else {
+                    shiny::selectInput(
+                      inputId = "factor_value_col",
+                      label = "Factor Columns",
+                      choices = unique(c("None Selected" = "", fac_columns))
+                    )
+                  }
+                )
+              ),
+              width = 2.5
+            )
+          ),
           shiny::mainPanel(
             actionButton("toggleSidebar", "toggle sidebar"),
-            shiny::fluidRow(shiny::uiOutput("plot_list")))
+            shiny::fluidRow(shiny::uiOutput("plot_list"))
+          )
         )
       )
     )
@@ -71,8 +86,10 @@ shiny_models.reg_shiny_data <-
       else {
         shiny::observe({
           new <-
-            c(plotly::event_data("plotly_click")$customdata,
-              plotly::event_data("plotly_selected")$customdata)
+            c(
+              plotly::event_data("plotly_click")$customdata,
+              plotly::event_data("plotly_selected")$customdata
+            )
           if (length(new)) {
             current <- shiny::isolate(selected_rows())
             selected_rows(unique(c(current, new)))
@@ -114,10 +131,12 @@ shiny_models.reg_shiny_data <-
       })
 
       output$plot_list <- shiny::renderUI({
-        plot_output_list <- lapply(input$plots,
-                                   function(plotname) {
-                                     column(6, plotly::plotlyOutput(plotname)) ## wrapped in column to render side-by-side
-                                   })
+        plot_output_list <- lapply(
+          input$plots,
+          function(plotname) {
+            column(6, plotly::plotlyOutput(plotname)) ## wrapped in column to render side-by-side
+          }
+        )
 
         # Convert the list to a tagList - this is necessary for the list of items
         # to display properly.
