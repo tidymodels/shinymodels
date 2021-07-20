@@ -71,7 +71,7 @@ shiny_models.reg_shiny_data <-
       else {
         shiny::observe({
           new <-
-            c(# TODO not sure if we need this plotly::event_data("plotly_click")$customdata,
+            c(plotly::event_data("plotly_click")$customdata,
               plotly::event_data("plotly_selected")$customdata)
           if (length(new)) {
             current <- shiny::isolate(selected_rows())
@@ -88,14 +88,12 @@ shiny_models.reg_shiny_data <-
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
-        req(preds_dat())
         if ("obs_vs_pred" %in% input$plots) {
           plot_numeric_obs_pred(preds_dat(), x$y_name)
         }
       })
 
       output$resid_vs_pred <- plotly::renderPlotly({
-        req(preds_dat())
         if ("resid_vs_pred" %in% input$plots) {
           plot_numeric_res_pred(preds_dat(), x$y_name)
         }
@@ -103,7 +101,6 @@ shiny_models.reg_shiny_data <-
 
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        req(preds_dat())
         if ("resid_vs_numcol" %in% input$plots) {
           plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col)
         }
@@ -111,7 +108,6 @@ shiny_models.reg_shiny_data <-
 
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        req(preds_dat())
         if ("resid_vs_factorcol" %in% input$plots) {
           plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col)
         }

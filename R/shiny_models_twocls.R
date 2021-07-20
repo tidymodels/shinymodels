@@ -101,7 +101,7 @@ shiny_models.two_cls_shiny_data <-
       else {
         shiny::observe({
           new <-
-            c(#TODO not sure if we even need this plotly::event_data("plotly_click")$customdata,
+            c(plotly::event_data("plotly_click")$customdata,
               plotly::event_data("plotly_selected")$customdata)
           if (length(new)) {
             current <- shiny::isolate(selected_rows())
@@ -117,40 +117,34 @@ shiny_models.two_cls_shiny_data <-
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        req(preds_dat())
         if ("obs_vs_pred" %in% input$plots1) {
           plot_twoclass_obs_pred(preds_dat(), x$y_name)
         }
       })
       output$conf_mat <- plotly::renderPlotly({
-        req(preds_dat())
         if ("conf_mat" %in% input$plots1) {
           plot_twoclass_conf_mat(preds_dat())
         }
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        req(preds_dat())
         if ("pred_vs_numcol" %in% input$plots2) {
           plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col)
         }
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        req(preds_dat())
         if ("pred_vs_factorcol" %in% input$plots2) {
           plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col)
         }
       })
 
       output$roc <- plotly::renderPlotly({
-        req(preds_dat())
         if ("roc" %in% input$plots1) {
           plot_twoclass_roc(preds_dat(), x$y_name)
         }
       })
       output$pr <- plotly::renderPlotly({
-        req(preds_dat())
         if ("pr" %in% input$plots1) {
           plot_twoclass_pr(preds_dat(), x$y_name)
         }
