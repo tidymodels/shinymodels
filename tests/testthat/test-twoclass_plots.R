@@ -17,7 +17,7 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
     "object 'y_name' not found"
   )
   a <- plot_twoclass_obs_pred(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(a))
+  expect_snapshot_output(make_clean_snapshot(a))
 })
 
 test_that("can accurately plot confusion matrix plot", {
@@ -32,7 +32,7 @@ test_that("can accurately plot confusion matrix plot", {
    "no applicable method for 'conf_mat' applied to an object of class"
   )
   b <- plot_twoclass_conf_mat(org$predictions)
-  expect_snapshot(make_clean_snapshot(b))
+  expect_snapshot_output(make_clean_snapshot(b))
 })
 
 test_that("can accurately plot predicted probabilities vs. a numeric column plot", {
@@ -61,7 +61,7 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
   c <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
   "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(c))
+  expect_snapshot_output(make_clean_snapshot(c))
 })
 
 test_that("can accurately plot predicted probabilities vs. a factor column plot", {
@@ -90,7 +90,7 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     d <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(d))
+  expect_snapshot_output(make_clean_snapshot(d))
 })
 
 test_that("can accurately plot the ROC curve", {
@@ -109,7 +109,7 @@ test_that("can accurately plot the ROC curve", {
     "object 'y_name' not found"
   )
   e <- plot_twoclass_roc(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(e))
+  expect_snapshot_output(make_clean_snapshot(e))
 })
 
 test_that("can accurately plot the PR curve", {
@@ -132,5 +132,5 @@ test_that("can accurately plot the PR curve", {
     "'mpg' is not a column in the dataset"
   )
   f <- plot_twoclass_pr(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(f))
+  expect_snapshot_output(make_clean_snapshot(f))
 })

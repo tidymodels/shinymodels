@@ -23,7 +23,7 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
     a <- plot_numeric_obs_pred(org$predictions, org$y_name),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(a))
+  expect_snapshot_output(make_clean_snapshot(a))
 })
 
 test_that("can accurately plot numeric residuals vs. predicted plot", {
@@ -41,7 +41,7 @@ test_that("can accurately plot numeric residuals vs. predicted plot", {
     b <- plot_numeric_res_pred(org$predictions, org$y_name),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(b))
+  expect_snapshot_output(make_clean_snapshot(b))
 })
 
 test_that("can accurately plot numeric residuals vs. a numeric column plot", {
@@ -66,7 +66,7 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
     c <- plot_numeric_res_numcol(org$predictions, org$y_name,"hp"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(c))
+  expect_snapshot_output(make_clean_snapshot(c))
 })
 
 test_that("can accurately plot numeric residuals vs. a factor column plot", {
@@ -91,5 +91,5 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
     d <- plot_numeric_res_factorcol(org$predictions, org$y_name, "Street"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(d))
+  expect_snapshot_output(make_clean_snapshot(d))
 })
