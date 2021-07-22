@@ -21,8 +21,10 @@ plot_numeric_obs_pred <- function(dat, y_name) {
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs. predicted", x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text") %>%
+  fig <- plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
+  fig <- fig %>% plotly::toWebGL()
+  fig
 }
 
 #' Visualizing residuals vs. predicted values for a regression model
@@ -48,8 +50,10 @@ plot_numeric_res_pred <- function(dat, y_name) {
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text") %>%
+  fig <- plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
+  fig <- fig %>% plotly::toWebGL()
+  fig
 }
 
 #' Visualizing residuals vs. a numeric column for a regression model
@@ -74,8 +78,10 @@ plot_numeric_res_numcol <-
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste(numcol, " vs. residual")) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text") %>%
+    fig <- plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
+    fig <- fig %>% plotly::toWebGL()
+    fig
   }
 
 #' Visualizing residuals vs. a factor column for a regression model
@@ -108,6 +114,8 @@ plot_numeric_res_factorcol <-
         y = factorcol
       ) +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text") %>%
+  fig <- plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
+  fig <- fig %>% plotly::toWebGL()
+  fig
   }
