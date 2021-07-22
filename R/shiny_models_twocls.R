@@ -43,33 +43,33 @@ shiny_models.two_cls_shiny_data <-
         shinydashboard::tabItems(
           # First tab content
           shinydashboard::tabItem(tabName = "static",
-                  shiny::fluidRow(
-                    shinydashboard::box( plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
-                                         title = "Predicted probabilities vs True class", status = "primary", collapsed = T),
-                    shinydashboard::box( plotly::plotlyOutput("conf_mat"), solidHeader = T, collapsible = T,
-                                         title =  "Confusion Matrix", status = "primary", collapsed = T),
-                    shinydashboard::box( plotly::plotlyOutput("roc"), solidHeader = T, collapsible = T,
-                                         title = "ROC curve", status = "primary", collapsed = T),
-                    shinydashboard::box( plotly::plotlyOutput("pr"), solidHeader = T, collapsible = T,
-                                         title =  "PR curve", status = "primary", collapsed = T)
-                  )
+                                  shiny::fluidRow(
+                                    shinydashboard::box( plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
+                                                         title = "Predicted probabilities vs True class", status = "primary", collapsed = T),
+                                    shinydashboard::box( plotly::plotlyOutput("conf_mat"), solidHeader = T, collapsible = T,
+                                                         title =  "Confusion Matrix", status = "primary", collapsed = T),
+                                    shinydashboard::box( plotly::plotlyOutput("roc"), solidHeader = T, collapsible = T,
+                                                         title = "ROC curve", status = "primary", collapsed = T),
+                                    shinydashboard::box( plotly::plotlyOutput("pr"), solidHeader = T, collapsible = T,
+                                                         title =  "PR curve", status = "primary", collapsed = T)
+                                  )
           ),
           # Second tab content
           shinydashboard::tabItem(tabName = "interactive",
-                  shiny::fluidRow(
-                    if (length(num_columns)==0){
-                      NULL
-                    }
-                    else{
-                    shinydashboard::box( plotly::plotlyOutput("pred_vs_numcol"), solidHeader = T, collapsible = T,
-                                         title = "Predicted probabilities vs A numeric column", status = "primary", collapsed = T)},
-                    if (length(fac_columns)==0){
-                      NULL
-                    }
-                    else{
-                     shinydashboard::box( plotly::plotlyOutput("pred_vs_factorcol"), solidHeader = T, collapsible = T,
-                                         title =  "Predicted probabilities vs A factor column", status = "primary", collapsed = T)}
-                  )
+                                  shiny::fluidRow(
+                                    if (length(num_columns)==0){
+                                      NULL
+                                    }
+                                    else{
+                                      shinydashboard::box( plotly::plotlyOutput("pred_vs_numcol"), solidHeader = T, collapsible = T,
+                                                           title = "Predicted probabilities vs A numeric column", status = "primary", collapsed = T)},
+                                    if (length(fac_columns)==0){
+                                      NULL
+                                    }
+                                    else{
+                                      shinydashboard::box( plotly::plotlyOutput("pred_vs_factorcol"), solidHeader = T, collapsible = T,
+                                                           title =  "Predicted probabilities vs A factor column", status = "primary", collapsed = T)}
+                                  )
           )
         )
       )
@@ -107,18 +107,18 @@ shiny_models.two_cls_shiny_data <-
         plot_twoclass_conf_mat(preds_dat())
       })
       output$roc <- plotly::renderPlotly({
-          plot_twoclass_roc(preds_dat(), x$y_name)
+        plot_twoclass_roc(preds_dat(), x$y_name)
       })
       output$pr <- plotly::renderPlotly({
-          plot_twoclass_pr(preds_dat(), x$y_name)
+        plot_twoclass_pr(preds_dat(), x$y_name)
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-          plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col)
+        plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col)
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-          plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col)
+        plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col)
       })
     }
 

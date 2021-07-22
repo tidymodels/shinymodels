@@ -40,29 +40,29 @@ shiny_models.reg_shiny_data <-
         shinydashboard::tabItems(
           # First tab content
           shinydashboard::tabItem(tabName = "interactive",
-                  shiny::fluidRow(
-                    shinydashboard::box(plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
-                                 title = "Observed vs. Predicted", status = "primary", collapsed = T),
-            shinydashboard::box( plotly::plotlyOutput("resid_vs_pred"), solidHeader = T, collapsible = T,
-                                 title =  "Residuals vs Predicted", status = "primary", collapsed = T),
-            if (length(num_columns)==0){
-              NULL
-            }
-            else{
-              shinydashboard::box( plotly::plotlyOutput("resid_vs_numcol"), solidHeader = T, collapsible = T,
-                                   title = "Residuals vs A numeric column", status = "primary", collapsed = T)
-            },
-            if (length(fac_columns)==0){
-              NULL
-            }
-            else{
-              shinydashboard::box( plotly::plotlyOutput("resid_vs_factorcol"), solidHeader = T, collapsible = T,
-                                   title = "Residuals vs A factor column", status = "primary", collapsed = T)
-            }
+                                  shiny::fluidRow(
+                                    shinydashboard::box(plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
+                                                        title = "Observed vs. Predicted", status = "primary", collapsed = T),
+                                    shinydashboard::box( plotly::plotlyOutput("resid_vs_pred"), solidHeader = T, collapsible = T,
+                                                         title =  "Residuals vs Predicted", status = "primary", collapsed = T),
+                                    if (length(num_columns)==0){
+                                      NULL
+                                    }
+                                    else{
+                                      shinydashboard::box( plotly::plotlyOutput("resid_vs_numcol"), solidHeader = T, collapsible = T,
+                                                           title = "Residuals vs A numeric column", status = "primary", collapsed = T)
+                                    },
+                                    if (length(fac_columns)==0){
+                                      NULL
+                                    }
+                                    else{
+                                      shinydashboard::box( plotly::plotlyOutput("resid_vs_factorcol"), solidHeader = T, collapsible = T,
+                                                           title = "Residuals vs A factor column", status = "primary", collapsed = T)
+                                    }
+                                  )
           )
         )
       )
-    )
     )
     # Define server logic required to draw a histogram
     server <- function(input, output) {
