@@ -9,10 +9,10 @@ shiny_models.reg_shiny_data <-
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
     ui <- shinydashboard::dashboardPage(
-      dashboardHeader(title = "Shinymodels"),
-      dashboardSidebar(
-        sidebarMenu(
-          menuItem("Plots", tabName = "interactive", icon = icon("chart-line")),
+      shinydashboard::dashboardHeader(title = "Shinymodels"),
+      shinydashboard::dashboardSidebar(
+        shinydashboard::sidebarMenu(
+          shinydashboard::menuItem("Plots", tabName = "interactive", icon = icon("chart-line")),
           shiny::helpText("Select column(s) to create plots"),
           if (length(num_columns) == 0) {
             shiny::helpText("No numeric column to display")
@@ -36,11 +36,11 @@ shiny_models.reg_shiny_data <-
           }
         )
       ),
-      dashboardBody(
-        tabItems(
+      shinydashboard::dashboardBody(
+        shinydashboard::tabItems(
           # First tab content
-          tabItem(tabName = "interactive",
-                  fluidRow(
+          shinydashboard::tabItem(tabName = "interactive",
+                  shiny::fluidRow(
                     shinydashboard::box(plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
                                  title = "Observed vs. Predicted", status = "primary", collapsed = T),
             shinydashboard::box( plotly::plotlyOutput("resid_vs_pred"), solidHeader = T, collapsible = T,
@@ -106,6 +106,6 @@ shiny_models.reg_shiny_data <-
     }
 
     # Run the application
-    shinyApp(ui = ui, server = server)
+    shiny::shinyApp(ui = ui, server = server)
 
   }

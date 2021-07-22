@@ -33,6 +33,8 @@ utils::globalVariables(
     "Class",
     "delta",
     ".hover",
-    ".outcome"
+    ".outcome",
+    "icon",
+    "req"
   )
 )
