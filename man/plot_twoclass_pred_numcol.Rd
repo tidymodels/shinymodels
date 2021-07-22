@@ -9,6 +9,9 @@ plot_twoclass_pred_numcol(
   dat,
   y_name,
   numcol,
+  alpha,
+  size,
+  prob_scaling = FALSE,
   event_level = "first",
   prob_breaks = (2:9)/10,
   prob_eps = 0.001
@@ -21,6 +24,12 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{y_name}{The y/response variable for the model.}
 
 \item{numcol}{The numerical column to plot against the predicted probabilities.}
+
+\item{alpha}{The opacity for the geom points.}
+
+\item{size}{The size for the geom points.}
+
+\item{prob_scaling}{The boolean to turn on or off the logit scale for probability.}
 
 \item{event_level}{A single character value for the level corresponding to the event.}
 

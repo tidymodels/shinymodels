@@ -11,8 +11,10 @@ NULL
 #' @importFrom tune .get_tune_outcome_names collect_predictions
 #' @importFrom stats reorder
 #' @importFrom broom augment
+#' @importFrom scales logit_trans
 #' @import yardstick
 #' @import shiny
+#' @import shinydashboard
 #' @import dplyr
 #' @import ggplot2
 #' @import rlang

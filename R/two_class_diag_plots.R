@@ -20,7 +20,7 @@ plot_twoclass_obs_pred <-
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    p <- dat %>%
+    dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_wrap(~Class, # TODO
@@ -29,9 +29,6 @@ plot_twoclass_obs_pred <-
       ) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
 
 #' Visualizing the confusion matrix for a classification model
@@ -44,12 +41,9 @@ plot_twoclass_obs_pred <-
 #' A [ggplot2::ggplot()] object.
 plot_twoclass_conf_mat <- function(dat) {
   # plotting
-  p <- dat %>%
+  dat %>%
     yardstick::conf_mat(truth = Class, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  fig <- plotly::ggplotly(p)
-  fig <- fig %>% plotly::toWebGL()
-  fig
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
@@ -59,6 +53,10 @@ plot_twoclass_conf_mat <- function(dat) {
 #' on {tidymodels} results for a two-class classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
+#' @param alpha The opacity for the geom points.
+#' @param size The size for the geom points.
+#' @param prob_scaling The boolean to turn on or off the logit scale for probability.
+#' @param size The size for the geom points.
 #' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
@@ -69,6 +67,9 @@ plot_twoclass_pred_numcol <-
   function(dat,
            y_name,
            numcol,
+           alpha,
+           size,
+           prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
@@ -85,6 +86,8 @@ plot_twoclass_pred_numcol <-
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
       ggplot2::geom_point(ggplot2::aes(
+        alpha = alpha,
+        size = size,
         customdata = .row,
         color = .color,
         text = .hover
@@ -98,10 +101,11 @@ plot_twoclass_pred_numcol <-
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       ggplot2::theme(legend.position = "none")
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    if (prob_scaling) {
+      p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+    }
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
 
 #' Visualizing the predicted probabilities vs. a factor variable for a classification
@@ -120,6 +124,9 @@ plot_twoclass_pred_factorcol <-
   function(dat,
            y_name,
            factorcol,
+           alpha,
+           size,
+           prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
@@ -136,6 +143,8 @@ plot_twoclass_pred_factorcol <-
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
       ggplot2::geom_point(ggplot2::aes(
+        alpha = alpha,
+        size = size,
         customdata = .row,
         color = .color,
         text = .hover
@@ -152,10 +161,11 @@ plot_twoclass_pred_factorcol <-
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       ggplot2::theme(legend.position = "none")
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    if (prob_scaling) {
+      p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+    }
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
 
 #' Visualizing the ROC curve for a classification model
@@ -176,7 +186,7 @@ plot_twoclass_roc <-
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
       dplyr::slice(1)
-    p <- ggplot2::autoplot(res) +
+    ggplot2::autoplot(res) +
       ggplot2::geom_point(
         data = fifty,
         ggplot2::aes(
@@ -184,9 +194,6 @@ plot_twoclass_roc <-
           y = sensitivity
         )
       )
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
 
 #' Visualizing the PR curve for a classification model
@@ -207,7 +214,7 @@ plot_twoclass_pr <-
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
       dplyr::slice(1)
-    p <- ggplot2::autoplot(res) +
+    ggplot2::autoplot(res) +
       ggplot2::geom_point(
         data = fifty,
         ggplot2::aes(
@@ -215,7 +222,4 @@ plot_twoclass_pr <-
           y = precision
         )
       )
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
