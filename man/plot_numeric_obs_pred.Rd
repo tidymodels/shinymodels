@@ -4,7 +4,7 @@
 \alias{plot_numeric_obs_pred}
 \title{Visualizing observed vs. predicted values for a regression model}
 \usage{
-plot_numeric_obs_pred(dat, y_name, alpha, size)
+plot_numeric_obs_pred(dat, y_name, alpha = 1, size = 1)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following

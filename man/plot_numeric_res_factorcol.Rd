@@ -4,7 +4,7 @@
 \alias{plot_numeric_res_factorcol}
 \title{Visualizing residuals vs. a factor column for a regression model}
 \usage{
-plot_numeric_res_factorcol(dat, y_name, factorcol, alpha, size)
+plot_numeric_res_factorcol(dat, y_name, factorcol, alpha = 1, size = 1)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following

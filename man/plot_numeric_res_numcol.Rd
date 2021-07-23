@@ -4,7 +4,7 @@
 \alias{plot_numeric_res_numcol}
 \title{Visualizing residuals vs. a numeric column for a regression model}
 \usage{
-plot_numeric_res_numcol(dat, y_name, numcol, alpha, size)
+plot_numeric_res_numcol(dat, y_name, numcol, alpha = 1, size = 1)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following

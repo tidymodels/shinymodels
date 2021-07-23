@@ -11,7 +11,7 @@
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_obs_pred <- function(dat, y_name, alpha, size) {
+plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(
@@ -40,7 +40,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha, size) {
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_res_pred <- function(dat, y_name, alpha, size) {
+plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
     ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
@@ -72,7 +72,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha, size) {
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_numcol <-
-  function(dat, y_name, numcol, alpha, size) {
+  function(dat, y_name, numcol, alpha = 1, size = 1) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
@@ -101,7 +101,7 @@ plot_numeric_res_numcol <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_factorcol <-
-  function(dat, y_name, factorcol, alpha, size) {
+  function(dat, y_name, factorcol, alpha = 1, size = 1) {
     p <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(
         !!rlang::sym(factorcol),
