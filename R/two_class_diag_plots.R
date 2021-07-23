@@ -86,12 +86,13 @@ plot_twoclass_pred_numcol <-
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
       ggplot2::geom_point(ggplot2::aes(
-        alpha = alpha,
-        size = size,
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::facet_wrap(~Class,
         labeller = ggplot2::labeller(Class = ggplot2::label_both),
         ncol = 1
@@ -143,12 +144,13 @@ plot_twoclass_pred_factorcol <-
       )
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
       ggplot2::geom_point(ggplot2::aes(
-        alpha = alpha,
-        size = size,
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::facet_wrap(~Class,
         labeller = ggplot2::labeller(Class = ggplot2::label_both),
         ncol = 1

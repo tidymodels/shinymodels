@@ -14,13 +14,15 @@
 plot_numeric_obs_pred <- function(dat, y_name, alpha, size) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
-    ggplot2::geom_point(ggplot2::aes(
+    ggplot2::geom_point(
+      ggplot2::aes(
+        customdata = .row,
+        color = .color,
+        text = .hover
+      ),
       alpha = alpha,
-      size = size,
-      customdata = .row,
-      color = .color,
-      text = .hover
-    )) +
+      size = size
+    ) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs. predicted", x = y_name, y = "Predicted") +
@@ -42,12 +44,13 @@ plot_numeric_res_pred <- function(dat, y_name, alpha, size) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
     ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
-      alpha = alpha,
-      size = size,
       customdata = .row,
       color = .color,
       text = .hover
-    )) +
+    ),
+    alpha = alpha,
+    size = size
+    ) +
     ggplot2::scale_color_identity() +
     ggplot2::labs(
       title = "Residuals vs. predicted",
@@ -73,12 +76,13 @@ plot_numeric_res_numcol <-
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
-        alpha = alpha,
-        size = size,
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste(numcol, " vs. residual")) +
       ggplot2::theme(legend.position = "none")
@@ -106,12 +110,13 @@ plot_numeric_res_factorcol <-
       ggplot2::geom_point(alpha = .3) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
-        alpha = alpha,
-        size = size,
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste(factorcol, " vs. residual"),
