@@ -4,13 +4,17 @@
 \alias{plot_numeric_res_pred}
 \title{Visualizing residuals vs. predicted values for a regression model}
 \usage{
-plot_numeric_res_pred(dat, y_name)
+plot_numeric_res_pred(dat, y_name, alpha = 1, size = 1)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
 variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{y_name}{The y/response variable for the model.}
+
+\item{alpha}{The opacity for the geom points.}
+
+\item{size}{The size for the geom points.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.

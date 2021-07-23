@@ -12,7 +12,9 @@ NULL
 #' @importFrom stats reorder
 #' @importFrom broom augment
 #' @import yardstick
+#' @importFrom scales logit_trans
 #' @import shiny
+#' @import shinydashboard
 #' @import dplyr
 #' @import ggplot2
 #' @import rlang
