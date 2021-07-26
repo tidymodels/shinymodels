@@ -58,18 +58,17 @@ shiny_models.two_cls_shiny_data <-
       shinydashboard::dashboardBody(
         shinydashboard::tabItems(
           # First tab content
-          shinydashboard::tabItem(tabName = "static",
-                                  shiny::fluidRow(
-                                    shinydashboard::box( plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
-                                                         title = "Predicted probabilities vs True class", status = "primary", collapsed = T),
-                                    shinydashboard::box( plotly::plotlyOutput("conf_mat"), solidHeader = T, collapsible = T,
-                                                         title =  "Confusion Matrix", status = "primary", collapsed = T),
-                                    shinydashboard::box( plotly::plotlyOutput("roc"), solidHeader = T, collapsible = T,
-                                                         title = "ROC curve", status = "primary", collapsed = T),
-                                    shinydashboard::box( plotly::plotlyOutput("pr"), solidHeader = T, collapsible = T,
-                                                         title =  "PR curve", status = "primary", collapsed = T)
-                                  )
+          shinydashboard::tabItem(
+            tabName = "static",
+            shiny::fluidRow(
+              boxed(plotly::plotlyOutput("obs_vs_pred"),
+                    "Predicted probabilities vs true class"),
+              boxed(plotly::plotlyOutput("conf_mat"),  "Confusion matrix"),
+              boxed(plotly::plotlyOutput("roc"),  "ROC curve"),
+              boxed(plotly::plotlyOutput("pr"), "PR curve")
+            )
           ),
+
           # Second tab content
           shinydashboard::tabItem(tabName = "interactive",
                                   shiny::fluidRow(
@@ -77,14 +76,16 @@ shiny_models.two_cls_shiny_data <-
                                       NULL
                                     }
                                     else{
-                                      shinydashboard::box( plotly::plotlyOutput("pred_vs_numcol"), solidHeader = T, collapsible = T,
-                                                           title = "Predicted probabilities vs A numeric column", status = "primary", collapsed = T)},
+                                      boxed(plotly::plotlyOutput("pred_vs_numcol"),
+                                            "Predicted probabilities vs numeric columns",
+                                            num_columns)},
                                     if (length(fac_columns)==0){
                                       NULL
                                     }
                                     else{
-                                      shinydashboard::box( plotly::plotlyOutput("pred_vs_factorcol"), solidHeader = T, collapsible = T,
-                                                           title =  "Predicted probabilities vs A factor column", status = "primary", collapsed = T)}
+                                      boxed(plotly::plotlyOutput("pred_vs_factorcol"),
+                                            "Predicted probabilities vs factor columns",
+                                            fac_columns)}
                                   )
           )
         )

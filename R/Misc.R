@@ -61,3 +61,22 @@ format_hover <- function(x, ...) {
   # # This returns a string
   apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }
+
+# ------------------------------------------------------------------------------
+
+boxed <- function(x, title, input = character(1)) {
+  if (length(input) > 0) {
+    res <-
+      shinydashboard::box(
+        x,
+        solidHeader = TRUE,
+        collapsible = TRUE,
+        title = title,
+        status = "primary",
+        collapsed = TRUE
+      )
+  } else {
+    res <- NULL
+  }
+  res
+}
