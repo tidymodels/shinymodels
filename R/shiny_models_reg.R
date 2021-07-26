@@ -39,27 +39,25 @@ shiny_models.reg_shiny_data <-
       shinydashboard::dashboardBody(
         shinydashboard::tabItems(
           # First tab content
-          shinydashboard::tabItem(tabName = "interactive",
-                                  shiny::fluidRow(
-                                    shinydashboard::box(plotly::plotlyOutput("obs_vs_pred"), solidHeader = T, collapsible = T,
-                                                        title = "Observed vs. Predicted", status = "primary", collapsed = T),
-                                    shinydashboard::box( plotly::plotlyOutput("resid_vs_pred"), solidHeader = T, collapsible = T,
-                                                         title =  "Residuals vs Predicted", status = "primary", collapsed = T),
-                                    if (length(num_columns)==0){
-                                      NULL
-                                    }
-                                    else{
-                                      shinydashboard::box( plotly::plotlyOutput("resid_vs_numcol"), solidHeader = T, collapsible = T,
-                                                           title = "Residuals vs A numeric column", status = "primary", collapsed = T)
-                                    },
-                                    if (length(fac_columns)==0){
-                                      NULL
-                                    }
-                                    else{
-                                      shinydashboard::box( plotly::plotlyOutput("resid_vs_factorcol"), solidHeader = T, collapsible = T,
-                                                           title = "Residuals vs A factor column", status = "primary", collapsed = T)
-                                    }
-                                  )
+          shinydashboard::tabItem(
+            tabName = "interactive",
+            shiny::fluidRow(
+              boxed(plotly::plotlyOutput("obs_vs_pred"),
+                    "Observed vs. Predicted"),
+              boxed(plotly::plotlyOutput("resid_vs_pred"),  "Residuals vs Predicted"),
+              if (length(num_columns) == 0) {
+                NULL
+              }
+              else {
+                boxed(plotly::plotlyOutput("resid_vs_numcol"),  "Residuals vs A numeric column")
+              },
+              if (length(fac_columns) == 0) {
+                NULL
+              }
+              else {
+                boxed(plotly::plotlyOutput("resid_vs_factorcol"),  "Residuals vs A factor column")
+              }
+            )
           )
         )
       )
