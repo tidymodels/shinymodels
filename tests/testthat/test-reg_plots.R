@@ -89,7 +89,7 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
   )
   expect_warning(
     d <- plot_numeric_res_factorcol(org$predictions, org$y_name, "Street"),
-    "Ignoring unknown aesthetics"
+    "Ignoring unknown aesthetics",
   )
   expect_snapshot_output(make_clean_snapshot(d))
 })
