@@ -1,8 +1,8 @@
-#' Visualizing predicted probability vs. true class for a two-class classification
+#' Visualizing predicted probability vs. true class for a multi-class classification
 #' model
 #'
 #' This function plots the predicted probabilities against the observed class based on
-#' {tidymodels} results for a two-class classification model.
+#' {tidymodels} results for a multi-class classification model.
 #' @param dat The predictions data frame in the [organize_data()] result. Following
 #'  variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
@@ -12,7 +12,7 @@
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_obs_pred <-
+plot_multiclass_obs_pred <-
   function(dat,
            y_name,
            event_level = "first",
@@ -23,9 +23,9 @@ plot_twoclass_obs_pred <-
     p <- dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~.outcome, # TODO
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+      ggplot2::facet_wrap(~.outcome,
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
@@ -35,25 +35,25 @@ plot_twoclass_obs_pred <-
 #' Visualizing the confusion matrix for a classification model
 #'
 #' This function plots the confusion matrix for a classification model.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_multiclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_conf_mat <- function(dat) {
+plot_multiclass_conf_mat <- function(dat) {
   # plotting
   p <- dat %>%
     yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  plotly::ggplotly(p)
+ plotly::ggplotly(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
 #' classification model
 #'
 #' This function plots the predicted probabilities against a numeric column based
-#' on {tidymodels} results for a two-class classification model.
-#' @inheritParams plot_twoclass_obs_pred
+#' on {tidymodels} results for a multi-class classification model.
+#' @inheritParams plot_multiclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
 #' @param alpha The opacity for the geom points.
 #' @param size The size for the geom points.
@@ -64,7 +64,7 @@ plot_twoclass_conf_mat <- function(dat) {
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_pred_numcol <-
+plot_multiclass_pred_numcol <-
   function(dat,
            y_name,
            numcol,
@@ -94,8 +94,8 @@ plot_twoclass_pred_numcol <-
       alpha = alpha,
       size = size) +
       ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
@@ -113,15 +113,15 @@ plot_twoclass_pred_numcol <-
 #' model
 #'
 #' This function plots the predicted probabilities against a factor column based on
-#' {tidymodels} results for a two-class classification model.
-#' @inheritParams plot_twoclass_obs_pred
-#' @inheritParams plot_twoclass_pred_numcol
+#' {tidymodels} results for a multi-class classification model.
+#' @inheritParams plot_multiclass_obs_pred
+#' @inheritParams plot_multiclass_pred_numcol
 #' @param factorcol The factor column to plot against the predicted probabilities.
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_pred_factorcol <-
+plot_multiclass_pred_factorcol <-
   function(dat,
            y_name,
            factorcol,
@@ -151,8 +151,8 @@ plot_twoclass_pred_factorcol <-
       alpha = alpha,
       size = size) +
       ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
@@ -171,17 +171,17 @@ plot_twoclass_pred_factorcol <-
 #' Visualizing the ROC curve for a classification model
 #'
 #' This function plots the ROC curve for a classification model.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_multiclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_roc <-
+plot_multiclass_roc <-
   function(dat, y_name, event_level = "first") {
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::roc_curve(dat, truth = .outcome, !!prob_name)
+    res <- yardstick::roc_curve(dat, .outcome, .pred_Other, .pred_Shield, .pred_Stratovolcano) #TODO how to give .pred_ for any dataset
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
@@ -200,17 +200,17 @@ plot_twoclass_roc <-
 #' Visualizing the PR curve for a classification model
 #'
 #' This function plots the full precision recall curve.
-#' @inheritParams plot_twoclass_obs_pred
+#' @inheritParams plot_multiclass_obs_pred
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_twoclass_pr <-
+plot_multiclass_pr <-
   function(dat, y_name, event_level = "first") {
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::pr_curve(dat, truth = .outcome, !!prob_name)
+    res <- yardstick::pr_curve(dat, .outcome, .pred_Other, .pred_Shield, .pred_Stratovolcano) #TODO how to give .pred_ for any dataset
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%

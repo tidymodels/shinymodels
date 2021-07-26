@@ -14,17 +14,19 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
   }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
-  if (length(our_levels) == 2) {
-    if (event_level == "first") {
-      prob_name <- our_levels[1]
-    } else if (event_level == "second") {
-      prob_name <- our_levels[2]
-    }
-    return(prob_name)
-  }
-  else {
-    rlang::abort("first_level() can only be used for a two-class variable")
-  }
+  prob_name <- our_levels[1]
+  return(prob_name)
+  # if (length(our_levels) == 2) {
+  #   if (event_level == "first") {
+  #     prob_name <- our_levels[1]
+  #   } else if (event_level == "second") {
+  #     prob_name <- our_levels[2]
+  #   }
+  #   return(prob_name)
+  # }
+  # else {
+  #   rlang::abort("first_level() can only be used for a two-class variable")
+  # }
 }
 
 
@@ -61,3 +63,23 @@ format_hover <- function(x, ...) {
   # # This returns a string
   apply(x, 1, function(x) paste0(names(x), ": ", x, collapse = "<br>"))
 }
+
+# ------------------------------------------------------------------------------
+
+boxed <- function(x, title, input = character(1)) {
+  if (length(input) > 0) {
+    res <-
+      shinydashboard::box(
+        x,
+        solidHeader = TRUE,
+        collapsible = TRUE,
+        title = title,
+        status = "primary",
+        collapsed = TRUE
+      )
+  } else {
+    res <- NULL
+  }
+  res
+}
+

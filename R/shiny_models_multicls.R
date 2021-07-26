@@ -1,8 +1,8 @@
-#'  [shiny_models()] for an object of `two_cls_shiny_data` class
+#'  [shiny_models()] for an object of `multi_cls_shiny_data` class
 #'
 #' @export
 #' @rdname shiny_models
-shiny_models.two_cls_shiny_data <-
+shiny_models.multi_cls_shiny_data <-
   function(x,
            hover_cols = NULL,
            hover_only = FALSE,
@@ -14,8 +14,10 @@ shiny_models.two_cls_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
-          shinydashboard::menuItem("Static Plots", tabName = "static", icon = icon("chart-bar")),
-          shinydashboard::menuItem("Interactive Plots", tabName = "interactive", icon = icon("chart-line")),
+          shinydashboard::menuItem("Static Plots", tabName = "static",
+                                   icon = icon("chart-bar")),
+          shinydashboard::menuItem("Interactive Plots", tabName = "interactive",
+                                   icon = icon("chart-line")),
           shiny::helpText("Select column(s) to create plots"),
           if (length(num_columns) == 0) {
             shiny::helpText("No numeric column to display")
@@ -84,7 +86,6 @@ shiny_models.two_cls_shiny_data <-
       )
     )
 
-
     server <- function(input, output) {
       selected_rows <- shiny::reactiveVal()
       if (hover_only) {
@@ -111,24 +112,26 @@ shiny_models.two_cls_shiny_data <-
         dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_twoclass_obs_pred(preds_dat(), x$y_name)
+        plot_multiclass_obs_pred(preds_dat(), x$y_name)
       })
       output$conf_mat <- plotly::renderPlotly({
-        plot_twoclass_conf_mat(preds_dat())
+        plot_multiclass_conf_mat(preds_dat())
       })
       output$roc <- plotly::renderPlotly({
-        plot_twoclass_roc(preds_dat(), x$y_name)
+        plot_multiclass_roc(preds_dat(), x$y_name)
       })
       output$pr <- plotly::renderPlotly({
-        plot_twoclass_pr(preds_dat(), x$y_name)
+        plot_multiclass_pr(preds_dat(), x$y_name)
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col, input$alpha, input$size, input$prob_scaling)
+        plot_multiclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
+                                    input$alpha, input$size, input$prob_scaling)
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col, input$alpha, input$size, input$prob_scaling)
+        plot_multiclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
+                                       input$alpha, input$size, input$prob_scaling)
       })
     }
 
