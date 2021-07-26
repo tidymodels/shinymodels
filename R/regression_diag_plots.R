@@ -54,7 +54,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
     ggplot2::scale_color_identity() +
     ggplot2::labs(
       title = "Residuals vs. predicted",
-      x = "Predicted", y = "Residual"
+      x = "Predicted", y = "Residuals"
     ) +
     ggplot2::theme(legend.position = "none")
   plotly::ggplotly(p, tooltip = "text") %>%
@@ -84,7 +84,7 @@ plot_numeric_res_numcol <-
       size = size
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste(numcol, " vs. residual")) +
+      ggplot2::labs(title = paste(numcol, " vs. residual", y = "Residuals")) +
       ggplot2::theme(legend.position = "none")
     plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
@@ -120,7 +120,8 @@ plot_numeric_res_factorcol <-
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste(factorcol, " vs. residual"),
-        y = factorcol
+        y = factorcol,
+        x = residuals
       ) +
       ggplot2::theme(legend.position = "none")
     plotly::ggplotly(p, tooltip = "text") %>%

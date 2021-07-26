@@ -98,7 +98,8 @@ plot_twoclass_pred_numcol <-
                           ncol = 1
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
+      ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol),
+                    y = paste("Probability of ", first_level(dat, event_level, y_name))) +
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       ggplot2::theme(legend.position = "none")
@@ -158,7 +159,8 @@ plot_twoclass_pred_factorcol <-
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
-        y = factorcol
+        y = factorcol,
+        x = paste("Probability of ", first_level(dat, event_level, y_name))
       ) +
       # # We should make a custom transformation that handles probs at 0 and 1
       # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
