@@ -72,20 +72,12 @@ shiny_models.two_cls_shiny_data <-
           # Second tab content
           shinydashboard::tabItem(tabName = "interactive",
                                   shiny::fluidRow(
-                                    if (length(num_columns)==0){
-                                      NULL
-                                    }
-                                    else{
                                       boxed(plotly::plotlyOutput("pred_vs_numcol"),
                                             "Predicted probabilities vs numeric columns",
-                                            num_columns)},
-                                    if (length(fac_columns)==0){
-                                      NULL
-                                    }
-                                    else{
+                                            num_columns),
                                       boxed(plotly::plotlyOutput("pred_vs_factorcol"),
                                             "Predicted probabilities vs factor columns",
-                                            fac_columns)}
+                                            fac_columns)
                                   )
           )
         )

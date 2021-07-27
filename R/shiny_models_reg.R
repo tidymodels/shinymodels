@@ -59,18 +59,8 @@ shiny_models.reg_shiny_data <-
               boxed(plotly::plotlyOutput("obs_vs_pred"),
                     "Observed vs. Predicted"),
               boxed(plotly::plotlyOutput("resid_vs_pred"),  "Residuals vs Predicted"),
-              if (length(num_columns) == 0) {
-                NULL
-              }
-              else {
-                boxed(plotly::plotlyOutput("resid_vs_numcol"),  "Residuals vs A numeric column")
-              },
-              if (length(fac_columns) == 0) {
-                NULL
-              }
-              else {
-                boxed(plotly::plotlyOutput("resid_vs_factorcol"),  "Residuals vs A factor column")
-              }
+              boxed(plotly::plotlyOutput("resid_vs_numcol"),  "Residuals vs A numeric column"),
+              boxed(plotly::plotlyOutput("resid_vs_factorcol"),  "Residuals vs A factor column")
             )
           )
         )
