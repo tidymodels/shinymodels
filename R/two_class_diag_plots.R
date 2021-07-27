@@ -24,8 +24,8 @@ plot_twoclass_obs_pred <-
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_wrap(~.outcome, # TODO
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
+        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+        ncol = 1
       ) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
@@ -92,10 +92,11 @@ plot_twoclass_pred_numcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_wrap(~.outcome,
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
+        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+        ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
@@ -149,16 +150,18 @@ plot_twoclass_pred_factorcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_wrap(~.outcome,
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
+        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+        ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
         y = factorcol
-      ) + ggplot2::theme(legend.position = "none")
+      ) +
+      ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }

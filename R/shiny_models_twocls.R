@@ -40,19 +40,23 @@ shiny_models.two_cls_shiny_data <-
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           sliderInput("alpha", "Alpha:",
-                      min = 0, max = 1,
-                      value = 0.7, step = 0.1
+            min = 0, max = 1,
+            value = 0.7, step = 0.1
           ),
           shiny::helpText("Select the size of the points"),
           # Input: Simple integer interval ----
           sliderInput("size", "Size:",
-                      min = 0.5, max = 3,
-                      value = 1.5, step = 0.5
+            min = 0.5, max = 3,
+            value = 1.5, step = 0.5
           ),
           shiny::helpText("Logit scaling for probability?"),
-          radioButtons("prob_scaling", "Probability scaling:",
-                       c("TRUE" = "true",
-                         "FALSE" = "false"))
+          radioButtons(
+            "prob_scaling", "Probability scaling:",
+            c(
+              "TRUE" = "true",
+              "FALSE" = "false"
+            )
+          )
         )
       ),
       shinydashboard::dashboardBody(
@@ -61,24 +65,31 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-              boxed(plotly::plotlyOutput("obs_vs_pred"),
-                    "Predicted probabilities vs true class"),
-              boxed(plotly::plotlyOutput("conf_mat"),  "Confusion matrix"),
-              boxed(plotly::plotlyOutput("roc"),  "ROC curve"),
+              boxed(
+                plotly::plotlyOutput("obs_vs_pred"),
+                "Predicted probabilities vs true class"
+              ),
+              boxed(plotly::plotlyOutput("conf_mat"), "Confusion matrix"),
+              boxed(plotly::plotlyOutput("roc"), "ROC curve"),
               boxed(plotly::plotlyOutput("pr"), "PR curve")
             )
           ),
 
           # Second tab content
-          shinydashboard::tabItem(tabName = "interactive",
-                                  shiny::fluidRow(
-                                      boxed(plotly::plotlyOutput("pred_vs_numcol"),
-                                            "Predicted probabilities vs numeric columns",
-                                            num_columns),
-                                      boxed(plotly::plotlyOutput("pred_vs_factorcol"),
-                                            "Predicted probabilities vs factor columns",
-                                            fac_columns)
-                                  )
+          shinydashboard::tabItem(
+            tabName = "interactive",
+            shiny::fluidRow(
+              boxed(
+                plotly::plotlyOutput("pred_vs_numcol"),
+                "Predicted probabilities vs numeric columns",
+                num_columns
+              ),
+              boxed(
+                plotly::plotlyOutput("pred_vs_factorcol"),
+                "Predicted probabilities vs factor columns",
+                fac_columns
+              )
+            )
           )
         )
       )

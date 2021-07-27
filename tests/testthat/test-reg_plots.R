@@ -63,7 +63,7 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    c <- plot_numeric_res_numcol(org$predictions, org$y_name,"hp"),
+    c <- plot_numeric_res_numcol(org$predictions, org$y_name, "hp"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
