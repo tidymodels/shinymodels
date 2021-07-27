@@ -5,26 +5,30 @@
 #' @param dat The predictions data frame in the [organize_data()] result. Following
 #' variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
+#' @param alpha The opacity for the geom points.
+#' @param size The size for the geom points.
 #' @keywords models, regression, graphs
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_obs_pred <- function(dat, y_name) {
+plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
-    ggplot2::geom_point(ggplot2::aes(
-      customdata = .row,
-      color = .color,
-      text = .hover
-    )) +
+    ggplot2::geom_point(
+      ggplot2::aes(
+        customdata = .row,
+        color = .color,
+        text = .hover
+      ),
+      alpha = alpha,
+      size = size
+    ) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
     ggplot2::labs(title = "Observed vs. predicted", x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
-  fig <- plotly::ggplotly(p, tooltip = "text") %>%
+  plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
-  fig <- fig %>% plotly::toWebGL()
-  fig
 }
 
 #' Visualizing residuals vs. predicted values for a regression model
@@ -36,24 +40,25 @@ plot_numeric_obs_pred <- function(dat, y_name) {
 #' @export
 #' @return
 #' A [ggplot2::ggplot()] object.
-plot_numeric_res_pred <- function(dat, y_name) {
+plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
     ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
       customdata = .row,
       color = .color,
       text = .hover
-    )) +
+    ),
+    alpha = alpha,
+    size = size
+    ) +
     ggplot2::scale_color_identity() +
     ggplot2::labs(
       title = "Residuals vs. predicted",
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
-  fig <- plotly::ggplotly(p, tooltip = "text") %>%
+  plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
-  fig <- fig %>% plotly::toWebGL()
-  fig
 }
 
 #' Visualizing residuals vs. a numeric column for a regression model
@@ -67,21 +72,22 @@ plot_numeric_res_pred <- function(dat, y_name) {
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_numcol <-
-  function(dat, y_name, numcol) {
+  function(dat, y_name, numcol, alpha = 1, size = 1) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_abline(lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste(numcol, " vs. residual")) +
       ggplot2::theme(legend.position = "none")
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
-    fig
   }
 
 #' Visualizing residuals vs. a factor column for a regression model
@@ -95,7 +101,7 @@ plot_numeric_res_numcol <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_numeric_res_factorcol <-
-  function(dat, y_name, factorcol) {
+  function(dat, y_name, factorcol, alpha = 1, size = 1) {
     p <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(
         !!rlang::sym(factorcol),
@@ -107,15 +113,16 @@ plot_numeric_res_factorcol <-
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
+      ),
+      alpha = alpha,
+      size = size
+      ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste(factorcol, " vs. residual"),
         y = factorcol
       ) +
       ggplot2::theme(legend.position = "none")
-  fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
-  fig <- fig %>% plotly::toWebGL()
-  fig
   }

@@ -14,19 +14,17 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
   }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
-  prob_name <- our_levels[1]
-  return(prob_name)
-  # if (length(our_levels) == 2) {
-  #   if (event_level == "first") {
-  #     prob_name <- our_levels[1]
-  #   } else if (event_level == "second") {
-  #     prob_name <- our_levels[2]
-  #   }
-  #   return(prob_name)
-  # }
-  # else {
-  #   rlang::abort("first_level() can only be used for a two-class variable")
-  # }
+  if (length(our_levels) == 2) {
+    if (event_level == "first") {
+      prob_name <- our_levels[1]
+    } else if (event_level == "second") {
+      prob_name <- our_levels[2]
+    }
+    return(prob_name)
+  }
+  else {
+    rlang::abort("first_level() can only be used for a two-class variable")
+  }
 }
 
 
