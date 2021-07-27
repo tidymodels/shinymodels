@@ -23,15 +23,13 @@ plot_twoclass_obs_pred <-
     p <- dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~Class, # TODO
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+      ggplot2::facet_wrap(~.outcome, # TODO
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
+    plotly::ggplotly(p)
   }
 
 #' Visualizing the confusion matrix for a classification model
@@ -45,11 +43,9 @@ plot_twoclass_obs_pred <-
 plot_twoclass_conf_mat <- function(dat) {
   # plotting
   p <- dat %>%
-    yardstick::conf_mat(truth = Class, estimate = .pred_class) %>%
+    yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  fig <- plotly::ggplotly(p)
-  fig <- fig %>% plotly::toWebGL()
-  fig
+  plotly::ggplotly(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
@@ -59,6 +55,9 @@ plot_twoclass_conf_mat <- function(dat) {
 #' on {tidymodels} results for a two-class classification model.
 #' @inheritParams plot_twoclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
+#' @param alpha The opacity for the geom points.
+#' @param size The size for the geom points.
+#' @param prob_scaling The boolean to turn on or off the logit scale for probability.
 #' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
@@ -69,6 +68,9 @@ plot_twoclass_pred_numcol <-
   function(dat,
            y_name,
            numcol,
+           alpha = 1,
+           size = 1,
+           prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
@@ -88,16 +90,19 @@ plot_twoclass_pred_numcol <-
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
-      ggplot2::facet_wrap(~Class,
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+      ),
+      alpha = alpha,
+      size = size) +
+      ggplot2::facet_wrap(~.outcome,
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
-      # # We should make a custom transformation that handles probs at 0 and 1
-      # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
       ggplot2::theme(legend.position = "none")
+    if (prob_scaling) {
+      p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+    }
     fig <- plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
@@ -120,6 +125,9 @@ plot_twoclass_pred_factorcol <-
   function(dat,
            y_name,
            factorcol,
+           alpha = 1,
+           size = 1,
+           prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
@@ -139,19 +147,21 @@ plot_twoclass_pred_factorcol <-
         customdata = .row,
         color = .color,
         text = .hover
-      )) +
-      ggplot2::facet_wrap(~Class,
-        labeller = ggplot2::labeller(Class = ggplot2::label_both),
-        ncol = 1
+      ),
+      alpha = alpha,
+      size = size) +
+      ggplot2::facet_wrap(~.outcome,
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
         y = factorcol
-      ) +
-      # # We should make a custom transformation that handles probs at 0 and 1
-      # scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks) +
-      ggplot2::theme(legend.position = "none")
+      ) + ggplot2::theme(legend.position = "none")
+    if (prob_scaling) {
+      p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+    }
     fig <- plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
@@ -171,7 +181,7 @@ plot_twoclass_roc <-
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::roc_curve(dat, truth = !!sym(y_name), !!prob_name)
+    res <- yardstick::roc_curve(dat, truth = .outcome, !!prob_name)
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
@@ -184,9 +194,7 @@ plot_twoclass_roc <-
           y = sensitivity
         )
       )
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
+    plotly::ggplotly(p)
   }
 
 #' Visualizing the PR curve for a classification model
@@ -202,7 +210,7 @@ plot_twoclass_pr <-
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
-    res <- yardstick::pr_curve(dat, truth = !!sym(y_name), !!prob_name)
+    res <- yardstick::pr_curve(dat, truth = .outcome, !!prob_name)
     fifty <- res %>%
       dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
       dplyr::arrange(delta) %>%
@@ -215,7 +223,5 @@ plot_twoclass_pr <-
           y = precision
         )
       )
-    fig <- plotly::ggplotly(p)
-    fig <- fig %>% plotly::toWebGL()
-    fig
+    plotly::ggplotly(p)
   }
