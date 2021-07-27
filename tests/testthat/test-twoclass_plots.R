@@ -2,7 +2,7 @@ library(testthat)
 library(shinymodels)
 source(test_path("helper.R"))
 
-test_that("can accurately plot numeric observed vs. predicted plot", {
+test_that("can accurately plot predicted probabilities vs true class plot", {
   skip_on_cran()
   data("twoclass_ad_data_boost_res")
 
@@ -29,7 +29,7 @@ test_that("can accurately plot confusion matrix plot", {
 
   expect_error(
     plot_twoclass_conf_mat(org),
-   "no applicable method for 'conf_mat' applied to an object of class"
+    "no applicable method for 'conf_mat' applied to an object of class"
   )
   b <- plot_twoclass_conf_mat(org$predictions)
   expect_snapshot_output(make_clean_snapshot(b))
@@ -58,8 +58,8 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-  c <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
-  "Ignoring unknown aesthetics"
+    c <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
+    "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
 })
@@ -72,22 +72,22 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
   org$predictions$.color <- "black"
 
   expect_error(
-    plot_twoclass_pred_numcol(org, org$y_name, "Genotype"),
+    plot_twoclass_pred_factorcol(org, org$y_name, "Genotype"),
     "'Class' is not a column in the dataset"
   )
   expect_error(
-    plot_twoclass_pred_numcol(org$predictions, y_name, "Genotype"),
+    plot_twoclass_pred_factorcol(org$predictions, y_name, "Genotype"),
     "object 'y_name' not found"
   )
   expect_warning(
     expect_error(
-      plot_twoclass_pred_numcol(org$predictions, org$y_name, "cyl"),
+      plot_twoclass_pred_factorcol(org$predictions, org$y_name, "cyl"),
       "object 'cyl' not found"
     ),
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    d <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
+    d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name,"AXL"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(d))
