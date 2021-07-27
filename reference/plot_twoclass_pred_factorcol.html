@@ -121,6 +121,9 @@ tidymodels results for a two-class classification model.</p>
   <span class='va'>dat</span>,
   <span class='va'>y_name</span>,
   <span class='va'>factorcol</span>,
+  alpha <span class='op'>=</span> <span class='fl'>1</span>,
+  size <span class='op'>=</span> <span class='fl'>1</span>,
+  prob_scaling <span class='op'>=</span> <span class='cn'>FALSE</span>,
   event_level <span class='op'>=</span> <span class='st'>"first"</span>,
   prob_breaks <span class='op'>=</span> <span class='op'>(</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>10</span>,
   prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>
@@ -141,6 +144,18 @@ variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color<
     <tr>
       <th>factorcol</th>
       <td><p>The factor column to plot against the predicted probabilities.</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>The opacity for the geom points.</p></td>
+    </tr>
+    <tr>
+      <th>size</th>
+      <td><p>The size for the geom points.</p></td>
+    </tr>
+    <tr>
+      <th>prob_scaling</th>
+      <td><p>The boolean to turn on or off the logit scale for probability.</p></td>
     </tr>
     <tr>
       <th>event_level</th>
