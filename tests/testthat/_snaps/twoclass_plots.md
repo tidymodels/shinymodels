@@ -186,7 +186,7 @@
             "annotationType": "axis"
           },
           {
-            "text": ".pred_Impaired",
+            "text": "Probability of  Impaired",
             "x": -0.0333904109589041,
             "y": 0.5,
             "showarrow": false,
@@ -548,7 +548,7 @@
             "annotationType": "axis"
           },
           {
-            "text": ".pred_Impaired",
+            "text": "Probability of  Impaired",
             "x": -0.0333904109589041,
             "y": 0.5,
             "showarrow": false,
