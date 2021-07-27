@@ -15,6 +15,7 @@ NULL
 #' @import shiny
 #' @import dplyr
 #' @import ggplot2
+#' @import tidyr
 #' @import rlang
 #' @import utils
 #' @importFrom tidyselect eval_select

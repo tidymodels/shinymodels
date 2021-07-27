@@ -6,7 +6,6 @@
 #' @param dat The predictions data frame in the [organize_data()] result. Following
 #'  variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
-#' @param event_level A single character value for the level corresponding to the event.
 #' @param prob_bins The desired `binwidth` for histogram.
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -15,18 +14,19 @@
 plot_multiclass_obs_pred <-
   function(dat,
            y_name,
-           event_level = "first",
            prob_bins = 0.025) {
-    prob_name <-
-      first_class_prob_name(dat, event_level, y_name)
-    # plotting
+    dat <- dat %>%
+      dplyr::select(-.pred_class) %>%
+      tidyr::pivot_longer(
+        cols = starts_with(".pred_"),
+        names_to = "predicted_class",
+        values_to = "predicted_probabilities"
+      )
     p <- dat %>%
-      ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
+      dplyr::group_by(predicted_class) %>%
+      ggplot2::ggplot(ggplot2::aes(x = predicted_probabilities)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~.outcome,
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
-      ) +
+      ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
     plotly::ggplotly(p)
@@ -71,21 +71,27 @@ plot_multiclass_pred_numcol <-
            alpha = 1,
            size = 1,
            prob_scaling = FALSE,
-           event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
-    prob_name <- first_class_prob_name(dat, event_level, y_name)
-    # plotting
-    dat %>%
+    dat <- dat %>%
+      dplyr::select(-.pred_class) %>%
+      tidyr::pivot_longer(
+        cols = starts_with(".pred_"),
+        names_to = "predicted_class",
+        values_to = "predicted_probabilities"
+      )
+    dat <-  dat %>%
       dplyr::mutate(
-        !!prob_name :=
+        predicted_probabilities :=
           dplyr::case_when(
-            !!prob_name > 1 - prob_eps ~ 1 - prob_eps,
-            !!prob_name < prob_eps ~ prob_eps,
-            TRUE ~ !!prob_name
+            predicted_probabilities > 1 - prob_eps ~ 1 - prob_eps,
+            predicted_probabilities < prob_eps ~ prob_eps,
+            TRUE ~ predicted_probabilities
           )
       )
-    p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
+    p <- dat %>%
+      dplyr::group_by(predicted_class, .outcome) %>%
+      ggplot2::ggplot(ggplot2::aes(x = !!rlang::sym(numcol), y = predicted_probabilities)) +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
@@ -93,10 +99,7 @@ plot_multiclass_pred_numcol <-
       ),
       alpha = alpha,
       size = size) +
-      ggplot2::facet_wrap(~.outcome,
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
-      ) +
+      ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
       ggplot2::theme(legend.position = "none")
@@ -128,21 +131,27 @@ plot_multiclass_pred_factorcol <-
            alpha = 1,
            size = 1,
            prob_scaling = FALSE,
-           event_level = "first",
            prob_breaks = (2:9) / 10,
            prob_eps = 0.001) {
-    prob_name <- first_class_prob_name(dat, event_level, y_name)
-    # plotting
-    dat %>%
+    dat <- dat %>%
+      dplyr::select(-.pred_class) %>%
+      tidyr::pivot_longer(
+        cols = starts_with(".pred_"),
+        names_to = "predicted_class",
+        values_to = "predicted_probabilities"
+      )
+    dat <-  dat %>%
       dplyr::mutate(
-        !!prob_name :=
+        predicted_probabilities :=
           dplyr::case_when(
-            !!prob_name > 1 - prob_eps ~ 1 - prob_eps,
-            !!prob_name < prob_eps ~ prob_eps,
-            TRUE ~ !!prob_name
+            predicted_probabilities > 1 - prob_eps ~ 1 - prob_eps,
+            predicted_probabilities < prob_eps ~ prob_eps,
+            TRUE ~ predicted_probabilities
           )
       )
-    p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
+    p <- dat %>%
+      dplyr::group_by(predicted_class, .outcome) %>%
+      ggplot2::ggplot(ggplot2::aes(x = predicted_probabilities, y = !!rlang::sym(factorcol))) +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
@@ -150,10 +159,7 @@ plot_multiclass_pred_factorcol <-
       ),
       alpha = alpha,
       size = size) +
-      ggplot2::facet_wrap(~.outcome,
-                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-                          ncol = 1
-      ) +
+      ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
@@ -177,23 +183,13 @@ plot_multiclass_pred_factorcol <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_multiclass_roc <-
-  function(dat, y_name, event_level = "first") {
-    prob_name <-
-      first_class_prob_name(dat, event_level, y_name)
-    # plotting
-    res <- yardstick::roc_curve(dat, .outcome, .pred_Other, .pred_Shield, .pred_Stratovolcano) #TODO how to give .pred_ for any dataset
-    fifty <- res %>%
-      dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
-      dplyr::arrange(delta) %>%
-      dplyr::slice(1)
-    p <- ggplot2::autoplot(res) +
-      ggplot2::geom_point(
-        data = fifty,
-        ggplot2::aes(
-          x = 1 - specificity,
-          y = sensitivity
-        )
-      )
+  function(dat, y_name) {
+    # Get a character vector of the class probabilities
+    prob_cols <- grep("^\\.pred_", names(dat), value = TRUE)
+    prob_cols <- prob_cols[prob_cols != ".pred_class"]
+    # Splice them in
+    res <- yardstick::roc_curve(dat, .outcome, !!!prob_cols)
+    p <- ggplot2::autoplot(res)
     plotly::ggplotly(p)
   }
 
@@ -206,22 +202,12 @@ plot_multiclass_roc <-
 #' @return
 #' A [ggplot2::ggplot()] object.
 plot_multiclass_pr <-
-  function(dat, y_name, event_level = "first") {
-    prob_name <-
-      first_class_prob_name(dat, event_level, y_name)
-    # plotting
-    res <- yardstick::pr_curve(dat, .outcome, .pred_Other, .pred_Shield, .pred_Stratovolcano) #TODO how to give .pred_ for any dataset
-    fifty <- res %>%
-      dplyr::mutate(delta = abs(0.5 - .threshold)) %>%
-      dplyr::arrange(delta) %>%
-      dplyr::slice(1)
-    p <- ggplot2::autoplot(res) +
-      ggplot2::geom_point(
-        data = fifty,
-        ggplot2::aes(
-          x = 1 - recall,
-          y = precision
-        )
-      )
+  function(dat, y_name) {
+    # Get a character vector of the class probabilities
+    prob_cols <- grep("^\\.pred_", names(dat), value = TRUE)
+    prob_cols <- prob_cols[prob_cols != ".pred_class"]
+    # Splice them in
+    res <- yardstick::pr_curve(dat, .outcome, !!!prob_cols)
+    p <- ggplot2::autoplot(res)
     plotly::ggplotly(p)
   }

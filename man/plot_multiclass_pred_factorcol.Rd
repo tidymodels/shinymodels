@@ -12,7 +12,6 @@ plot_multiclass_pred_factorcol(
   alpha = 1,
   size = 1,
   prob_scaling = FALSE,
-  event_level = "first",
   prob_breaks = (2:9)/10,
   prob_eps = 0.001
 )
@@ -30,8 +29,6 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{size}{The size for the geom points.}
 
 \item{prob_scaling}{The boolean to turn on or off the logit scale for probability.}
-
-\item{event_level}{A single character value for the level corresponding to the event.}
 
 \item{prob_breaks}{A vector to use for breaks in the probability levels.}
 

@@ -4,15 +4,13 @@
 \alias{plot_multiclass_roc}
 \title{Visualizing the ROC curve for a classification model}
 \usage{
-plot_multiclass_roc(dat, y_name, event_level = "first")
+plot_multiclass_roc(dat, y_name)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
 variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{.hover}.}
 
 \item{y_name}{The y/response variable for the model.}
-
-\item{event_level}{A single character value for the level corresponding to the event.}
 }
 \value{
 A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
