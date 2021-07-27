@@ -68,22 +68,21 @@ shiny_models.two_cls_shiny_data <-
               boxed(plotly::plotlyOutput("pr"), "PR curve")
             )
           ),
+
           # Second tab content
-          shinydashboard::tabItem(
-            tabName = "interactive",
-            shiny::fluidRow(
-              boxed(plotly::plotlyOutput("pred_vs_numcol"),
-                    "Predicted probabilities vs numeric columns",
-                    num_columns),
-              boxed(plotly::plotlyOutput("pred_vs_factorcol"),
-                    "Predicted probabilities vs factor columns",
-                    fac_columns)
-            )
+          shinydashboard::tabItem(tabName = "interactive",
+                                  shiny::fluidRow(
+                                    boxed(plotly::plotlyOutput("pred_vs_numcol"),
+                                          "Predicted probabilities vs numeric columns",
+                                          num_columns),
+                                    boxed(plotly::plotlyOutput("pred_vs_factorcol"),
+                                          "Predicted probabilities vs factor columns",
+                                          fac_columns)
+                                  )
           )
         )
       )
     )
-
 
     server <- function(input, output) {
       selected_rows <- shiny::reactiveVal()
