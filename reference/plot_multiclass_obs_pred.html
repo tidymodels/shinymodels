@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Internal function to run shiny application on an object of shiny_data class — shiny_models • shinymodels</title>
+<title>Visualizing predicted probability vs. true class for a multi-class classification
+model — plot_multiclass_obs_pred • shinymodels</title>
 
 
 <!-- jquery -->
@@ -39,8 +40,10 @@
 
 
 
-<meta property="og:title" content="Internal function to run shiny application on an object of shiny_data class — shiny_models" />
-<meta property="og:description" content="This function takes the organize_data() result to shiny_models a Shiny app." />
+<meta property="og:title" content="Visualizing predicted probability vs. true class for a multi-class classification
+model — plot_multiclass_obs_pred" />
+<meta property="og:description" content="This function plots the predicted probabilities against the observed class based on
+tidymodels results for a multi-class classification model." />
 
 
 
@@ -103,51 +106,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Internal function to run shiny application on an object of <code>shiny_data</code> class</h1>
+    <h1>Visualizing predicted probability vs. true class for a multi-class classification
+model</h1>
     
-    <div class="hidden name"><code>shiny_models.Rd</code></div>
+    <div class="hidden name"><code>plot_multiclass_obs_pred.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function takes the <code><a href='organize_data.html'>organize_data()</a></code> result to shiny_models a Shiny app.</p>
+    <p>This function plots the predicted probabilities against the observed class based on
+tidymodels results for a multi-class classification model.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>shiny_models</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, hover_only <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>shiny_models</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, hover_only <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for multi_cls_shiny_data</span>
-<span class='fu'>shiny_models</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, hover_only <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for reg_shiny_data</span>
-<span class='fu'>shiny_models</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, hover_only <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span>
-
-<span class='co'># S3 method for two_cls_shiny_data</span>
-<span class='fu'>shiny_models</span><span class='op'>(</span><span class='va'>x</span>, hover_cols <span class='op'>=</span> <span class='cn'>NULL</span>, hover_only <span class='op'>=</span> <span class='cn'>FALSE</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_multiclass_obs_pred</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>y_name</span>, prob_bins <span class='op'>=</span> <span class='fl'>0.025</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>The <code><a href='organize_data.html'>organize_data()</a></code> result.</p></td>
+      <th>dat</th>
+      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
+variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
     </tr>
     <tr>
-      <th>hover_cols</th>
-      <td><p>The columns to display while hovering in the Shiny app.</p></td>
+      <th>y_name</th>
+      <td><p>The y/response variable for the model.</p></td>
     </tr>
     <tr>
-      <th>hover_only</th>
-      <td><p>A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>Other parameters not currently used.</p></td>
+      <th>prob_bins</th>
+      <td><p>The desired <code>binwidth</code> for histogram.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <code><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot2::ggplot()</a></code> object.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
