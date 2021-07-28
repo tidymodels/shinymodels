@@ -136,7 +136,7 @@ plot_multiclass_pred_factorcol <-
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
-        cols = starts_with(".pred_"),
+        cols =  tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
       )
