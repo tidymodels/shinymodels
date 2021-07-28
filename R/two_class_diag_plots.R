@@ -11,7 +11,7 @@
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_obs_pred <-
   function(dat,
            y_name,
@@ -39,7 +39,7 @@ plot_twoclass_obs_pred <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_conf_mat <- function(dat) {
   # plotting
   p <- dat %>%
@@ -63,7 +63,7 @@ plot_twoclass_conf_mat <- function(dat) {
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_pred_numcol <-
   function(dat,
            y_name,
@@ -121,7 +121,7 @@ plot_twoclass_pred_numcol <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_pred_factorcol <-
   function(dat,
            y_name,
@@ -178,7 +178,7 @@ plot_twoclass_pred_factorcol <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_roc <-
   function(dat, y_name, event_level = "first") {
     prob_name <-
@@ -207,7 +207,7 @@ plot_twoclass_roc <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_twoclass_pr <-
   function(dat, y_name, event_level = "first") {
     prob_name <-

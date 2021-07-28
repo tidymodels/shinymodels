@@ -18,6 +18,13 @@ shiny_models.multi_cls_shiny_data <-
                                    icon = icon("chart-bar")),
           shinydashboard::menuItem("Interactive Plots", tabName = "interactive",
                                    icon = icon("chart-line")),
+          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0){
+            shiny::helpText("No tuning parameters!")
+          }
+          else{
+            shinydashboard::menuItem("Tuning Parameters", tabName = "tuning",
+                                     icon = icon("filter"))
+          },
           shiny::helpText("Select column(s) to create plots"),
           if (length(num_columns) == 0) {
             shiny::helpText("No numeric column to display")
@@ -81,6 +88,14 @@ shiny_models.multi_cls_shiny_data <-
                     "Predicted probabilities vs factor columns",
                     fac_columns)
             )
+          ),
+          # third tab content
+          shinydashboard::tabItem(
+            tabName = "tuning",
+            shiny::fluidRow(
+              boxed(plotly::plotlyOutput("tuning_autoplot"),
+                    "Tuning Parameters", width = 12)
+            )
           )
         )
       )
@@ -132,6 +147,9 @@ shiny_models.multi_cls_shiny_data <-
         req(input$factor_value_col)
         plot_multiclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
                                        input$alpha, input$size, input$prob_scaling)
+      })
+      output$tuning_autoplot <- plotly::renderPlotly({
+        plot_tuning_params(x$tune_results)
       })
     }
 

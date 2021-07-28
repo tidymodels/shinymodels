@@ -10,7 +10,7 @@
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_obs_pred <-
   function(dat,
            y_name,
@@ -39,7 +39,7 @@ plot_multiclass_obs_pred <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_conf_mat <- function(dat) {
   # plotting
   p <- dat %>%
@@ -63,7 +63,7 @@ plot_multiclass_conf_mat <- function(dat) {
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_pred_numcol <-
   function(dat,
            y_name,
@@ -123,7 +123,7 @@ plot_multiclass_pred_numcol <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_pred_factorcol <-
   function(dat,
            y_name,
@@ -181,7 +181,7 @@ plot_multiclass_pred_factorcol <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_roc <-
   function(dat, y_name) {
     # Get a character vector of the class probabilities
@@ -200,7 +200,7 @@ plot_multiclass_roc <-
 #' @keywords models, classes, classif, graphs
 #' @export
 #' @return
-#' A [ggplot2::ggplot()] object.
+#' A [plotly::ggplotly()] object.
 plot_multiclass_pr <-
   function(dat, y_name) {
     # Get a character vector of the class probabilities

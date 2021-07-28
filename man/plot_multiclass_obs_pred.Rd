@@ -16,7 +16,7 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{prob_bins}{The desired \code{binwidth} for histogram.}
 }
 \value{
-A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
+A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted probabilities against the observed class based on

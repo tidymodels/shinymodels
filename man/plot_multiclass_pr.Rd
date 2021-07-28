@@ -13,7 +13,7 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{y_name}{The y/response variable for the model.}
 }
 \value{
-A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
+A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the full precision recall curve.

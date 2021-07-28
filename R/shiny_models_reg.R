@@ -15,17 +15,32 @@ shiny_models.reg_shiny_data <-
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
           shinydashboard::menuItem("Plots", tabName = "interactive", icon = icon("chart-line")),
+          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0){
+            shiny::helpText("No tuning parameters!")
+          }
+          else{
+            shinydashboard::menuItem("Tuning Parameters", tabName = "tuning",
+                                     icon = icon("filter"))
+          },
           shiny::helpText("Select column(s) to create plots"),
+          if (length(num_columns) == 0) {
+            shiny::helpText("No numeric column to display")
+          }
+          else {
             shiny::selectInput(
               inputId = "num_value_col",
               label = "Numeric Columns",
               choices = unique(c("None Selected" = "", num_columns))
-            ),
+            )},
+          if (length(fac_columns) == 0) {
+            shiny::helpText("No factor column to display")
+          }
+          else {
             shiny::selectInput(
               inputId = "factor_value_col",
               label = "Factor Columns",
               choices = unique(c("None Selected" = "", fac_columns))
-            ),
+            )},
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           shiny::sliderInput("alpha", "Alpha:",
@@ -51,8 +66,18 @@ shiny_models.reg_shiny_data <-
                 "Observed vs. Predicted"
               ),
               boxed(plotly::plotlyOutput("resid_vs_pred"), "Residuals vs Predicted"),
-              boxed(plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric column"),
-              boxed(plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor column")
+              boxed(plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric column",
+                    num_columns),
+              boxed(plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor column",
+                    fac_columns)
+            )
+          ),
+          # second tab content
+          shinydashboard::tabItem(
+            tabName = "tuning",
+            shiny::fluidRow(
+              boxed(plotly::plotlyOutput("tuning_autoplot"),
+                    "Tuning Parameters", width = 12)
             )
           )
         )
@@ -96,6 +121,9 @@ shiny_models.reg_shiny_data <-
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col, input$alpha, input$size)
+      })
+      output$tuning_autoplot <- plotly::renderPlotly({
+        plot_tuning_params(x$tune_results)
       })
     }
 
