@@ -82,7 +82,7 @@ plot_multiclass_pred_numcol <-
       )
     dat <-  dat %>%
       dplyr::mutate(
-        predicted_probabilities :=
+        predicted_probabilities =
           dplyr::case_when(
             predicted_probabilities > 1 - prob_eps ~ 1 - prob_eps,
             predicted_probabilities < prob_eps ~ prob_eps,
@@ -142,7 +142,7 @@ plot_multiclass_pred_factorcol <-
       )
     dat <-  dat %>%
       dplyr::mutate(
-        predicted_probabilities :=
+        predicted_probabilities =
           dplyr::case_when(
             predicted_probabilities > 1 - prob_eps ~ 1 - prob_eps,
             predicted_probabilities < prob_eps ~ prob_eps,
