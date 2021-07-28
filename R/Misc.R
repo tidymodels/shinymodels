@@ -80,4 +80,3 @@ boxed <- function(x, title, input = character(1)) {
   }
   res
 }
-

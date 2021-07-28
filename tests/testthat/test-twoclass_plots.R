@@ -58,7 +58,7 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    c <- plot_twoclass_pred_numcol(org$predictions, org$y_name,"AXL"),
+    c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "AXL"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
@@ -87,7 +87,7 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name,"AXL"),
+    d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "AXL"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(d))

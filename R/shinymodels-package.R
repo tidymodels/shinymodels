@@ -13,6 +13,7 @@ NULL
 #' @importFrom scales logit_trans
 #' @importFrom broom augment
 #' @import yardstick
+#' @importFrom scales logit_trans
 #' @import shiny
 #' @import shinydashboard
 #' @import dplyr

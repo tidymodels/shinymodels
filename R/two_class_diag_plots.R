@@ -92,7 +92,8 @@ plot_twoclass_pred_numcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_wrap(~.outcome,
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
@@ -149,7 +150,8 @@ plot_twoclass_pred_factorcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_wrap(~.outcome,
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
@@ -158,7 +160,8 @@ plot_twoclass_pred_factorcol <-
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
         y = factorcol
-      ) + ggplot2::theme(legend.position = "none")
+      ) +
+      ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }

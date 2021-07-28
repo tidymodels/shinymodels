@@ -29,14 +29,14 @@ shiny_models.reg_shiny_data <-
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           shiny::sliderInput("alpha", "Alpha:",
-                             min = 0, max = 1,
-                             value = 0.7, step = 0.1
+            min = 0, max = 1,
+            value = 0.7, step = 0.1
           ),
           shiny::helpText("Select the size of the points"),
           # Input: Simple integer interval ----
           shiny::sliderInput("size", "Size:",
-                             min = 0.5, max = 3,
-                             value = 1.5, step = 0.5
+            min = 0.5, max = 3,
+            value = 1.5, step = 0.5
           )
         )
       ),
@@ -46,11 +46,13 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              boxed(plotly::plotlyOutput("obs_vs_pred"),
-                    "Observed vs. Predicted"),
-              boxed(plotly::plotlyOutput("resid_vs_pred"),  "Residuals vs Predicted"),
-              boxed(plotly::plotlyOutput("resid_vs_numcol"),  "Residuals vs A numeric column"),
-              boxed(plotly::plotlyOutput("resid_vs_factorcol"),  "Residuals vs A factor column")
+              boxed(
+                plotly::plotlyOutput("obs_vs_pred"),
+                "Observed vs. Predicted"
+              ),
+              boxed(plotly::plotlyOutput("resid_vs_pred"), "Residuals vs Predicted"),
+              boxed(plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric column"),
+              boxed(plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor column")
             )
           )
         )
