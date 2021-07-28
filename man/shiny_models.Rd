@@ -4,6 +4,7 @@
 \name{shiny_models}
 \alias{shiny_models}
 \alias{shiny_models.default}
+\alias{shiny_models.multi_cls_shiny_data}
 \alias{shiny_models.reg_shiny_data}
 \alias{shiny_models.two_cls_shiny_data}
 \title{Internal function to run shiny application on an object of \code{shiny_data} class}
@@ -11,6 +12,8 @@
 shiny_models(x, hover_cols = NULL, hover_only = NULL, ...)
 
 \method{shiny_models}{default}(x, hover_cols = NULL, hover_only = NULL, ...)
+
+\method{shiny_models}{multi_cls_shiny_data}(x, hover_cols = NULL, hover_only = FALSE, ...)
 
 \method{shiny_models}{reg_shiny_data}(x, hover_cols = NULL, hover_only = FALSE, ...)
 

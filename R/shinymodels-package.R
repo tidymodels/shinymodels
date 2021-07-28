@@ -10,6 +10,7 @@ NULL
 
 #' @importFrom tune .get_tune_outcome_names collect_predictions
 #' @importFrom stats reorder
+#' @importFrom scales logit_trans
 #' @importFrom broom augment
 #' @import yardstick
 #' @importFrom scales logit_trans
@@ -17,6 +18,7 @@ NULL
 #' @import shinydashboard
 #' @import dplyr
 #' @import ggplot2
+#' @import tidyr
 #' @import rlang
 #' @import utils
 #' @importFrom tidyselect eval_select
@@ -34,6 +36,8 @@ utils::globalVariables(
     "Class",
     "delta",
     ".hover",
-    ".outcome"
+    ".outcome",
+    "predicted_class",
+    "predicted_probabilities"
   )
 )

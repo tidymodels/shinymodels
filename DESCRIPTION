@@ -50,6 +50,7 @@ Imports:
     shinydashboard,
     stats,
     tidymodels,
+    tidyr,
     tidyselect,
     tune,
     yardstick
