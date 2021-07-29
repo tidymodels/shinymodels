@@ -2,7 +2,7 @@
 % Please edit documentation in R/Misc.R
 \name{plot_tuning_params}
 \alias{plot_tuning_params}
-\title{Autoplot of tuning parameters}
+\title{Plot tuning parameters}
 \usage{
 plot_tuning_params(obj)
 }

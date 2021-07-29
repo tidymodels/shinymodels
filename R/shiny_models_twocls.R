@@ -14,15 +14,17 @@ shiny_models.two_cls_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
-          shinydashboard::menuItem("Static Plots", tabName = "static", icon = icon("chart-bar")),
-          shinydashboard::menuItem("Interactive Plots", tabName = "interactive", icon = icon("chart-line")),
-          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0){
+          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0) {
             shiny::helpText("No tuning parameters!")
           }
-          else{
-            shinydashboard::menuItem("Tuning Parameters", tabName = "tuning",
-                                     icon = icon("filter"))
+          else {
+            shinydashboard::menuItem("Tuning Parameters",
+              tabName = "tuning",
+              icon = icon("filter")
+            )
           },
+          shinydashboard::menuItem("Static Plots", tabName = "static", icon = icon("chart-bar")),
+          shinydashboard::menuItem("Interactive Plots", tabName = "interactive", icon = icon("chart-line")),
           shiny::helpText("Select column(s) to create plots"),
           if (length(num_columns) == 0) {
             shiny::helpText("No numeric column to display")
@@ -68,7 +70,17 @@ shiny_models.two_cls_shiny_data <-
       ),
       shinydashboard::dashboardBody(
         shinydashboard::tabItems(
-          # First tab content
+          # first tab content
+          shinydashboard::tabItem(
+            tabName = "tuning",
+            shiny::fluidRow(
+              boxed(
+                plotly::plotlyOutput("tuning_autoplot"),
+                "Tuning Parameters"
+              )
+            )
+          ),
+          # second tab content
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
@@ -82,7 +94,7 @@ shiny_models.two_cls_shiny_data <-
             )
           ),
 
-          # Second tab content
+          # third tab content
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
@@ -95,14 +107,6 @@ shiny_models.two_cls_shiny_data <-
                 plotly::plotlyOutput("pred_vs_factorcol"),
                 "Predicted probabilities vs factor columns",
                 fac_columns
-              )
-            ),
-            # third tab content
-            shinydashboard::tabItem(
-              tabName = "tuning",
-              shiny::fluidRow(
-                boxed(plotly::plotlyOutput("tuning_autoplot"),
-                      "Tuning Parameters", width = 12)
               )
             )
           )

@@ -54,7 +54,7 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name,"latitude"),
+    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "latitude"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
@@ -83,7 +83,7 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name,"tectonic_settings"),
+    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "tectonic_settings"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(d))

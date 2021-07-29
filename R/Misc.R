@@ -84,7 +84,7 @@ boxed <- function(x, title, input = character(1), width = 6) {
 
 # ------------------------------------------------------------------------------
 
-#' Autoplot of tuning parameters
+#' Plot tuning parameters
 #'
 #' This function plots the tuning parameters against a metric.
 #' @param obj The results from tune_() functions.
@@ -93,6 +93,6 @@ boxed <- function(x, title, input = character(1), width = 6) {
 #' A [plotly::ggplotly()] object.
 plot_tuning_params <-
   function(obj) {
-    p <- ggplot2::autoplot(obj, metric = "rmse")
+    p <- tune::autoplot(obj)
     plotly::ggplotly(p)
   }

@@ -45,7 +45,7 @@ plot_multiclass_conf_mat <- function(dat) {
   p <- dat %>%
     yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
- plotly::ggplotly(p)
+  plotly::ggplotly(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
@@ -80,7 +80,7 @@ plot_multiclass_pred_numcol <-
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
       )
-    dat <-  dat %>%
+    dat <- dat %>%
       dplyr::mutate(
         predicted_probabilities =
           dplyr::case_when(
@@ -98,7 +98,8 @@ plot_multiclass_pred_numcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
@@ -136,11 +137,11 @@ plot_multiclass_pred_factorcol <-
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
-        cols =  tidyselect::starts_with(".pred_"),
+        cols = tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
       )
-    dat <-  dat %>%
+    dat <- dat %>%
       dplyr::mutate(
         predicted_probabilities =
           dplyr::case_when(
@@ -158,13 +159,15 @@ plot_multiclass_pred_factorcol <-
         text = .hover
       ),
       alpha = alpha,
-      size = size) +
+      size = size
+      ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(
         title = paste("Predicted probabilities vs. ", factorcol),
         y = factorcol
-      ) + ggplot2::theme(legend.position = "none")
+      ) +
+      ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
