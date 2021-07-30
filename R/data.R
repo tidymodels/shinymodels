@@ -1,4 +1,4 @@
-#' A tune_ function result object for internal testing
+#' A `tune` package result object for internal testing
 #'
 #' @details  An internal object used for development containing the
 #' results of tune_grid(), tune_bayes(), fit_resamples(), or last_fit().
