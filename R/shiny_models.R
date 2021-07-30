@@ -5,6 +5,7 @@
 #' @param hover_cols The columns to display while hovering in the Shiny app.
 #' @param hover_only A Boolean to turn on and off hovering in the interactive
 #' plots; the default option is FALSE, it is recommended to use TRUE for a big data.
+#' @param original_data Original dataset.
 #' @param ... Other parameters not currently used.
 #' @export
 #' @keywords internal
@@ -18,5 +19,3 @@ shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
 shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
   rlang::abort("No `shiny_models()` exists for this type of object.")
 }
-
-

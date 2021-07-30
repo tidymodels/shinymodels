@@ -17,7 +17,7 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{size}{The size for the geom points.}
 }
 \value{
-A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
+A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted values against the observed values based on

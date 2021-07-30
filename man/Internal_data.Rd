@@ -7,15 +7,17 @@
 \alias{mtcars_spline_res}
 \alias{ames_rf_res}
 \alias{volcano_res}
-\title{fit_resamples() object for internal testing}
+\alias{svm_res}
+\title{A \code{tune} package result object for internal testing}
 \value{
-a fit_resample() object
+A tune_() result object
 }
 \description{
-fit_resamples() object for internal testing
+A \code{tune} package result object for internal testing
 }
 \details{
 An internal object used for development containing the
-fit_resamples() result for different models
+results of \code{\link[tune:tune_grid]{tune::tune_grid()}}, \code{\link[tune:tune_bayes]{tune::tune_bayes()}}, \code{\link[tune:fit_resamples]{tune::fit_resamples()}},
+or \code{\link[tune:last_fit]{tune::last_fit()}}.
 }
 \keyword{datasets}

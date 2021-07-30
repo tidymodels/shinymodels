@@ -64,7 +64,7 @@ format_hover <- function(x, ...) {
 
 # ------------------------------------------------------------------------------
 
-boxed <- function(x, title, input = character(1)) {
+boxed <- function(x, title, input = character(1), width = 6) {
   if (length(input) > 0) {
     res <-
       shinydashboard::box(
@@ -73,6 +73,7 @@ boxed <- function(x, title, input = character(1)) {
         collapsible = TRUE,
         title = title,
         status = "primary",
+        width = width,
         collapsed = TRUE
       )
   } else {
@@ -80,3 +81,18 @@ boxed <- function(x, title, input = character(1)) {
   }
   res
 }
+
+# ------------------------------------------------------------------------------
+
+#' Plot tuning parameters
+#'
+#' This function plots the tuning parameters against a metric.
+#' @param obj The results from tune_() functions.
+#' @export
+#' @return
+#' A [plotly::ggplotly()] object.
+plot_tuning_params <-
+  function(obj) {
+    p <- tune::autoplot(obj)
+    plotly::ggplotly(p)
+  }

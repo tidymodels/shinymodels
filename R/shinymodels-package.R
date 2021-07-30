@@ -8,7 +8,7 @@
 NULL
 
 
-#' @importFrom tune .get_tune_outcome_names collect_predictions
+#' @importFrom tune .get_tune_outcome_names collect_predictions .get_tune_parameter_names
 #' @importFrom stats reorder
 #' @importFrom scales logit_trans
 #' @importFrom broom augment

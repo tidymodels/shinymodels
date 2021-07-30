@@ -14,6 +14,15 @@ shiny_models.two_cls_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
+          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0) {
+            shiny::helpText("No tuning parameters!")
+          }
+          else {
+            shinydashboard::menuItem("Tuning Parameters",
+              tabName = "tuning",
+              icon = icon("filter")
+            )
+          },
           shinydashboard::menuItem("Static Plots", tabName = "static", icon = icon("chart-bar")),
           shinydashboard::menuItem("Interactive Plots", tabName = "interactive", icon = icon("chart-line")),
           shiny::helpText("Select column(s) to create plots"),
@@ -61,7 +70,17 @@ shiny_models.two_cls_shiny_data <-
       ),
       shinydashboard::dashboardBody(
         shinydashboard::tabItems(
-          # First tab content
+          # first tab content
+          shinydashboard::tabItem(
+            tabName = "tuning",
+            shiny::fluidRow(
+              boxed(
+                plotly::plotlyOutput("tuning_autoplot"),
+                "Tuning Parameters"
+              )
+            )
+          ),
+          # second tab content
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
@@ -75,7 +94,7 @@ shiny_models.two_cls_shiny_data <-
             )
           ),
 
-          # Second tab content
+          # third tab content
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
@@ -139,6 +158,9 @@ shiny_models.two_cls_shiny_data <-
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col, input$alpha, input$size, input$prob_scaling)
+      })
+      output$tuning_autoplot <- plotly::renderPlotly({
+        plot_tuning_params(x$tune_results)
       })
     }
 

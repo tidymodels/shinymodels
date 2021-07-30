@@ -38,7 +38,7 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{prob_eps}{A small numerical constant to prevent division by zero.}
 }
 \value{
-A \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
+A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted probabilities against a numeric column based

@@ -14,10 +14,23 @@ shiny_models.multi_cls_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
-          shinydashboard::menuItem("Static Plots", tabName = "static",
-                                   icon = icon("chart-bar")),
-          shinydashboard::menuItem("Interactive Plots", tabName = "interactive",
-                                   icon = icon("chart-line")),
+          if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0) {
+            shiny::helpText("No tuning parameters!")
+          }
+          else {
+            shinydashboard::menuItem("Tuning Parameters",
+              tabName = "tuning",
+              icon = icon("filter")
+            )
+          },
+          shinydashboard::menuItem("Static Plots",
+            tabName = "static",
+            icon = icon("chart-bar")
+          ),
+          shinydashboard::menuItem("Interactive Plots",
+            tabName = "interactive",
+            icon = icon("chart-line")
+          ),
           shiny::helpText("Select column(s) to create plots"),
           if (length(num_columns) == 0) {
             shiny::helpText("No numeric column to display")
@@ -42,44 +55,64 @@ shiny_models.multi_cls_shiny_data <-
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           sliderInput("alpha", "Alpha:",
-                      min = 0, max = 1,
-                      value = 0.7, step = 0.1
+            min = 0, max = 1,
+            value = 0.7, step = 0.1
           ),
           shiny::helpText("Select the size of the points"),
           # Input: Simple integer interval ----
           sliderInput("size", "Size:",
-                      min = 0.5, max = 3,
-                      value = 1.5, step = 0.5
+            min = 0.5, max = 3,
+            value = 1.5, step = 0.5
           ),
           shiny::helpText("Logit scaling for probability?"),
-          radioButtons("prob_scaling", "Probability scaling:",
-                       c("TRUE" = "true",
-                         "FALSE" = "false"))
+          radioButtons(
+            "prob_scaling", "Probability scaling:",
+            c(
+              "TRUE" = "true",
+              "FALSE" = "false"
+            )
+          )
         )
       ),
       shinydashboard::dashboardBody(
         shinydashboard::tabItems(
-          # First tab content
+          # first tab content
+          shinydashboard::tabItem(
+            tabName = "tuning",
+            shiny::fluidRow(
+              boxed(
+                plotly::plotlyOutput("tuning_autoplot"),
+                "Tuning Parameters"
+              )
+            )
+          ),
+          # second tab content
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-              boxed(plotly::plotlyOutput("obs_vs_pred"),
-                    "Predicted probabilities vs true class"),
-              boxed(plotly::plotlyOutput("conf_mat"),  "Confusion matrix"),
-              boxed(plotly::plotlyOutput("roc"),  "ROC curve"),
+              boxed(
+                plotly::plotlyOutput("obs_vs_pred"),
+                "Predicted probabilities vs true class"
+              ),
+              boxed(plotly::plotlyOutput("conf_mat"), "Confusion matrix"),
+              boxed(plotly::plotlyOutput("roc"), "ROC curve"),
               boxed(plotly::plotlyOutput("pr"), "PR curve")
             )
           ),
-          # Second tab content
+          # third tab content
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              boxed(plotly::plotlyOutput("pred_vs_numcol"),
-                    "Predicted probabilities vs numeric columns",
-                    num_columns),
-              boxed(plotly::plotlyOutput("pred_vs_factorcol"),
-                    "Predicted probabilities vs factor columns",
-                    fac_columns)
+              boxed(
+                plotly::plotlyOutput("pred_vs_numcol"),
+                "Predicted probabilities vs numeric columns",
+                num_columns
+              ),
+              boxed(
+                plotly::plotlyOutput("pred_vs_factorcol"),
+                "Predicted probabilities vs factor columns",
+                fac_columns
+              )
             )
           )
         )
@@ -125,15 +158,21 @@ shiny_models.multi_cls_shiny_data <-
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        plot_multiclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
-                                    input$alpha, input$size, input$prob_scaling)
+        plot_multiclass_pred_numcol(
+          preds_dat(), x$y_name, input$num_value_col,
+          input$alpha, input$size, input$prob_scaling
+        )
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        plot_multiclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
-                                       input$alpha, input$size, input$prob_scaling)
+        plot_multiclass_pred_factorcol(
+          preds_dat(), x$y_name, input$factor_value_col,
+          input$alpha, input$size, input$prob_scaling
+        )
+      })
+      output$tuning_autoplot <- plotly::renderPlotly({
+        plot_tuning_params(x$tune_results)
       })
     }
-
     shiny::shinyApp(ui, server)
   }
