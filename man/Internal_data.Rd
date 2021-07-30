@@ -8,15 +8,16 @@
 \alias{ames_rf_res}
 \alias{volcano_res}
 \alias{svm_res}
-\title{A tune_ function result object for internal testing}
+\title{A \code{tune} package result object for internal testing}
 \value{
-a tune_() result object
+A tune_() result object
 }
 \description{
-A tune_ function result object for internal testing
+A \code{tune} package result object for internal testing
 }
 \details{
 An internal object used for development containing the
-results of tune_grid(), tune_bayes(), fit_resamples(), or last_fit().
+results of \code{\link[tune:tune_grid]{tune::tune_grid()}}, \code{\link[tune:tune_bayes]{tune::tune_bayes()}}, \code{\link[tune:fit_resamples]{tune::fit_resamples()}},
+or \code{\link[tune:last_fit]{tune::last_fit()}}.
 }
 \keyword{datasets}
