@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualizing the predicted probabilities vs. a factor variable for a classification
-model — plot_twoclass_pred_factorcol • shinymodels</title>
+<title>Plot tuning parameters — plot_tuning_params • shinymodels</title>
 
 
 <!-- jquery -->
@@ -40,10 +39,8 @@ model — plot_twoclass_pred_factorcol • shinymodels</title>
 
 
 
-<meta property="og:title" content="Visualizing the predicted probabilities vs. a factor variable for a classification
-model — plot_twoclass_pred_factorcol" />
-<meta property="og:description" content="This function plots the predicted probabilities against a factor column based on
-tidymodels results for a two-class classification model." />
+<meta property="og:title" content="Plot tuning parameters — plot_tuning_params" />
+<meta property="og:description" content="This function plots the tuning parameters against a metric." />
 
 
 
@@ -106,68 +103,23 @@ tidymodels results for a two-class classification model." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Visualizing the predicted probabilities vs. a factor variable for a classification
-model</h1>
+    <h1>Plot tuning parameters</h1>
     
-    <div class="hidden name"><code>plot_twoclass_pred_factorcol.Rd</code></div>
+    <div class="hidden name"><code>plot_tuning_params.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function plots the predicted probabilities against a factor column based on
-tidymodels results for a two-class classification model.</p>
+    <p>This function plots the tuning parameters against a metric.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_twoclass_pred_factorcol</span><span class='op'>(</span>
-  <span class='va'>dat</span>,
-  <span class='va'>y_name</span>,
-  <span class='va'>factorcol</span>,
-  alpha <span class='op'>=</span> <span class='fl'>1</span>,
-  size <span class='op'>=</span> <span class='fl'>1</span>,
-  prob_scaling <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  event_level <span class='op'>=</span> <span class='st'>"first"</span>,
-  prob_breaks <span class='op'>=</span> <span class='op'>(</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>10</span>,
-  prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_tuning_params</span><span class='op'>(</span><span class='va'>obj</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dat</th>
-      <td><p>The predictions data frame in the <code><a href='organize_data.html'>organize_data()</a></code> result. Following
-variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color</code>, and <code>.hover</code>.</p></td>
-    </tr>
-    <tr>
-      <th>y_name</th>
-      <td><p>The y/response variable for the model.</p></td>
-    </tr>
-    <tr>
-      <th>factorcol</th>
-      <td><p>The factor column to plot against the predicted probabilities.</p></td>
-    </tr>
-    <tr>
-      <th>alpha</th>
-      <td><p>The opacity for the geom points.</p></td>
-    </tr>
-    <tr>
-      <th>size</th>
-      <td><p>The size for the geom points.</p></td>
-    </tr>
-    <tr>
-      <th>prob_scaling</th>
-      <td><p>The boolean to turn on or off the logit scale for probability.</p></td>
-    </tr>
-    <tr>
-      <th>event_level</th>
-      <td><p>A single character value for the level corresponding to the event.</p></td>
-    </tr>
-    <tr>
-      <th>prob_breaks</th>
-      <td><p>A vector to use for breaks in the probability levels.</p></td>
-    </tr>
-    <tr>
-      <th>prob_eps</th>
-      <td><p>A small numerical constant to prevent division by zero.</p></td>
+      <th>obj</th>
+      <td><p>The results from tune_() functions.</p></td>
     </tr>
     </table>
 
