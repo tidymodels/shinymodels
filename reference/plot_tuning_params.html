@@ -40,7 +40,8 @@
 
 
 <meta property="og:title" content="Plot tuning parameters — plot_tuning_params" />
-<meta property="og:description" content="This function plots the tuning parameters against a metric." />
+<meta property="og:description" content="This function plots the tuning parameters against the metrics measured
+during tuning." />
 
 
 
@@ -109,23 +110,32 @@
     </div>
 
     <div class="ref-description">
-    <p>This function plots the tuning parameters against a metric.</p>
+    <p>This function plots the tuning parameters against the metrics measured
+during tuning.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_tuning_params</span><span class='op'>(</span><span class='va'>obj</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_tuning_params</span><span class='op'>(</span><span class='va'>obj</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>obj</th>
-      <td><p>The results from tune_() functions.</p></td>
+      <td><p>An object with class <code>tune_results</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Other options to pass to <code><a href='https://tune.tidymodels.org/reference/autoplot.tune_results.html'>tune::autoplot.tune_results()</a></code>.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <code><a href='https://docs.ropensci.org/plotly/reference/ggplotly.html'>plotly::ggplotly()</a></code> object.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The ggplot object is modified to have an aesthetic of
+<code>customdata = .config</code>.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
