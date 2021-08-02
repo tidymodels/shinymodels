@@ -25,7 +25,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
     ) +
     ggplot2::scale_color_identity() +
     tune::coord_obs_pred() +
-    ggplot2::labs(title = "Observed vs. predicted", x = y_name, y = "Predicted") +
+    ggplot2::labs(x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
   plotly::ggplotly(p, tooltip = "text") %>%
     plotly::layout(dragmode = "select")
@@ -53,7 +53,6 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
     ) +
     ggplot2::scale_color_identity() +
     ggplot2::labs(
-      title = "Residuals vs. predicted",
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
@@ -74,7 +73,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
 plot_numeric_res_numcol <-
   function(dat, y_name, numcol, alpha = 1, size = 1) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
-      ggplot2::geom_abline(lty = 2, col = "green") +
+      ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
@@ -84,7 +83,6 @@ plot_numeric_res_numcol <-
       size = size
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste(numcol, " vs. residual")) +
       ggplot2::theme(legend.position = "none")
     plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")
@@ -118,10 +116,6 @@ plot_numeric_res_factorcol <-
       size = size
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(
-        title = paste(factorcol, " vs. residual"),
-        y = factorcol
-      ) +
       ggplot2::theme(legend.position = "none")
     plotly::ggplotly(p, tooltip = "text") %>%
       plotly::layout(dragmode = "select")

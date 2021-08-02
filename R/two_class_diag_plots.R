@@ -27,7 +27,6 @@ plot_twoclass_obs_pred <-
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
       ) +
-      ggplot2::labs(title = "Predicted probabilities vs. true class") +
       ggplot2::lims(x = 0:1)
     plotly::ggplotly(p)
   }
@@ -99,7 +98,6 @@ plot_twoclass_pred_numcol <-
         ncol = 1
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
@@ -157,10 +155,6 @@ plot_twoclass_pred_factorcol <-
         ncol = 1
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(
-        title = paste("Predicted probabilities vs. ", factorcol),
-        y = factorcol
-      ) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)

@@ -93,6 +93,7 @@ boxed <- function(x, title, input = character(1), width = 6) {
 #' A [plotly::ggplotly()] object.
 plot_tuning_params <-
   function(obj) {
-    p <- tune::autoplot(obj)
+    p <- tune::autoplot(obj) +
+      labs(title = "Tuning parameters")
     plotly::ggplotly(p)
   }

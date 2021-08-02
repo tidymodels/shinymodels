@@ -48,7 +48,7 @@ shiny_models.reg_shiny_data <-
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           shiny::sliderInput("alpha", "Alpha:",
-            min = 0, max = 1,
+            min = 0.1, max = 1,
             value = 0.7, step = 0.1
           ),
           shiny::helpText("Select the size of the points"),
@@ -65,10 +65,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              boxed(
-                plotly::plotlyOutput("tuning_autoplot"),
-                "Tuning Parameters"
-              )
+              plotly::plotlyOutput("tuning_autoplot")
             )
           ),
           # second tab content
@@ -81,11 +78,11 @@ shiny_models.reg_shiny_data <-
               ),
               boxed(plotly::plotlyOutput("resid_vs_pred"), "Residuals vs Predicted"),
               boxed(
-                plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric column",
+                plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric predictor",
                 num_columns
               ),
               boxed(
-                plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor column",
+                plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor predictor",
                 fac_columns
               )
             )

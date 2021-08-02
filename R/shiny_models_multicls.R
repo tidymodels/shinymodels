@@ -23,11 +23,11 @@ shiny_models.multi_cls_shiny_data <-
               icon = icon("filter")
             )
           },
-          shinydashboard::menuItem("Static Plots",
+          shinydashboard::menuItem("Performance Plots",
             tabName = "static",
             icon = icon("chart-bar")
           ),
-          shinydashboard::menuItem("Interactive Plots",
+          shinydashboard::menuItem("Variable Plots",
             tabName = "interactive",
             icon = icon("chart-line")
           ),
@@ -55,7 +55,7 @@ shiny_models.multi_cls_shiny_data <-
           shiny::helpText("Select the opacity of the points"),
           # Input: Simple integer interval ----
           sliderInput("alpha", "Alpha:",
-            min = 0, max = 1,
+            min = 0.1, max = 1,
             value = 0.7, step = 0.1
           ),
           shiny::helpText("Select the size of the points"),
@@ -80,10 +80,7 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              boxed(
-                plotly::plotlyOutput("tuning_autoplot"),
-                "Tuning Parameters"
-              )
+              plotly::plotlyOutput("tuning_autoplot")
             )
           ),
           # second tab content
@@ -105,12 +102,12 @@ shiny_models.multi_cls_shiny_data <-
             shiny::fluidRow(
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
-                "Predicted probabilities vs numeric columns",
+                "Predicted probabilities vs a numeric predictor",
                 num_columns
               ),
               boxed(
                 plotly::plotlyOutput("pred_vs_factorcol"),
-                "Predicted probabilities vs factor columns",
+                "Predicted probabilities vs a factor predictor",
                 fac_columns
               )
             )
