@@ -28,6 +28,7 @@ NULL
 utils::globalVariables(
   c(
     ".color",
+    ".config",
     ".pred",
     ".pred_class",
     ".residual",
