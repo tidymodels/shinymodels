@@ -43,6 +43,7 @@ Imports:
     magrittr,
     modeldata,
     parsnip,
+    purrr,
     plotly,
     rlang,
     scales,
@@ -59,4 +60,5 @@ Depends:
     R (>= 2.10),
     ggplot2
 Remotes:  
-    r-lib/generics
+    r-lib/generics,
+    tidymodels/tune@autoplot-updates
