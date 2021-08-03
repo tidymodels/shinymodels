@@ -24,10 +24,10 @@ plot_twoclass_obs_pred <-
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_wrap(~.outcome, # TODO
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
-      ggplot2::labs(title = "Predicted probabilities vs. true class") +
+      ggplot2::labs(x = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::lims(x = 0:1)
     plotly::ggplotly(p)
   }
@@ -95,11 +95,11 @@ plot_twoclass_pred_numcol <-
       size = size
       ) +
       ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
+      ggplot2::labs(y = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
@@ -153,14 +153,11 @@ plot_twoclass_pred_factorcol <-
       size = size
       ) +
       ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
+                          labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
+                          ncol = 1
       ) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(
-        title = paste("Predicted probabilities vs. ", factorcol),
-        y = factorcol
-      ) +
+      ggplot2::labs(x = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)

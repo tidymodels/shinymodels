@@ -4,10 +4,13 @@
 \alias{plot_tuning_params}
 \title{Plot tuning parameters}
 \usage{
-plot_tuning_params(obj, ...)
+plot_tuning_params(obj, source, ...)
 }
 \arguments{
 \item{obj}{An object with class \code{tune_results}.}
+
+\item{source}{A character string of length 1 that matches the source argument
+in event_data().}
 
 \item{...}{Other options to pass to \code{\link[tune:autoplot.tune_results]{tune::autoplot.tune_results()}}.}
 }

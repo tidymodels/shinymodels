@@ -49,7 +49,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 37.2602739726027
@@ -60,16 +60,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs. true class",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -107,7 +97,7 @@
         },
         "annotations": [
           {
-            "text": ".pred_Impaired",
+            "text": "Probability of  Impaired",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,
@@ -584,7 +574,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 43.1050228310502
@@ -595,16 +585,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs.  AXL",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -661,7 +641,7 @@
             "annotationType": "axis"
           },
           {
-            "text": ".pred_Impaired",
+            "text": "Probability of  Impaired",
             "x": -0.0333904109589041,
             "y": 0.5,
             "showarrow": false,
@@ -947,7 +927,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 48.9497716894977
@@ -958,16 +938,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs.  AXL",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -1005,7 +975,7 @@
         },
         "annotations": [
           {
-            "text": ".pred_Impaired",
+            "text": "Probability of  Impaired",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,

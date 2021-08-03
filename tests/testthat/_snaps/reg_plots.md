@@ -50,7 +50,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 43.2754946727549,
+          "t": 25.7412480974125,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 37.2602739726027
@@ -61,16 +61,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Observed vs. predicted",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -193,7 +183,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -263,7 +253,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 43.2754946727549,
+          "t": 25.7412480974125,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 37.2602739726027
@@ -274,16 +264,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Residuals vs. predicted",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -402,7 +382,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -426,7 +406,7 @@
       "data": [
         {
           "x": [37.85, 349.15],
-          "y": [37.85, 349.15],
+          "y": [0, 0],
           "text": "",
           "type": "scatter",
           "mode": "lines",
@@ -472,7 +452,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 43.2754946727549,
+          "t": 25.7412480974125,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 37.2602739726027
@@ -483,16 +463,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "hp  vs. residual",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -611,7 +581,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -705,7 +675,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 43.2754946727549,
+          "t": 25.7412480974125,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
           "l": 48.9497716894977
@@ -716,16 +686,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Street  vs. residual",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 1],
@@ -800,7 +760,7 @@
           "zeroline": false,
           "anchor": "x",
           "title": {
-            "text": "Street",
+            "text": "stats::reorder(Street, .residual)",
             "font": {
               "color": "rgba(0,0,0,1)",
               "family": "",
