@@ -14,6 +14,7 @@ shiny_models.reg_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
+          id = "sidebarid",
           if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0) {
             shiny::helpText("No tuning parameters!")
           }
@@ -23,39 +24,45 @@ shiny_models.reg_shiny_data <-
               icon = icon("filter")
             )
           },
-          shinydashboard::menuItem("Plots", tabName = "interactive", icon = icon("chart-line")),
-          shiny::helpText("Select column(s) to create plots"),
-          if (length(num_columns) == 0) {
-            shiny::helpText("No numeric column to display")
-          }
-          else {
-            shiny::selectInput(
-              inputId = "num_value_col",
-              label = "Numeric Columns",
-              choices = unique(c("None Selected" = "", num_columns))
-            )
-          },
-          if (length(fac_columns) == 0) {
-            shiny::helpText("No factor column to display")
-          }
-          else {
-            shiny::selectInput(
-              inputId = "factor_value_col",
-              label = "Factor Columns",
-              choices = unique(c("None Selected" = "", fac_columns))
-            )
-          },
-          shiny::helpText("Select the opacity of the points"),
-          # Input: Simple integer interval ----
-          shiny::sliderInput("alpha", "Alpha:",
-            min = 0.1, max = 1,
-            value = 0.7, step = 0.1
+          shinydashboard::menuItem("Plots",
+            tabName = "plot",
+            icon = icon("chart-line")
           ),
-          shiny::helpText("Select the size of the points"),
-          # Input: Simple integer interval ----
-          shiny::sliderInput("size", "Size:",
-            min = 0.5, max = 3,
-            value = 1.5, step = 0.5
+          shiny::conditionalPanel(
+            'input.sidebarid == "plot"',
+            shiny::helpText("Select column(s) to create plots"),
+            if (length(num_columns) == 0) {
+              shiny::helpText("No numeric column to display")
+            }
+            else {
+              shiny::selectInput(
+                inputId = "num_value_col",
+                label = "Numeric Columns",
+                choices = unique(c("None Selected" = "", num_columns))
+              )
+            },
+            if (length(fac_columns) == 0) {
+              shiny::helpText("No factor column to display")
+            }
+            else {
+              shiny::selectInput(
+                inputId = "factor_value_col",
+                label = "Factor Columns",
+                choices = unique(c("None Selected" = "", fac_columns))
+              )
+            },
+            shiny::helpText("Select the opacity of the points"),
+            # Input: Simple integer interval ----
+            shiny::sliderInput("alpha", "Alpha:",
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
+            ),
+            shiny::helpText("Select the size of the points"),
+            # Input: Simple integer interval ----
+            shiny::sliderInput("size", "Size:",
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
+            )
           )
         )
       ),
@@ -70,7 +77,7 @@ shiny_models.reg_shiny_data <-
           ),
           # second tab content
           shinydashboard::tabItem(
-            tabName = "interactive",
+            tabName = "plot",
             shiny::fluidRow(
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -133,7 +140,6 @@ shiny_models.reg_shiny_data <-
         plot_tuning_params(x$tune_results)
       })
     }
-
     # Run the application
     shiny::shinyApp(ui = ui, server = server)
   }

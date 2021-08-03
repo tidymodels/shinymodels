@@ -27,6 +27,7 @@ plot_multiclass_obs_pred <-
       ggplot2::ggplot(ggplot2::aes(x = predicted_probabilities)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
+      ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::lims(x = 0:1)
     plotly::ggplotly(p)
   }
@@ -101,6 +102,7 @@ plot_multiclass_pred_numcol <-
       ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
+      ggplot2::labs(y = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
