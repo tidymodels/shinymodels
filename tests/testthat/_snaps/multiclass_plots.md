@@ -289,7 +289,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -307,7 +307,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -325,7 +325,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -343,7 +343,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -361,7 +361,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -379,7 +379,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,
@@ -1347,7 +1347,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -1365,7 +1365,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -1383,7 +1383,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -1401,7 +1401,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -1419,7 +1419,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -1437,7 +1437,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,
@@ -2195,7 +2195,7 @@
         },
         "annotations": [
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,
@@ -2233,7 +2233,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -2251,7 +2251,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -2269,7 +2269,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -2287,7 +2287,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -2305,7 +2305,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -2323,7 +2323,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,

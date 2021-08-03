@@ -21,6 +21,10 @@ plot_multiclass_obs_pred <-
         cols = tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     p <- dat %>%
       dplyr::group_by(predicted_class) %>%
@@ -88,6 +92,10 @@ plot_multiclass_pred_numcol <-
             predicted_probabilities < prob_eps ~ prob_eps,
             TRUE ~ predicted_probabilities
           )
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     p <- dat %>%
       dplyr::group_by(predicted_class, .outcome) %>%
@@ -140,6 +148,10 @@ plot_multiclass_pred_factorcol <-
         cols = tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     dat <- dat %>%
       dplyr::mutate(
@@ -163,6 +175,7 @@ plot_multiclass_pred_factorcol <-
       ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
+      ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
