@@ -251,7 +251,7 @@
         },
         "annotations": [
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,
@@ -1328,7 +1328,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": -0.0402397260273973,
             "y": 0.5,
             "showarrow": false,
