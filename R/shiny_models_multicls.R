@@ -25,12 +25,12 @@ shiny_models.multi_cls_shiny_data <-
             )
           },
           shinydashboard::menuItem("Performance Plots",
-                                   tabName = "static",
-                                   icon = icon("chart-bar")
+            tabName = "static",
+            icon = icon("chart-bar")
           ),
           shinydashboard::menuItem("Variable Plots",
-                                   tabName = "interactive",
-                                   icon = icon("chart-line")
+            tabName = "interactive",
+            icon = icon("chart-line")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "interactive"',
@@ -58,14 +58,14 @@ shiny_models.multi_cls_shiny_data <-
             shiny::helpText("Select the opacity of the points"),
             # Input: Simple integer interval ----
             sliderInput("alpha", "Alpha:",
-                        min = 0.1, max = 1,
-                        value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             # Input: Simple integer interval ----
             sliderInput("size", "Size:",
-                        min = 0.5, max = 3,
-                        value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(

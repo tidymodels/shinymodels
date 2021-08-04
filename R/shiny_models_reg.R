@@ -25,8 +25,8 @@ shiny_models.reg_shiny_data <-
             )
           },
           shinydashboard::menuItem("Plots",
-                                   tabName = "plot",
-                                   icon = icon("chart-line")
+            tabName = "plot",
+            icon = icon("chart-line")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "plot"',
@@ -54,14 +54,14 @@ shiny_models.reg_shiny_data <-
             shiny::helpText("Select the opacity of the points"),
             # Input: Simple integer interval ----
             shiny::sliderInput("alpha", "Alpha:",
-                               min = 0.1, max = 1,
-                               value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             # Input: Simple integer interval ----
             shiny::sliderInput("size", "Size:",
-                               min = 0.5, max = 3,
-                               value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             )
           )
         )

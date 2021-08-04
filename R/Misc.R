@@ -81,4 +81,3 @@ boxed <- function(x, title, input = character(1), width = 6) {
   }
   res
 }
-
