@@ -13,7 +13,8 @@ plot_multiclass_pred_numcol(
   size = 1,
   prob_scaling = FALSE,
   prob_breaks = (2:9)/10,
-  prob_eps = 0.001
+  prob_eps = 0.001,
+  source = NULL
 )
 }
 \arguments{
@@ -33,6 +34,9 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{prob_breaks}{A vector to use for breaks in the probability levels.}
 
 \item{prob_eps}{A small numerical constant to prevent division by zero.}
+
+\item{source}{A character string of length 1 that matches the source argument
+in event_data().}
 }
 \value{
 A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.

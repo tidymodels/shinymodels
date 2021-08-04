@@ -72,13 +72,19 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              plotly::plotlyOutput("tuning_autoplot")
+              verbatimTextOutput('chosen_config'),
+              plotly::plotlyOutput("tuning_autoplot"),
+              shiny::helpText("Please click on a point to select a tuning parameter
+                              and the associated model.")
             )
           ),
           # second tab content
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
+              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
+                shiny::verbatimTextOutput('selected_config')
+              },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
@@ -107,9 +113,10 @@ shiny_models.reg_shiny_data <-
         # make sure config is a unique value; run unique if not
         if (length(config) == 0) {
           selected_ids(x$best_config)
-        } # if length is 0, return empty reactive value
-        # selecting model(s) clears any previous selection
-        selected_ids(config) # reactive value is the ids vector ids based on selected config
+        }
+        else{
+          selected_ids(config) # reactive value is the ids vector ids based on selected config
+        }
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -118,21 +125,20 @@ shiny_models.reg_shiny_data <-
       }
       else {
         shiny::observe({
-          # listens to the `ggplotly(p, source = "obs")` graph where each point encodes an observation
-          obs <- c(
+          new <- c(
             plotly::event_data("plotly_click", source = "obs")$customdata,
             plotly::event_data("plotly_selected", source = "obs")$customdata
           )
-          print(summary(obs))
-          if (length(obs)){
-            selected_obs(obs)
+          if (length(new)) {
+            current <- shiny::isolate(selected_obs())
+            selected_obs(unique(c(current, new)))
           }
-          else{
-            return()
+          else {
+            # clear the selected rows when a double-click occurs
+            selected_obs(NULL)
           }
         })
       }
-
       preds_dat <- shiny::reactive({
         dplyr::filter(preds, .config == selected_ids()) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
@@ -152,8 +158,14 @@ shiny_models.reg_shiny_data <-
         req(input$factor_value_col)
         plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col, input$alpha, input$size, source = "obs")
       })
+      output$chosen_config = renderPrint({
+        paste("Selected model:", selected_ids())
+      })
       output$tuning_autoplot <- plotly::renderPlotly({
         plot_tuning_params(x$tune_results, source = "config")
+      })
+      output$selected_config = renderPrint({
+        paste("Selected model:", selected_ids())
       })
     }
     # Run the application

@@ -57,6 +57,8 @@ plot_twoclass_conf_mat <- function(dat) {
 #' @param numcol The numerical column to plot against the predicted probabilities.
 #' @param alpha The opacity for the geom points.
 #' @param size The size for the geom points.
+#' @param source A character string of length 1 that matches the source argument
+#' in event_data().
 #' @param prob_scaling The boolean to turn on or off the logit scale for probability.
 #' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
@@ -73,7 +75,8 @@ plot_twoclass_pred_numcol <-
            prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
-           prob_eps = 0.001) {
+           prob_eps = 0.001,
+           source = NULL) {
     prob_name <- first_class_prob_name(dat, event_level, y_name)
     # plotting
     dat %>%
@@ -104,7 +107,7 @@ plot_twoclass_pred_numcol <-
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
     fig
@@ -131,7 +134,8 @@ plot_twoclass_pred_factorcol <-
            prob_scaling = FALSE,
            event_level = "first",
            prob_breaks = (2:9) / 10,
-           prob_eps = 0.001) {
+           prob_eps = 0.001,
+           source = NULL) {
     prob_name <- first_class_prob_name(dat, event_level, y_name)
     # plotting
     dat %>%
@@ -162,7 +166,7 @@ plot_twoclass_pred_factorcol <-
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
     fig

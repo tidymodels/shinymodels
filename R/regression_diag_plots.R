@@ -119,6 +119,6 @@ plot_numeric_res_factorcol <-
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text", source) %>%
+    plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
   }
