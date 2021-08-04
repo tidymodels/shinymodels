@@ -195,7 +195,7 @@ shiny_models.multi_cls_shiny_data <-
           input$alpha, input$size, input$prob_scaling, source = "obs"
         )
       })
-      output$selected_config = renderPrint({
+      output$chosen_config = renderPrint({
         paste("Selected model:", selected_ids())
       })
       output$tuning_autoplot <- plotly::renderPlotly({
