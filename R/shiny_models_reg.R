@@ -100,7 +100,7 @@ shiny_models.reg_shiny_data <-
     # Define server logic required to draw a histogram
     server <- function(input, output) {
       # a df with all the predictions across all models; for Carson's code, model = .config and id = .row
-      selected_ids <- shiny::reactiveVal()
+      selected_config <- shiny::reactiveVal()
       shiny::observe({
         # listens to the `ggplotly(p, source = "config")` graph where each point encodes a model
         config <- plotly::event_data("plotly_click", source = "config")$customdata
@@ -108,10 +108,8 @@ shiny_models.reg_shiny_data <-
         if (length(config) == 0) {
           return()
         } # if length is 0, return empty reactive value
-        # Get all the observation ids from the chosen model(s)
-        ids <- preds[preds$.config %in% config, ]$.row
-        # selecting model(s) clears any previous selection
-        selected_ids(ids) # reactive value is the ids vector ids based on selected config
+
+        selected_config(config)
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -125,7 +123,6 @@ shiny_models.reg_shiny_data <-
             plotly::event_data("plotly_click", source = "obs")$customdata,
             plotly::event_data("plotly_selected", source = "obs")$customdata
           )
-          print(summary(obs))
           if (length(obs)){
             selected_obs(obs)
           }
@@ -136,7 +133,7 @@ shiny_models.reg_shiny_data <-
       }
 
       preds_dat <- shiny::reactive({
-        dplyr::filter(preds, .row %in% selected_ids()) %>%
+        dplyr::filter(preds, .config == selected_config()) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
       })
 
