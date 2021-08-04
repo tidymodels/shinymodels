@@ -24,7 +24,7 @@ test_that("can accurately organize data", {
   expect_equal(sum(length(org$num_cols), length(org$fac_cols)), length(colnames(mtcars)))
   expect_equal("mpg" %in% org$num_cols, TRUE)
   expect_equal(org$app_type, "reg")
-  expect_equal(length(org), 6)
+  expect_equal(length(org), 7)
   expect_equal(nrow(org$predictions), 32)
   expect_equal(org$y_name, "mpg")
   expect_error(

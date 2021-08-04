@@ -61,6 +61,8 @@ plot_multiclass_conf_mat <- function(dat) {
 #' @param numcol The numerical column to plot against the predicted probabilities.
 #' @param alpha The opacity for the geom points.
 #' @param size The size for the geom points.
+#' @param source A character string of length 1 that matches the source argument
+#' in event_data().
 #' @param prob_scaling The boolean to turn on or off the logit scale for probability.
 #' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
@@ -76,7 +78,8 @@ plot_multiclass_pred_numcol <-
            size = 1,
            prob_scaling = FALSE,
            prob_breaks = (2:9) / 10,
-           prob_eps = 0.001) {
+           prob_eps = 0.001,
+           source = NULL) {
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
@@ -115,7 +118,7 @@ plot_multiclass_pred_numcol <-
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
     fig
@@ -141,7 +144,8 @@ plot_multiclass_pred_factorcol <-
            size = 1,
            prob_scaling = FALSE,
            prob_breaks = (2:9) / 10,
-           prob_eps = 0.001) {
+           prob_eps = 0.001,
+           source = NULL) {
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
@@ -180,7 +184,7 @@ plot_multiclass_pred_factorcol <-
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
-    fig <- plotly::ggplotly(p, tooltip = "text") %>%
+    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
     fig <- fig %>% plotly::toWebGL()
     fig
