@@ -66,11 +66,13 @@ organize_data.tune_results <-
     }
     preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
-    new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x)
+    best_config <- tune::select_best(x)$.config
+    new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x, best_config)
   }
 # ------------------------------------------------------------------------------
 
-new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x) {
+new_shiny_data <- function(predictions, y_name, subclass, numeric_cols,
+                           factor_cols, x, best_config) {
   if (!inherits(predictions, "data.frame")) {
     rlang::abort("predictions should be a data frame")
   }
@@ -95,6 +97,7 @@ new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_c
     app_type = subclass,
     num_cols = numeric_cols,
     fac_cols = factor_cols,
+    best_config = best_config,
     tune_results = x
   )
   result <- structure(res, class = c(paste0(subclass, "_shiny_data"), "shiny_data"))

@@ -106,12 +106,10 @@ shiny_models.reg_shiny_data <-
         config <- plotly::event_data("plotly_click", source = "config")$customdata
         # make sure config is a unique value; run unique if not
         if (length(config) == 0) {
-          return()
+          selected_ids(x$best_config)
         } # if length is 0, return empty reactive value
-        # Get all the observation ids from the chosen model(s)
-        ids <- preds[preds$.config %in% config, ]$.row
         # selecting model(s) clears any previous selection
-        selected_ids(ids) # reactive value is the ids vector ids based on selected config
+        selected_ids(config) # reactive value is the ids vector ids based on selected config
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -136,7 +134,7 @@ shiny_models.reg_shiny_data <-
       }
 
       preds_dat <- shiny::reactive({
-        dplyr::filter(preds, .row %in% selected_ids()) %>%
+        dplyr::filter(preds, .config == selected_ids()) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
       })
 
