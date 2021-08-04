@@ -20,13 +20,13 @@ shiny_models.reg_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Plots",
-                                   tabName = "plot",
-                                   icon = icon("chart-line")
+            tabName = "plot",
+            icon = icon("chart-line")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "plot"',
@@ -54,14 +54,14 @@ shiny_models.reg_shiny_data <-
             shiny::helpText("Select the opacity of the points"),
             # Input: Simple integer interval ----
             shiny::sliderInput("alpha", "Alpha:",
-                               min = 0.1, max = 1,
-                               value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             # Input: Simple integer interval ----
             shiny::sliderInput("size", "Size:",
-                               min = 0.5, max = 3,
-                               value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             )
           )
         )
@@ -72,7 +72,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              verbatimTextOutput('chosen_config'),
+              verbatimTextOutput("chosen_config"),
               DT::dataTableOutput("metrics")
             )
           ),
@@ -80,13 +80,15 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
-              verbatimTextOutput('selected_config'),
+              verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
               ),
-              boxed(plotly::plotlyOutput("resid_vs_pred"),
-                    "Residuals vs Predicted"),
+              boxed(
+                plotly::plotlyOutput("resid_vs_pred"),
+                "Residuals vs Predicted"
+              ),
               boxed(
                 plotly::plotlyOutput("resid_vs_numcol"),
                 "Residuals vs A numeric predictor",
@@ -117,7 +119,7 @@ shiny_models.reg_shiny_data <-
           ) %>%
           DT::formatSignif(columns = reals, digits = 3)
       })
-      output$chosen_config = renderPrint({
+      output$chosen_config <- renderPrint({
         paste("Selected model:", preds$.config[input$metrics_rows_selected])
       })
 
@@ -143,37 +145,44 @@ shiny_models.reg_shiny_data <-
       }
       preds_dat <- shiny::reactive({
         selected <- input$metrics_rows_selected
-        if (length(selected)==0){
+        if (length(selected) == 0) {
           selected_config <- x$best_config
         }
-        else{
+        else {
           selected_config <- preds[selected, ".config"]$.config
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-                                        "red", "black"))
+            "red", "black"
+          ))
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_numeric_obs_pred(preds_dat(), x$y_name, input$alpha, input$size,
-                              source = "obs")
+          source = "obs"
+        )
       })
       output$resid_vs_pred <- plotly::renderPlotly({
         plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
-                              source = "obs")
+          source = "obs"
+        )
       })
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
         plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col,
-                                input$alpha, input$size, source = "obs")
+          input$alpha, input$size,
+          source = "obs"
+        )
       })
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col,
-                                   input$alpha, input$size, source = "obs")
+          input$alpha, input$size,
+          source = "obs"
+        )
       })
-      output$selected_config = renderPrint({
+      output$selected_config <- renderPrint({
         paste("Selected model:", preds$.config[input$metrics_rows_selected])
       })
     }

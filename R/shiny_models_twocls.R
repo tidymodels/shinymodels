@@ -20,8 +20,8 @@ shiny_models.two_cls_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Performance Plots", tabName = "static", icon = icon("chart-bar")),
@@ -52,14 +52,14 @@ shiny_models.two_cls_shiny_data <-
             shiny::helpText("Select the opacity of the points"),
             # Input: Simple integer interval ----
             sliderInput("alpha", "Alpha:",
-                        min = 0.1, max = 1,
-                        value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             # Input: Simple integer interval ----
             sliderInput("size", "Size:",
-                        min = 0.5, max = 3,
-                        value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(
@@ -78,7 +78,7 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              verbatimTextOutput('chosen_config'),
+              verbatimTextOutput("chosen_config"),
               DT::dataTableOutput("metrics")
             )
           ),
@@ -86,6 +86,7 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
+              verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Predicted probabilities vs true class"
@@ -100,6 +101,7 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
+              verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
                 "Predicted probabilities vs a numeric predictor",
@@ -130,7 +132,7 @@ shiny_models.two_cls_shiny_data <-
           ) %>%
           DT::formatSignif(columns = reals, digits = 3)
       })
-      output$chosen_config = renderPrint({
+      output$chosen_config <- renderPrint({
         paste("Selected model:", preds$.config[input$metrics_rows_selected])
       })
 
@@ -155,17 +157,18 @@ shiny_models.two_cls_shiny_data <-
         })
       }
       preds_dat <- shiny::reactive({
-          selected <- input$metrics_rows_selected
-          if (length(selected)==0){
-            selected_config <- x$best_config
-          }
-          else{
-            selected_config <- preds[selected, ".config"]$.config
-          }
+        selected <- input$metrics_rows_selected
+        if (length(selected) == 0) {
+          selected_config <- x$best_config
+        }
+        else {
+          selected_config <- preds[selected, ".config"]$.config
+        }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-                                        "red", "black"))
+            "red", "black"
+          ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_twoclass_obs_pred(preds_dat(), x$y_name)
@@ -182,12 +185,19 @@ shiny_models.two_cls_shiny_data <-
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
         plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
-                                  input$alpha, input$size, input$prob_scaling, source = "obs")
+          input$alpha, input$size, input$prob_scaling,
+          source = "obs"
+        )
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
-                                     input$alpha, input$size, input$prob_scaling, source = "obs")
+          input$alpha, input$size, input$prob_scaling,
+          source = "obs"
+        )
+      })
+      output$selected_config <- renderPrint({
+        paste("Selected model:", preds$.config[input$metrics_rows_selected])
       })
     }
 
