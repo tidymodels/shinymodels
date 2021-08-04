@@ -121,29 +121,44 @@ shiny_models.multi_cls_shiny_data <-
     )
 
     server <- function(input, output) {
-      selected_rows <- shiny::reactiveVal()
+      # a df with all the predictions across all models; for Carson's code, model = .config and id = .row
+      selected_ids <- shiny::reactiveVal()
+      shiny::observe({
+        # listens to the `ggplotly(p, source = "config")` graph where each point encodes a model
+        config <- plotly::event_data("plotly_click", source = "config")$customdata
+        # make sure config is a unique value; run unique if not
+        if (length(config) == 0) {
+          return()
+        } # if length is 0, return empty reactive value
+        # Get all the observation ids from the chosen model(s)
+        ids <- preds[preds$.config %in% config, ]$.row
+        # selecting model(s) clears any previous selection
+        selected_ids(ids) # reactive value is the ids vector ids based on selected config
+      })
+
+      selected_obs <- shiny::reactiveVal()
       if (hover_only) {
-        selected_rows(NULL)
+        selected_obs(NULL)
       }
       else {
         shiny::observe({
-          new <-
-            c(
-              plotly::event_data("plotly_click")$customdata,
-              plotly::event_data("plotly_selected")$customdata
-            )
-          if (length(new)) {
-            current <- shiny::isolate(selected_rows())
-            selected_rows(unique(c(current, new)))
+          # listens to the `ggplotly(p, source = "obs")` graph where each point encodes an observation
+          obs <- c(
+            plotly::event_data("plotly_click", source = "obs")$customdata,
+            plotly::event_data("plotly_selected", source = "obs")$customdata
+          )
+          print(summary(obs))
+          if (length(obs)){
+            selected_obs(obs)
           }
-          else {
-            # clear the selected rows when a double-click occurs
-            selected_rows(NULL)
+          else{
+            selected_obs(NULL)
           }
         })
       }
       preds_dat <- shiny::reactive({
-        dplyr::mutate(preds, .color = ifelse(.row %in% selected_rows(), "red", "black"))
+        dplyr::filter(preds, .row %in% selected_ids()) %>%
+          dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_multiclass_obs_pred(preds_dat(), x$y_name)

@@ -119,20 +119,20 @@ shiny_models.reg_shiny_data <-
         selected_obs(NULL)
       }
       else {
-      shiny::observe({
-        # listens to the `ggplotly(p, source = "obs")` graph where each point encodes an observation
-        obs <- c(
-          plotly::event_data("plotly_click", source = "obs")$customdata,
-          plotly::event_data("plotly_selected", source = "obs")$customdata
-        )
-        print(summary(obs))
-        if (length(obs)){
-          selected_obs(obs)
-        }
-        else{
-          selected_obs(NULL)
-        }
-      })
+        shiny::observe({
+          # listens to the `ggplotly(p, source = "obs")` graph where each point encodes an observation
+          obs <- c(
+            plotly::event_data("plotly_click", source = "obs")$customdata,
+            plotly::event_data("plotly_selected", source = "obs")$customdata
+          )
+          print(summary(obs))
+          if (length(obs)){
+            selected_obs(obs)
+          }
+          else{
+            return()
+          }
+        })
       }
 
       preds_dat <- shiny::reactive({
