@@ -21,13 +21,17 @@ plot_multiclass_obs_pred <-
         cols = tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     p <- dat %>%
       dplyr::group_by(predicted_class) %>%
       ggplot2::ggplot(ggplot2::aes(x = predicted_probabilities)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
-      ggplot2::labs(title = "Predicted probabilities vs. true class") +
+      ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::lims(x = 0:1)
     plotly::ggplotly(p)
   }
@@ -88,6 +92,10 @@ plot_multiclass_pred_numcol <-
             predicted_probabilities < prob_eps ~ prob_eps,
             TRUE ~ predicted_probabilities
           )
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     p <- dat %>%
       dplyr::group_by(predicted_class, .outcome) %>%
@@ -102,7 +110,7 @@ plot_multiclass_pred_numcol <-
       ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(title = paste("Predicted probabilities vs. ", numcol)) +
+      ggplot2::labs(y = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
@@ -140,6 +148,10 @@ plot_multiclass_pred_factorcol <-
         cols = tidyselect::starts_with(".pred_"),
         names_to = "predicted_class",
         values_to = "predicted_probabilities"
+      ) %>%
+      mutate(
+        predicted_class = gsub("\\.pred_", "", predicted_class),
+        .outcome = paste("Truth:", .outcome)
       )
     dat <- dat %>%
       dplyr::mutate(
@@ -163,10 +175,7 @@ plot_multiclass_pred_factorcol <-
       ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
-      ggplot2::labs(
-        title = paste("Predicted probabilities vs. ", factorcol),
-        y = factorcol
-      ) +
+      ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)

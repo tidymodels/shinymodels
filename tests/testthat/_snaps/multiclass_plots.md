@@ -203,7 +203,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 18.9954337899543,
           "b": 39.6955859969559,
           "l": 37.2602739726027
@@ -214,16 +214,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs. true class",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 0.324771689497717],
@@ -261,7 +251,7 @@
         },
         "annotations": [
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,
@@ -299,7 +289,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -317,7 +307,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -335,7 +325,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -353,7 +343,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -371,7 +361,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -389,7 +379,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,
@@ -1271,7 +1261,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 18.9954337899543,
           "b": 39.6955859969559,
           "l": 48.9497716894977
@@ -1282,16 +1272,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs.  latitude",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 0.324771689497717],
@@ -1348,7 +1328,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": -0.0402397260273973,
             "y": 0.5,
             "showarrow": false,
@@ -1367,7 +1347,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -1385,7 +1365,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -1403,7 +1383,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -1421,7 +1401,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -1439,7 +1419,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -1457,7 +1437,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,
@@ -2167,7 +2147,7 @@
       ],
       "layout": {
         "margin": {
-          "t": 54.9649923896499,
+          "t": 37.4307458143075,
           "r": 18.9954337899543,
           "b": 39.6955859969559,
           "l": 300.27397260274
@@ -2178,16 +2158,6 @@
           "color": "rgba(0,0,0,1)",
           "family": "",
           "size": 14.6118721461187
-        },
-        "title": {
-          "text": "Predicted probabilities vs.  tectonic_settings",
-          "font": {
-            "color": "rgba(0,0,0,1)",
-            "family": "",
-            "size": 17.5342465753425
-          },
-          "x": 0,
-          "xref": "paper"
         },
         "xaxis": {
           "domain": [0, 0.324771689497717],
@@ -2225,7 +2195,7 @@
         },
         "annotations": [
           {
-            "text": "predicted_probabilities",
+            "text": "Predicted probabilities",
             "x": 0.5,
             "y": -0.0353881278538813,
             "showarrow": false,
@@ -2263,7 +2233,7 @@
             "annotationType": "axis"
           },
           {
-            "text": "Other",
+            "text": "Truth: Other",
             "x": 0.162385844748858,
             "y": 1,
             "showarrow": false,
@@ -2281,7 +2251,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Shield",
+            "text": "Truth: Shield",
             "x": 0.5,
             "y": 1,
             "showarrow": false,
@@ -2299,7 +2269,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": "Stratovolcano",
+            "text": "Truth: Stratovolcano",
             "x": 0.837614155251142,
             "y": 1,
             "showarrow": false,
@@ -2317,7 +2287,7 @@
             "yanchor": "bottom"
           },
           {
-            "text": ".pred_Other",
+            "text": "Other",
             "x": 1,
             "y": 0.839041095890411,
             "showarrow": false,
@@ -2335,7 +2305,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Shield",
+            "text": "Shield",
             "x": 1,
             "y": 0.5,
             "showarrow": false,
@@ -2353,7 +2323,7 @@
             "yanchor": "middle"
           },
           {
-            "text": ".pred_Stratovolcano",
+            "text": "Stratovolcano",
             "x": 1,
             "y": 0.160958904109589,
             "showarrow": false,

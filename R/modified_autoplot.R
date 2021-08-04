@@ -3,15 +3,17 @@
 #' This function plots the tuning parameters against the metrics measured
 #' during tuning.
 #' @param obj An object with class `tune_results`.
+#' @param source A character string of length 1 that matches the source argument
+#' in event_data().
 #' @param ... Other options to pass to [tune::autoplot.tune_results()].
 #' @details The ggplot object is modified to have an aesthetic of
 #' `customdata = .config`.
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
-plot_tuning_params <- function(obj, ...) {
+plot_tuning_params <- function(obj, source, ...) {
   p <- modified_autoplot(obj, ...)
-  plotly::ggplotly(p)
+  plotly::ggplotly(p, source = source)
 }
 
 # ------------------------------------------------------------------------------
@@ -44,4 +46,3 @@ is_geom_point <- function(x) {
   }
   res
 }
-

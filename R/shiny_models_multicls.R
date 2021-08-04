@@ -14,6 +14,7 @@ shiny_models.multi_cls_shiny_data <-
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
+          id = "sidebarid",
           if (length(tune::.get_tune_parameter_names(x$tune_results)) == 0) {
             shiny::helpText("No tuning parameters!")
           }
@@ -23,53 +24,56 @@ shiny_models.multi_cls_shiny_data <-
               icon = icon("filter")
             )
           },
-          shinydashboard::menuItem("Static Plots",
+          shinydashboard::menuItem("Performance Plots",
             tabName = "static",
             icon = icon("chart-bar")
           ),
-          shinydashboard::menuItem("Interactive Plots",
+          shinydashboard::menuItem("Variable Plots",
             tabName = "interactive",
             icon = icon("chart-line")
           ),
-          shiny::helpText("Select column(s) to create plots"),
-          if (length(num_columns) == 0) {
-            shiny::helpText("No numeric column to display")
-          }
-          else {
-            shiny::selectInput(
-              inputId = "num_value_col",
-              label = "Numeric Columns",
-              choices = unique(c("None Selected" = "", num_columns))
-            )
-          },
-          if (length(fac_columns) == 0) {
-            shiny::helpText("No factor column to display")
-          }
-          else {
-            shiny::selectInput(
-              inputId = "factor_value_col",
-              label = "Factor Columns",
-              choices = unique(c("None Selected" = "", fac_columns))
-            )
-          },
-          shiny::helpText("Select the opacity of the points"),
-          # Input: Simple integer interval ----
-          sliderInput("alpha", "Alpha:",
-            min = 0, max = 1,
-            value = 0.7, step = 0.1
-          ),
-          shiny::helpText("Select the size of the points"),
-          # Input: Simple integer interval ----
-          sliderInput("size", "Size:",
-            min = 0.5, max = 3,
-            value = 1.5, step = 0.5
-          ),
-          shiny::helpText("Logit scaling for probability?"),
-          radioButtons(
-            "prob_scaling", "Probability scaling:",
-            c(
-              "TRUE" = "true",
-              "FALSE" = "false"
+          shiny::conditionalPanel(
+            'input.sidebarid == "interactive"',
+            shiny::helpText("Select column(s) to create plots"),
+            if (length(num_columns) == 0) {
+              shiny::helpText("No numeric column to display")
+            }
+            else {
+              shiny::selectInput(
+                inputId = "num_value_col",
+                label = "Numeric Columns",
+                choices = unique(c("None Selected" = "", num_columns))
+              )
+            },
+            if (length(fac_columns) == 0) {
+              shiny::helpText("No factor column to display")
+            }
+            else {
+              shiny::selectInput(
+                inputId = "factor_value_col",
+                label = "Factor Columns",
+                choices = unique(c("None Selected" = "", fac_columns))
+              )
+            },
+            shiny::helpText("Select the opacity of the points"),
+            # Input: Simple integer interval ----
+            sliderInput("alpha", "Alpha:",
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
+            ),
+            shiny::helpText("Select the size of the points"),
+            # Input: Simple integer interval ----
+            sliderInput("size", "Size:",
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
+            ),
+            shiny::helpText("Logit scaling for probability?"),
+            radioButtons(
+              "prob_scaling", "Probability scaling:",
+              c(
+                "TRUE" = "true",
+                "FALSE" = "false"
+              )
             )
           )
         )
@@ -80,10 +84,7 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              boxed(
-                plotly::plotlyOutput("tuning_autoplot"),
-                "Tuning Parameters"
-              )
+              plotly::plotlyOutput("tuning_autoplot")
             )
           ),
           # second tab content
@@ -105,12 +106,12 @@ shiny_models.multi_cls_shiny_data <-
             shiny::fluidRow(
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
-                "Predicted probabilities vs numeric columns",
+                "Predicted probabilities vs a numeric predictor",
                 num_columns
               ),
               boxed(
                 plotly::plotlyOutput("pred_vs_factorcol"),
-                "Predicted probabilities vs factor columns",
+                "Predicted probabilities vs a factor predictor",
                 fac_columns
               )
             )
