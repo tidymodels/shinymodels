@@ -86,7 +86,9 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-              verbatimTextOutput("selected_config"),
+              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
+                shiny::verbatimTextOutput('selected_config')
+              },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Predicted probabilities vs true class"
@@ -101,7 +103,9 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              verbatimTextOutput("selected_config"),
+              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
+                shiny::verbatimTextOutput('selected_config')
+              },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
                 "Predicted probabilities vs a numeric predictor",
