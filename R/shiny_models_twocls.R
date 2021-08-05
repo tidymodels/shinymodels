@@ -20,14 +20,18 @@ shiny_models.two_cls_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
-          shinydashboard::menuItem("Performance Plots", tabName = "static",
-                                   icon = icon("chart-bar")),
-          shinydashboard::menuItem("Variable Plots", tabName = "interactive",
-                                   icon = icon("chart-line")),
+          shinydashboard::menuItem("Performance Plots",
+            tabName = "static",
+            icon = icon("chart-bar")
+          ),
+          shinydashboard::menuItem("Variable Plots",
+            tabName = "interactive",
+            icon = icon("chart-line")
+          ),
           conditionalPanel(
             'input.sidebarid == "interactive"',
             shiny::helpText("Select column(s) to create plots"),
@@ -88,7 +92,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
+                shiny::verbatimTextOutput("selected_config")
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -105,7 +109,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "interactive",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
+                shiny::verbatimTextOutput("selected_config")
               },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
@@ -132,7 +136,7 @@ shiny_models.two_cls_shiny_data <-
         if (length(config) == 0) {
           selected_config(x$default_config)
         }
-        else{
+        else {
           selected_config(config)
         }
       })
@@ -176,18 +180,21 @@ shiny_models.two_cls_shiny_data <-
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
         plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col, input$alpha,
-                                  input$size, input$prob_scaling, source = "obs")
+          input$size, input$prob_scaling,
+          source = "obs"
+        )
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
-                                     input$alpha, input$size, input$prob_scaling,
-                                     source = "obs")
+          input$alpha, input$size, input$prob_scaling,
+          source = "obs"
+        )
       })
       output$tuning_autoplot <- plotly::renderPlotly({
         plot_tuning_params(x$tune_results, source = "config")
       })
-      output$selected_config = renderPrint({
+      output$selected_config <- renderPrint({
         paste("Selected model:", selected_config())
       })
     }

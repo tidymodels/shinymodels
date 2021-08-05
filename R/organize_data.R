@@ -56,8 +56,8 @@ organize_data.tune_results <-
     fac_col_names <- names(fac_cols)[fac_cols]
     preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-                          parsnip::add_rowindex(),
-                        by = ".row"
+        parsnip::add_rowindex(),
+      by = ".row"
       )
     if (quo_is_null(hover_expr)) {
       var <- preds %>% dplyr::select(dplyr::all_of(y_name))

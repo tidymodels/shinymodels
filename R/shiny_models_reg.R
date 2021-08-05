@@ -20,8 +20,8 @@ shiny_models.reg_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Plots",
@@ -80,7 +80,7 @@ shiny_models.reg_shiny_data <-
             tabName = "plot",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
+                shiny::verbatimTextOutput("selected_config")
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -109,7 +109,7 @@ shiny_models.reg_shiny_data <-
         if (length(config) == 0) {
           selected_config(x$default_config)
         }
-        else{
+        else {
           selected_config(config)
         }
       })
@@ -156,7 +156,7 @@ shiny_models.reg_shiny_data <-
       output$tuning_autoplot <- plotly::renderPlotly({
         plot_tuning_params(x$tune_results, source = "config")
       })
-      output$selected_config = renderPrint({
+      output$selected_config <- renderPrint({
         paste("Selected model:", selected_config())
       })
     }
