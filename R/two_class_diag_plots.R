@@ -29,7 +29,7 @@ plot_twoclass_obs_pred <-
       ) +
       ggplot2::labs(x = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::lims(x = 0:1)
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }
 
 #' Visualizing the confusion matrix for a classification model
@@ -45,7 +45,7 @@ plot_twoclass_conf_mat <- function(dat) {
   p <- dat %>%
     yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  plotly::ggplotly(p)
+  ggplotly2(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
@@ -107,10 +107,9 @@ plot_twoclass_pred_numcol <-
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
-    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
-      plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
-    fig
+    ggplotly2(p, tooltip = "text", source = source) %>%
+      plotly::layout(dragmode = "select") %>%
+      plotly::toWebGL()
   }
 
 #' Visualizing the predicted probabilities vs. a factor variable for a classification
@@ -198,7 +197,7 @@ plot_twoclass_roc <-
           y = sensitivity
         )
       )
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }
 
 #' Visualizing the PR curve for a classification model
@@ -227,5 +226,5 @@ plot_twoclass_pr <-
           y = precision
         )
       )
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }

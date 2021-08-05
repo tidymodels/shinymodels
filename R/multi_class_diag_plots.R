@@ -33,8 +33,18 @@ plot_multiclass_obs_pred <-
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::lims(x = 0:1)
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }
+
+
+# Let ggplotly() know about the size of it's output container
+# (only works when being called within a renderPlotly() context)
+ggplotly2 <- function(x, ...) {
+  info <- shiny::getCurrentOutputInfo()
+  height <- if (is.function(info$height)) info$height()
+  width <- if (is.function(info$width)) info$width()
+  plotly::ggplotly(x, width = width, height = height, ...)
+}
 
 #' Visualizing the confusion matrix for a classification model
 #'
@@ -49,7 +59,7 @@ plot_multiclass_conf_mat <- function(dat) {
   p <- dat %>%
     yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  plotly::ggplotly(p)
+  ggplotly3(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
@@ -206,7 +216,7 @@ plot_multiclass_roc <-
     # Splice them in
     res <- yardstick::roc_curve(dat, .outcome, !!!prob_cols)
     p <- ggplot2::autoplot(res)
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }
 
 #' Visualizing the PR curve for a classification model
@@ -225,5 +235,5 @@ plot_multiclass_pr <-
     # Splice them in
     res <- yardstick::pr_curve(dat, .outcome, !!!prob_cols)
     p <- ggplot2::autoplot(res)
-    plotly::ggplotly(p)
+    ggplotly2(p)
   }
