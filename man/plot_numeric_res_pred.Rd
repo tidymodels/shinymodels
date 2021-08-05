@@ -4,7 +4,7 @@
 \alias{plot_numeric_res_pred}
 \title{Visualizing residuals vs. predicted values for a regression model}
 \usage{
-plot_numeric_res_pred(dat, y_name, alpha = 1, size = 1)
+plot_numeric_res_pred(dat, y_name, alpha = 1, size = 1, source = NULL)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
@@ -15,6 +15,9 @@ variables are required: \code{.outcome}, \code{.pred}, \code{.color}, and \code{
 \item{alpha}{The opacity for the geom points.}
 
 \item{size}{The size for the geom points.}
+
+\item{source}{A character string of length 1 that matches the source argument
+in event_data().}
 }
 \value{
 A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.

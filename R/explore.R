@@ -5,8 +5,8 @@ generics::explore
 #'  Launches shiny application based on data from [tune::fit_resamples()]
 #'
 #' This function takes the data based on [tune::fit_resamples()] results to
-#' launch a Shiny app. This function normally does not return; interrupt R
-#' to stop the app (usually by pressing Ctrl+C or Esc).
+#' launch a Shiny app. Also, note that the default configuration is based on the
+#' optimal value of the first metric.
 #' @export
 #' @rdname explore
 explore.default <- function(x, ...) {

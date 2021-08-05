@@ -31,9 +31,11 @@ modified_autoplot <- function(object, ...) {
 maybe_modify_mapping <- function(x) {
   has_mapping <- any(names(x) == "mapping")
   is_point <- is_geom_point(x)
-  is_null <- identical(x$mapping, NULL)
-  if (has_mapping & is_point & !is_null) {
-    x$mapping <- utils::modifyList(x$mapping, ggplot2::aes(customdata = .config))
+  if (has_mapping & is_point) {
+    x$mapping <- utils::modifyList(
+      x$mapping %||% list(),
+      ggplot2::aes(customdata = .config)
+    )
   }
   x
 }

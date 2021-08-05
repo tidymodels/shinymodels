@@ -1878,7 +1878,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       ".plotlyWebGl": true,
       "attrs": [],
@@ -2764,7 +2764,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       ".plotlyWebGl": true,
       "attrs": [],

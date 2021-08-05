@@ -24,9 +24,12 @@ test_that("can accurately organize data", {
   expect_equal(sum(length(org$num_cols), length(org$fac_cols)), length(colnames(mtcars)))
   expect_equal("mpg" %in% org$num_cols, TRUE)
   expect_equal(org$app_type, "reg")
-  expect_equal(length(org), 6)
+  expect_equal(length(org), 7)
   expect_equal(nrow(org$predictions), 32)
   expect_equal(org$y_name, "mpg")
+  expect_equal(is.character(org$default_config), TRUE)
+  expect_equal(org$default_config %in% org$predictions$.config, TRUE)
+  expect_equal(org$default_config, "Preprocessor1_Model1")
   expect_error(
     organize_data(lin_mod),
     "No `organize_data\\(\\)` exists for this type of object."
@@ -39,7 +42,6 @@ test_that("can accurately organize data", {
     )
   )
 })
-
 
 
 test_that("can add hover column", {
