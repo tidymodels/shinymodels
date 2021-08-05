@@ -40,6 +40,7 @@ Imports:
     broom,
     dplyr,
     glue,
+    htmltools,
     magrittr,
     modeldata,
     parsnip,
