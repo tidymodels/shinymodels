@@ -94,6 +94,9 @@ new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_c
   if (!is.character(default_config)) {
     rlang::abort("default_config should be a character string")
   }
+  if (default_config %in% predictions$.config) {
+    rlang::abort("default_config should be a character string in predictions")
+  }
   res <- list(
     predictions = predictions,
     y_name = y_name,
