@@ -10,6 +10,16 @@ shiny_models.multi_cls_shiny_data <-
     preds <- x$predictions
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
+    # Calculate and reformat performance metrics for each candidate model
+    performance <-
+      x$tune_results %>%
+      tune::collect_metrics() %>%
+      dplyr::relocate(metric = .metric, estimate = mean) %>%
+      dplyr::select(-.estimator, -n, -std_err)
+    # Save info to round real number columns (if any)
+    is_real_number <- purrr::map_lgl(performance, ~ is.numeric(.x) & !is.integer(.x))
+    reals <- names(is_real_number)[is_real_number]
+
     ui <- shinydashboard::dashboardPage(
       shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
@@ -20,17 +30,17 @@ shiny_models.multi_cls_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-              tabName = "tuning",
-              icon = icon("filter")
+                                     tabName = "tuning",
+                                     icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Performance Plots",
-            tabName = "static",
-            icon = icon("chart-bar")
+                                   tabName = "static",
+                                   icon = icon("chart-bar")
           ),
           shinydashboard::menuItem("Variable Plots",
-            tabName = "interactive",
-            icon = icon("chart-line")
+                                   tabName = "interactive",
+                                   icon = icon("chart-line")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "interactive"',
@@ -57,13 +67,13 @@ shiny_models.multi_cls_shiny_data <-
             },
             shiny::helpText("Select the opacity of the points"),
             sliderInput("alpha", "Alpha:",
-              min = 0.1, max = 1,
-              value = 0.7, step = 0.1
+                        min = 0.1, max = 1,
+                        value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             sliderInput("size", "Size:",
-              min = 0.5, max = 3,
-              value = 1.5, step = 0.5
+                        min = 0.5, max = 3,
+                        value = 1.5, step = 0.5
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(
@@ -82,9 +92,7 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              plotly::plotlyOutput("tuning_autoplot"),
-              shiny::helpText("Please click on a point to select a tuning parameter
-                              and the associated model.")
+              DT::dataTableOutput("metrics")
             )
           ),
           # second tab content
@@ -92,7 +100,7 @@ shiny_models.multi_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
+                shiny::verbatimTextOutput('selected_config')
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -107,9 +115,7 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
-              },
+              verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
                 "Predicted probabilities vs a numeric predictor",
@@ -126,18 +132,17 @@ shiny_models.multi_cls_shiny_data <-
       )
     )
 
-    # Define server logic
     server <- function(input, output) {
-      selected_config <- shiny::reactiveVal()
-      shiny::observe({
-        # listens to the `ggplotly(p, source = "config")` graph where each point encodes a model
-        config <- plotly::event_data("plotly_click", source = "config")$customdata
-        if (length(config) == 0) {
-          selected_config(x$default_config)
-        }
-        else {
-          selected_config(config)
-        }
+      output$metrics <- DT::renderDataTable({
+        performance %>%
+          dplyr::select(-.config) %>%
+          DT::datatable(
+            selection = "single",
+            filter = "top",
+            fillContainer = FALSE,
+            rownames = FALSE
+          ) %>%
+          DT::formatSignif(columns = reals, digits = 3)
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -161,8 +166,18 @@ shiny_models.multi_cls_shiny_data <-
         })
       }
       preds_dat <- shiny::reactive({
-        dplyr::filter(preds, .config == selected_config()) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
+        selected <- input$metrics_rows_selected
+        if (length(selected) == 0) {
+          selected_config <- x$default_config
+        }
+        else {
+          selected_config <- preds[selected, ".config"]$.config
+        }
+        preds %>%
+          dplyr::filter(.config == selected_config) %>%
+          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
+                                        "red", "black"
+          ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_multiclass_obs_pred(preds_dat(), x$y_name)
@@ -192,11 +207,8 @@ shiny_models.multi_cls_shiny_data <-
           source = "obs"
         )
       })
-      output$tuning_autoplot <- plotly::renderPlotly({
-        plot_tuning_params(x$tune_results, source = "config")
-      })
       output$selected_config <- renderPrint({
-        paste("Selected model:", selected_config())
+        paste("Selected model:", preds$.config[input$metrics_rows_selected])
       })
     }
     shiny::shinyApp(ui, server)
