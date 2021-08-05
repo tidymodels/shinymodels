@@ -76,7 +76,7 @@ shiny_models.multi_cls_shiny_data <-
           )
         )
       ),
-      shinydashboard::dashboardBody(
+      dashboard_body(
         shinydashboard::tabItems(
           # first tab content
           shinydashboard::tabItem(
@@ -199,3 +199,22 @@ shiny_models.multi_cls_shiny_data <-
     }
     shiny::shinyApp(ui, server)
   }
+
+
+
+dashboard_body <- function(...) {
+  shinydashboard::dashboardBody(
+    dashboard_css(), ...
+  )
+}
+
+dashboard_css <- function() {
+  htmltools::htmlDependency(
+    name = "shinymodels-custom-css",
+    version = "1.0",
+    src = "www",
+    package = "shinymodels",
+    stylesheet = "dashboard-styles.css"
+  )
+}
+
