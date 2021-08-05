@@ -82,7 +82,6 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "tuning",
             shiny::fluidRow(
-              verbatimTextOutput('chosen_config'),
               plotly::plotlyOutput("tuning_autoplot"),
               shiny::helpText("Please click on a point to select a tuning parameter
                               and the associated model.")
@@ -190,9 +189,6 @@ shiny_models.multi_cls_shiny_data <-
           preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size, input$prob_scaling, source = "obs"
         )
-      })
-      output$chosen_config = renderPrint({
-        paste("Selected model:", selected_config())
       })
       output$tuning_autoplot <- plotly::renderPlotly({
         plot_tuning_params(x$tune_results, source = "config")
