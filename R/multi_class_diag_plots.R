@@ -59,7 +59,7 @@ plot_multiclass_conf_mat <- function(dat) {
   p <- dat %>%
     yardstick::conf_mat(truth = .outcome, estimate = .pred_class) %>%
     ggplot2::autoplot()
-  ggplotly3(p)
+  ggplotly2(p)
 }
 
 #' Visualizing the predicted probabilities vs. a numeric column for a
