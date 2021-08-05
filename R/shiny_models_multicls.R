@@ -56,13 +56,11 @@ shiny_models.multi_cls_shiny_data <-
               )
             },
             shiny::helpText("Select the opacity of the points"),
-            # Input: Simple integer interval ----
             sliderInput("alpha", "Alpha:",
                         min = 0.1, max = 1,
                         value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
-            # Input: Simple integer interval ----
             sliderInput("size", "Size:",
                         min = 0.5, max = 3,
                         value = 1.5, step = 0.5
@@ -129,19 +127,17 @@ shiny_models.multi_cls_shiny_data <-
       )
     )
 
-    # Define server logic required to draw a histogram
+    # Define server logic
     server <- function(input, output) {
-      # a df with all the predictions across all models; for Carson's code, model = .config and id = .row
-      selected_ids <- shiny::reactiveVal()
+      selected_config <- shiny::reactiveVal()
       shiny::observe({
         # listens to the `ggplotly(p, source = "config")` graph where each point encodes a model
         config <- plotly::event_data("plotly_click", source = "config")$customdata
-        # make sure config is a unique value; run unique if not
         if (length(config) == 0) {
-          selected_ids(x$best_config)
+          selected_config(x$default_config)
         }
         else{
-          selected_ids(config) # reactive value is the ids vector ids based on selected config
+          selected_config(config)
         }
       })
 
@@ -166,7 +162,7 @@ shiny_models.multi_cls_shiny_data <-
         })
       }
       preds_dat <- shiny::reactive({
-        dplyr::filter(preds, .config == selected_ids()) %>%
+        dplyr::filter(preds, .config == selected_config()) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(), "red", "black"))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
@@ -196,13 +192,13 @@ shiny_models.multi_cls_shiny_data <-
         )
       })
       output$chosen_config = renderPrint({
-        paste("Selected model:", selected_ids())
+        paste("Selected model:", selected_config())
       })
       output$tuning_autoplot <- plotly::renderPlotly({
         plot_tuning_params(x$tune_results, source = "config")
       })
       output$selected_config = renderPrint({
-        paste("Selected model:", selected_ids())
+        paste("Selected model:", selected_config())
       })
     }
     shiny::shinyApp(ui, server)
