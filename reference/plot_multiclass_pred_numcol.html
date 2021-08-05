@@ -125,7 +125,8 @@ on tidymodels results for a multi-class classification model.</p>
   size <span class='op'>=</span> <span class='fl'>1</span>,
   prob_scaling <span class='op'>=</span> <span class='cn'>FALSE</span>,
   prob_breaks <span class='op'>=</span> <span class='op'>(</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>10</span>,
-  prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>
+  prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>,
+  source <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -163,6 +164,11 @@ variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color<
     <tr>
       <th>prob_eps</th>
       <td><p>A small numerical constant to prevent division by zero.</p></td>
+    </tr>
+    <tr>
+      <th>source</th>
+      <td><p>A character string of length 1 that matches the source argument
+in event_data().</p></td>
     </tr>
     </table>
 

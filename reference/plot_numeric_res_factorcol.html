@@ -114,7 +114,14 @@ tidymodels results for a regression model." />
 tidymodels results for a regression model.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_numeric_res_factorcol</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>y_name</span>, <span class='va'>factorcol</span>, alpha <span class='op'>=</span> <span class='fl'>1</span>, size <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plot_numeric_res_factorcol</span><span class='op'>(</span>
+  <span class='va'>dat</span>,
+  <span class='va'>y_name</span>,
+  <span class='va'>factorcol</span>,
+  alpha <span class='op'>=</span> <span class='fl'>1</span>,
+  size <span class='op'>=</span> <span class='fl'>1</span>,
+  source <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,6 +146,11 @@ variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color<
     <tr>
       <th>size</th>
       <td><p>The size for the geom points.</p></td>
+    </tr>
+    <tr>
+      <th>source</th>
+      <td><p>A character string of length 1 that matches the source argument
+in event_data().</p></td>
     </tr>
     </table>
 
