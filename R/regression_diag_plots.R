@@ -7,11 +7,13 @@
 #' @param y_name The y/response variable for the model.
 #' @param alpha The opacity for the geom points.
 #' @param size The size for the geom points.
+#' @param source A character string of length 1 that matches the source argument
+#' in event_data().
 #' @keywords models, regression, graphs
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
-plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
+plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NULL) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
     ggplot2::geom_abline(lty = 2, col = "green") +
     ggplot2::geom_point(
@@ -27,7 +29,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
     tune::coord_obs_pred() +
     ggplot2::labs(x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text") %>%
+  plotly::ggplotly(p, tooltip = "text", source = source) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -40,7 +42,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1) {
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
-plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
+plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1, source = NULL) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
     ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
     ggplot2::geom_point(ggplot2::aes(
@@ -56,7 +58,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text") %>%
+  plotly::ggplotly(p, tooltip = "text", source = source) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -71,7 +73,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1) {
 #' @return
 #' A [plotly::ggplotly()] object.
 plot_numeric_res_numcol <-
-  function(dat, y_name, numcol, alpha = 1, size = 1) {
+  function(dat, y_name, numcol, alpha = 1, size = 1, source = NULL) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
       ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
       ggplot2::geom_point(ggplot2::aes(
@@ -84,7 +86,7 @@ plot_numeric_res_numcol <-
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text") %>%
+    plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
   }
 
@@ -99,7 +101,7 @@ plot_numeric_res_numcol <-
 #' @return
 #' A [plotly::ggplotly()] object.
 plot_numeric_res_factorcol <-
-  function(dat, y_name, factorcol, alpha = 1, size = 1) {
+  function(dat, y_name, factorcol, alpha = 1, size = 1, source = NULL) {
     p <-
       ggplot2::ggplot(dat, ggplot2::aes(y = stats::reorder(
         !!rlang::sym(factorcol),
@@ -117,6 +119,6 @@ plot_numeric_res_factorcol <-
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text") %>%
+    plotly::ggplotly(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
   }

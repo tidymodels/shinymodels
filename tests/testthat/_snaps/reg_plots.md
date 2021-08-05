@@ -183,7 +183,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -382,7 +382,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -581,7 +581,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {
@@ -804,7 +804,7 @@
         "doubleClick": "reset",
         "showSendToCloud": false
       },
-      "source": "A",
+      "source": null,
       "cur_data": "env-name",
       "attrs": [],
       "highlight": {

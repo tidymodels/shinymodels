@@ -9,8 +9,9 @@
 #' @export
 #' @return
 #' A list with elements data frame and character vectors. The data frame includes
-#'  an outcome variable `.outcome`, a prediction variable `.pred`, and hovering
-#'  columns `.hover`.
+#'  an outcome variable `.outcome`, a prediction variable `.pred`, model
+#'  configuration variable `.config`, and hovering columns `.hover`. The default
+#'  configuration is based on the optimal value of the first metric.
 organize_data <- function(x, hover_cols = NULL, ...) {
   UseMethod("organize_data")
 }
@@ -55,8 +56,8 @@ organize_data.tune_results <-
     fac_col_names <- names(fac_cols)[fac_cols]
     preds <- sample_predictions %>%
       dplyr::inner_join(original_data %>%
-        parsnip::add_rowindex(),
-      by = ".row"
+                          parsnip::add_rowindex(),
+                        by = ".row"
       )
     if (quo_is_null(hover_expr)) {
       var <- preds %>% dplyr::select(dplyr::all_of(y_name))
@@ -66,11 +67,12 @@ organize_data.tune_results <-
     }
     preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
-    new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x)
+    default_config <- tune::select_best(x, tune::.get_tune_metric_names(x)[1])$.config
+    new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x, default_config)
   }
 # ------------------------------------------------------------------------------
 
-new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x) {
+new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x, default_config) {
   if (!inherits(predictions, "data.frame")) {
     rlang::abort("predictions should be a data frame")
   }
@@ -89,10 +91,17 @@ new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_c
   if (!is.character(factor_cols)) {
     rlang::abort("factor_cols should be a character string")
   }
+  if (!is.character(default_config)) {
+    rlang::abort("default_config should be a character string")
+  }
+  if (!(default_config %in% predictions$.config)) {
+    rlang::abort("default_config should be a character string in predictions")
+  }
   res <- list(
     predictions = predictions,
     y_name = y_name,
     app_type = subclass,
+    default_config = default_config,
     num_cols = numeric_cols,
     fac_cols = factor_cols,
     tune_results = x
