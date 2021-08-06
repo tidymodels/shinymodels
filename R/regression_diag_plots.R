@@ -29,7 +29,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
     tune::coord_obs_pred() +
     ggplot2::labs(x = y_name, y = "Predicted") +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text", source = source) %>%
+  ggplotly2(p, tooltip = "text", source = source) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -58,7 +58,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
       x = "Predicted", y = "Residual"
     ) +
     ggplot2::theme(legend.position = "none")
-  plotly::ggplotly(p, tooltip = "text", source = source) %>%
+  ggplotly2(p, tooltip = "text", source = source) %>%
     plotly::layout(dragmode = "select")
 }
 
@@ -86,7 +86,7 @@ plot_numeric_res_numcol <-
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text", source = source) %>%
+    ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
   }
 
@@ -119,6 +119,6 @@ plot_numeric_res_factorcol <-
       ) +
       ggplot2::scale_color_identity() +
       ggplot2::theme(legend.position = "none")
-    plotly::ggplotly(p, tooltip = "text", source = source) %>%
+    ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select")
   }

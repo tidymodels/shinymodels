@@ -13,7 +13,7 @@
 #' A [plotly::ggplotly()] object.
 plot_tuning_params <- function(obj, source, ...) {
   p <- modified_autoplot(obj, ...)
-  plotly::ggplotly(p, source = source)
+  ggplotly2(p, source = source)
 }
 
 # ------------------------------------------------------------------------------
