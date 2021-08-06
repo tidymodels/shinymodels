@@ -64,7 +64,7 @@ shiny_models.reg_shiny_data <-
           )
         )
       ),
-      shinydashboard::dashboardBody(
+      dashboard_body(
         shinydashboard::tabItems(
           # first tab content
           shinydashboard::tabItem(
