@@ -35,8 +35,9 @@ devtools::install_github("adhikars11/shinymodels")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use shinymodels:
 
+Step 1: Load {shinymodels}.
 ``` r
 library(shinymodels)
 #> Registered S3 method overwritten by 'tune':
@@ -45,6 +46,7 @@ library(shinymodels)
 ## basic example code
 ```
 
+Step 1: Create a `tune_` object using various tune functions like `fit_resamples()` or `tune_bayes()`.
 ``` r
 library(tidymodels)
 tidymodels_prefer()
@@ -69,12 +71,13 @@ svm_res <- tune_bayes(svm_mod, car_rec, resamples = folds, initial = 7, iter = 3
                      control = control_bayes(save_pred = TRUE, verbose = TRUE))
 svm_res
 ```
+
+Step 3: Apply the launcher function `explore()` on the `tune_` object to launch a shiny app with the plots realted to the model. 
 ``` r
 explore(svm_res)
 ```
-
-You can also embed plots, for example:
+You should see a shiny app that looks like this:
 
 <img src="man/figures/welcome.png" width="100%" />
 
-You can use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations. 
+Step 4: Use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations. 
