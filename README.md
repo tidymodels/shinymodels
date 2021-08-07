@@ -75,6 +75,6 @@ explore(svm_res)
 
 You can also embed plots, for example:
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+<img src="man/figures/welcome.png" width="100%" />
 
 You can use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations. 
