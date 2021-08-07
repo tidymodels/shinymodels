@@ -86,20 +86,34 @@
 <span class="co">#&gt;   method                   from   </span>
 <span class="co">#&gt;   required_pkgs.model_spec parsnip</span>
 <span class="co">## basic example code</span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>
-<span class="co">#&gt;      speed           dist       </span>
-<span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span>
-<span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span>
-<span class="co">#&gt;  Median :15.0   Median : 36.00  </span>
-<span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span>
-<span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span>
-<span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this. You could also use GitHub Actions to re-render <code>README.Rmd</code> every time you push. An example workflow can be found here: <a href="https://github.com/r-lib/actions/tree/master/examples" class="uri">https://github.com/r-lib/actions/tree/master/examples</a>.</p>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span>
+<span class="fu"><a href="https://tidymodels.tidymodels.org/reference/tidymodels_prefer.html">tidymodels_prefer</a></span><span class="op">(</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">doMC</span><span class="op">)</span>
+<span class="fu">registerDoMC</span><span class="op">(</span>cores <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">6735</span><span class="op">)</span>
+<span class="va">folds</span> <span class="op">&lt;-</span> <span class="fu">vfold_cv</span><span class="op">(</span><span class="va">mtcars</span>, v <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
+
+<span class="va">car_rec</span> <span class="op">&lt;-</span>
+  <span class="fu">recipe</span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">.</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">step_normalize</span><span class="op">(</span><span class="fu">all_predictors</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">svm_mod</span> <span class="op">&lt;-</span>
+  <span class="fu">svm_rbf</span><span class="op">(</span>cost <span class="op">=</span> <span class="fu">tune</span><span class="op">(</span><span class="op">)</span>, rbf_sigma <span class="op">=</span> <span class="fu">tune</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">set_engine</span><span class="op">(</span><span class="st">"kernlab"</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">set_mode</span><span class="op">(</span><span class="st">"regression"</span><span class="op">)</span>
+
+<span class="co"># Use a space-filling design with 7 points</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">3254</span><span class="op">)</span>
+<span class="va">svm_res</span> <span class="op">&lt;-</span> <span class="fu">tune_bayes</span><span class="op">(</span><span class="va">svm_mod</span>, <span class="va">car_rec</span>, resamples <span class="op">=</span> <span class="va">folds</span>, initial <span class="op">=</span> <span class="fl">7</span>, iter <span class="op">=</span> <span class="fl">3</span>,
+                     control <span class="op">=</span> <span class="fu">control_bayes</span><span class="op">(</span>save_pred <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+<span class="va">svm_res</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/explore.html">explore</a></span><span class="op">(</span><span class="va">svm_res</span><span class="op">)</span></code></pre></div>
 <p>You can also embed plots, for example:</p>
 <p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub and CRAN.</p>
+<p>You can use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations.</p>
 </div>
 </div>
   </div>
