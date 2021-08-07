@@ -46,7 +46,7 @@ library(shinymodels)
 ## basic example code
 ```
 
-Step 1: Create a `tune_` object using various tune functions like `fit_resamples()` or `tune_bayes()`.
+Step 2: Create a `tune_` object using various tune functions like `fit_resamples()` or `tune_bayes()`.
 ``` r
 library(tidymodels)
 tidymodels_prefer()
