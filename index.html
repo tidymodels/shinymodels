@@ -79,13 +79,15 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>This is a basic example which shows you how to use shinymodels:</p>
+<p>Step 1: Load {shinymodels}.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">shinymodels</span><span class="op">)</span>
 <span class="co">#&gt; Registered S3 method overwritten by 'tune':</span>
 <span class="co">#&gt;   method                   from   </span>
 <span class="co">#&gt;   required_pkgs.model_spec parsnip</span>
 <span class="co">## basic example code</span></code></pre></div>
+<p>Step 1: Create a <code>tune_</code> object using various tune functions like <code>fit_resamples()</code> or <code>tune_bayes()</code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidymodels.tidymodels.org">tidymodels</a></span><span class="op">)</span>
 <span class="fu"><a href="https://tidymodels.tidymodels.org/reference/tidymodels_prefer.html">tidymodels_prefer</a></span><span class="op">(</span><span class="op">)</span>
@@ -109,11 +111,12 @@
 <span class="va">svm_res</span> <span class="op">&lt;-</span> <span class="fu">tune_bayes</span><span class="op">(</span><span class="va">svm_mod</span>, <span class="va">car_rec</span>, resamples <span class="op">=</span> <span class="va">folds</span>, initial <span class="op">=</span> <span class="fl">7</span>, iter <span class="op">=</span> <span class="fl">3</span>,
                      control <span class="op">=</span> <span class="fu">control_bayes</span><span class="op">(</span>save_pred <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
 <span class="va">svm_res</span></code></pre></div>
+<p>Step 3: Apply the launcher function <code><a href="https://generics.r-lib.org/reference/explore.html">explore()</a></code> on the <code>tune_</code> object to launch a shiny app with the plots realted to the model.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/explore.html">explore</a></span><span class="op">(</span><span class="va">svm_res</span><span class="op">)</span></code></pre></div>
-<p>You can also embed plots, for example:</p>
+<p>You should see a shiny app that looks like this:</p>
 <p><img src="reference/figures/welcome.png" width="100%"></p>
-<p>You can use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations.</p>
+<p>Step 4: Use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations.</p>
 </div>
 </div>
   </div>
