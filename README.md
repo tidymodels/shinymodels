@@ -45,29 +45,36 @@ library(shinymodels)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+library(tidymodels)
+tidymodels_prefer()
+library(doMC)
+registerDoMC(cores = 8)
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+set.seed(6735)
+folds <- vfold_cv(mtcars, v = 5)
+
+car_rec <-
+  recipe(mpg ~ ., data = mtcars) %>%
+  step_normalize(all_predictors())
+
+svm_mod <-
+  svm_rbf(cost = tune(), rbf_sigma = tune()) %>%
+  set_engine("kernlab") %>%
+  set_mode("regression")
+
+# Use a space-filling design with 7 points
+set.seed(3254)
+svm_res <- tune_bayes(svm_mod, car_rec, resamples = folds, initial = 7, iter = 3,
+                     control = control_bayes(save_pred = TRUE, verbose = TRUE))
+svm_res
+```
+``` r
+explore(svm_res)
+```
 
 You can also embed plots, for example:
 
 <img src="man/figures/README-pressure-1.png" width="100%" />
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+You can use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations. 
