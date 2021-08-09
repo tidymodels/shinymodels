@@ -72,7 +72,7 @@ svm_res <- tune_bayes(svm_mod, car_rec, resamples = folds, initial = 7, iter = 3
 svm_res
 ```
 
-Step 3: Apply the launcher function `explore()` on the `tune_` object to launch a shiny app with the plots realted to the model. 
+Step 3: Apply the launcher function `explore()` on the `tune_` object to launch a shiny app with the plots related to the model. 
 ``` r
 explore(svm_res)
 ```

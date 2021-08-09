@@ -21,7 +21,7 @@ shiny_models.multi_cls_shiny_data <-
     reals <- names(is_real_number)[is_real_number]
 
     ui <- shinydashboard::dashboardPage(
-      shinydashboard::dashboardHeader(title = "Shinymodels"),
+      shinydashboard::dashboardHeader(title = "SHINYMODELS"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
           id = "sidebarid",
@@ -104,7 +104,7 @@ shiny_models.multi_cls_shiny_data <-
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
-                "Predicted probabilities vs true class"
+                "Predicted probabilities vs. true class"
               ),
               boxed(plotly::plotlyOutput("conf_mat"), "Confusion matrix"),
               boxed(plotly::plotlyOutput("roc"), "ROC curve"),
@@ -118,12 +118,12 @@ shiny_models.multi_cls_shiny_data <-
               verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
-                "Predicted probabilities vs a numeric predictor",
+                "Predicted probabilities vs. a numeric predictor",
                 num_columns
               ),
               boxed(
                 plotly::plotlyOutput("pred_vs_factorcol"),
-                "Predicted probabilities vs a factor predictor",
+                "Predicted probabilities vs. a factor predictor",
                 fac_columns
               )
             )

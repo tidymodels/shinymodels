@@ -21,7 +21,7 @@ shiny_models.reg_shiny_data <-
     reals <- names(is_real_number)[is_real_number]
 
     ui <- shinydashboard::dashboardPage(
-      shinydashboard::dashboardHeader(title = "Shinymodels"),
+      shinydashboard::dashboardHeader(title = "SHINYMODELS"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
           id = "sidebarid",
@@ -94,13 +94,13 @@ shiny_models.reg_shiny_data <-
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
               ),
-              boxed(plotly::plotlyOutput("resid_vs_pred"), "Residuals vs Predicted"),
+              boxed(plotly::plotlyOutput("resid_vs_pred"), "Residuals vs. Predicted"),
               boxed(
-                plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs A numeric predictor",
+                plotly::plotlyOutput("resid_vs_numcol"), "Residuals vs. A numeric predictor",
                 num_columns
               ),
               boxed(
-                plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs A factor predictor",
+                plotly::plotlyOutput("resid_vs_factorcol"), "Residuals vs. A factor predictor",
                 fac_columns
               )
             )
