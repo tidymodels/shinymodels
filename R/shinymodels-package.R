@@ -26,19 +26,21 @@ NULL
 # ------------------------------------------------------------------------------
 
 utils::globalVariables(
-  c(
+  c("Class",
     ".color",
     ".config",
+    "delta",
+    ".estimator",
+    ".hover",
+    ".metric",
+    ".outcome",
     ".pred",
     ".pred_class",
-    ".residual",
-    ".threshold",
-    ":=",
-    "Class",
-    "delta",
-    ".hover",
-    ".outcome",
     "predicted_class",
-    "predicted_probabilities"
+    "predicted_probabilities",
+    ".residual",
+    "std_err",
+    ".threshold",
+    ":="
   )
 )

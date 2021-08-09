@@ -39,6 +39,7 @@ Imports:
     generics (>= 0.1.0),
     broom,
     dplyr,
+    DT,
     glue,
     htmltools,
     magrittr,
