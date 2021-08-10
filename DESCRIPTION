@@ -42,6 +42,7 @@ Imports:
     DT,
     glue,
     htmltools,
+    markdown,
     magrittr,
     modeldata,
     parsnip,

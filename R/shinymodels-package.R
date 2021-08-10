@@ -26,7 +26,8 @@ NULL
 # ------------------------------------------------------------------------------
 
 utils::globalVariables(
-  c("Class",
+  c(
+    "Class",
     ".color",
     ".config",
     "delta",

@@ -21,7 +21,7 @@ shiny_models.multi_cls_shiny_data <-
     reals <- names(is_real_number)[is_real_number]
 
     ui <- shinydashboard::dashboardPage(
-      shinydashboard::dashboardHeader(title = "Shinymodels"),
+      shinydashboard::dashboardHeader(title = "SHINYMODELS"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
           id = "sidebarid",
@@ -30,17 +30,17 @@ shiny_models.multi_cls_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Performance Plots",
-                                   tabName = "static",
-                                   icon = icon("chart-bar")
+            tabName = "static",
+            icon = icon("chart-bar")
           ),
           shinydashboard::menuItem("Variable Plots",
-                                   tabName = "interactive",
-                                   icon = icon("chart-line")
+            tabName = "interactive",
+            icon = icon("chart-line")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "interactive"',
@@ -67,13 +67,13 @@ shiny_models.multi_cls_shiny_data <-
             },
             shiny::helpText("Select the opacity of the points"),
             sliderInput("alpha", "Alpha:",
-                        min = 0.1, max = 1,
-                        value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             sliderInput("size", "Size:",
-                        min = 0.5, max = 3,
-                        value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(
@@ -100,11 +100,11 @@ shiny_models.multi_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
+                shiny::verbatimTextOutput("selected_config")
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
-                "Predicted probabilities vs true class"
+                "Predicted probabilities vs. true class"
               ),
               boxed(plotly::plotlyOutput("conf_mat"), "Confusion matrix"),
               boxed(plotly::plotlyOutput("roc"), "ROC curve"),
@@ -118,12 +118,12 @@ shiny_models.multi_cls_shiny_data <-
               verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
-                "Predicted probabilities vs a numeric predictor",
+                "Predicted probabilities vs. a numeric predictor",
                 num_columns
               ),
               boxed(
                 plotly::plotlyOutput("pred_vs_factorcol"),
-                "Predicted probabilities vs a factor predictor",
+                "Predicted probabilities vs. a factor predictor",
                 fac_columns
               )
             )
@@ -176,7 +176,7 @@ shiny_models.multi_cls_shiny_data <-
         preds %>%
           dplyr::filter(.config == selected_config) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-                                        "red", "black"
+            "red", "black"
           ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
@@ -231,4 +231,3 @@ dashboard_css <- function() {
     stylesheet = "dashboard-styles.css"
   )
 }
-
