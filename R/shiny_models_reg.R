@@ -10,6 +10,7 @@ shiny_models.reg_shiny_data <-
     preds <- x$predictions
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
+    tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
     performance <-
       x$tune_results %>%
@@ -87,9 +88,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
-              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
-              },
+              shiny::verbatimTextOutput('selected_config'),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
@@ -182,7 +181,30 @@ shiny_models.reg_shiny_data <-
         )
       })
       output$selected_config <- renderPrint({
-        paste("Selected model:", preds$.config[input$metrics_rows_selected])
+        # return null if there are no tuning parameters
+        if (is.null(input$metrics_rows_selected)) {
+          return(invisible(NULL))
+        }
+
+        # Get the config and translate to a sentence with the parameter values
+        # TODO make a function with tests to do this
+        ## function start
+        sel_config <- preds$.config[input$metrics_rows_selected]
+
+        # distinguish between no tuning parameters and no seleted rows yet
+        if (length(sel_config) == 0) {
+          sel_config <- x$default_config
+        }
+
+        values <- preds[preds$.config == sel_config, tuning_param]
+        values <- values[!duplicated(values), ]
+        values <- as.data.frame(values)
+        values <- format(values, digits = 3, scientific = FALSE)
+        values <- paste(names(values), "=", values, collapse = ", ")
+
+        paste("Selected model:", values)
+        # function end
+
       })
     }
     # Run the application
