@@ -29,6 +29,7 @@ utils::globalVariables(
   c("Class",
     ".color",
     ".config",
+    "default_selected",
     "delta",
     ".estimator",
     ".hover",

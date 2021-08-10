@@ -10,6 +10,7 @@ shiny_models.reg_shiny_data <-
     preds <- x$predictions
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
+    tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
     performance <-
       x$tune_results %>%
@@ -87,9 +88,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
-              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
-              },
+              shiny::verbatimTextOutput('selected_config'),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
@@ -111,15 +110,15 @@ shiny_models.reg_shiny_data <-
     # Define server logic
     server <- function(input, output) {
       output$metrics <- DT::renderDataTable({
-        performance %>%
-          dplyr::select(-.config) %>%
-          DT::datatable(
-            selection = "single",
-            filter = "top",
-            fillContainer = FALSE,
-            rownames = FALSE
-          ) %>%
-          DT::formatSignif(columns = reals, digits = 3)
+          performance %>%
+            dplyr::select(-.config) %>%
+            DT::datatable(
+              selection = "single",
+              filter = "top",
+              fillContainer = FALSE,
+              rownames = FALSE
+            ) %>%
+            DT::formatSignif(columns = reals, digits = 3)
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -181,8 +180,8 @@ shiny_models.reg_shiny_data <-
                                    source = "obs"
         )
       })
-      output$selected_config <- renderPrint({
-        paste("Selected model:", preds$.config[input$metrics_rows_selected])
+      output$selected_config <- shiny::renderText({
+        display_selected(x, preds, tuning_param, input)
       })
     }
     # Run the application

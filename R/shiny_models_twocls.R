@@ -10,6 +10,7 @@ shiny_models.two_cls_shiny_data <-
     preds <- x$predictions
     num_columns <- x$num_cols
     fac_columns <- x$fac_cols
+    tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
     performance <-
       x$tune_results %>%
@@ -93,9 +94,7 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
-              },
+                shiny::verbatimTextOutput('selected_config'),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Predicted probabilities vs. true class"
@@ -110,9 +109,7 @@ shiny_models.two_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput('selected_config')
-              },
+                shiny::verbatimTextOutput('selected_config'),
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
                 "Predicted probabilities vs. a numeric predictor",
@@ -202,8 +199,8 @@ shiny_models.two_cls_shiny_data <-
                                      source = "obs"
         )
       })
-      output$selected_config <- renderPrint({
-        paste("Selected model:", preds$.config[input$metrics_rows_selected])
+      output$selected_config <- shiny::renderText({
+        default_selected(x, preds, tuning_param, input)
       })
     }
 

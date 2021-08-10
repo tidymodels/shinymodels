@@ -81,3 +81,54 @@ boxed <- function(x, title, input = character(1), width = 6) {
   }
   res
 }
+
+# ------------------------------------------------------------------------------
+
+dashboard_body <- function(...) {
+  shinydashboard::dashboardBody(
+    dashboard_css(), ...
+  )
+}
+
+dashboard_css <- function() {
+  htmltools::htmlDependency(
+    name = "shinymodels-custom-css",
+    version = "1.0",
+    src = "www",
+    package = "shinymodels",
+    stylesheet = "dashboard-styles.css"
+  )
+}
+
+# ------------------------------------------------------------------------------
+
+#' Gets the config and translate to a sentence with the parameter values
+#'
+#' This function takes result of [organize_data], predictions across all models,
+#' and the names of the tuning parameters to return a sentence with the default
+#' parameter values.
+#' @param x The [organize_data()] result.
+#' @param predictions The dataframe with predictions across all models.
+#' @param tuning_param The names of the tuning parameters.
+#' @param input The datatable object.
+#' @export
+#' @return
+#' A sentence.
+display_selected <- function(x, predictions, tuning_param, input) {
+  # return null if there are no tuning parameters
+  if (is.null(input$metrics_rows_selected)) {
+    return(invisible(NULL))
+  }
+  # Get the config and translate to a sentence with the parameter values
+  sel_config <- predictions$.config[input$metrics_rows_selected]
+  # distinguish between no tuning parameters and no seleted rows yet
+  if (length(sel_config) == 0) {
+    sel_config <- x$default_config
+  }
+  values <- predictions[predictions$.config == sel_config, tuning_param]
+  values <- values[!duplicated(values), ]
+  values <- as.data.frame(values)
+  values <- format(values, digits = 3, scientific = FALSE)
+  values <- paste(names(values), "=", values, collapse = ", ")
+  paste("Selected model:", values)
+}
