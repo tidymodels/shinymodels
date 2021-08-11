@@ -39,6 +39,10 @@ shiny_models.reg_shiny_data <-
                                    tabName = "plot",
                                    icon = icon("chart-line")
           ),
+          shinydashboard::menuItem("About",
+                                   tabName = "about",
+                                   icon = icon("info-circle")
+          ),
           shiny::conditionalPanel(
             'input.sidebarid == "plot"',
             shiny::helpText("Select column(s) to create plots"),
@@ -103,6 +107,11 @@ shiny_models.reg_shiny_data <-
                 fac_columns
               )
             )
+          ),
+          # third tab content
+          shinydashboard::tabItem(
+            tabName = "about",
+            includeMarkdown("welcome_tab.Rmd")
           )
         )
       )

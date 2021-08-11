@@ -37,6 +37,10 @@ shiny_models.two_cls_shiny_data <-
           },
           shinydashboard::menuItem("Performance Plots", tabName = "static", icon = icon("chart-bar")),
           shinydashboard::menuItem("Variable Plots", tabName = "interactive", icon = icon("chart-line")),
+          shinydashboard::menuItem("About",
+                                   tabName = "about",
+                                   icon = icon("info-circle")
+          ),
           conditionalPanel(
             'input.sidebarid == "interactive"',
             shiny::helpText("Select column(s) to create plots"),
@@ -121,6 +125,11 @@ shiny_models.two_cls_shiny_data <-
                 fac_columns
               )
             )
+          ),
+          # fourth tab content
+          shinydashboard::tabItem(
+            tabName = "about",
+            includeMarkdown("welcome_tab.Rmd")
           )
         )
       )

@@ -43,6 +43,10 @@ shiny_models.multi_cls_shiny_data <-
                                    tabName = "interactive",
                                    icon = icon("chart-line")
           ),
+          shinydashboard::menuItem("About",
+                                   tabName = "about",
+                                   icon = icon("info-circle")
+          ),
           shiny::conditionalPanel(
             'input.sidebarid == "interactive"',
             shiny::helpText("Select column(s) to create plots"),
@@ -126,6 +130,11 @@ shiny_models.multi_cls_shiny_data <-
                 fac_columns
               )
             )
+          ),
+          # fourth tab content
+          shinydashboard::tabItem(
+            tabName = "about",
+            includeMarkdown("welcome_tab.Rmd")
           )
         )
       )
