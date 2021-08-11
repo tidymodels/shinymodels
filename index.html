@@ -111,7 +111,7 @@
 <span class="va">svm_res</span> <span class="op">&lt;-</span> <span class="fu">tune_bayes</span><span class="op">(</span><span class="va">svm_mod</span>, <span class="va">car_rec</span>, resamples <span class="op">=</span> <span class="va">folds</span>, initial <span class="op">=</span> <span class="fl">7</span>, iter <span class="op">=</span> <span class="fl">3</span>,
                      control <span class="op">=</span> <span class="fu">control_bayes</span><span class="op">(</span>save_pred <span class="op">=</span> <span class="cn">TRUE</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
 <span class="va">svm_res</span></code></pre></div>
-<p>Step 3: Apply the launcher function <code><a href="https://generics.r-lib.org/reference/explore.html">explore()</a></code> on the <code>tune_</code> object to launch a shiny app with the plots realted to the model.</p>
+<p>Step 3: Apply the launcher function <code><a href="https://generics.r-lib.org/reference/explore.html">explore()</a></code> on the <code>tune_</code> object to launch a shiny app with the plots related to the model.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://generics.r-lib.org/reference/explore.html">explore</a></span><span class="op">(</span><span class="va">svm_res</span><span class="op">)</span></code></pre></div>
 <p>You should see a shiny app that looks like this:</p>
