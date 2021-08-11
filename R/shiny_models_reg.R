@@ -31,17 +31,17 @@ shiny_models.reg_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Plots",
-                                   tabName = "plot",
-                                   icon = icon("chart-line")
+            tabName = "plot",
+            icon = icon("chart-line")
           ),
           shinydashboard::menuItem("About",
-                                   tabName = "about",
-                                   icon = icon("info-circle")
+            tabName = "about",
+            icon = icon("info-circle")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "plot"',
@@ -68,13 +68,13 @@ shiny_models.reg_shiny_data <-
             },
             shiny::helpText("Select the opacity of the points"),
             shiny::sliderInput("alpha", "Alpha:",
-                               min = 0.1, max = 1,
-                               value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             shiny::sliderInput("size", "Size:",
-                               min = 0.5, max = 3,
-                               value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             )
           )
         )
@@ -92,7 +92,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
-              shiny::verbatimTextOutput('selected_config'),
+              shiny::verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
@@ -119,15 +119,15 @@ shiny_models.reg_shiny_data <-
     # Define server logic
     server <- function(input, output) {
       output$metrics <- DT::renderDataTable({
-          performance %>%
-            dplyr::select(-.config) %>%
-            DT::datatable(
-              selection = "single",
-              filter = "top",
-              fillContainer = FALSE,
-              rownames = FALSE
-            ) %>%
-            DT::formatSignif(columns = reals, digits = 3)
+        performance %>%
+          dplyr::select(-.config) %>%
+          DT::datatable(
+            selection = "single",
+            filter = "top",
+            fillContainer = FALSE,
+            rownames = FALSE
+          ) %>%
+          DT::formatSignif(columns = reals, digits = 3)
       })
 
       selected_obs <- shiny::reactiveVal()
@@ -161,32 +161,32 @@ shiny_models.reg_shiny_data <-
         preds %>%
           dplyr::filter(.config == selected_config) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-                                        "red", "black"
+            "red", "black"
           ))
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
         plot_numeric_obs_pred(preds_dat(), x$y_name, input$alpha, input$size,
-                              source = "obs"
+          source = "obs"
         )
       })
       output$resid_vs_pred <- plotly::renderPlotly({
         plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
-                              source = "obs"
+          source = "obs"
         )
       })
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
         plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col,
-                                input$alpha, input$size,
-                                source = "obs"
+          input$alpha, input$size,
+          source = "obs"
         )
       })
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
         plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col,
-                                   input$alpha, input$size,
-                                   source = "obs"
+          input$alpha, input$size,
+          source = "obs"
         )
       })
       output$selected_config <- shiny::renderText({

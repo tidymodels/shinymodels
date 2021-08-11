@@ -22,12 +22,14 @@ organize_data(x, hover_cols = NULL, ...)
 \value{
 A list with elements data frame and character vectors. The data frame includes
 an outcome variable \code{.outcome}, a prediction variable \code{.pred}, model
-configuration variable \code{.config}, and hovering columns \code{.hover}. The default
-configuration is based on the optimal value of the first metric.
+configuration variable \code{.config}, and hovering columns \code{.hover}.
 }
 \description{
 This function joins the result of \code{\link[tune:fit_resamples]{tune::fit_resamples()}}  to the original
 dataset to give a list that can be an input for the Shiny app.
+}
+\details{
+The default configuration is based on \strong{the optimal value} of the first metric.
 }
 \keyword{classes,}
 \keyword{classif}

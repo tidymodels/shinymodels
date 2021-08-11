@@ -5,13 +5,13 @@
 #' @param x The [tune::fit_resamples()] result.
 #' @param hover_cols The columns to display while hovering.
 #' @param ... Other parameters not currently used.
+#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @keywords models,  regression, graphs, classes, classif
 #' @export
 #' @return
 #' A list with elements data frame and character vectors. The data frame includes
 #'  an outcome variable `.outcome`, a prediction variable `.pred`, model
-#'  configuration variable `.config`, and hovering columns `.hover`. The default
-#'  configuration is based on the optimal value of the first metric.
+#'  configuration variable `.config`, and hovering columns `.hover`.
 organize_data <- function(x, hover_cols = NULL, ...) {
   UseMethod("organize_data")
 }

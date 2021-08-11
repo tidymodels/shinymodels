@@ -33,7 +33,8 @@ RoxygenNote: 7.1.1
 Suggests: 
     spelling,
     testthat (>= 3.0.0),
-    covr
+    covr,
+    markdown
 Language: en-US
 Imports: 
     generics (>= 0.1.0),
@@ -42,7 +43,6 @@ Imports:
     DT,
     glue,
     htmltools,
-    markdown,
     magrittr,
     modeldata,
     parsnip,

@@ -34,4 +34,7 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
 \description{
 This function takes the \code{\link[=organize_data]{organize_data()}} result to shiny_models a Shiny app.
 }
+\details{
+The default configuration is based on \strong{the optimal value} of the first metric.
+}
 \keyword{internal}

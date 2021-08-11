@@ -21,6 +21,8 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
 }
 \description{
 This function takes the data based on \code{\link[tune:fit_resamples]{tune::fit_resamples()}} results to
-launch a Shiny app. Also, note that the default configuration is based on the
-optimal value of the first metric.
+launch a Shiny app.
+}
+\details{
+The default configuration is based on \strong{the optimal value} of the first metric.
 }

@@ -7,6 +7,7 @@
 #' plots; the default option is FALSE, it is recommended to use TRUE for a big data.
 #' @param original_data Original dataset.
 #' @param ... Other parameters not currently used.
+#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @export
 #' @keywords internal
 

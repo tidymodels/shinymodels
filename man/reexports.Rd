@@ -5,6 +5,9 @@
 \alias{reexports}
 \alias{explore}
 \title{Objects exported from other packages}
+\details{
+The default configuration is based on \strong{the optimal value} of the first metric.
+}
 \keyword{internal}
 \description{
 These objects are imported from other packages. Follow the links
