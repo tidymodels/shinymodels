@@ -182,14 +182,14 @@ shiny_models.reg_shiny_data <-
       })
       output$selected_config <- renderPrint({
         # return null if there are no tuning parameters
-        if (is.null(input$metrics_rows_selected)) {
+        if (length(tuning_param) == 0) {
           return(invisible(NULL))
         }
 
         # Get the config and translate to a sentence with the parameter values
         # TODO make a function with tests to do this
         ## function start
-        sel_config <- preds$.config[input$metrics_rows_selected]
+        sel_config <- performance$.config[input$metrics_rows_selected]
 
         # distinguish between no tuning parameters and no seleted rows yet
         if (length(sel_config) == 0) {
