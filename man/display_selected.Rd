@@ -4,10 +4,12 @@
 \alias{display_selected}
 \title{Gets the config and translate to a sentence with the parameter values}
 \usage{
-display_selected(x, predictions, tuning_param, input)
+display_selected(x, performance, predictions, tuning_param, input)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
+
+\item{performance}{The dataframe with performance metrics for each candidate model.}
 
 \item{predictions}{The dataframe with predictions across all models.}
 

@@ -108,19 +108,20 @@ dashboard_css <- function() {
 #' and the names of the tuning parameters to return a sentence with the default
 #' parameter values.
 #' @param x The [organize_data()] result.
+#' @param performance The dataframe with performance metrics for each candidate model.
 #' @param predictions The dataframe with predictions across all models.
 #' @param tuning_param The names of the tuning parameters.
 #' @param input The datatable object.
 #' @export
 #' @return
 #' A sentence.
-display_selected <- function(x, predictions, tuning_param, input) {
+display_selected <- function(x, performance, predictions, tuning_param, input) {
   # return null if there are no tuning parameters
-  if (is.null(input$metrics_rows_selected)) {
+  if (length(tuning_param) == 0) {
     return(invisible(NULL))
   }
   # Get the config and translate to a sentence with the parameter values
-  sel_config <- predictions$.config[input$metrics_rows_selected]
+  sel_config <- performance$.config[input$metrics_rows_selected]
   # distinguish between no tuning parameters and no seleted rows yet
   if (length(sel_config) == 0) {
     sel_config <- x$default_config

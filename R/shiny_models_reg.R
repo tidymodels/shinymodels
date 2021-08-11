@@ -22,7 +22,7 @@ shiny_models.reg_shiny_data <-
     reals <- names(is_real_number)[is_real_number]
 
     ui <- shinydashboard::dashboardPage(
-      shinydashboard::dashboardHeader(title = "SHINYMODELS"),
+      shinydashboard::dashboardHeader(title = "Shinymodels"),
       shinydashboard::dashboardSidebar(
         shinydashboard::sidebarMenu(
           id = "sidebarid",
@@ -181,7 +181,7 @@ shiny_models.reg_shiny_data <-
         )
       })
       output$selected_config <- shiny::renderText({
-        display_selected(x, preds, tuning_param, input)
+        display_selected(x, performance, preds, tuning_param, input)
       })
     }
     # Run the application
