@@ -34,7 +34,9 @@ Suggests:
     spelling,
     testthat (>= 3.0.0),
     covr,
-    markdown
+    markdown,
+    knitr,
+    rmarkdown
 Language: en-US
 Imports: 
     generics (>= 0.1.0),
@@ -62,6 +64,7 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 2.10),
     ggplot2
-Remotes:  
+Remotes: 
     r-lib/generics,
     tidymodels/tune@autoplot-updates
+VignetteBuilder: knitr

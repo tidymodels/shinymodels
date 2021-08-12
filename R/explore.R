@@ -1,5 +1,4 @@
 #' @importFrom generics explore
-#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @export
 generics::explore
 
@@ -8,6 +7,7 @@ generics::explore
 #' This function takes the data based on [tune::fit_resamples()] results to
 #' launch a Shiny app.
 #' @export
+#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @rdname explore
 explore.default <- function(x, ...) {
   rlang::abort("No `explore()` exists for this type of object.")
@@ -15,7 +15,6 @@ explore.default <- function(x, ...) {
 
 #' @export
 #' @inheritParams shiny_models
-#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @rdname explore
 explore.tune_results <-
   function(x,
