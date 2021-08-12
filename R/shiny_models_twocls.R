@@ -136,14 +136,20 @@ shiny_models.two_cls_shiny_data <-
     )
 
     server <- function(input, output) {
+      table_with_default_metric <- performance %>%
+        dplyr::mutate(estimate = ifelse(metric != tune::.get_tune_metric_names(x$tune_results)[1],
+                                        NA, estimate))
+      default_row_index <- which.min(table_with_default_metric$estimate)
+
       output$metrics <- DT::renderDataTable({
         performance %>%
           dplyr::select(-.config) %>%
           DT::datatable(
-            selection = "single",
+            selection = list(mode = "single", selected = default_row_index),
             filter = "top",
             fillContainer = FALSE,
-            rownames = FALSE
+            rownames = FALSE,
+            style = "bootstrap"
           ) %>%
           DT::formatSignif(columns = reals, digits = 3)
       })
@@ -162,11 +168,15 @@ shiny_models.two_cls_shiny_data <-
             current <- shiny::isolate(selected_obs())
             selected_obs(unique(c(current, new)))
           }
-          else {
-            # clear the selected rows when a double-click occurs
-            selected_obs(NULL)
-          }
         })
+        shiny::observeEvent(plotly::event_data("plotly_doubleclick",
+                                               source = "obs"), {
+                                                 selected_obs(NULL)
+                                               })
+        shiny::observeEvent(plotly::event_data("plotly_deselect",
+                                               source = "obs"), {
+                                                 selected_obs(NULL)
+                                               })
       }
       preds_dat <- shiny::reactive({
         selected <- input$metrics_rows_selected

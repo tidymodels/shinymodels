@@ -8,3 +8,5 @@
 ^codecov\.yml$
 ^welcome_tab.Rmd
 ^welcome1.png
+^doc$
+^Meta$
