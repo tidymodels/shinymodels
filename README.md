@@ -78,6 +78,6 @@ explore(svm_res)
 ```
 You should see a shiny app that looks like this:
 
-<img src="man/welcome.png" width="100%" />
+<img src="man/welcome.png" width="80%" />
 
 Step 4: Use the shiny app to explore the model and quickly detect any outliers or problematic observations. 
