@@ -80,4 +80,4 @@ You should see a shiny app that looks like this:
 
 <img src="man/welcome.png" width="100%" />
 
-Step 4: Use the shiny app to diagnose the model and quickly detect and rectify the any outliers or problematic observations. 
+Step 4: Use the shiny app to explore the model and quickly detect any outliers or problematic observations. 
