@@ -179,28 +179,28 @@ shiny_models.reg_shiny_data <-
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_numeric_obs_pred(preds_dat(), x$y_name, input$alpha, input$size,
+        quietly_run(plot_numeric_obs_pred(preds_dat(), x$y_name, input$alpha, input$size,
           source = "obs"
-        )
+        ))
       })
       output$resid_vs_pred <- plotly::renderPlotly({
-        plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
+        quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
           source = "obs"
-        )
+        ))
       })
       output$resid_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col,
+        quietly_run(plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col,
           input$alpha, input$size,
           source = "obs"
-        )
+        ))
       })
       output$resid_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col,
+        quietly_run(plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size,
           source = "obs"
-        )
+        ))
       })
       output$selected_config <- shiny::renderText({
         display_selected(x, performance, preds, tuning_param, input)

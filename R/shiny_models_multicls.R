@@ -201,32 +201,32 @@ shiny_models.multi_cls_shiny_data <-
           ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_multiclass_obs_pred(preds_dat(), x$y_name)
+        quietly_run(plot_multiclass_obs_pred(preds_dat(), x$y_name))
       })
       output$conf_mat <- plotly::renderPlotly({
-        plot_multiclass_conf_mat(preds_dat())
+        quietly_run(plot_multiclass_conf_mat(preds_dat()))
       })
       output$roc <- plotly::renderPlotly({
-        plot_multiclass_roc(preds_dat(), x$y_name)
+        quietly_run(plot_multiclass_roc(preds_dat(), x$y_name))
       })
       output$pr <- plotly::renderPlotly({
-        plot_multiclass_pr(preds_dat(), x$y_name)
+        quietly_run(plot_multiclass_pr(preds_dat(), x$y_name))
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        plot_multiclass_pred_numcol(
+        quietly_run(plot_multiclass_pred_numcol(
           preds_dat(), x$y_name, input$num_value_col,
           input$alpha, input$size, input$prob_scaling,
           source = "obs"
-        )
+        ))
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        plot_multiclass_pred_factorcol(
+        quietly_run(plot_multiclass_pred_factorcol(
           preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size, input$prob_scaling,
           source = "obs"
-        )
+        ))
       })
       output$selected_config <- shiny::renderText({
         display_selected(x, performance, preds, tuning_param, input)
