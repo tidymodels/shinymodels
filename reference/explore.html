@@ -41,8 +41,7 @@
 
 <meta property="og:title" content="Launches shiny application based on data from tune::fit_resamples() — explore.default" />
 <meta property="og:description" content="This function takes the data based on tune::fit_resamples() results to
-launch a Shiny app. Also, note that the default configuration is based on the
-optimal value of the first metric." />
+launch a Shiny app." />
 
 
 
@@ -89,6 +88,18 @@ optimal value of the first metric." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/shinymodels_example-vignette.html">Shinymodels</a>
+    </li>
+  </ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -112,8 +123,7 @@ optimal value of the first metric." />
 
     <div class="ref-description">
     <p>This function takes the data based on <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code> results to
-launch a Shiny app. Also, note that the default configuration is based on the
-optimal value of the first metric.</p>
+launch a Shiny app.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for default</span>
@@ -144,6 +154,9 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The default configuration is based on <strong>the optimal value</strong> of the first metric.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
