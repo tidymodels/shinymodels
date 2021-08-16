@@ -28,4 +28,8 @@ There are mainly two categories of tabs in the app:
  
  To give feedback, file a bug report, or ask a question, go to the [GitHub issues page](https://github.com/adhikars11/shinymodels/issues) or go to [RStudio Community](https://community.rstudio.com/) and create a post with the tag `tidymodels`. 
  
-#### For more information on Tidymodels click [here](https://www.tidymodels.org/).
+For more information on {tidymodels}: 
+
+ * [`tidymodels.org`](https://www.tidymodels.org/)
+
+ * [_Tidy Modeling with R_](https://www.tmwr.org/)
