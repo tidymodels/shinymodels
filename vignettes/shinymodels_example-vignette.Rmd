@@ -11,7 +11,7 @@ vignette: >
 
 Shinymodels is designed to help detect the problematic observations in the dataset and deal with them quickly in an efficient manner.
 
-Let's look at a simple example. Below is the code modeling mtcars with tuning parameters using `tune::tune_bayes()`funtion.
+Let's look at a simple example. Below is the code modeling `mtcars` with tuning parameters using [`tune_bayes()`](https://tune.tidymodels.org/reference/tune_bayes.html) function.
 
 ```{r eval=FALSE}
 library(tidymodels)
