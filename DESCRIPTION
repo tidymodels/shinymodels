@@ -1,55 +1,40 @@
 Package: shinymodels
-Version: 0.0.0.9000
 Title: shinymodels
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Shisham",
+             family = "Adhikari",
+             role = c("aut", "cre"),
+             email = "shisham.adhikari@rstudio.com"),
+      person(given = "Max",
+             family = "Kuhn",
+             role = "aut",
+             email = "max@rstudio.com",
+             comment = c(ORCID = "0000-0003-2402-136X")),
+      person(given = "Julia",
+             family = "Silge",
+             role = "aut",
+             email = "julia.silge@rstudio.com",
+             comment = c(ORCID = "0000-0002-3671-836X")),
+      person(given = "RStudio",
+             role = "cph"))
 Description: A package that launches a Shiny app for 'tidymodels' results.
-Authors@R: c(
-        person(
-          given = "Shisham",
-          family = "Adhikari",
-          email = "shisham.adhikari@rstudio.com",
-          role = c("aut", "cre")
-          ),
-        person(
-          given = "Max",
-          family = "Kuhn",
-          email = "max@rstudio.com",
-          comment = c(ORCID = "0000-0003-2402-136X"),
-          role = c("aut")
-          ),
-        person(
-          given = "Julia",
-          family = "Silge",
-          email = "julia.silge@rstudio.com",
-          role = c("aut"),
-          comment = c(ORCID = "0000-0002-3671-836X")
-        ),
-        person("RStudio", role = "cph")
-      )
 License: MIT + file LICENSE
-Encoding: UTF-8
-LazyData: false
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
-Suggests: 
-    spelling,
-    testthat (>= 3.0.0),
-    covr,
-    markdown,
-    knitr,
-    rmarkdown
-Language: en-US
+Depends: 
+    ggplot2,
+    R (>= 2.10)
 Imports: 
-    generics (>= 0.1.0),
     broom,
     dplyr,
     DT,
+    generics (>= 0.1.0),
     glue,
     htmltools,
     magrittr,
     modeldata,
     parsnip,
-    purrr,
     plotly,
+    purrr,
     rlang,
     scales,
     shiny,
@@ -60,11 +45,21 @@ Imports:
     tidyselect,
     tune,
     yardstick
-Config/testthat/edition: 3
-Depends: 
-    R (>= 2.10),
-    ggplot2
+Suggests: 
+    covr,
+    knitr,
+    markdown,
+    rmarkdown,
+    spelling,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Remotes: 
     r-lib/generics,
     tidymodels/tune@autoplot-updates
-VignetteBuilder: knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+LazyData: false
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1

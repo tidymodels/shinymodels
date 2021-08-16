@@ -129,7 +129,7 @@ shiny_models.two_cls_shiny_data <-
           # fourth tab content
           shinydashboard::tabItem(
             tabName = "about",
-            includeMarkdown("welcome_tab.Rmd")
+            includeMarkdown("man/welcome_tab.Rmd")
           )
         )
       )

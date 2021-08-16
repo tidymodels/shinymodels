@@ -16,9 +16,9 @@ Let's look at a simple example. Below is the code modeling mtcars with tuning pa
 ```{r eval=FALSE}
 library(tidymodels)
 tidymodels_prefer()
-library(doMC)
-registerDoMC(cores = 8)
+
 set.seed(6735)
+
 folds <- vfold_cv(mtcars, v = 5)
 car_rec <-
   recipe(mpg ~ ., data = mtcars) %>%
@@ -29,8 +29,15 @@ svm_mod <-
   set_mode("regression")
 # Use a space-filling design with 7 points
 set.seed(3254)
-svm_res <- tune_bayes(svm_mod, car_rec, resamples = folds, initial = 7, iter = 3,
-                     control = control_bayes(save_pred = TRUE, verbose = TRUE))
+svm_res <-
+  tune_bayes(
+    svm_mod,
+    car_rec,
+    resamples = folds,
+    initial = 7,
+    iter = 3,
+    control = control_bayes(save_pred = TRUE, verbose = TRUE)
+  )
 summary(svm_res)
 ```
 

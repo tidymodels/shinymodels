@@ -111,7 +111,7 @@ shiny_models.reg_shiny_data <-
           # third tab content
           shinydashboard::tabItem(
             tabName = "about",
-            includeMarkdown("welcome_tab.Rmd")
+            includeMarkdown("man/welcome_tab.Rmd")
           )
         )
       )
