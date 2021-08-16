@@ -11,7 +11,7 @@ vignette: >
 
 Shinymodels is designed to help detect the problematic observations in the dataset and deal with them quickly in an efficient manner.
 
-Let's look at a simple example. Below is the code modeling mtcars with tuning parameters using `tune::tune_bayes()`funtion.
+Let's look at a simple example. Below is the code modeling `mtcars` with tuning parameters using [`tune_bayes()`](https://tune.tidymodels.org/reference/tune_bayes.html) function.
 
 ```{r eval=FALSE}
 library(tidymodels)
@@ -50,5 +50,5 @@ explore(svm_res)
 It should launch the shiny app that looks like this:
 <img src="welcome1.png" width="80%"/>
 
-Now, you can navigate through the tabs in the sidebar to use the app and explore about the model object. Start by clicking on the tab names Tuning parameters and selecting a row. Selecting a row in the tuning parameter table selects the tuning paramter(s) and the related model. Then, in the plots tab, you should see various diagnostic plots for the model you selected. You can click on observation(s) in the plots either by clicking on individual points or using the select box to highlight the points in rest of the plots. The idea is to help see where an observation lies in different diagnostic plots and what information it gives us about the observation. This will ultimately help diagnose the outliers or "problematic" observations in the modeling objet and hopefully give insights on why that is the case. You can go between selecting different tuning paramter(s) and diagnostic plots.
+Now, you can navigate through the tabs in the sidebar to use the app and explore about the model object. Start by clicking on the tab names Tuning parameters and selecting a row. Selecting a row in the tuning parameter table selects the tuning parameter(s) and the related model. Then, in the plots tab, you should see various diagnostic plots for the model you selected. You can click on observation(s) in the plots either by clicking on individual points or using the select box to highlight the points in rest of the plots. The idea is to help see where an observation lies in different diagnostic plots and what information it gives us about the observation. This will ultimately help diagnose the outliers or "problematic" observations in the modeling object and hopefully give insights on why that is the case. You can go between selecting different tuning parameter(s) and diagnostic plots.
 

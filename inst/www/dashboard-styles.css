@@ -143,3 +143,7 @@ label {
    background-color: #CA225E !important;
    border-color: #CA225E !important;
 }
+
+a:link {
+   color: #CA225E !important;
+}

@@ -120,7 +120,8 @@ shiny_models.reg_shiny_data <-
     server <- function(input, output) {
       table_with_default_metric <- performance %>%
         dplyr::mutate(estimate = ifelse(metric != tune::.get_tune_metric_names(x$tune_results)[1],
-                                        NA, estimate))
+          NA, estimate
+        ))
       default_row_index <- which.min(table_with_default_metric$estimate)
 
       output$metrics <- DT::renderDataTable({
@@ -152,13 +153,15 @@ shiny_models.reg_shiny_data <-
           }
         })
         shiny::observeEvent(plotly::event_data("plotly_doubleclick",
-                                               source = "obs"), {
-                                                 selected_obs(NULL)
-                                               })
+          source = "obs"
+        ), {
+          selected_obs(NULL)
+        })
         shiny::observeEvent(plotly::event_data("plotly_deselect",
-                                               source = "obs"), {
-                                                selected_obs(NULL)
-                                               })
+          source = "obs"
+        ), {
+          selected_obs(NULL)
+        })
       }
       preds_dat <- shiny::reactive({
         selected <- input$metrics_rows_selected

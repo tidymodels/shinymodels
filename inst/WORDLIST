@@ -1,5 +1,6 @@
 CMD
 Codecov
+config
 Ctrl
 Esc
 ggplot
@@ -12,6 +13,7 @@ ROC
 tidymodels
 tooltip
 bayes
+
 
 
 
