@@ -135,6 +135,15 @@ label {
   color:red !important;
 }
 
-table.dataTable tr.selected td, table.dataTable td.selected {
-    background: #CA225E !important;
+.table.dataTable tbody td.active, .table.dataTable tbody tr.active td {
+    background-color: #CA225E !important;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+   background-color: #CA225E !important;
+   border-color: #CA225E !important;
+}
+
+a:link {
+   color: #CA225E !important;
 }

@@ -26,13 +26,16 @@ NULL
 # ------------------------------------------------------------------------------
 
 utils::globalVariables(
-  c("Class",
+  c(
+    "Class",
     ".color",
     ".config",
     "default_selected",
     "delta",
+    "estimate",
     ".estimator",
     ".hover",
+    "metric",
     ".metric",
     ".outcome",
     ".pred",

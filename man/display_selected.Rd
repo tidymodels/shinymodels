@@ -15,7 +15,7 @@ display_selected(x, performance, predictions, tuning_param, input)
 
 \item{tuning_param}{The names of the tuning parameters.}
 
-\item{input}{The datatable object.}
+\item{input}{The \link[DT:datatable]{DT::datatable} object.}
 }
 \value{
 A sentence.

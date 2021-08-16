@@ -31,17 +31,21 @@ shiny_models.multi_cls_shiny_data <-
           }
           else {
             shinydashboard::menuItem("Tuning Parameters",
-                                     tabName = "tuning",
-                                     icon = icon("filter")
+              tabName = "tuning",
+              icon = icon("filter")
             )
           },
           shinydashboard::menuItem("Performance Plots",
-                                   tabName = "static",
-                                   icon = icon("chart-bar")
+            tabName = "static",
+            icon = icon("chart-bar")
           ),
           shinydashboard::menuItem("Variable Plots",
-                                   tabName = "interactive",
-                                   icon = icon("chart-line")
+            tabName = "interactive",
+            icon = icon("chart-line")
+          ),
+          shinydashboard::menuItem("About",
+            tabName = "about",
+            icon = icon("info-circle")
           ),
           shiny::conditionalPanel(
             'input.sidebarid == "interactive"',
@@ -68,13 +72,13 @@ shiny_models.multi_cls_shiny_data <-
             },
             shiny::helpText("Select the opacity of the points"),
             sliderInput("alpha", "Alpha:",
-                        min = 0.1, max = 1,
-                        value = 0.7, step = 0.1
+              min = 0.1, max = 1,
+              value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
             sliderInput("size", "Size:",
-                        min = 0.5, max = 3,
-                        value = 1.5, step = 0.5
+              min = 0.5, max = 3,
+              value = 1.5, step = 0.5
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(
@@ -100,7 +104,7 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-                shiny::verbatimTextOutput('selected_config'),
+              shiny::verbatimTextOutput("selected_config"),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Predicted probabilities vs. true class"
@@ -126,20 +130,32 @@ shiny_models.multi_cls_shiny_data <-
                 fac_columns
               )
             )
+          ),
+          # fourth tab content
+          shinydashboard::tabItem(
+            tabName = "about",
+            includeMarkdown("man/welcome_tab.Rmd")
           )
         )
       )
     )
 
     server <- function(input, output) {
+      table_with_default_metric <- performance %>%
+        dplyr::mutate(estimate = ifelse(metric != tune::.get_tune_metric_names(x$tune_results)[1],
+          NA, estimate
+        ))
+      default_row_index <- which.min(table_with_default_metric$estimate)
+
       output$metrics <- DT::renderDataTable({
         performance %>%
           dplyr::select(-.config) %>%
           DT::datatable(
-            selection = "single",
+            selection = list(mode = "single", selected = default_row_index),
             filter = "top",
             fillContainer = FALSE,
-            rownames = FALSE
+            rownames = FALSE,
+            style = "bootstrap"
           ) %>%
           DT::formatSignif(columns = reals, digits = 3)
       })
@@ -158,10 +174,16 @@ shiny_models.multi_cls_shiny_data <-
             current <- shiny::isolate(selected_obs())
             selected_obs(unique(c(current, new)))
           }
-          else {
-            # clear the selected rows when a double-click occurs
-            selected_obs(NULL)
-          }
+        })
+        shiny::observeEvent(plotly::event_data("plotly_doubleclick",
+          source = "obs"
+        ), {
+          selected_obs(NULL)
+        })
+        shiny::observeEvent(plotly::event_data("plotly_deselect",
+          source = "obs"
+        ), {
+          selected_obs(NULL)
         })
       }
       preds_dat <- shiny::reactive({
@@ -175,7 +197,7 @@ shiny_models.multi_cls_shiny_data <-
         preds %>%
           dplyr::filter(.config == selected_config) %>%
           dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-                                        "red", "black"
+            "red", "black"
           ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
@@ -212,4 +234,3 @@ shiny_models.multi_cls_shiny_data <-
     }
     shiny::shinyApp(ui, server)
   }
-

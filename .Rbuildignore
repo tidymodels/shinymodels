@@ -6,3 +6,7 @@
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
 ^codecov\.yml$
+^welcome_tab.Rmd
+^welcome1.png
+^doc$
+^Meta$
