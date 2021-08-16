@@ -136,7 +136,7 @@ display_selected <- function(x, performance, predictions, tuning_param, input) {
 
 # ------------------------------------------------------------------------------
 # A general wrapper to catch and suppress a specific ggplot warning
-quietly_run <- function(expr, warn_pattern = c("Ignoring unknown aesthetics")) {
+quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
   withCallingHandlers(
     warning = function(cnd) {
       if (grepl(warn_pattern, cnd$message)) {
@@ -145,4 +145,5 @@ quietly_run <- function(expr, warn_pattern = c("Ignoring unknown aesthetics")) {
     },
     expr
   )
+
 }
