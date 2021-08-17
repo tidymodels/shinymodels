@@ -5,12 +5,10 @@
 \title{This function takes result of \link{organize_data} to calculate and reformat
 performance metrics for each candidate model.}
 \usage{
-performance_object(x, estimate_name)
+performance_object(x)
 }
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
-
-\item{estimate_name}{The column name with performance metrics.}
 }
 \value{
 A dataframe.

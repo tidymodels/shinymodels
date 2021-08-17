@@ -12,7 +12,7 @@ shiny_models.reg_shiny_data <-
     fac_columns <- x$fac_cols
     tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
-    performance <- performance_object(x, "mean")
+    performance <- performance_object(x)
     # Save info to round real number columns (if any)
     is_real_number <- purrr::map_lgl(performance, ~ is.numeric(.x) & !is.integer(.x))
     reals <- names(is_real_number)[is_real_number]
