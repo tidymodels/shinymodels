@@ -145,5 +145,20 @@ quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
     },
     expr
   )
+}
 
+# ------------------------------------------------------------------------------
+# Create the performance object with performance metrics for each candidate model
+#' This function takes result of [organize_data] to calculate and reformat
+#' performance metrics for each candidate model.
+#' @param x The [organize_data()] result.
+#' @param estimate_name The column name with performance metrics.
+#' @export
+#' @return
+#' A dataframe.
+performance_object <- function(x, estimate_name) {
+  x$tune_results %>%
+    tune::collect_metrics() %>%
+    dplyr::relocate(metric = .metric, estimate = {{ estimate_name }}) %>%
+    dplyr::select(-.estimator, -n, -std_err)
 }

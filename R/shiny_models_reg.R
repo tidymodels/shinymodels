@@ -12,11 +12,7 @@ shiny_models.reg_shiny_data <-
     fac_columns <- x$fac_cols
     tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
-    performance <-
-      x$tune_results %>%
-      tune::collect_metrics() %>%
-      dplyr::relocate(metric = .metric, estimate = mean) %>%
-      dplyr::select(-.estimator, -n, -std_err)
+    performance <- performance_object(x, "mean")
     # Save info to round real number columns (if any)
     is_real_number <- purrr::map_lgl(performance, ~ is.numeric(.x) & !is.integer(.x))
     reals <- names(is_real_number)[is_real_number]
@@ -111,7 +107,9 @@ shiny_models.reg_shiny_data <-
           # third tab content
           shinydashboard::tabItem(
             tabName = "about",
-            includeMarkdown("man/welcome_tab.Rmd")
+            includeMarkdown(
+              system.file("welcome", "welcome_tab.Rmd", package = "shinymodels")
+            )
           )
         )
       )

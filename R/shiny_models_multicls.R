@@ -134,7 +134,9 @@ shiny_models.multi_cls_shiny_data <-
           # fourth tab content
           shinydashboard::tabItem(
             tabName = "about",
-            includeMarkdown("man/welcome_tab.Rmd")
+            includeMarkdown(
+              system.file("welcome", "welcome_tab.Rmd", package = "shinymodels")
+            )
           )
         )
       )
