@@ -131,15 +131,13 @@ label {
   outline: solid 1px #CA225E !important;
 }
 
-.dataTables_length select option:hover{
-  color:red !important;
-}
 
 .table.dataTable tbody td.active, .table.dataTable tbody tr.active td {
     background-color: #CA225E !important;
 }
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+   color: #fff !important;
    background-color: #CA225E !important;
    border-color: #CA225E !important;
 }
@@ -147,3 +145,5 @@ label {
 a:link {
    color: #CA225E !important;
 }
+
+

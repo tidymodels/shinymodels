@@ -12,11 +12,7 @@ shiny_models.two_cls_shiny_data <-
     fac_columns <- x$fac_cols
     tuning_param <- tune::.get_tune_parameter_names(x$tune_results)
     # Calculate and reformat performance metrics for each candidate model
-    performance <-
-      x$tune_results %>%
-      tune::collect_metrics() %>%
-      dplyr::relocate(metric = .metric, estimate = mean) %>%
-      dplyr::select(-.estimator, -n, -std_err)
+    performance <- performance_object(x)
     # Save info to round real number columns (if any)
     is_real_number <- purrr::map_lgl(performance, ~ is.numeric(.x) & !is.integer(.x))
     reals <- names(is_real_number)[is_real_number]
@@ -129,7 +125,9 @@ shiny_models.two_cls_shiny_data <-
           # fourth tab content
           shinydashboard::tabItem(
             tabName = "about",
-            includeMarkdown("man/welcome_tab.Rmd")
+            includeMarkdown(
+              system.file("welcome", "welcome_tab.Rmd", package = "shinymodels")
+            )
           )
         )
       )
@@ -196,30 +194,30 @@ shiny_models.two_cls_shiny_data <-
           ))
       })
       output$obs_vs_pred <- plotly::renderPlotly({
-        plot_twoclass_obs_pred(preds_dat(), x$y_name)
+        quietly_run(plot_twoclass_obs_pred(preds_dat(), x$y_name))
       })
       output$conf_mat <- plotly::renderPlotly({
-        plot_twoclass_conf_mat(preds_dat())
+        quietly_run(plot_twoclass_conf_mat(preds_dat()))
       })
       output$roc <- plotly::renderPlotly({
-        plot_twoclass_roc(preds_dat(), x$y_name)
+        quietly_run(plot_twoclass_roc(preds_dat(), x$y_name))
       })
       output$pr <- plotly::renderPlotly({
-        plot_twoclass_pr(preds_dat(), x$y_name)
+        quietly_run(plot_twoclass_pr(preds_dat(), x$y_name))
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         req(input$num_value_col)
-        plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
+        quietly_run(plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
           input$alpha, input$size, input$prob_scaling,
           source = "obs"
-        )
+        ))
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         req(input$factor_value_col)
-        plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
+        quietly_run(plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size, input$prob_scaling,
           source = "obs"
-        )
+        ))
       })
       output$selected_config <- shiny::renderText({
         display_selected(x, performance, preds, tuning_param, input)

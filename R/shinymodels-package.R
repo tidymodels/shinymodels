@@ -33,6 +33,7 @@ utils::globalVariables(
     "default_selected",
     "delta",
     "estimate",
+    ".estimate",
     ".estimator",
     ".hover",
     "metric",

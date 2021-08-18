@@ -133,3 +133,35 @@ display_selected <- function(x, performance, predictions, tuning_param, input) {
   values <- paste(names(values), "=", values, collapse = ", ")
   paste("Selected model:", values)
 }
+
+# ------------------------------------------------------------------------------
+# A general wrapper to catch and suppress a specific ggplot warning
+quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
+  withCallingHandlers(
+    warning = function(cnd) {
+      if (grepl(warn_pattern, cnd$message)) {
+        rlang::cnd_muffle(cnd)
+      }
+    },
+    expr
+  )
+}
+
+# ------------------------------------------------------------------------------
+# Create the performance object with performance metrics for each candidate model
+#' This function takes result of [organize_data] to calculate and reformat
+#' performance metrics for each candidate model.
+#' @param x The [organize_data()] result.
+#' @export
+#' @return
+#' A dataframe.
+performance_object <- function(x) {
+  obj <- x$tune_results %>%
+    tune::collect_metrics()
+  if (inherits(obj, "last_fit")) {
+    dplyr::rename(obj, mean = .estimate)
+  }
+  obj %>%
+    dplyr::relocate(metric = .metric, estimate = mean) %>%
+    dplyr::select(-.estimator, -n, -std_err)
+}
