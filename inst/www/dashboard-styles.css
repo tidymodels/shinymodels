@@ -96,6 +96,10 @@ h3 {
     background-color:#CA225E !important;
 }
 
+.irs-grid-text {
+  color: #242022;
+}
+
 label {
    color: #333 !important;
    font-family: 'Lato', sans-serif !important;

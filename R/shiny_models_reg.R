@@ -140,7 +140,11 @@ shiny_models.reg_shiny_data <-
         selected_obs(NULL)
       }
       else {
+        obs_shown <- reactiveVal(FALSE)
         shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
           new <- c(
             plotly::event_data("plotly_click", source = "obs")$customdata,
             plotly::event_data("plotly_selected", source = "obs")$customdata
@@ -150,14 +154,18 @@ shiny_models.reg_shiny_data <-
             selected_obs(unique(c(current, new)))
           }
         })
-        shiny::observeEvent(plotly::event_data("plotly_doubleclick",
-          source = "obs"
-        ), {
+        shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
+          plotly::event_data("plotly_doubleclick", source = "obs")
           selected_obs(NULL)
         })
-        shiny::observeEvent(plotly::event_data("plotly_deselect",
-          source = "obs"
-        ), {
+        shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
+          plotly::event_data("plotly_deselect", source = "obs")
           selected_obs(NULL)
         })
       }
@@ -177,24 +185,32 @@ shiny_models.reg_shiny_data <-
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_numeric_obs_pred(preds_dat(), x$y_name, input$alpha, input$size,
           source = "obs"
         ))
       })
       output$resid_vs_pred <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
           source = "obs"
         ))
       })
       output$resid_vs_numcol <- plotly::renderPlotly({
-        req(input$num_value_col)
+        validate(
+          need(input$num_value_col, message = "Please choose a numeric variable from the dropdown menu")
+        )
+        obs_shown(TRUE)
         quietly_run(plot_numeric_res_numcol(preds_dat(), x$y_name, input$num_value_col,
           input$alpha, input$size,
           source = "obs"
         ))
       })
       output$resid_vs_factorcol <- plotly::renderPlotly({
-        req(input$factor_value_col)
+        validate(
+          need(input$factor_value_col, message = "Please choose a factor variable from the dropdown menu")
+        )
+        obs_shown(TRUE)
         quietly_run(plot_numeric_res_factorcol(preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size,
           source = "obs"
