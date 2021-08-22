@@ -129,8 +129,8 @@ plot_multiclass_pred_numcol <-
       p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
     fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
-      plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
+      plotly::layout(dragmode = "select") %>%
+      plotly::toWebGL()
     fig
   }
 
@@ -195,8 +195,8 @@ plot_multiclass_pred_factorcol <-
       p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
     }
     fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
-      plotly::layout(dragmode = "select")
-    fig <- fig %>% plotly::toWebGL()
+      plotly::layout(dragmode = "select") %>%
+      plotly::toWebGL()
     fig
   }
 

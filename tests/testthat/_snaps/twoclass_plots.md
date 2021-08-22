@@ -10,6 +10,7 @@
           "y": [1, 0, 0, 1, 0, 1, 3, 1, 0, 1, 0, 0, 0, 0, 1, 2, 2, 2, 6, 6, 2, 6, 2, 5, 3, 3, 1, 5, 6, 2, 2, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0],
           "text": ["count:  1<br />.pred_Impaired: 0.000", "count:  0<br />.pred_Impaired: 0.025", "count:  0<br />.pred_Impaired: 0.050", "count:  1<br />.pred_Impaired: 0.075", "count:  0<br />.pred_Impaired: 0.100", "count:  1<br />.pred_Impaired: 0.125", "count:  3<br />.pred_Impaired: 0.150", "count:  1<br />.pred_Impaired: 0.175", "count:  0<br />.pred_Impaired: 0.200", "count:  1<br />.pred_Impaired: 0.225", "count:  0<br />.pred_Impaired: 0.250", "count:  0<br />.pred_Impaired: 0.275", "count:  0<br />.pred_Impaired: 0.300", "count:  0<br />.pred_Impaired: 0.325", "count:  1<br />.pred_Impaired: 0.350", "count:  2<br />.pred_Impaired: 0.375", "count:  2<br />.pred_Impaired: 0.400", "count:  2<br />.pred_Impaired: 0.425", "count:  6<br />.pred_Impaired: 0.450", "count:  6<br />.pred_Impaired: 0.475", "count:  2<br />.pred_Impaired: 0.500", "count:  6<br />.pred_Impaired: 0.525", "count:  2<br />.pred_Impaired: 0.550", "count:  5<br />.pred_Impaired: 0.575", "count:  3<br />.pred_Impaired: 0.600", "count:  3<br />.pred_Impaired: 0.625", "count:  1<br />.pred_Impaired: 0.650", "count:  5<br />.pred_Impaired: 0.675", "count:  6<br />.pred_Impaired: 0.700", "count:  2<br />.pred_Impaired: 0.725", "count:  2<br />.pred_Impaired: 0.750", "count:  1<br />.pred_Impaired: 0.775", "count:  1<br />.pred_Impaired: 0.800", "count:  0<br />.pred_Impaired: 0.825", "count:  1<br />.pred_Impaired: 0.850", "count:  0<br />.pred_Impaired: 0.875", "count:  0<br />.pred_Impaired: 0.900", "count:  0<br />.pred_Impaired: 0.925", "count:  0<br />.pred_Impaired: 0.950", "count:  0<br />.pred_Impaired: 0.975", "count:  0<br />.pred_Impaired: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -32,6 +33,7 @@
           "y": [2, 14, 15, 19, 16, 14, 18, 11, 12, 4, 8, 6, 4, 6, 5, 4, 4, 1, 3, 3, 3, 0, 1, 4, 1, 2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  2<br />.pred_Impaired: 0.000", "count: 14<br />.pred_Impaired: 0.025", "count: 15<br />.pred_Impaired: 0.050", "count: 19<br />.pred_Impaired: 0.075", "count: 16<br />.pred_Impaired: 0.100", "count: 14<br />.pred_Impaired: 0.125", "count: 18<br />.pred_Impaired: 0.150", "count: 11<br />.pred_Impaired: 0.175", "count: 12<br />.pred_Impaired: 0.200", "count:  4<br />.pred_Impaired: 0.225", "count:  8<br />.pred_Impaired: 0.250", "count:  6<br />.pred_Impaired: 0.275", "count:  4<br />.pred_Impaired: 0.300", "count:  6<br />.pred_Impaired: 0.325", "count:  5<br />.pred_Impaired: 0.350", "count:  4<br />.pred_Impaired: 0.375", "count:  4<br />.pred_Impaired: 0.400", "count:  1<br />.pred_Impaired: 0.425", "count:  3<br />.pred_Impaired: 0.450", "count:  3<br />.pred_Impaired: 0.475", "count:  3<br />.pred_Impaired: 0.500", "count:  0<br />.pred_Impaired: 0.525", "count:  1<br />.pred_Impaired: 0.550", "count:  4<br />.pred_Impaired: 0.575", "count:  1<br />.pred_Impaired: 0.600", "count:  2<br />.pred_Impaired: 0.625", "count:  0<br />.pred_Impaired: 0.650", "count:  1<br />.pred_Impaired: 0.675", "count:  0<br />.pred_Impaired: 0.700", "count:  0<br />.pred_Impaired: 0.725", "count:  0<br />.pred_Impaired: 0.750", "count:  0<br />.pred_Impaired: 0.775", "count:  1<br />.pred_Impaired: 0.800", "count:  0<br />.pred_Impaired: 0.825", "count:  0<br />.pred_Impaired: 0.850", "count:  0<br />.pred_Impaired: 0.875", "count:  0<br />.pred_Impaired: 0.900", "count:  0<br />.pred_Impaired: 0.925", "count:  0<br />.pred_Impaired: 0.950", "count:  0<br />.pred_Impaired: 0.975", "count:  0<br />.pred_Impaired: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -99,7 +101,7 @@
           {
             "text": "Probability of  Impaired",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -113,11 +115,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "count",
-            "x": -0.026541095890411,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -132,7 +135,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -21.9178082191781
           },
           {
             "text": ".outcome: Impaired",
@@ -320,6 +324,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -493,6 +498,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -624,7 +630,7 @@
           {
             "text": "AXL",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -638,11 +644,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "Probability of  Impaired",
-            "x": -0.0333904109589041,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -657,7 +664,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -27.7625570776256
           },
           {
             "text": ".outcome: Impaired",
@@ -845,6 +853,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -977,7 +986,7 @@
           {
             "text": "Probability of  Impaired",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -991,11 +1000,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "AXL",
-            "x": -0.0402397260273973,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -1010,7 +1020,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -33.6073059360731
           },
           {
             "text": ".outcome: Impaired",
@@ -1198,6 +1209,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -1417,6 +1429,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -1617,6 +1630,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",

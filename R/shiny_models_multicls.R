@@ -100,7 +100,9 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "static",
             shiny::fluidRow(
-              shiny::verbatimTextOutput("selected_config"),
+              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
+                shiny::verbatimTextOutput("selected_config")
+              },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Predicted probabilities vs. true class"
@@ -114,7 +116,9 @@ shiny_models.multi_cls_shiny_data <-
           shinydashboard::tabItem(
             tabName = "interactive",
             shiny::fluidRow(
-              shiny::verbatimTextOutput("selected_config"),
+              if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
+                shiny::verbatimTextOutput("selected_config")
+              },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
                 "Predicted probabilities vs. a numeric predictor",
@@ -163,7 +167,11 @@ shiny_models.multi_cls_shiny_data <-
         selected_obs(NULL)
       }
       else {
+        obs_shown <- reactiveVal(FALSE)
         shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
           new <- c(
             plotly::event_data("plotly_click", source = "obs")$customdata,
             plotly::event_data("plotly_selected", source = "obs")$customdata
@@ -173,14 +181,18 @@ shiny_models.multi_cls_shiny_data <-
             selected_obs(unique(c(current, new)))
           }
         })
-        shiny::observeEvent(plotly::event_data("plotly_doubleclick",
-          source = "obs"
-        ), {
+        shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
+          plotly::event_data("plotly_doubleclick", source = "obs")
           selected_obs(NULL)
         })
-        shiny::observeEvent(plotly::event_data("plotly_deselect",
-          source = "obs"
-        ), {
+        shiny::observe({
+          if (!obs_shown()) {
+            return()
+          }
+          plotly::event_data("plotly_deselect", source = "obs")
           selected_obs(NULL)
         })
       }
@@ -198,6 +210,7 @@ shiny_models.multi_cls_shiny_data <-
             "red", "black"
           ))
       })
+
       output$obs_vs_pred <- plotly::renderPlotly({
         quietly_run(plot_multiclass_obs_pred(preds_dat(), x$y_name))
       })
@@ -211,7 +224,10 @@ shiny_models.multi_cls_shiny_data <-
         quietly_run(plot_multiclass_pr(preds_dat(), x$y_name))
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
-        req(input$num_value_col)
+        validate(
+          need(input$num_value_col, message = "Please choose a numeric variable from the dropdown menu")
+        )
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_pred_numcol(
           preds_dat(), x$y_name, input$num_value_col,
           input$alpha, input$size, input$prob_scaling,
@@ -219,7 +235,10 @@ shiny_models.multi_cls_shiny_data <-
         ))
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
-        req(input$factor_value_col)
+        validate(
+          need(input$factor_value_col, message = "Please choose a factor variable from the dropdown menu")
+        )
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_pred_factorcol(
           preds_dat(), x$y_name, input$factor_value_col,
           input$alpha, input$size, input$prob_scaling,

@@ -10,6 +10,7 @@
           "y": [0, 0, 1, 0, 2, 2, 5, 3, 8, 7, 13, 14, 20, 22, 12, 16, 28, 22, 16, 13, 24, 17, 15, 16, 19, 18, 20, 11, 6, 6, 9, 6, 2, 5, 1, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  0<br />predicted_probabilities: 0.025", "count:  1<br />predicted_probabilities: 0.050", "count:  0<br />predicted_probabilities: 0.075", "count:  2<br />predicted_probabilities: 0.100", "count:  2<br />predicted_probabilities: 0.125", "count:  5<br />predicted_probabilities: 0.150", "count:  3<br />predicted_probabilities: 0.175", "count:  8<br />predicted_probabilities: 0.200", "count:  7<br />predicted_probabilities: 0.225", "count: 13<br />predicted_probabilities: 0.250", "count: 14<br />predicted_probabilities: 0.275", "count: 20<br />predicted_probabilities: 0.300", "count: 22<br />predicted_probabilities: 0.325", "count: 12<br />predicted_probabilities: 0.350", "count: 16<br />predicted_probabilities: 0.375", "count: 28<br />predicted_probabilities: 0.400", "count: 22<br />predicted_probabilities: 0.425", "count: 16<br />predicted_probabilities: 0.450", "count: 13<br />predicted_probabilities: 0.475", "count: 24<br />predicted_probabilities: 0.500", "count: 17<br />predicted_probabilities: 0.525", "count: 15<br />predicted_probabilities: 0.550", "count: 16<br />predicted_probabilities: 0.575", "count: 19<br />predicted_probabilities: 0.600", "count: 18<br />predicted_probabilities: 0.625", "count: 20<br />predicted_probabilities: 0.650", "count: 11<br />predicted_probabilities: 0.675", "count:  6<br />predicted_probabilities: 0.700", "count:  6<br />predicted_probabilities: 0.725", "count:  9<br />predicted_probabilities: 0.750", "count:  6<br />predicted_probabilities: 0.775", "count:  2<br />predicted_probabilities: 0.800", "count:  5<br />predicted_probabilities: 0.825", "count:  1<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -32,6 +33,7 @@
           "y": [0, 0, 8, 10, 11, 6, 8, 0, 4, 5, 10, 1, 5, 2, 8, 2, 3, 2, 6, 2, 7, 4, 4, 0, 4, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  0<br />predicted_probabilities: 0.025", "count:  8<br />predicted_probabilities: 0.050", "count: 10<br />predicted_probabilities: 0.075", "count: 11<br />predicted_probabilities: 0.100", "count:  6<br />predicted_probabilities: 0.125", "count:  8<br />predicted_probabilities: 0.150", "count:  0<br />predicted_probabilities: 0.175", "count:  4<br />predicted_probabilities: 0.200", "count:  5<br />predicted_probabilities: 0.225", "count: 10<br />predicted_probabilities: 0.250", "count:  1<br />predicted_probabilities: 0.275", "count:  5<br />predicted_probabilities: 0.300", "count:  2<br />predicted_probabilities: 0.325", "count:  8<br />predicted_probabilities: 0.350", "count:  2<br />predicted_probabilities: 0.375", "count:  3<br />predicted_probabilities: 0.400", "count:  2<br />predicted_probabilities: 0.425", "count:  6<br />predicted_probabilities: 0.450", "count:  2<br />predicted_probabilities: 0.475", "count:  7<br />predicted_probabilities: 0.500", "count:  4<br />predicted_probabilities: 0.525", "count:  4<br />predicted_probabilities: 0.550", "count:  0<br />predicted_probabilities: 0.575", "count:  4<br />predicted_probabilities: 0.600", "count:  1<br />predicted_probabilities: 0.625", "count:  2<br />predicted_probabilities: 0.650", "count:  1<br />predicted_probabilities: 0.675", "count:  1<br />predicted_probabilities: 0.700", "count:  1<br />predicted_probabilities: 0.725", "count:  0<br />predicted_probabilities: 0.750", "count:  0<br />predicted_probabilities: 0.775", "count:  0<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -54,6 +56,7 @@
           "y": [0, 0, 0, 1, 4, 14, 4, 10, 23, 46, 56, 60, 27, 34, 38, 29, 20, 25, 11, 12, 12, 10, 5, 6, 5, 2, 4, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  0<br />predicted_probabilities: 0.025", "count:  0<br />predicted_probabilities: 0.050", "count:  1<br />predicted_probabilities: 0.075", "count:  4<br />predicted_probabilities: 0.100", "count: 14<br />predicted_probabilities: 0.125", "count:  4<br />predicted_probabilities: 0.150", "count: 10<br />predicted_probabilities: 0.175", "count: 23<br />predicted_probabilities: 0.200", "count: 46<br />predicted_probabilities: 0.225", "count: 56<br />predicted_probabilities: 0.250", "count: 60<br />predicted_probabilities: 0.275", "count: 27<br />predicted_probabilities: 0.300", "count: 34<br />predicted_probabilities: 0.325", "count: 38<br />predicted_probabilities: 0.350", "count: 29<br />predicted_probabilities: 0.375", "count: 20<br />predicted_probabilities: 0.400", "count: 25<br />predicted_probabilities: 0.425", "count: 11<br />predicted_probabilities: 0.450", "count: 12<br />predicted_probabilities: 0.475", "count: 12<br />predicted_probabilities: 0.500", "count: 10<br />predicted_probabilities: 0.525", "count:  5<br />predicted_probabilities: 0.550", "count:  6<br />predicted_probabilities: 0.575", "count:  5<br />predicted_probabilities: 0.600", "count:  2<br />predicted_probabilities: 0.625", "count:  4<br />predicted_probabilities: 0.650", "count:  1<br />predicted_probabilities: 0.675", "count:  2<br />predicted_probabilities: 0.700", "count:  0<br />predicted_probabilities: 0.725", "count:  0<br />predicted_probabilities: 0.750", "count:  0<br />predicted_probabilities: 0.775", "count:  0<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -76,6 +79,7 @@
           "y": [0, 32, 54, 24, 17, 31, 39, 26, 22, 22, 13, 16, 12, 15, 15, 8, 6, 5, 7, 5, 2, 2, 1, 0, 1, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count: 32<br />predicted_probabilities: 0.025", "count: 54<br />predicted_probabilities: 0.050", "count: 24<br />predicted_probabilities: 0.075", "count: 17<br />predicted_probabilities: 0.100", "count: 31<br />predicted_probabilities: 0.125", "count: 39<br />predicted_probabilities: 0.150", "count: 26<br />predicted_probabilities: 0.175", "count: 22<br />predicted_probabilities: 0.200", "count: 22<br />predicted_probabilities: 0.225", "count: 13<br />predicted_probabilities: 0.250", "count: 16<br />predicted_probabilities: 0.275", "count: 12<br />predicted_probabilities: 0.300", "count: 15<br />predicted_probabilities: 0.325", "count: 15<br />predicted_probabilities: 0.350", "count:  8<br />predicted_probabilities: 0.375", "count:  6<br />predicted_probabilities: 0.400", "count:  5<br />predicted_probabilities: 0.425", "count:  7<br />predicted_probabilities: 0.450", "count:  5<br />predicted_probabilities: 0.475", "count:  2<br />predicted_probabilities: 0.500", "count:  2<br />predicted_probabilities: 0.525", "count:  1<br />predicted_probabilities: 0.550", "count:  0<br />predicted_probabilities: 0.575", "count:  1<br />predicted_probabilities: 0.600", "count:  0<br />predicted_probabilities: 0.625", "count:  0<br />predicted_probabilities: 0.650", "count:  2<br />predicted_probabilities: 0.675", "count:  0<br />predicted_probabilities: 0.700", "count:  1<br />predicted_probabilities: 0.725", "count:  0<br />predicted_probabilities: 0.750", "count:  0<br />predicted_probabilities: 0.775", "count:  0<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  1<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -98,6 +102,7 @@
           "y": [0, 2, 1, 1, 7, 6, 5, 5, 3, 2, 6, 3, 2, 2, 0, 7, 3, 0, 3, 0, 2, 3, 4, 1, 3, 3, 2, 5, 4, 3, 3, 3, 6, 1, 7, 5, 5, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  2<br />predicted_probabilities: 0.025", "count:  1<br />predicted_probabilities: 0.050", "count:  1<br />predicted_probabilities: 0.075", "count:  7<br />predicted_probabilities: 0.100", "count:  6<br />predicted_probabilities: 0.125", "count:  5<br />predicted_probabilities: 0.150", "count:  5<br />predicted_probabilities: 0.175", "count:  3<br />predicted_probabilities: 0.200", "count:  2<br />predicted_probabilities: 0.225", "count:  6<br />predicted_probabilities: 0.250", "count:  3<br />predicted_probabilities: 0.275", "count:  2<br />predicted_probabilities: 0.300", "count:  2<br />predicted_probabilities: 0.325", "count:  0<br />predicted_probabilities: 0.350", "count:  7<br />predicted_probabilities: 0.375", "count:  3<br />predicted_probabilities: 0.400", "count:  0<br />predicted_probabilities: 0.425", "count:  3<br />predicted_probabilities: 0.450", "count:  0<br />predicted_probabilities: 0.475", "count:  2<br />predicted_probabilities: 0.500", "count:  3<br />predicted_probabilities: 0.525", "count:  4<br />predicted_probabilities: 0.550", "count:  1<br />predicted_probabilities: 0.575", "count:  3<br />predicted_probabilities: 0.600", "count:  3<br />predicted_probabilities: 0.625", "count:  2<br />predicted_probabilities: 0.650", "count:  5<br />predicted_probabilities: 0.675", "count:  4<br />predicted_probabilities: 0.700", "count:  3<br />predicted_probabilities: 0.725", "count:  3<br />predicted_probabilities: 0.750", "count:  3<br />predicted_probabilities: 0.775", "count:  6<br />predicted_probabilities: 0.800", "count:  1<br />predicted_probabilities: 0.825", "count:  7<br />predicted_probabilities: 0.850", "count:  5<br />predicted_probabilities: 0.875", "count:  5<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -120,6 +125,7 @@
           "y": [0, 75, 91, 47, 34, 48, 28, 22, 20, 21, 16, 15, 5, 6, 5, 5, 1, 3, 3, 3, 2, 0, 1, 1, 2, 2, 1, 0, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count: 75<br />predicted_probabilities: 0.025", "count: 91<br />predicted_probabilities: 0.050", "count: 47<br />predicted_probabilities: 0.075", "count: 34<br />predicted_probabilities: 0.100", "count: 48<br />predicted_probabilities: 0.125", "count: 28<br />predicted_probabilities: 0.150", "count: 22<br />predicted_probabilities: 0.175", "count: 20<br />predicted_probabilities: 0.200", "count: 21<br />predicted_probabilities: 0.225", "count: 16<br />predicted_probabilities: 0.250", "count: 15<br />predicted_probabilities: 0.275", "count:  5<br />predicted_probabilities: 0.300", "count:  6<br />predicted_probabilities: 0.325", "count:  5<br />predicted_probabilities: 0.350", "count:  5<br />predicted_probabilities: 0.375", "count:  1<br />predicted_probabilities: 0.400", "count:  3<br />predicted_probabilities: 0.425", "count:  3<br />predicted_probabilities: 0.450", "count:  3<br />predicted_probabilities: 0.475", "count:  2<br />predicted_probabilities: 0.500", "count:  0<br />predicted_probabilities: 0.525", "count:  1<br />predicted_probabilities: 0.550", "count:  1<br />predicted_probabilities: 0.575", "count:  2<br />predicted_probabilities: 0.600", "count:  2<br />predicted_probabilities: 0.625", "count:  1<br />predicted_probabilities: 0.650", "count:  0<br />predicted_probabilities: 0.675", "count:  1<br />predicted_probabilities: 0.700", "count:  1<br />predicted_probabilities: 0.725", "count:  2<br />predicted_probabilities: 0.750", "count:  0<br />predicted_probabilities: 0.775", "count:  0<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -142,6 +148,7 @@
           "y": [0, 14, 12, 8, 10, 15, 22, 18, 20, 18, 13, 13, 19, 17, 19, 12, 16, 18, 9, 8, 10, 7, 11, 17, 10, 10, 7, 6, 4, 4, 5, 1, 3, 1, 1, 1, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count: 14<br />predicted_probabilities: 0.025", "count: 12<br />predicted_probabilities: 0.050", "count:  8<br />predicted_probabilities: 0.075", "count: 10<br />predicted_probabilities: 0.100", "count: 15<br />predicted_probabilities: 0.125", "count: 22<br />predicted_probabilities: 0.150", "count: 18<br />predicted_probabilities: 0.175", "count: 20<br />predicted_probabilities: 0.200", "count: 18<br />predicted_probabilities: 0.225", "count: 13<br />predicted_probabilities: 0.250", "count: 13<br />predicted_probabilities: 0.275", "count: 19<br />predicted_probabilities: 0.300", "count: 17<br />predicted_probabilities: 0.325", "count: 19<br />predicted_probabilities: 0.350", "count: 12<br />predicted_probabilities: 0.375", "count: 16<br />predicted_probabilities: 0.400", "count: 18<br />predicted_probabilities: 0.425", "count:  9<br />predicted_probabilities: 0.450", "count:  8<br />predicted_probabilities: 0.475", "count: 10<br />predicted_probabilities: 0.500", "count:  7<br />predicted_probabilities: 0.525", "count: 11<br />predicted_probabilities: 0.550", "count: 17<br />predicted_probabilities: 0.575", "count: 10<br />predicted_probabilities: 0.600", "count: 10<br />predicted_probabilities: 0.625", "count:  7<br />predicted_probabilities: 0.650", "count:  6<br />predicted_probabilities: 0.675", "count:  4<br />predicted_probabilities: 0.700", "count:  4<br />predicted_probabilities: 0.725", "count:  5<br />predicted_probabilities: 0.750", "count:  1<br />predicted_probabilities: 0.775", "count:  3<br />predicted_probabilities: 0.800", "count:  1<br />predicted_probabilities: 0.825", "count:  1<br />predicted_probabilities: 0.850", "count:  1<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -164,6 +171,7 @@
           "y": [0, 5, 8, 17, 11, 6, 4, 11, 7, 6, 5, 5, 5, 1, 2, 5, 3, 1, 2, 1, 1, 1, 1, 2, 1, 3, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  5<br />predicted_probabilities: 0.025", "count:  8<br />predicted_probabilities: 0.050", "count: 17<br />predicted_probabilities: 0.075", "count: 11<br />predicted_probabilities: 0.100", "count:  6<br />predicted_probabilities: 0.125", "count:  4<br />predicted_probabilities: 0.150", "count: 11<br />predicted_probabilities: 0.175", "count:  7<br />predicted_probabilities: 0.200", "count:  6<br />predicted_probabilities: 0.225", "count:  5<br />predicted_probabilities: 0.250", "count:  5<br />predicted_probabilities: 0.275", "count:  5<br />predicted_probabilities: 0.300", "count:  1<br />predicted_probabilities: 0.325", "count:  2<br />predicted_probabilities: 0.350", "count:  5<br />predicted_probabilities: 0.375", "count:  3<br />predicted_probabilities: 0.400", "count:  1<br />predicted_probabilities: 0.425", "count:  2<br />predicted_probabilities: 0.450", "count:  1<br />predicted_probabilities: 0.475", "count:  1<br />predicted_probabilities: 0.500", "count:  1<br />predicted_probabilities: 0.525", "count:  1<br />predicted_probabilities: 0.550", "count:  2<br />predicted_probabilities: 0.575", "count:  1<br />predicted_probabilities: 0.600", "count:  3<br />predicted_probabilities: 0.625", "count:  3<br />predicted_probabilities: 0.650", "count:  0<br />predicted_probabilities: 0.675", "count:  0<br />predicted_probabilities: 0.700", "count:  0<br />predicted_probabilities: 0.725", "count:  1<br />predicted_probabilities: 0.750", "count:  0<br />predicted_probabilities: 0.775", "count:  0<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -186,6 +194,7 @@
           "y": [0, 0, 0, 0, 3, 4, 3, 4, 6, 7, 3, 9, 6, 9, 11, 16, 14, 17, 16, 23, 20, 33, 27, 29, 28, 33, 29, 31, 23, 21, 20, 10, 6, 0, 0, 0, 0, 0, 0, 0, 0],
           "text": ["count:  0<br />predicted_probabilities: 0.000", "count:  0<br />predicted_probabilities: 0.025", "count:  0<br />predicted_probabilities: 0.050", "count:  0<br />predicted_probabilities: 0.075", "count:  3<br />predicted_probabilities: 0.100", "count:  4<br />predicted_probabilities: 0.125", "count:  3<br />predicted_probabilities: 0.150", "count:  4<br />predicted_probabilities: 0.175", "count:  6<br />predicted_probabilities: 0.200", "count:  7<br />predicted_probabilities: 0.225", "count:  3<br />predicted_probabilities: 0.250", "count:  9<br />predicted_probabilities: 0.275", "count:  6<br />predicted_probabilities: 0.300", "count:  9<br />predicted_probabilities: 0.325", "count: 11<br />predicted_probabilities: 0.350", "count: 16<br />predicted_probabilities: 0.375", "count: 14<br />predicted_probabilities: 0.400", "count: 17<br />predicted_probabilities: 0.425", "count: 16<br />predicted_probabilities: 0.450", "count: 23<br />predicted_probabilities: 0.475", "count: 20<br />predicted_probabilities: 0.500", "count: 33<br />predicted_probabilities: 0.525", "count: 27<br />predicted_probabilities: 0.550", "count: 29<br />predicted_probabilities: 0.575", "count: 28<br />predicted_probabilities: 0.600", "count: 33<br />predicted_probabilities: 0.625", "count: 29<br />predicted_probabilities: 0.650", "count: 31<br />predicted_probabilities: 0.675", "count: 23<br />predicted_probabilities: 0.700", "count: 21<br />predicted_probabilities: 0.725", "count: 20<br />predicted_probabilities: 0.750", "count: 10<br />predicted_probabilities: 0.775", "count:  6<br />predicted_probabilities: 0.800", "count:  0<br />predicted_probabilities: 0.825", "count:  0<br />predicted_probabilities: 0.850", "count:  0<br />predicted_probabilities: 0.875", "count:  0<br />predicted_probabilities: 0.900", "count:  0<br />predicted_probabilities: 0.925", "count:  0<br />predicted_probabilities: 0.950", "count:  0<br />predicted_probabilities: 0.975", "count:  0<br />predicted_probabilities: 1.000"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -253,7 +262,7 @@
           {
             "text": "Predicted probabilities",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -267,11 +276,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "count",
-            "x": -0.026541095890411,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -286,7 +296,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -21.9178082191781
           },
           {
             "text": "Truth: Other",
@@ -818,6 +829,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -991,6 +1003,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -1311,7 +1324,7 @@
           {
             "text": "latitude",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -1325,11 +1338,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "Predicted probabilities",
-            "x": -0.0402397260273973,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -1344,7 +1358,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -33.6073059360731
           },
           {
             "text": "Truth: Other",
@@ -1876,6 +1891,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -2197,7 +2213,7 @@
           {
             "text": "Predicted probabilities",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -2211,11 +2227,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "tectonic_settings",
-            "x": -0.334760273972603,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -2230,7 +2247,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -284.931506849315
           },
           {
             "text": "Truth: Other",
@@ -2762,6 +2780,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -2950,7 +2969,7 @@
           {
             "text": "1 - specificity",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -2964,11 +2983,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "sensitivity",
-            "x": -0.0402397260273973,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -2983,7 +3003,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -33.6073059360731
           },
           {
             "text": "Other",
@@ -3260,6 +3281,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -3393,7 +3415,7 @@
           {
             "text": "recall",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -3407,11 +3429,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "precision",
-            "x": -0.0402397260273973,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -3426,7 +3449,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -33.6073059360731
           },
           {
             "text": "Other",
@@ -3703,6 +3727,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
