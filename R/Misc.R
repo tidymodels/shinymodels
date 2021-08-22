@@ -158,10 +158,11 @@ quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
 performance_object <- function(x) {
   obj <- x$tune_results %>%
     tune::collect_metrics()
-  if (inherits(obj, "last_fit")) {
-    dplyr::rename(obj, mean = .estimate)
+  if (inherits(x$tune_results, "last_fit")) {
+    obj <- dplyr::rename(obj, mean = .estimate) %>%
+      dplyr::select(-.estimator)
+  } else {
+    obj  <- dplyr::select(obj, -.estimator, -n, -std_err)
   }
-  obj %>%
-    dplyr::relocate(metric = .metric, estimate = mean) %>%
-    dplyr::select(-.estimator, -n, -std_err)
+  dplyr::relocate(obj, metric = .metric, estimate = mean)
 }
