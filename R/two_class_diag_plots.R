@@ -106,7 +106,7 @@ plot_twoclass_pred_numcol <-
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(
-        oob = scales::squish_infinite,
+        # oob = scales::squish_infinite,  #deciding if to add this
         trans = scales::logit_trans(),
         breaks = prob_breaks
       )
@@ -168,7 +168,7 @@ plot_twoclass_pred_factorcol <-
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(
-        oob = scales::squish_infinite,
+        # oob = scales::squish_infinite, #deciding if to add this
         trans = scales::logit_trans(),
         breaks = prob_breaks
       )
