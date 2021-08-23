@@ -10,8 +10,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![CRAN
 status](https://www.r-pkg.org/badges/version/shinymodels)](https://CRAN.R-project.org/package=shinymodels)
 [![Codecov test
-coverage](https://codecov.io/gh/adhikars11/shinymodels/branch/main/graph/badge.svg)](https://codecov.io/gh/adhikars11/shinymodels?branch=main)
-[![R-CMD-check](https://github.com/adhikars11/shinymodels/workflows/R-CMD-check/badge.svg)](https://github.com/adhikars11/shinymodels/actions)
+coverage](https://codecov.io/gh/tidymodels/shinymodels/branch/main/graph/badge.svg)](https://codecov.io/gh/tidymodels/shinymodels?branch=main)
+[![R-CMD-check](https://github.com/tidymodels/shinymodels/workflows/R-CMD-check/badge.svg)](https://github.com/tidymodels/shinymodels/actions)
 <!-- badges: end -->
 
 The goal of shinymodels is to launch a Shiny app given a {tidymodels} object.
@@ -30,7 +30,7 @@ And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("adhikars11/shinymodels")
+devtools::install_github("tidymodels/shinymodels")
 ```
 
 ## Example
@@ -78,6 +78,6 @@ explore(svm_res)
 ```
 You should see a shiny app that looks like this:
 
-<img src="man/welcome.png" width="80%" />
+![](https://media.giphy.com/media/MJQBGHVZmGzFiMqWMs/giphy.gif)
 
 Step 4: Use the shiny app to explore the model and quickly detect any outliers or problematic observations. 

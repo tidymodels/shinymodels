@@ -105,7 +105,11 @@ plot_twoclass_pred_numcol <-
       ggplot2::labs(y = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
-      p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      p <- p + ggplot2::scale_y_continuous(
+        oob = scales::squish_infinite,
+        trans = scales::logit_trans(),
+        breaks = prob_breaks
+      )
     }
     ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
@@ -163,9 +167,13 @@ plot_twoclass_pred_factorcol <-
       ggplot2::labs(x = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
-      p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      p <- p + ggplot2::scale_x_continuous(
+        oob = scales::squish_infinite,
+        trans = scales::logit_trans(),
+        breaks = prob_breaks
+      )
     }
-    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
+    fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
       plotly::toWebGL()
     fig

@@ -362,7 +362,6 @@
           },
           "fill": "toself",
           "fillcolor": "rgba(89,89,89,1)",
-          "hoveron": "fills",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -541,7 +540,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
@@ -568,7 +566,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": false,
@@ -897,7 +894,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
@@ -924,7 +920,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": false,
@@ -1246,7 +1241,6 @@
             "color": "rgba(0,0,0,1)",
             "dash": "solid"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -1264,7 +1258,6 @@
             "color": "rgba(0,0,0,1)",
             "dash": "dot"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -1288,7 +1281,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -1465,7 +1457,6 @@
             "color": "rgba(0,0,0,1)",
             "dash": "solid"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -1489,7 +1480,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",

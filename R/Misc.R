@@ -160,12 +160,26 @@ performance_object <- function(x) {
   obj <- x$tune_results %>%
     tune::collect_metrics()
   if (inherits(x$tune_results, "last_fit")) {
-    obj <- obj %>%
-      dplyr::rename(mean = .estimate) %>%
+    obj <- dplyr::rename(obj, mean = .estimate) %>%
       dplyr::select(-.estimator)
   } else {
-    obj <- dplyr::select(-.estimator, -n, -std_err)
+    obj <- dplyr::select(obj, -.estimator, -n, -std_err)
   }
-  obj %>%
-    dplyr::relocate(metric = .metric, estimate = mean)
+  dplyr::relocate(obj, metric = .metric, estimate = mean)
+}
+
+# ------------------------------------------------------------------------------
+# Modify the value of the ggplotly() value to let ggplotly() know about the size
+# of it's output container (only works when being called within a renderPlotly() context)
+
+ggplotly2 <- function(x, ...) {
+  info <- shiny::getCurrentOutputInfo()
+  height <- if (is.function(info$height)) info$height()
+  width <- if (is.function(info$width)) info$width()
+  gg <- plotly::ggplotly(x, width = width, height = height, ...)
+  gg$x$data <- lapply(gg$x$data, function(x) {
+    x$hoveron <- NULL
+    x
+  })
+  gg
 }

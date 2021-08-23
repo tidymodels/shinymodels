@@ -36,16 +36,6 @@ plot_multiclass_obs_pred <-
     ggplotly2(p)
   }
 
-
-# Let ggplotly() know about the size of it's output container
-# (only works when being called within a renderPlotly() context)
-ggplotly2 <- function(x, ...) {
-  info <- shiny::getCurrentOutputInfo()
-  height <- if (is.function(info$height)) info$height()
-  width <- if (is.function(info$width)) info$width()
-  plotly::ggplotly(x, width = width, height = height, ...)
-}
-
 #' Visualizing the confusion matrix for a classification model
 #'
 #' This function plots the confusion matrix for a classification model.
@@ -126,9 +116,13 @@ plot_multiclass_pred_numcol <-
       ggplot2::labs(y = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
-      p <- p + ggplot2::scale_y_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      p <- p + ggplot2::scale_y_continuous(
+        oob = scales::squish_infinite,
+        trans = scales::logit_trans(),
+        breaks = prob_breaks
+      )
     }
-    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
+    fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
       plotly::toWebGL()
     fig
@@ -192,9 +186,13 @@ plot_multiclass_pred_factorcol <-
       ggplot2::labs(x = "Predicted probabilities") +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
-      p <- p + ggplot2::scale_x_continuous(trans = scales::logit_trans(), breaks = prob_breaks)
+      p <- p + ggplot2::scale_x_continuous(
+        oob = scales::squish_infinite,
+        trans = scales::logit_trans(),
+        breaks = prob_breaks
+      )
     }
-    fig <- plotly::ggplotly(p, tooltip = "text", source = source) %>%
+    fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
       plotly::toWebGL()
     fig

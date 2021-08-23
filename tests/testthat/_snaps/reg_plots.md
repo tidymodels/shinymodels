@@ -13,7 +13,6 @@
             "color": "rgba(0,255,0,1)",
             "dash": "dash"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -38,7 +37,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
@@ -218,7 +216,6 @@
             "color": "rgba(0,255,0,1)",
             "dash": "dash"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -243,7 +240,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
@@ -419,7 +415,6 @@
             "color": "rgba(0,255,0,1)",
             "dash": "dash"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -444,7 +439,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
@@ -626,7 +620,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -644,7 +637,6 @@
             "color": "rgba(0,255,0,1)",
             "dash": "dash"
           },
-          "hoveron": "points",
           "showlegend": false,
           "xaxis": "x",
           "yaxis": "y",
@@ -669,7 +661,6 @@
               "color": "rgba(0,0,0,1)"
             }
           },
-          "hoveron": "points",
           "name": "black",
           "legendgroup": "black",
           "showlegend": true,
