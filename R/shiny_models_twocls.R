@@ -61,14 +61,14 @@ shiny_models.two_cls_shiny_data <-
               )
             },
             shiny::helpText("Select the opacity of the points"),
-            sliderInput("alpha", "Alpha:",
-              min = 0.1, max = 1,
-              value = 0.7, step = 0.1
+            shiny::sliderInput("alpha", "Opaqueness:",
+                               min = 0.1, max = 1,
+                               value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
-            sliderInput("size", "Size:",
-              min = 0.5, max = 3,
-              value = 1.5, step = 0.5
+            shiny::sliderInput("size", "Size:",
+                               min = 0.25, max = 2,
+                               value = 1, step = 0.4
             ),
             shiny::helpText("Logit scaling for probability?"),
             radioButtons(
