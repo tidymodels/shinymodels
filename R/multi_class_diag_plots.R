@@ -14,7 +14,7 @@
 plot_multiclass_obs_pred <-
   function(dat,
            y_name,
-           prob_bins = 0.025) {
+           prob_bins = 0.05) {
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(

@@ -16,14 +16,14 @@ plot_twoclass_obs_pred <-
   function(dat,
            y_name,
            event_level = "first",
-           prob_bins = 0.025) {
+           prob_bins = 0.05) {
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
     p <- dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~.outcome, # TODO
+      ggplot2::facet_wrap(~.outcome,
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
       ) +
