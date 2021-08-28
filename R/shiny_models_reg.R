@@ -69,8 +69,8 @@ shiny_models.reg_shiny_data <-
             ),
             shiny::helpText("Select the size of the points"),
             shiny::sliderInput("size", "Size:",
-                               min = 0.25, max = 2,
-                               value = 1, step = 0.4
+                               min = 0.1, max = 2,
+                               value = 1, step = 0.1
             )
           )
         )

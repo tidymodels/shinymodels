@@ -67,15 +67,14 @@ shiny_models.two_cls_shiny_data <-
             ),
             shiny::helpText("Select the size of the points"),
             shiny::sliderInput("size", "Size:",
-                               min = 0.25, max = 2,
-                               value = 1, step = 0.4
+                               min = 0.1, max = 2,
+                               value = 1, step = 0.1
             ),
-            shiny::helpText("Logit scaling for probability?"),
             radioButtons(
               "prob_scaling", "Probability scaling:",
               c(
-                "TRUE" = "true",
-                "FALSE" = "false"
+                "Unscaled (i.e. linear)" = FALSE,
+                "Logit scaled" = TRUE
               )
             )
           )

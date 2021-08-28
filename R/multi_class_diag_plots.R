@@ -64,7 +64,6 @@ plot_multiclass_conf_mat <- function(dat) {
 #' @param source A character string of length 1 that matches the source argument
 #' in event_data().
 #' @param prob_scaling The boolean to turn on or off the logit scale for probability.
-#' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -77,9 +76,11 @@ plot_multiclass_pred_numcol <-
            alpha = 1,
            size = 1,
            prob_scaling = FALSE,
-           prob_breaks = (2:9) / 10,
            prob_eps = 0.001,
            source = NULL) {
+    if (is.character(prob_scaling)) {
+      prob_scaling <- as.logical(prob_scaling)
+    }
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
@@ -100,16 +101,18 @@ plot_multiclass_pred_numcol <-
         predicted_class = gsub("\\.pred_", "", predicted_class),
         .outcome = paste("Truth:", .outcome)
       )
-    p <- dat %>%
+    p <-
+      dat %>%
       dplyr::group_by(predicted_class, .outcome) %>%
       ggplot2::ggplot(ggplot2::aes(x = !!rlang::sym(numcol), y = predicted_probabilities)) +
-      ggplot2::geom_point(ggplot2::aes(
-        customdata = .row,
-        color = .color,
-        text = .hover
-      ),
-      alpha = alpha,
-      size = size
+      ggplot2::geom_point(
+        ggplot2::aes(
+          customdata = .row,
+          color = .color,
+          text = .hover
+        ),
+        alpha = alpha,
+        size = size
       ) +
       ggplot2::facet_grid(predicted_class ~ .outcome) +
       ggplot2::scale_color_identity() +
@@ -117,10 +120,12 @@ plot_multiclass_pred_numcol <-
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_y_continuous(
-        oob = scales::squish_infinite,
+        # oob = scales::squish_infinite,  #deciding if to add this
         trans = scales::logit_trans(),
-        breaks = prob_breaks
+        breaks = c(0.1, (0:5)/5, 0.9)
       )
+    } else {
+      p <- p + ggplot2::scale_y_continuous(breaks = (0:5)/5, limits = 0:1)
     }
     fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
@@ -147,9 +152,11 @@ plot_multiclass_pred_factorcol <-
            alpha = 1,
            size = 1,
            prob_scaling = FALSE,
-           prob_breaks = (2:9) / 10,
            prob_eps = 0.001,
            source = NULL) {
+    if (is.character(prob_scaling)) {
+      prob_scaling <- as.logical(prob_scaling)
+    }
     dat <- dat %>%
       dplyr::select(-.pred_class) %>%
       tidyr::pivot_longer(
@@ -187,10 +194,12 @@ plot_multiclass_pred_factorcol <-
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(
-        oob = scales::squish_infinite,
+        # oob = scales::squish_infinite,  #deciding if to add this
         trans = scales::logit_trans(),
-        breaks = prob_breaks
+        breaks = c(0.1, (0:5)/5, 0.9)
       )
+    } else {
+      p <- p + ggplot2::scale_x_continuous(breaks = (0:5)/5, limits = 0:1)
     }
     fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%

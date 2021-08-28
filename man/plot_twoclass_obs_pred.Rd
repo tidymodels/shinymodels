@@ -5,7 +5,7 @@
 \title{Visualizing predicted probability vs. true class for a two-class classification
 model}
 \usage{
-plot_twoclass_obs_pred(dat, y_name, event_level = "first", prob_bins = 0.025)
+plot_twoclass_obs_pred(dat, y_name, event_level = "first", prob_bins = 0.05)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following

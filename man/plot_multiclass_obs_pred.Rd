@@ -5,7 +5,7 @@
 \title{Visualizing predicted probability vs. true class for a multi-class classification
 model}
 \usage{
-plot_multiclass_obs_pred(dat, y_name, prob_bins = 0.025)
+plot_multiclass_obs_pred(dat, y_name, prob_bins = 0.05)
 }
 \arguments{
 \item{dat}{The predictions data frame in the \code{\link[=organize_data]{organize_data()}} result. Following
