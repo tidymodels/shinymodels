@@ -100,7 +100,7 @@ shiny_models.multi_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
+                h3(shiny::textOutput("selected_config"))
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -116,7 +116,7 @@ shiny_models.multi_cls_shiny_data <-
             tabName = "interactive",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
+                h3(shiny::textOutput("selected_config"))
               },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),

@@ -88,7 +88,7 @@ shiny_models.reg_shiny_data <-
           shinydashboard::tabItem(
             tabName = "plot",
             shiny::fluidRow(
-              shiny::verbatimTextOutput("selected_config"),
+              h3(shiny::textOutput("selected_config")),
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
                 "Observed vs. Predicted"
