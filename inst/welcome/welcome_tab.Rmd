@@ -23,9 +23,7 @@ There are mainly two categories of tabs in the app:
 
 ### Feedback 
 
-This package was built by Shisham Adhikari (UC Davis) under the supervision of Max Kuhn (RStudio) and Julia Silge (RStudio) as a part of the RStudio summer internship 2021. Your suggestions, feedback, complaints or compliments are highly valued and will guide us to improve the package continuously. Please email them to shishamadhikari6@gmail.com or max@rstudio.com or julia.silge@rstudio.com.
-
-To give feedback, file a bug report, or ask a question, go to the [GitHub issues page](https://github.com/adhikars11/shinymodels/issues) or go to [RStudio Community](https://community.rstudio.com/) and create a post with the tag `tidymodels`. 
+This package was built by Shisham Adhikari (UC Davis) under the supervision of Max Kuhn (RStudio) and Julia Silge (RStudio) as a part of the RStudio summer internship 2021. Your suggestions, feedback, complaints or compliments are highly valued and will guide us to improve the package continuously. To give feedback, file a bug report, or ask a question, go to the [GitHub issues page](https://github.com/adhikars11/shinymodels/issues) or go to [RStudio Community](https://community.rstudio.com/) and create a post with the tag `tidymodels`. 
  
 For more information on {tidymodels}: 
 
