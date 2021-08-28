@@ -108,8 +108,8 @@ shiny_models.multi_cls_shiny_data <-
                 "Predicted probabilities vs. true class"
               ),
               boxed(plotly::plotlyOutput("conf_mat"), "Confusion matrix"),
-              boxed(plotly::plotlyOutput("roc"), "ROC curve"),
-              boxed(plotly::plotlyOutput("pr"), "PR curve")
+              boxed(plotly::plotlyOutput("roc"), "ROC curve (one class vs. all)"),
+              boxed(plotly::plotlyOutput("pr"), "PR curve (one class vs. all)")
             )
           ),
           # third tab content
