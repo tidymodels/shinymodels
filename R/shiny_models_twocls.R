@@ -61,21 +61,20 @@ shiny_models.two_cls_shiny_data <-
               )
             },
             shiny::helpText("Select the opacity of the points"),
-            sliderInput("alpha", "Alpha:",
-              min = 0.1, max = 1,
-              value = 0.7, step = 0.1
+            shiny::sliderInput("alpha", "Opacity:",
+                               min = 0.1, max = 1,
+                               value = 0.7, step = 0.1
             ),
             shiny::helpText("Select the size of the points"),
-            sliderInput("size", "Size:",
-              min = 0.5, max = 3,
-              value = 1.5, step = 0.5
+            shiny::sliderInput("size", "Size:",
+                               min = 0.1, max = 2,
+                               value = 1, step = 0.1
             ),
-            shiny::helpText("Logit scaling for probability?"),
             radioButtons(
               "prob_scaling", "Probability scaling:",
               c(
-                "TRUE" = "true",
-                "FALSE" = "false"
+                "Unscaled (i.e. linear)" = FALSE,
+                "Logit scaled" = TRUE
               )
             )
           )
@@ -95,7 +94,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
+                h3(shiny::textOutput("selected_config"))
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -112,7 +111,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "interactive",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                shiny::verbatimTextOutput("selected_config")
+                h3(shiny::textOutput("selected_config"))
               },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),

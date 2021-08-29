@@ -16,14 +16,14 @@ plot_twoclass_obs_pred <-
   function(dat,
            y_name,
            event_level = "first",
-           prob_bins = 0.025) {
+           prob_bins = 0.05) {
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
     # plotting
     p <- dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
       ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
-      ggplot2::facet_wrap(~.outcome, # TODO
+      ggplot2::facet_wrap(~.outcome,
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
       ) +
@@ -60,7 +60,6 @@ plot_twoclass_conf_mat <- function(dat) {
 #' @param source A character string of length 1 that matches the source argument
 #' in event_data().
 #' @param prob_scaling The boolean to turn on or off the logit scale for probability.
-#' @param prob_breaks A vector to use for breaks in the probability levels.
 #' @param prob_eps A small numerical constant to prevent division by zero.
 #' @keywords models, classes, classif, graphs
 #' @export
@@ -74,33 +73,36 @@ plot_twoclass_pred_numcol <-
            size = 1,
            prob_scaling = FALSE,
            event_level = "first",
-           prob_breaks = (2:9) / 10,
            prob_eps = 0.001,
            source = NULL) {
     prob_name <- first_class_prob_name(dat, event_level, y_name)
+    if (is.character(prob_scaling)) {
+      prob_scaling <- as.logical(prob_scaling)
+    }
     # plotting
-    dat %>%
+    dat <-
+      dat %>%
       dplyr::mutate(
         !!prob_name :=
           dplyr::case_when(
             !!prob_name > 1 - prob_eps ~ 1 - prob_eps,
             !!prob_name < prob_eps ~ prob_eps,
             TRUE ~ !!prob_name
-          )
+          ),
+        .outcome = paste("Truth:", .outcome)
       )
-    p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
-      ggplot2::geom_point(ggplot2::aes(
-        customdata = .row,
-        color = .color,
-        text = .hover
-      ),
-      alpha = alpha,
-      size = size
+    p <-
+      ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = !!prob_name)) +
+      ggplot2::geom_point(
+        ggplot2::aes(
+          customdata = .row,
+          color = .color,
+          text = .hover
+        ),
+        alpha = alpha,
+        size = size
       ) +
-      ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
-      ) +
+      ggplot2::facet_wrap(~.outcome, ncol = 1) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(y = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
@@ -108,8 +110,10 @@ plot_twoclass_pred_numcol <-
       p <- p + ggplot2::scale_y_continuous(
         # oob = scales::squish_infinite,  #deciding if to add this
         trans = scales::logit_trans(),
-        breaks = prob_breaks
+        breaks = c(0.1, (0:5)/5, 0.9)
       )
+    } else {
+      p <- p + ggplot2::scale_y_continuous(breaks = (0:5)/5, limits = 0:1)
     }
     ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
@@ -136,42 +140,47 @@ plot_twoclass_pred_factorcol <-
            size = 1,
            prob_scaling = FALSE,
            event_level = "first",
-           prob_breaks = (2:9) / 10,
            prob_eps = 0.001,
            source = NULL) {
     prob_name <- first_class_prob_name(dat, event_level, y_name)
+    if (is.character(prob_scaling)) {
+      prob_scaling <- as.logical(prob_scaling)
+    }
     # plotting
-    dat %>%
+    dat <-
+      dat %>%
       dplyr::mutate(
         !!prob_name :=
           dplyr::case_when(
             !!prob_name > 1 - prob_eps ~ 1 - prob_eps,
             !!prob_name < prob_eps ~ prob_eps,
             TRUE ~ !!prob_name
-          )
+          ),
+        .outcome = paste("Truth:", .outcome)
       )
-    p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
-      ggplot2::geom_point(ggplot2::aes(
-        customdata = .row,
-        color = .color,
-        text = .hover
-      ),
-      alpha = alpha,
-      size = size
+    p <-
+      ggplot2::ggplot(dat, ggplot2::aes(x = !!prob_name, y = !!rlang::sym(factorcol))) +
+      ggplot2::geom_point(
+        ggplot2::aes(
+          customdata = .row,
+          color = .color,
+          text = .hover
+        ),
+        alpha = alpha,
+        size = size
       ) +
-      ggplot2::facet_wrap(~.outcome,
-        labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
-        ncol = 1
-      ) +
+      ggplot2::facet_wrap(~.outcome, ncol = 1) +
       ggplot2::scale_color_identity() +
       ggplot2::labs(x = paste("Probability of ", first_level(dat, event_level, y_name))) +
       ggplot2::theme(legend.position = "none")
     if (prob_scaling) {
       p <- p + ggplot2::scale_x_continuous(
-        # oob = scales::squish_infinite, #deciding if to add this
+        # oob = scales::squish_infinite,  #deciding if to add this
         trans = scales::logit_trans(),
-        breaks = prob_breaks
+        breaks = c(0.1, (0:5)/5, 0.9)
       )
+    } else {
+      p <- p + ggplot2::scale_x_continuous(breaks = (0:5)/5, limits = 0:1)
     }
     fig <- ggplotly2(p, tooltip = "text", source = source) %>%
       plotly::layout(dragmode = "select") %>%
