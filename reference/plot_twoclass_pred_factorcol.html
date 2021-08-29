@@ -137,7 +137,6 @@ tidymodels results for a two-class classification model.</p>
   size <span class='op'>=</span> <span class='fl'>1</span>,
   prob_scaling <span class='op'>=</span> <span class='cn'>FALSE</span>,
   event_level <span class='op'>=</span> <span class='st'>"first"</span>,
-  prob_breaks <span class='op'>=</span> <span class='op'>(</span><span class='fl'>2</span><span class='op'>:</span><span class='fl'>9</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>10</span>,
   prob_eps <span class='op'>=</span> <span class='fl'>0.001</span>,
   source <span class='op'>=</span> <span class='cn'>NULL</span>
 <span class='op'>)</span></pre>
@@ -173,10 +172,6 @@ variables are required: <code>.outcome</code>, <code>.pred</code>, <code>.color<
     <tr>
       <th>event_level</th>
       <td><p>A single character value for the level corresponding to the event.</p></td>
-    </tr>
-    <tr>
-      <th>prob_breaks</th>
-      <td><p>A vector to use for breaks in the probability levels.</p></td>
     </tr>
     <tr>
       <th>prob_eps</th>
