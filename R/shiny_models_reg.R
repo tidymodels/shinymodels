@@ -63,7 +63,7 @@ shiny_models.reg_shiny_data <-
               )
             },
             shiny::helpText("Select the opacity of the points"),
-            shiny::sliderInput("alpha", "Opaqueness:",
+            shiny::sliderInput("alpha", "Opacity:",
                                min = 0.1, max = 1,
                                value = 0.7, step = 0.1
             ),
