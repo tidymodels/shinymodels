@@ -3,11 +3,17 @@
 #' This function takes the [organize_data()] result to shiny_models a Shiny app.
 #' @param x The [organize_data()] result.
 #' @param hover_cols The columns to display while hovering in the Shiny app.
-#' @param hover_only A Boolean to turn on and off hovering in the interactive
-#' plots; the default option is FALSE, it is recommended to use TRUE for a big data.
+#' This argument can be:
+#'
+#'  * A `dplyr` selector (such as [dplyr::starts_with()]) or a set of selector
+#'    if they are enclosed with in `c()`.
+#'  * A character vector.
+#'
+#' @param hover_only A logical to determine if interactive highlighting of
+#' points is enabled (the default) or not. This can be helpful for very large
+#' data sets.
 #' @param original_data Original dataset.
 #' @param ... Other parameters not currently used.
-#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @export
 #' @keywords internal
 
@@ -18,5 +24,5 @@ shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
 #' @export
 #' @rdname shiny_models
 shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  rlang::abort("No `shiny_models()` exists for this type of object.")
+  rlang::abort("No `shiny_models()` method exists for this type of object.")
 }

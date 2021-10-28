@@ -2,12 +2,41 @@
 #' @export
 generics::explore
 
-#'  Launches shiny application based on data from [tune::fit_resamples()]
+#' Interactive model results
 #'
-#' This function takes the data based on [tune::fit_resamples()] results to
-#' launch a Shiny app.
+#' @description
+#'
+#' `explore()` launches shiny application to interact with results from some
+#' tidymodels functions.
+#'
+#' To investigate model fit(s), `explore()` can be used on objects produced by
+#'
+#' * [tune::fit_resamples()]
+#' * [tune::tune_grid()]
+#' * [tune::tune_bayes()]
+#' * [finetune::tune_sim_anneal()]
+#' * [tune::last_fit()]
+#'
+#' The application starts in a new window and allows users to look at how
+#' predicted values align with the true, observed data. There are 2-3 tabs in
+#' the application (depending on the object):
+#'
+#' * **Tuning Parameters** enables users to choose a specific set of tuning
+#' parameters. These results are shown in the **Plots** tab. The default
+#' configuration is based on the _optimal value_ of the first performance
+#' metric used during the creation of the object.
+#'
+#' * **Plots** shows various panels that can visualize how well the model fits.
+#' Specific points can be colored by clicking on them (as long as the
+#' `hover_only = FALSE` option was used). To reset the colored points,
+#' double on the graph background.
+#'
+#' * **About** gives information on the application as well as links to get
+#' help or file bug reports/feature requests.
+#'
+#' To quit the shiny application, use the `Esc` key.
+#'
 #' @export
-#' @details The default configuration is based on **the optimal value** of the first metric.
 #' @rdname explore
 explore.default <- function(x, ...) {
   rlang::abort("No `explore()` exists for this type of object.")
@@ -15,6 +44,7 @@ explore.default <- function(x, ...) {
 
 #' @export
 #' @inheritParams shiny_models
+#' @param x An object with class `tune_results`.
 #' @rdname explore
 explore.tune_results <-
   function(x,
