@@ -9,7 +9,7 @@
 #' @param size The size for the geom points.
 #' @param source A character string of length 1 that matches the source argument
 #' in event_data().
-#' @keywords models, regression, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -39,7 +39,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
 #' This function plots the predicted values against the residuals based on
 #' {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
-#' @keywords models, regression, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -70,7 +70,7 @@ plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
 #'  {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param numcol The numerical column to plot against the residuals.
-#' @keywords models, regression, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -99,7 +99,7 @@ plot_numeric_res_numcol <-
 #'  {tidymodels} results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param factorcol The factor column to plot against the residuals.
-#' @keywords models, regression, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.

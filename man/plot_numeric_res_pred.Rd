@@ -26,6 +26,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 This function plots the predicted values against the residuals based on
 {tidymodels} results for a regression model.
 }
-\keyword{graphs}
-\keyword{models,}
-\keyword{regression,}
+\keyword{internal}

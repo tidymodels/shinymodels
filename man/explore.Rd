@@ -3,26 +3,57 @@
 \name{explore.default}
 \alias{explore.default}
 \alias{explore.tune_results}
-\title{Launches shiny application based on data from \code{\link[tune:fit_resamples]{tune::fit_resamples()}}}
+\title{Interactive model results}
 \usage{
 \method{explore}{default}(x, ...)
 
 \method{explore}{tune_results}(x, hover_cols = NULL, hover_only = FALSE, ...)
 }
 \arguments{
-\item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
+\item{x}{An object with class \code{tune_results}.}
 
 \item{...}{Other parameters not currently used.}
 
-\item{hover_cols}{The columns to display while hovering in the Shiny app.}
+\item{hover_cols}{The columns to display while hovering in the Shiny app.
+This argument can be:
+\itemize{
+\item A \code{dplyr} selector (such as \code{\link[dplyr:reexports]{dplyr::starts_with()}}) or a set of selector
+if they are enclosed with in \code{c()}.
+\item A character vector.
+}}
 
-\item{hover_only}{A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.}
+\item{hover_only}{A logical to determine if interactive highlighting of
+points is enabled (the default) or not. This can be helpful for very large
+data sets.}
 }
 \description{
-This function takes the data based on \code{\link[tune:fit_resamples]{tune::fit_resamples()}} results to
-launch a Shiny app.
+\code{explore()} launches shiny application to interact with results from some
+tidymodels functions.
+
+To investigate model fit(s), \code{explore()} can be used on objects produced by
+\itemize{
+\item \code{\link[tune:fit_resamples]{tune::fit_resamples()}}
+\item \code{\link[tune:tune_grid]{tune::tune_grid()}}
+\item \code{\link[tune:tune_bayes]{tune::tune_bayes()}}
+\item \code{\link[finetune:tune_sim_anneal]{finetune::tune_sim_anneal()}}
+\item \code{\link[tune:last_fit]{tune::last_fit()}}
 }
-\details{
-The default configuration is based on \strong{the optimal value} of the first metric.
+
+The application starts in a new window and allows users to look at how
+predicted values align with the true, observed data. There are 2-3 tabs in
+the application (depending on the object):
+\itemize{
+\item \strong{Tuning Parameters} enables users to choose a specific set of tuning
+parameters. These results are shown in the \strong{Plots} tab. The default
+configuration is based on the \emph{optimal value} of the first performance
+metric used during the creation of the object.
+\item \strong{Plots} shows various panels that can visualize how well the model fits.
+Specific points can be colored by clicking on them (as long as the
+\code{hover_only = FALSE} option was used). To reset the colored points,
+double on the graph background.
+\item \strong{About} gives information on the application as well as links to get
+help or file bug reports/feature requests.
+}
+
+To quit the shiny application, use the \code{Esc} key.
 }

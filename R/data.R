@@ -8,5 +8,6 @@
 #' ames_rf_res volcano_res svm_res
 #' @docType data
 #' @return A tune_() result object
-#' @keywords datasets
+#' @keywords datasets internal
+#'
 NULL

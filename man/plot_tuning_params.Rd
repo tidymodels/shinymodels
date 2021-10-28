@@ -25,3 +25,4 @@ during tuning.
 The ggplot object is modified to have an aesthetic of
 \code{customdata = .config}.
 }
+\keyword{internal}

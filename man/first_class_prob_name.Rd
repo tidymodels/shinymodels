@@ -21,6 +21,4 @@ A symbol.
 This function takes prediction data, the event level, and the outcome name as
 arguments and returns the predictions column for the first level variable.
 }
-\keyword{classes,}
-\keyword{classif}
-\keyword{models,}
+\keyword{internal}

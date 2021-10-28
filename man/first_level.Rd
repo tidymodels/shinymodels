@@ -21,6 +21,4 @@ A string.
 This function takes data, \code{event_level} and \code{y_name}, as arguments and
 returns the first level in a classification data.
 }
-\keyword{classes,}
-\keyword{classif}
-\keyword{models,}
+\keyword{internal}

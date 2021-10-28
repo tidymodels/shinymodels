@@ -8,6 +8,7 @@
 #' @param ... Other options to pass to [tune::autoplot.tune_results()].
 #' @details The ggplot object is modified to have an aesthetic of
 #' `customdata = .config`.
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.

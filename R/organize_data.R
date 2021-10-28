@@ -6,7 +6,7 @@
 #' @param hover_cols The columns to display while hovering.
 #' @param ... Other parameters not currently used.
 #' @details The default configuration is based on **the optimal value** of the first metric.
-#' @keywords models,  regression, graphs, classes, classif
+#' @keywords internal
 #' @export
 #' @return
 #' A list with elements data frame and character vectors. The data frame includes
@@ -135,6 +135,7 @@ get_app_type <- function(y) {
 #' This is a print method for a shiny_data class
 #' @param x an object of class shiny_data
 #' @param ... Other parameters not currently used
+#' @keywords internal
 #' @export
 print.shiny_data <- function(x, ...) {
   string <- paste(

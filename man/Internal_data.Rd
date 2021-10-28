@@ -21,3 +21,4 @@ results of \code{\link[tune:tune_grid]{tune::tune_grid()}}, \code{\link[tune:tun
 or \code{\link[tune:last_fit]{tune::last_fit()}}.
 }
 \keyword{datasets}
+\keyword{internal}
