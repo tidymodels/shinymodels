@@ -57,3 +57,13 @@ help or file bug reports/feature requests.
 
 To quit the shiny application, use the \code{Esc} key.
 }
+\details{
+For resampling methods that produce more than one hold-out prediction per
+row (e.g. the bootstrap, repeated V-fold cross-validation), the predicted
+values shown in the plots are averages of the predictions for that specific
+row.
+
+The ggplot theme used in the shiny application corresponds to the current
+theme in the R session. Run \code{\link[ggplot2:theme_get]{ggplot2::theme_set()}} to change the theme for
+the plots in the shiny application.
+}
