@@ -46,6 +46,18 @@ generics::explore
 #' theme in the R session. Run [ggplot2::theme_set()] to change the theme for
 #' the plots in the shiny application.
 #'
+#' For classification models, there is a shiny controller on the bottom left of
+#' the application that toggles between "Unscaled (i.e. linear)" and
+#' "Logit scaled" probability scaling. The first options plots the raw
+#' probabilities while the logit scaling uses [scales::logit_trans()] to rescale
+#' the axis. This can be helpful when a model with a linear predictor is used
+#' (e.g. logistic or multinomial regression) since it can show linear effects of
+#' a column more easily.
+#'
+#' When using the application, there may be warnings printed in the console
+#' about "event tied a source ID ... not registered". These can be ignored.
+#'
+#'
 #' @export
 #' @rdname explore
 explore.default <- function(x, ...) {
