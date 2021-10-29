@@ -11,7 +11,6 @@ NULL
 #' @importFrom tune .get_tune_outcome_names collect_predictions .get_tune_parameter_names
 #' @importFrom stats reorder
 #' @importFrom scales logit_trans squish_infinite
-#' @importFrom broom augment
 #' @import yardstick
 #' @import shiny
 #' @import shinydashboard
