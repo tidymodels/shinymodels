@@ -231,7 +231,7 @@
           "marker": {
             "autocolorscale": false,
             "color": "rgba(0,0,0,1)",
-            "opacity": 1,
+            "opacity": 0.55,
             "size": 3.77952755905512,
             "symbol": "circle",
             "line": {

@@ -8,6 +8,7 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
 
   org <- organize_data(mtcars_spline_res)
   org$predictions$.color <- "black"
+  org$predictions$.alpha <- 1
   expect_error(
     plot_numeric_obs_pred(org, org$y_name),
     "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
@@ -32,6 +33,7 @@ test_that("can accurately plot numeric residuals vs. predicted plot", {
 
   org <- organize_data(mtcars_spline_res)
   org$predictions$.color <- "black"
+  org$predictions$.alpha <- 1
 
   expect_error(
     plot_numeric_obs_pred(org, org$y_name),
@@ -50,6 +52,7 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
 
   org <- organize_data(mtcars_spline_res)
   org$predictions$.color <- "black"
+  org$predictions$.alpha <- 1
 
   expect_error(
     plot_numeric_obs_pred(org, org$y_name),
@@ -75,6 +78,7 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
 
   org <- organize_data(ames_rf_res)
   org$predictions$.color <- "black"
+  org$predictions$.alpha <- 1
 
   expect_error(
     plot_numeric_obs_pred(org, org$y_name),

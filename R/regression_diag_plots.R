@@ -43,16 +43,17 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
-plot_numeric_res_pred <- function(dat, y_name, alpha = 1, size = 1, source = NULL) {
+plot_numeric_res_pred <- function(dat, y_name, size = 1, source = NULL) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
     ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
-    ggplot2::geom_point(ggplot2::aes(
-      customdata = .row,
-      color = .color,
-      text = .hover
-    ),
-    alpha = alpha,
-    size = size
+    ggplot2::geom_point(
+      ggplot2::aes(
+        customdata = .row,
+        color = .color,
+        text = .hover,
+        alpha = .alpha
+      ),
+      size = size
     ) +
     ggplot2::scale_color_identity() +
     ggplot2::labs(

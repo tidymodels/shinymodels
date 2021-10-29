@@ -179,9 +179,11 @@ shiny_models.reg_shiny_data <-
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-            "red", "black"
-          ))
+          dplyr::mutate(
+            .color = ifelse(.row %in% selected_obs(), "red", "black"),
+            .alpha = ifelse(.row %in% selected_obs(), sqrt(input$alpha), input$alpha),
+            .alpha = I(.alpha)
+            )
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
@@ -192,7 +194,7 @@ shiny_models.reg_shiny_data <-
       })
       output$resid_vs_pred <- plotly::renderPlotly({
         obs_shown(TRUE)
-        quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
+        quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$size,
           source = "obs"
         ))
       })

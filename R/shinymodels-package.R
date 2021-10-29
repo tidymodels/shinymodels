@@ -26,6 +26,7 @@ NULL
 
 utils::globalVariables(
   c(
+    ".alpha",
     "Class",
     ".color",
     ".config",
