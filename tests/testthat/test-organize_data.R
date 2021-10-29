@@ -1,8 +1,6 @@
 library(testthat)
 library(shinymodels)
-library(tidymodels)
-tidymodels_prefer()
-
+library(parsnip)
 
 test_that("can accurately organize data", {
   skip_on_cran()
