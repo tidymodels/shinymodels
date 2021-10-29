@@ -217,6 +217,7 @@ shiny_models.reg_shiny_data <-
         ))
       })
       output$selected_config <- shiny::renderText({
+        obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
     }
