@@ -136,11 +136,11 @@ shiny_models.reg_shiny_data <-
       })
 
       selected_obs <- shiny::reactiveVal(NULL)
+      obs_shown <- shiny::reactiveVal(FALSE)
 
       if (hover_only) {
-        obs_shown <- shiny::reactiveVal(FALSE)
+        selected_obs(NULL)
       } else {
-        obs_shown <- shiny::reactiveVal(TRUE)
         shiny::observe({
           if (!obs_shown()) {
             return()
