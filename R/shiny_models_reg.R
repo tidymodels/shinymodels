@@ -135,12 +135,12 @@ shiny_models.reg_shiny_data <-
           DT::formatSignif(columns = reals, digits = 3)
       })
 
-      selected_obs <- shiny::reactiveVal()
+      selected_obs <- shiny::reactiveVal(NULL)
+      obs_shown <- shiny::reactiveVal(FALSE)
+
       if (hover_only) {
         selected_obs(NULL)
-      }
-      else {
-        obs_shown <- reactiveVal(FALSE)
+      } else {
         shiny::observe({
           if (!obs_shown()) {
             return()
@@ -219,6 +219,7 @@ shiny_models.reg_shiny_data <-
         ))
       })
       output$selected_config <- shiny::renderText({
+        obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
     }
