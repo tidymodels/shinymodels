@@ -19,10 +19,11 @@ plot_twoclass_obs_pred <-
            prob_bins = 0.05) {
     prob_name <-
       first_class_prob_name(dat, event_level, y_name)
+    bg_col <- theme_get()$plot.background$colour
     # plotting
     p <- dat %>%
       ggplot2::ggplot(ggplot2::aes(x = !!prob_name)) +
-      ggplot2::geom_histogram(binwidth = prob_bins, col = "white") +
+      ggplot2::geom_histogram(binwidth = prob_bins, col = bg_col) +
       ggplot2::facet_wrap(~.outcome,
         labeller = ggplot2::labeller(.outcome = ggplot2::label_both),
         ncol = 1
