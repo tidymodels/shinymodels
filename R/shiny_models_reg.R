@@ -135,12 +135,12 @@ shiny_models.reg_shiny_data <-
           DT::formatSignif(columns = reals, digits = 3)
       })
 
-      selected_obs <- shiny::reactiveVal()
+      selected_obs <- shiny::reactiveVal(NULL)
+
       if (hover_only) {
-        selected_obs(NULL)
-      }
-      else {
-        obs_shown <- reactiveVal(FALSE)
+        obs_shown <- shiny::reactiveVal(FALSE)
+      } else {
+        obs_shown <- shiny::reactiveVal(TRUE)
         shiny::observe({
           if (!obs_shown()) {
             return()
