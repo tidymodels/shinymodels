@@ -10,6 +10,7 @@
           "y": [1, 0, 2, 3, 2, 0, 0, 2, 3, 11, 8, 8, 7, 5, 9, 3, 2, 1, 0, 0, 0],
           "text": ["count:  1<br />.pred_Impaired: 0.00", "count:  0<br />.pred_Impaired: 0.05", "count:  2<br />.pred_Impaired: 0.10", "count:  3<br />.pred_Impaired: 0.15", "count:  2<br />.pred_Impaired: 0.20", "count:  0<br />.pred_Impaired: 0.25", "count:  0<br />.pred_Impaired: 0.30", "count:  2<br />.pred_Impaired: 0.35", "count:  3<br />.pred_Impaired: 0.40", "count: 11<br />.pred_Impaired: 0.45", "count:  8<br />.pred_Impaired: 0.50", "count:  8<br />.pred_Impaired: 0.55", "count:  7<br />.pred_Impaired: 0.60", "count:  5<br />.pred_Impaired: 0.65", "count:  9<br />.pred_Impaired: 0.70", "count:  3<br />.pred_Impaired: 0.75", "count:  2<br />.pred_Impaired: 0.80", "count:  1<br />.pred_Impaired: 0.85", "count:  0<br />.pred_Impaired: 0.90", "count:  0<br />.pred_Impaired: 0.95", "count:  0<br />.pred_Impaired: 1.00"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -32,6 +33,7 @@
           "y": [9, 33, 31, 31, 18, 13, 10, 12, 6, 6, 3, 3, 4, 2, 0, 0, 1, 0, 0, 0, 0],
           "text": ["count:  9<br />.pred_Impaired: 0.00", "count: 33<br />.pred_Impaired: 0.05", "count: 31<br />.pred_Impaired: 0.10", "count: 31<br />.pred_Impaired: 0.15", "count: 18<br />.pred_Impaired: 0.20", "count: 13<br />.pred_Impaired: 0.25", "count: 10<br />.pred_Impaired: 0.30", "count: 12<br />.pred_Impaired: 0.35", "count:  6<br />.pred_Impaired: 0.40", "count:  6<br />.pred_Impaired: 0.45", "count:  3<br />.pred_Impaired: 0.50", "count:  3<br />.pred_Impaired: 0.55", "count:  4<br />.pred_Impaired: 0.60", "count:  2<br />.pred_Impaired: 0.65", "count:  0<br />.pred_Impaired: 0.70", "count:  0<br />.pred_Impaired: 0.75", "count:  1<br />.pred_Impaired: 0.80", "count:  0<br />.pred_Impaired: 0.85", "count:  0<br />.pred_Impaired: 0.90", "count:  0<br />.pred_Impaired: 0.95", "count:  0<br />.pred_Impaired: 1.00"],
           "type": "bar",
+          "textposition": "none",
           "marker": {
             "autocolorscale": false,
             "color": "rgba(89,89,89,1)",
@@ -99,7 +101,7 @@
           {
             "text": "Probability of  Impaired",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -113,11 +115,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "count",
-            "x": -0.026541095890411,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -132,7 +135,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -21.9178082191781
           },
           {
             "text": ".outcome: Impaired",
@@ -320,6 +324,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -492,6 +497,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -621,7 +627,7 @@
           {
             "text": "AXL",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -635,11 +641,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "Probability of  Impaired",
-            "x": -0.0333904109589041,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -654,7 +661,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -27.7625570776256
           },
           {
             "text": "Truth: Control",
@@ -842,6 +850,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -972,7 +981,7 @@
           {
             "text": "Probability of  Impaired",
             "x": 0.5,
-            "y": -0.0353881278538813,
+            "y": 0,
             "showarrow": false,
             "ax": 0,
             "ay": 0,
@@ -986,11 +995,12 @@
             "textangle": -0,
             "xanchor": "center",
             "yanchor": "top",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "yshift": -21.9178082191781
           },
           {
             "text": "AXL",
-            "x": -0.0402397260273973,
+            "x": 0,
             "y": 0.5,
             "showarrow": false,
             "ax": 0,
@@ -1005,7 +1015,8 @@
             "textangle": -90,
             "xanchor": "right",
             "yanchor": "center",
-            "annotationType": "axis"
+            "annotationType": "axis",
+            "xshift": -33.6073059360731
           },
           {
             "text": "Truth: Control",
@@ -1193,6 +1204,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -1409,6 +1421,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
@@ -1607,6 +1620,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": "A",
