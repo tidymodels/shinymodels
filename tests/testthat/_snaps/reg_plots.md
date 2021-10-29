@@ -179,6 +179,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -377,6 +378,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -575,6 +577,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,
@@ -796,6 +799,7 @@
       },
       "config": {
         "doubleClick": "reset",
+        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
         "showSendToCloud": false
       },
       "source": null,

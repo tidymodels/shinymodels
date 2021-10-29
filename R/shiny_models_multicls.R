@@ -161,12 +161,11 @@ shiny_models.multi_cls_shiny_data <-
           DT::formatSignif(columns = reals, digits = 3)
       })
 
-      selected_obs <- shiny::reactiveVal()
+      selected_obs <- shiny::reactiveVal(NULL)
+      obs_shown <- reactiveVal(FALSE)
       if (hover_only) {
         selected_obs(NULL)
-      }
-      else {
-        obs_shown <- reactiveVal(FALSE)
+      } else {
         shiny::observe({
           if (!obs_shown()) {
             return()
@@ -211,20 +210,25 @@ shiny_models.multi_cls_shiny_data <-
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_obs_pred(preds_dat(), x$y_name))
       })
       output$conf_mat <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_conf_mat(preds_dat()))
       })
       output$roc <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_roc(preds_dat(), x$y_name))
       })
       output$pr <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_multiclass_pr(preds_dat(), x$y_name))
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
         validate(
-          need(input$num_value_col, message = "Please choose a numeric variable from the dropdown menu")
+          need(input$num_value_col,
+               message = "Please choose a numeric variable from the dropdown menu")
         )
         obs_shown(TRUE)
         quietly_run(plot_multiclass_pred_numcol(
@@ -235,7 +239,8 @@ shiny_models.multi_cls_shiny_data <-
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         validate(
-          need(input$factor_value_col, message = "Please choose a factor variable from the dropdown menu")
+          need(input$factor_value_col,
+               message = "Please choose a factor variable from the dropdown menu")
         )
         obs_shown(TRUE)
         quietly_run(plot_multiclass_pred_factorcol(
@@ -245,8 +250,9 @@ shiny_models.multi_cls_shiny_data <-
         ))
       })
       output$selected_config <- shiny::renderText({
+        obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
     }
-    shiny::shinyApp(ui, server)
+    shiny::shinyApp(ui = ui, server = server)
   }
