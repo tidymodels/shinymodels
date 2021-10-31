@@ -178,22 +178,25 @@ NULL
 #' Iterative optimization of neural network
 #'
 #' This object has the results when a neural network was tuned using Bayesian
-#' optimization and 10-fold cross-validation.
+#' optimization and a validation set.
 #'
 #' @details The code used to produce this object:
 #'
-#'   library(tidymodels)
-#'   tidymodels_prefer()
+#' ```
+#'   data(ames)
 #'
-#'   # ------------------------------------------------------------------------------
+#'   ames <-
+#'     ames %>%
+#'     select(Sale_Price, Neighborhood, Longitude, Latitude, Year_Built) %>%
+#'     mutate(Sale_Price = log10(ames$Sale_Price))
 #'
 #'   set.seed(1)
-#'   cars_rs <- vfold_cv(mtcars)
+#'   ames_rs <- validation_split(ames)
 #'
-#'   # ------------------------------------------------------------------------------
-#'
-#'   car_rec <-
-#'     recipe(mpg ~ ., data = mtcars) %>%
+#'   ames_rec <-
+#'     recipe(Sale_Price ~ ., data = ames) %>%
+#'     step_dummy(all_nominal_predictors()) %>%
+#'     step_zv(all_predictors()) %>%
 #'     step_normalize(all_predictors())
 #'
 #'   mlp_spec <-
@@ -203,19 +206,19 @@ NULL
 #'     set_mode("regression")
 #'
 #'   set.seed(1)
-#'   cars_mlp_itr <-
+#'   ames_mlp_itr <-
 #'     mlp_spec %>%
 #'     tune_bayes(
-#'       car_rec,
-#'       resamples = cars_rs,
+#'       ames_rec,
+#'       resamples = ames_rs,
 #'       initial = 5,
 #'       iter = 4,
 #'       control = control_bayes(save_pred = TRUE)
 #'     )
 #' ```
 #'
-#' @aliases cars_mlp_itr
-#' @name cars_mlp_itr
+#' @aliases ames_mlp_itr
+#' @name ames_mlp_itr
 #' @docType data
 #' @return An object with primary class `iteration_results`.
 #' @keywords datasets
