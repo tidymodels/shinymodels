@@ -137,7 +137,6 @@ shiny_models.two_cls_shiny_data <-
     )
 
     server <- function(input, output) {
-)
       table_with_default_metric <- performance %>%
         dplyr::mutate(estimate = ifelse(metric != tune::.get_tune_metric_names(x$tune_results)[1],
           NA, estimate
