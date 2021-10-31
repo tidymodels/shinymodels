@@ -137,13 +137,13 @@ shiny_models.two_cls_shiny_data <-
     )
 
     server <- function(input, output) {
-      print("started")
+)
       table_with_default_metric <- performance %>%
         dplyr::mutate(estimate = ifelse(metric != tune::.get_tune_metric_names(x$tune_results)[1],
           NA, estimate
         ))
       default_row_index <- which.min(table_with_default_metric$estimate)
-cat("default_row_index", default_row_index, "\n")
+
       output$metrics <- DT::renderDataTable({
         performance %>%
           dplyr::select(-.config) %>%
