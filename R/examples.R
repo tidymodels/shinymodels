@@ -32,7 +32,6 @@
 #'     tune_grid(
 #'       Species ~ .,
 #'       resamples = scat_rs,
-#'       metrics = metric_set(roc_auc),
 #'       control = ctrl_gr
 #'     )
 #' ```

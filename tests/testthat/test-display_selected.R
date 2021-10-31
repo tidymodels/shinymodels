@@ -3,8 +3,8 @@ library(shinymodels)
 
 test_that("can display the selected model correctly", {
   skip_on_cran()
-  data("tune_bayes_svm_res")
-  org <- organize_data(svm_res)
+  data(ames_mlp_itr)
+  org <- organize_data(ames_mlp_itr)
   preds <- org$predictions
   performance <-
     org$tune_results %>%
@@ -26,19 +26,19 @@ test_that("can display the selected model correctly", {
   )
   expect_equal(
     display_selected(org, performance, preds, tuning_param, input),
-    "Selected model: cost = 23.2, rbf_sigma = 0.000000684"
+    "Selected model: hidden_units = 4, penalty = 0.0000465, epochs = 792"
   )
   expect_equal(
     display_selected(org, performance, preds, tuning_param, input1),
-    "Selected model: cost = 0.00247, rbf_sigma = 0.00931"
+    "Selected model: hidden_units = 2, penalty = 0.00959, epochs = 989"
   )
   expect_equal(
     display_selected(org, preds, performance, tuning_param, input),
-    "Selected model: cost = 0.00247, rbf_sigma = 0.00931"
+    "Selected model: hidden_units = 2, penalty = 0.00959, epochs = 989"
   )
   expect_equal(
     display_selected(org, performance, preds, tuning_param, input2),
-    "Selected model: cost = NA, rbf_sigma = NA"
+    "Selected model: hidden_units = NA, penalty = NA, epochs = NA"
   )
   expect_error(
     display_selected(org, performance, preds, "foo", input),

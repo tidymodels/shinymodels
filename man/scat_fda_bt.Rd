@@ -38,7 +38,6 @@ The code used to produce this object:\preformatted{  library(tidymodels)
     tune_grid(
       Species ~ .,
       resamples = scat_rs,
-      metrics = metric_set(roc_auc),
       control = ctrl_gr
     )
 }

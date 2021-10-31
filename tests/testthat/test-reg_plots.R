@@ -4,10 +4,11 @@ source(test_path("helper.R"))
 
 test_that("can accurately plot numeric observed vs. predicted plot", {
   skip_on_cran()
-  data("reg_mtcars_spline_res")
+  data(ames_mlp_itr)
 
-  org <- organize_data(mtcars_spline_res)
+  org <- organize_data(ames_mlp_itr)
   org$predictions$.color <- "black"
+
   expect_error(
     plot_numeric_obs_pred(org, org$y_name),
     "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
@@ -28,9 +29,9 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
 
 test_that("can accurately plot numeric residuals vs. predicted plot", {
   skip_on_cran()
-  data("reg_mtcars_spline_res")
+  data(ames_mlp_itr)
 
-  org <- organize_data(mtcars_spline_res)
+  org <- organize_data(ames_mlp_itr)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -46,9 +47,9 @@ test_that("can accurately plot numeric residuals vs. predicted plot", {
 
 test_that("can accurately plot numeric residuals vs. a numeric column plot", {
   skip_on_cran()
-  data("reg_mtcars_spline_res")
+  data(ames_mlp_itr)
 
-  org <- organize_data(mtcars_spline_res)
+  org <- organize_data(ames_mlp_itr)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -57,13 +58,13 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
   )
   expect_warning(
     expect_error(
-      plot_numeric_res_numcol(org$predictions, "mpg", "Class"),
+      plot_numeric_res_numcol(org$predictions, "Sale_Price", "Class"),
       "object 'Class' not found"
     ),
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    c <- plot_numeric_res_numcol(org$predictions, org$y_name, "hp"),
+    c <- plot_numeric_res_numcol(org$predictions, org$y_name, "Longitude"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
@@ -73,7 +74,7 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
   skip_on_cran()
   data("reg_ames_rf_res")
 
-  org <- organize_data(ames_rf_res)
+  org <- organize_data(ames_mlp_itr)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -88,7 +89,7 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    d <- plot_numeric_res_factorcol(org$predictions, org$y_name, "Street"),
+    d <- plot_numeric_res_factorcol(org$predictions, org$y_name, "Neighborhood"),
     "Ignoring unknown aesthetics",
   )
   expect_snapshot_output(make_clean_snapshot(d))
