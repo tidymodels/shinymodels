@@ -149,12 +149,18 @@ quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
 
 # ------------------------------------------------------------------------------
 # Create the performance object with performance metrics for each candidate model
-#' This function takes result of [organize_data] to calculate and reformat
+#' This function takes result of [organize_data()] to calculate and reformat
 #' performance metrics for each candidate model.
+#'
 #' @param x The [organize_data()] result.
+#' @details
+#' For objects that were produced by one of the racing functions, the results
+#' are restricted to tuning parameter combinations that have results for all of
+#' the resamples. In other words, only the models left at the end of the race
+#' will be shown to the users.
 #' @export
 #' @return
-#' A dataframe.
+#' A data frame.
 
 performance_object <- function(x) {
   obj <- x$tune_results %>%
@@ -162,6 +168,9 @@ performance_object <- function(x) {
   if (inherits(x$tune_results, "last_fit")) {
     obj <- dplyr::rename(obj, mean = .estimate) %>%
       dplyr::select(-.estimator)
+  } else if (inherits(x$tune_results, "tune_race")) {
+    complete_set <- max(obj$n)
+    obj <- dplyr::filter(obj, n == complete_set)
   } else {
     obj <- dplyr::select(obj, -.estimator, -n, -std_err)
   }

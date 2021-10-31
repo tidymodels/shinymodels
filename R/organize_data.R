@@ -70,6 +70,60 @@ organize_data.tune_results <-
     default_config <- tune::select_best(x, tune::.get_tune_metric_names(x)[1])$.config
     new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x, default_config)
   }
+
+# ------------------------------------------------------------------------------
+
+#' @export
+#' @rdname organize_data
+organize_data.tune_race <- function(x, hover_cols = NULL, ...) {
+    res <- NextMethod()
+
+    # remove incomplete tuning parameters
+    info <-
+      tune::.get_tune_metrics(cell_race) %>%
+      tibble::as_tibble() %>%
+      dplyr::slice(1)
+    met_vals <- tune::collect_metrics(x)
+    complete_set <- max(met_vals$n)
+    met_vals <-
+      met_vals %>%
+      dplyr::filter(.metric == info$metric & n == complete_set)
+    complete_configs <-
+      met_vals %>%
+      dplyr::select(.config) %>%
+      dplyr::distinct(.config)
+
+    # --------------------------------------------------------------------------
+    # recompute best
+
+    if (info$direction == "maximize") {
+      met_vals <- dplyr::arrange(met_vals, dplyr::desc(mean))
+    } else {
+      met_vals <- dplyr::arrange(met_vals, mean)
+    }
+    met_vals <- dplyr::slice(met_vals, 1)
+    new_default <- met_vals$.config[1]
+
+    # --------------------------------------------------------------------------
+    # Update predictions to pass fewer rows
+
+    res$predictions <-
+      dplyr::inner_join(res$predictions, complete_configs, by = ".config")
+
+    # ------------------------------------------------------------------------------
+
+    new_shiny_data(
+      predictions = res$predictions,
+      y_name = res$y_name,
+      subclass = res$app_type,
+      numeric_cols = res$num_cols,
+      factor_cols = res$fac_cols,
+      x = res$tune_results,
+      default_config = new_default
+    )
+
+  }
+
 # ------------------------------------------------------------------------------
 
 new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x, default_config) {

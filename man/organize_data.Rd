@@ -4,6 +4,7 @@
 \alias{organize_data}
 \alias{organize_data.default}
 \alias{organize_data.tune_results}
+\alias{organize_data.tune_race}
 \title{Extract data from objects to use in a shiny app}
 \usage{
 organize_data(x, hover_cols = NULL, ...)
@@ -11,6 +12,8 @@ organize_data(x, hover_cols = NULL, ...)
 \method{organize_data}{default}(x, hover_cols = NULL, ...)
 
 \method{organize_data}{tune_results}(x, hover_cols = NULL, ...)
+
+\method{organize_data}{tune_race}(x, hover_cols = NULL, ...)
 }
 \arguments{
 \item{x}{The \code{\link[tune:fit_resamples]{tune::fit_resamples()}} result.}

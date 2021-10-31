@@ -2,7 +2,7 @@
 % Please edit documentation in R/Misc.R
 \name{performance_object}
 \alias{performance_object}
-\title{This function takes result of \link{organize_data} to calculate and reformat
+\title{This function takes result of \code{\link[=organize_data]{organize_data()}} to calculate and reformat
 performance metrics for each candidate model.}
 \usage{
 performance_object(x)
@@ -11,9 +11,15 @@ performance_object(x)
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
 }
 \value{
-A dataframe.
+A data frame.
 }
 \description{
-This function takes result of \link{organize_data} to calculate and reformat
+This function takes result of \code{\link[=organize_data]{organize_data()}} to calculate and reformat
 performance metrics for each candidate model.
+}
+\details{
+For objects that were produced by one of the racing functions, the results
+are restricted to tuning parameter combinations that have results for all of
+the resamples. In other words, only the models left at the end of the race
+will be shown to the users.
 }

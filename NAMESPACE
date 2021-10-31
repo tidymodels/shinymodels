@@ -3,6 +3,7 @@
 S3method(explore,default)
 S3method(explore,tune_results)
 S3method(organize_data,default)
+S3method(organize_data,tune_race)
 S3method(organize_data,tune_results)
 S3method(print,shiny_data)
 S3method(shiny_models,default)
