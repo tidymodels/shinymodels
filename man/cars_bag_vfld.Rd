@@ -12,8 +12,6 @@ This object has the results when a bagged regression tree was resampled using
 10-fold cross-validation.
 }
 \details{
-To reduce the object size, five bootstraps were used during bagging.
-
 The code used to produce this object:\preformatted{  library(tidymodels)
   library(baguette)
   tidymodels_prefer()
