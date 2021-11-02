@@ -15,7 +15,7 @@
 #' A [plotly::ggplotly()] object.
 plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NULL) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .outcome, y = .pred)) +
-    ggplot2::geom_abline(lty = 2, col = "green") +
+    ggplot2::geom_abline(lty = 2, col = "#0080a4", alpha = 1/2) +
     ggplot2::geom_point(
       ggplot2::aes(
         customdata = .row,
@@ -45,7 +45,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
 #' A [plotly::ggplotly()] object.
 plot_numeric_res_pred <- function(dat, y_name, size = 1, source = NULL) {
   p <- ggplot2::ggplot(dat, ggplot2::aes(x = .pred, y = .residual)) +
-    ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
+    ggplot2::geom_hline(yintercept = 0, lty = 2, col = "#0080a4", alpha = 1/2) +
     ggplot2::geom_point(
       ggplot2::aes(
         customdata = .row,
@@ -78,7 +78,7 @@ plot_numeric_res_pred <- function(dat, y_name, size = 1, source = NULL) {
 plot_numeric_res_numcol <-
   function(dat, y_name, numcol, alpha = 1, size = 1, source = NULL) {
     p <- ggplot2::ggplot(dat, ggplot2::aes(x = !!rlang::sym(numcol), y = .residual)) +
-      ggplot2::geom_hline(yintercept = 0, lty = 2, col = "green") +
+      ggplot2::geom_hline(yintercept = 0, lty = 2, col = "#0080a4", alpha = 1/2) +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
@@ -112,7 +112,7 @@ plot_numeric_res_factorcol <-
         .residual
       ), x = .residual)) +
       ggplot2::geom_point(alpha = .3) +
-      ggplot2::geom_abline(lty = 2, col = "green") +
+      ggplot2::geom_abline(lty = 2, col = "#0080a4", alpha = 1/2) +
       ggplot2::geom_point(ggplot2::aes(
         customdata = .row,
         color = .color,
