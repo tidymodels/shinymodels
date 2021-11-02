@@ -10,7 +10,7 @@
           "mode": "lines",
           "line": {
             "width": 1.88976377952756,
-            "color": "rgba(0,255,0,1)",
+            "color": "rgba(0,128,164,0.5)",
             "dash": "dash"
           },
           "showlegend": false,
@@ -213,7 +213,7 @@
           "mode": "lines",
           "line": {
             "width": 1.88976377952756,
-            "color": "rgba(0,255,0,1)",
+            "color": "rgba(0,128,164,0.5)",
             "dash": "dash"
           },
           "showlegend": false,
@@ -412,7 +412,7 @@
           "mode": "lines",
           "line": {
             "width": 1.88976377952756,
-            "color": "rgba(0,255,0,1)",
+            "color": "rgba(0,128,164,0.5)",
             "dash": "dash"
           },
           "showlegend": false,
@@ -634,7 +634,7 @@
           "mode": "lines",
           "line": {
             "width": 1.88976377952756,
-            "color": "rgba(0,255,0,1)",
+            "color": "rgba(0,128,164,0.5)",
             "dash": "dash"
           },
           "showlegend": false,
