@@ -201,9 +201,11 @@ shiny_models.two_cls_shiny_data <-
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-            "red", "black"
-          ))
+          dplyr::mutate(
+            .color = ifelse(.row %in% selected_obs(), "#CA225E", "#000000"),
+            .alpha = ifelse(.row %in% selected_obs(), sqrt(input$alpha), input$alpha),
+            .alpha = I(.alpha)
+          )
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         obs_shown(TRUE)
