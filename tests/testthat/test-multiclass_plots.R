@@ -4,9 +4,9 @@ source(test_path("helper.R"))
 
 test_that("can accurately plot predicted probabilities vs true class plot", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
   expect_error(
     plot_multiclass_obs_pred(org, org$y_name),
@@ -18,9 +18,9 @@ test_that("can accurately plot predicted probabilities vs true class plot", {
 
 test_that("can accurately plot confusion matrix plot", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -33,13 +33,13 @@ test_that("can accurately plot confusion matrix plot", {
 
 test_that("can accurately plot predicted probabilities vs. a numeric column plot", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
 
   expect_error(
-    plot_multiclass_pred_numcol(org, org$y_name, "latitude"),
+    plot_multiclass_pred_numcol(org, org$y_name, "Diameter"),
     "no applicable method for 'select' applied to an object of class"
   )
   expect_error(
@@ -54,7 +54,7 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "latitude"),
+    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "Diameter"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(c))
@@ -62,9 +62,9 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
 
 test_that("can accurately plot predicted probabilities vs. a factor column plot", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -83,7 +83,7 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     "Ignoring unknown aesthetics"
   )
   expect_warning(
-    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "tectonic_settings"),
+    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Month"),
     "Ignoring unknown aesthetics"
   )
   expect_snapshot_output(make_clean_snapshot(d))
@@ -91,9 +91,9 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
 
 test_that("can accurately plot the ROC curve", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
 
   expect_error(
@@ -110,9 +110,9 @@ test_that("can accurately plot the ROC curve", {
 
 test_that("can accurately plot the PR curve", {
   skip_on_cran()
-  data("multiclass_volcano_res")
+  data(scat_fda_bt)
 
-  org <- organize_data(volcano_res)
+  org <- organize_data(scat_fda_bt)
   org$predictions$.color <- "black"
 
   expect_error(
