@@ -15,7 +15,7 @@ coverage](https://codecov.io/gh/tidymodels/shinymodels/branch/main/graph/badge.s
 <!-- badges: end -->
 
 The goal of shinymodels is to launch a Shiny app given tidymodels’
-tuning or resampling results to make it easier to explore the model’s
+tuning or resampling results, to make it easier to explore the modeling
 results.
 
 ## Installation
@@ -74,13 +74,13 @@ function:
 explore(reg_res)
 ```
 
-The Shiny app to explore the model and detect any outliers or
-problematic observations. In the image below, the observed and predicted
-values are contrasted and one sample was selected (and highlighted to be
-red). The residuals are also visualized against `x1` and the quadratic
-pattern shows that a nonlinear term should be added.
+Use the Shiny app to explore the model results and detect any outliers
+or problematic observations. In the image below, the observed and
+predicted values are visualized, with one sample selected and
+highlighted. The residuals are also plotted against `x1` and the
+quadratic pattern shows that a nonlinear term should be added.
 
-<img src="/private/var/folders/zh/nd9kmnyd2_d_xbwvbx5_7k_00000gn/T/RtmpWXqBL7/temp_libpath1e9e693bfe03/shinymodels/example.png" width="100%" style="display: block; margin: auto;" />
+<img src="/private/var/folders/hv/hzsmmyk9393_m7q3nscx1slc0000gn/T/RtmpxXqN66/temp_libpatha85737e5e21d/shinymodels/example.png" width="100%" style="display: block; margin: auto;" />
 
 The `explore()` function can be used with objects produced by
 `fit_resamples()`, `last_fit()`, or any of the `tune_*()` functions.
