@@ -94,7 +94,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                h3(shiny::textOutput("selected_config"))
+                h3(shiny::textOutput("selected_perf"))
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -111,7 +111,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "interactive",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                h3(shiny::textOutput("selected_config"))
+                h3(shiny::textOutput("selected_plots"))
               },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
@@ -201,9 +201,11 @@ shiny_models.two_cls_shiny_data <-
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-            "red", "black"
-          ))
+          dplyr::mutate(
+            .color = ifelse(.row %in% selected_obs(), "#CA225E", "#000000"),
+            .alpha = ifelse(.row %in% selected_obs(), sqrt(input$alpha), input$alpha),
+            .alpha = I(.alpha)
+          )
       })
       output$obs_vs_pred <- plotly::renderPlotly({
         obs_shown(TRUE)
@@ -244,7 +246,12 @@ shiny_models.two_cls_shiny_data <-
           source = "obs"
         ))
       })
-      output$selected_config <- shiny::renderText({
+      # shiny can't re-use the same output in two different UI locations.
+      output$selected_perf <- shiny::renderText({
+        obs_shown(TRUE)
+        display_selected(x, performance, preds, tuning_param, input)
+      })
+      output$selected_plots <- shiny::renderText({
         obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
