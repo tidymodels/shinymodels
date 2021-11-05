@@ -80,7 +80,7 @@ organize_data.tune_race <- function(x, hover_cols = NULL, ...) {
 
     # remove incomplete tuning parameters
     info <-
-      tune::.get_tune_metrics(cell_race) %>%
+      tune::.get_tune_metrics(x) %>%
       tibble::as_tibble() %>%
       dplyr::slice(1)
     met_vals <- tune::collect_metrics(x)

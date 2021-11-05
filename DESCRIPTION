@@ -38,6 +38,7 @@ Imports:
     shiny,
     shinydashboard,
     stats,
+    tibble,
     tidyr,
     tidyselect,
     tune,
