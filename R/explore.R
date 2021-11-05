@@ -16,11 +16,7 @@ explore.default <- function(x, ...) {
 #' @export
 #' @inheritParams shiny_models
 #' @rdname explore
-explore.tune_results <-
-  function(x,
-           hover_cols = NULL,
-           hover_only = FALSE,
-           ...) {
-    dat <- organize_data(x, hover_cols = {{ hover_cols }}, ...)
-    shiny_models(dat, hover_only = hover_only)
-  }
+explore.tune_results <- function(x, hover_cols = NULL, hover_only = FALSE, ...) {
+  dat <- organize_data(x, hover_cols = {{ hover_cols }}, ...)
+  shiny_models(dat, hover_only = hover_only)
+}

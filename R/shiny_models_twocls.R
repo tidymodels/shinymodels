@@ -145,7 +145,7 @@ shiny_models.two_cls_shiny_data <-
 
       output$metrics <- DT::renderDataTable({
         performance %>%
-          dplyr::select(-.config) %>%
+          dplyr::select(-.config, -.estimator) %>%
           DT::datatable(
             selection = list(mode = "single", selected = default_row_index),
             filter = "top",
