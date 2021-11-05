@@ -239,7 +239,7 @@ plot_twoclass_pr <-
       ggplot2::geom_point(
         data = fifty,
         ggplot2::aes(
-          x = 1 - recall,
+          x = recall,
           y = precision
         )
       )
