@@ -22,7 +22,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 This function plots the predicted probabilities against the observed class based on
 {tidymodels} results for a multi-class classification model.
 }
-\keyword{classes,}
-\keyword{classif,}
-\keyword{graphs}
-\keyword{models,}
+\keyword{internal}

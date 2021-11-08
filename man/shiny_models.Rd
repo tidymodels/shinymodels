@@ -22,10 +22,17 @@ shiny_models(x, hover_cols = NULL, hover_only = NULL, ...)
 \arguments{
 \item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
 
-\item{hover_cols}{The columns to display while hovering in the Shiny app.}
+\item{hover_cols}{The columns to display while hovering in the Shiny app.
+This argument can be:
+\itemize{
+\item A \code{dplyr} selector (such as \code{\link[dplyr:reexports]{dplyr::starts_with()}}) or a set of selector
+if they are enclosed with in \code{c()}.
+\item A character vector.
+}}
 
-\item{hover_only}{A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.}
+\item{hover_only}{A logical to determine if interactive highlighting of
+points is enabled (the default) or not. This can be helpful for very large
+data sets.}
 
 \item{...}{Other parameters not currently used.}
 
@@ -33,8 +40,5 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
 }
 \description{
 This function takes the \code{\link[=organize_data]{organize_data()}} result to shiny_models a Shiny app.
-}
-\details{
-The default configuration is based on \strong{the optimal value} of the first metric.
 }
 \keyword{internal}

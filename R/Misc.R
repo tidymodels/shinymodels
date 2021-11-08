@@ -3,7 +3,7 @@
 #' This function takes data, `event_level` and `y_name`, as arguments and
 #' returns the first level in a classification data.
 #' @inheritParams plot_twoclass_obs_pred
-#' @keywords models, classes, classif
+#' @keywords internal
 #' @export
 #' @return
 #' A string.
@@ -33,7 +33,7 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
 #' This function takes prediction data, the event level, and the outcome name as
 #'  arguments and returns the predictions column for the first level variable.
 #' @inheritParams plot_twoclass_obs_pred
-#' @keywords models, classes, classif
+#' @keywords internal
 #' @export
 #' @return
 #' A symbol.
@@ -51,7 +51,7 @@ first_class_prob_name <- function(dat, event_level, y_name) {
 #' @param x A data frame with columns to be displayed in the hover.
 #' @param ... Arguments passed to [format()] to the column(s) selected to be seen
 #' in the hover/tooltip.
-#' @keywords models
+#' @keywords internal
 #' @export
 #' @return
 #' A character vector.
@@ -112,6 +112,7 @@ dashboard_css <- function() {
 #' @param predictions The dataframe with predictions across all models.
 #' @param tuning_param The names of the tuning parameters.
 #' @param input The [DT::datatable] object.
+#' @keywords internal
 #' @export
 #' @return
 #' A sentence.
@@ -153,6 +154,7 @@ quietly_run <- function(expr, warn_pattern = "Ignoring unknown aesthetics") {
 #' performance metrics for each candidate model.
 #' @param x The [organize_data()] result.
 #' @export
+#' @keywords internal
 #' @return
 #' A dataframe.
 

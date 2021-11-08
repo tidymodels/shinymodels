@@ -18,7 +18,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 \description{
 This function plots the full precision recall curve.
 }
-\keyword{classes,}
-\keyword{classif,}
-\keyword{graphs}
-\keyword{models,}
+\keyword{internal}

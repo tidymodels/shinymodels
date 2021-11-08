@@ -31,8 +31,4 @@ dataset to give a list that can be an input for the Shiny app.
 \details{
 The default configuration is based on \strong{the optimal value} of the first metric.
 }
-\keyword{classes,}
-\keyword{classif}
-\keyword{graphs,}
-\keyword{models,}
-\keyword{regression,}
+\keyword{internal}

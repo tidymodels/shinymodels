@@ -6,14 +6,14 @@
 \alias{shinymodels-package}
 \title{shinymodels: shinymodels}
 \description{
-A package that launches a Shiny app for 'tidymodels' results.
+A package that launches a 'shiny' application for 'tidymodels' results.
 }
 \author{
-\strong{Maintainer}: Shisham Adhikari \email{shisham.adhikari@rstudio.com}
+\strong{Maintainer}: Max Kuhn \email{max@rstudio.com} (\href{https://orcid.org/0000-0003-2402-136X}{ORCID})
 
 Authors:
 \itemize{
-  \item Max Kuhn \email{max@rstudio.com} (\href{https://orcid.org/0000-0003-2402-136X}{ORCID})
+  \item Shisham Adhikari \email{shisham.adhikari@rstudio.com}
   \item Julia Silge \email{julia.silge@rstudio.com} (\href{https://orcid.org/0000-0002-3671-836X}{ORCID})
 }
 

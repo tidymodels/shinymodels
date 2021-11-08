@@ -1,24 +1,16 @@
 Package: shinymodels
 Title: shinymodels
 Version: 0.0.0.9000
-Authors@R: 
-    c(person(given = "Shisham",
-             family = "Adhikari",
-             role = c("aut", "cre"),
-             email = "shisham.adhikari@rstudio.com"),
-      person(given = "Max",
-             family = "Kuhn",
-             role = "aut",
-             email = "max@rstudio.com",
-             comment = c(ORCID = "0000-0003-2402-136X")),
-      person(given = "Julia",
-             family = "Silge",
-             role = "aut",
-             email = "julia.silge@rstudio.com",
-             comment = c(ORCID = "0000-0002-3671-836X")),
-      person(given = "RStudio",
-             role = "cph"))
-Description: A package that launches a Shiny app for 'tidymodels' results.
+Authors@R: c(
+    person("Max", "Kuhn", , "max@rstudio.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2402-136X")),
+    person("Shisham", "Adhikari", , "shisham.adhikari@rstudio.com", role = "aut"),
+    person("Julia", "Silge", , "julia.silge@rstudio.com", role = "aut",
+           comment = c(ORCID = "0000-0002-3671-836X")),
+    person("RStudio", role = "cph")
+  )
+Description: A package that launches a 'shiny' application for
+    'tidymodels' results.
 License: MIT + file LICENSE
 Depends: 
     ggplot2,
@@ -52,9 +44,6 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
-Remotes: 
-    r-lib/generics,
-    tidymodels/tune@autoplot-updates
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US

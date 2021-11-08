@@ -16,7 +16,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 \description{
 This function plots the confusion matrix for a classification model.
 }
-\keyword{classes,}
-\keyword{classif,}
-\keyword{graphs}
-\keyword{models,}
+\keyword{internal}

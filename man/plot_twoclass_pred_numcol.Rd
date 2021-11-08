@@ -45,7 +45,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 This function plots the predicted probabilities against a numeric column based
 on {tidymodels} results for a two-class classification model.
 }
-\keyword{classes,}
-\keyword{classif,}
-\keyword{graphs}
-\keyword{models,}
+\keyword{internal}
