@@ -1,0 +1,16 @@
+{
+  "input": {
+    "alpha": 0.1,
+    "num_value_col": "disp",
+    "sidebarCollapsed": false,
+    "sidebarid": "plot",
+    "sidebarItemExpanded": null,
+    "size": 2
+  },
+  "output": {
+    "selected_config": ""
+  },
+  "export": {
+
+  }
+}

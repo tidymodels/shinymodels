@@ -1,0 +1,18 @@
+{
+  "input": {
+    "alpha": 0.7,
+    "factor_value_col": "",
+    "num_value_col": "",
+    "prob_scaling": "FALSE",
+    "sidebarCollapsed": false,
+    "sidebarid": "static",
+    "sidebarItemExpanded": null,
+    "size": 1
+  },
+  "output": {
+
+  },
+  "export": {
+
+  }
+}
