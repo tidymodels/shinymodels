@@ -94,7 +94,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "static",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                h3(shiny::textOutput("selected_config"))
+                h3(shiny::textOutput("selected_perf"))
               },
               boxed(
                 plotly::plotlyOutput("obs_vs_pred"),
@@ -111,7 +111,7 @@ shiny_models.two_cls_shiny_data <-
             tabName = "interactive",
             shiny::fluidRow(
               if (length(tune::.get_tune_parameter_names(x$tune_results)) != 0) {
-                h3(shiny::textOutput("selected_config"))
+                h3(shiny::textOutput("selected_plots"))
               },
               boxed(
                 plotly::plotlyOutput("pred_vs_numcol"),
@@ -156,12 +156,13 @@ shiny_models.two_cls_shiny_data <-
           DT::formatSignif(columns = reals, digits = 3)
       })
 
-      selected_obs <- shiny::reactiveVal()
+      selected_obs <- shiny::reactiveVal(NULL)
+      obs_shown <- shiny::reactiveVal(FALSE)
+
       if (hover_only) {
         selected_obs(NULL)
       }
       else {
-        obs_shown <- reactiveVal(FALSE)
         shiny::observe({
           if (!obs_shown()) {
             return()
@@ -200,25 +201,33 @@ shiny_models.two_cls_shiny_data <-
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-            "red", "black"
-          ))
+          dplyr::mutate(
+            .color = ifelse(.row %in% selected_obs(), "#CA225E", "#000000"),
+            .alpha = ifelse(.row %in% selected_obs(), sqrt(input$alpha), input$alpha),
+            .alpha = I(.alpha)
+          )
       })
       output$obs_vs_pred <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_twoclass_obs_pred(preds_dat(), x$y_name))
       })
       output$conf_mat <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_twoclass_conf_mat(preds_dat()))
       })
       output$roc <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_twoclass_roc(preds_dat(), x$y_name))
       })
       output$pr <- plotly::renderPlotly({
+        obs_shown(TRUE)
         quietly_run(plot_twoclass_pr(preds_dat(), x$y_name))
       })
       output$pred_vs_numcol <- plotly::renderPlotly({
+
         validate(
-          need(input$num_value_col, message = "Please choose a numeric variable from the dropdown menu")
+          need(input$num_value_col,
+               message = "Please choose a numeric variable from the dropdown menu")
         )
         obs_shown(TRUE)
         quietly_run(plot_twoclass_pred_numcol(preds_dat(), x$y_name, input$num_value_col,
@@ -228,7 +237,8 @@ shiny_models.two_cls_shiny_data <-
       })
       output$pred_vs_factorcol <- plotly::renderPlotly({
         validate(
-          need(input$factor_value_col, message = "Please choose a factor variable from the dropdown menu")
+          need(input$factor_value_col,
+               message = "Please choose a factor variable from the dropdown menu")
         )
         obs_shown(TRUE)
         quietly_run(plot_twoclass_pred_factorcol(preds_dat(), x$y_name, input$factor_value_col,
@@ -236,10 +246,16 @@ shiny_models.two_cls_shiny_data <-
           source = "obs"
         ))
       })
-      output$selected_config <- shiny::renderText({
+      # shiny can't re-use the same output in two different UI locations.
+      output$selected_perf <- shiny::renderText({
+        obs_shown(TRUE)
+        display_selected(x, performance, preds, tuning_param, input)
+      })
+      output$selected_plots <- shiny::renderText({
+        obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
     }
     # Run the application
-    shiny::shinyApp(ui, server)
+    shiny::shinyApp(ui = ui, server = server)
   }

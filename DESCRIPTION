@@ -16,14 +16,12 @@ Depends:
     ggplot2,
     R (>= 2.10)
 Imports: 
-    broom,
     dplyr,
     DT,
     generics (>= 0.1.0),
     glue,
     htmltools,
     magrittr,
-    modeldata,
     parsnip,
     plotly,
     purrr,
@@ -32,7 +30,6 @@ Imports:
     shiny,
     shinydashboard,
     stats,
-    tidymodels,
     tidyr,
     tidyselect,
     tune,
@@ -40,6 +37,7 @@ Imports:
 Suggests: 
     covr,
     knitr,
+    modeldata,
     markdown,
     rmarkdown,
     spelling,

@@ -135,12 +135,12 @@ shiny_models.reg_shiny_data <-
           DT::formatSignif(columns = reals, digits = 3)
       })
 
-      selected_obs <- shiny::reactiveVal()
+      selected_obs <- shiny::reactiveVal(NULL)
+      obs_shown <- shiny::reactiveVal(FALSE)
+
       if (hover_only) {
         selected_obs(NULL)
-      }
-      else {
-        obs_shown <- reactiveVal(FALSE)
+      } else {
         shiny::observe({
           if (!obs_shown()) {
             return()
@@ -179,9 +179,11 @@ shiny_models.reg_shiny_data <-
         }
         preds %>%
           dplyr::filter(.config == selected_config) %>%
-          dplyr::mutate(.color = ifelse(.row %in% selected_obs(),
-            "red", "black"
-          ))
+          dplyr::mutate(
+            .color = ifelse(.row %in% selected_obs(), "#CA225E", "#000000"),
+            .alpha = ifelse(.row %in% selected_obs(), sqrt(input$alpha), input$alpha),
+            .alpha = I(.alpha)
+            )
       })
 
       output$obs_vs_pred <- plotly::renderPlotly({
@@ -192,7 +194,7 @@ shiny_models.reg_shiny_data <-
       })
       output$resid_vs_pred <- plotly::renderPlotly({
         obs_shown(TRUE)
-        quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$alpha, input$size,
+        quietly_run(plot_numeric_res_pred(preds_dat(), x$y_name, input$size,
           source = "obs"
         ))
       })
@@ -217,6 +219,7 @@ shiny_models.reg_shiny_data <-
         ))
       })
       output$selected_config <- shiny::renderText({
+        obs_shown(TRUE)
         display_selected(x, performance, preds, tuning_param, input)
       })
     }
