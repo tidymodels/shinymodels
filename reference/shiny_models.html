@@ -147,12 +147,18 @@
     </tr>
     <tr>
       <th>hover_cols</th>
-      <td><p>The columns to display while hovering in the Shiny app.</p></td>
+      <td><p>The columns to display while hovering in the Shiny app.
+This argument can be:</p><ul>
+<li><p>A <code>dplyr</code> selector (such as <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>dplyr::starts_with()</a></code>) or a set of selector
+if they are enclosed with in <code><a href='https://rdrr.io/r/base/c.html'>c()</a></code>.</p></li>
+<li><p>A character vector.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>hover_only</th>
-      <td><p>A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.</p></td>
+      <td><p>A logical to determine if interactive highlighting of
+points is enabled (the default) or not. This can be helpful for very large
+data sets.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -164,9 +170,6 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The default configuration is based on <strong>the optimal value</strong> of the first metric.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -179,7 +182,7 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
 
       <footer>
       <div class="copyright">
-  <p>Developed by Shisham Adhikari, Max Kuhn, Julia Silge.</p>
+  <p>Developed by Max Kuhn, Shisham Adhikari, Julia Silge.</p>
 </div>
 
 <div class="pkgdown">

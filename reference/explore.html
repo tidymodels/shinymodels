@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Launches shiny application based on data from tune::fit_resamples() — explore.default • shinymodels</title>
+<title>Explore model results — explore.default • shinymodels</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,33 @@
 
 
 
-<meta property="og:title" content="Launches shiny application based on data from tune::fit_resamples() — explore.default" />
-<meta property="og:description" content="This function takes the data based on tune::fit_resamples() results to
-launch a Shiny app." />
+<meta property="og:title" content="Explore model results — explore.default" />
+<meta property="og:description" content="explore() launches a Shiny application to interact with results from some
+tidymodels functions.
+To investigate model fit(s), explore() can be used on objects produced by
+tune::fit_resamples()
+tune::tune_grid()
+tune::tune_bayes()
+finetune::tune_sim_anneal()
+tune::last_fit()
+
+
+The application starts in a new window and allows users to see how
+predicted values align with the true, observed data. There are 2-3 tabs in
+the application (depending on the object):
+Tuning Parameters enables users to choose a specific set of tuning
+parameters. These results are shown in the Plots tab. The default
+configuration is based on the optimal value of the first performance
+metric used during the creation of the object.
+Plots shows various panels that can visualize how well the model fits.
+Specific points can be highlighted by clicking on them (as long as the
+hover_only = FALSE option was used). To reset the highlighted points,
+double on the graph background.
+About gives information on the application as well as links to get
+help or file bug reports/feature requests.
+
+
+To quit the Shiny application, use the Esc key." />
 
 
 
@@ -116,14 +140,38 @@ launch a Shiny app." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Launches shiny application based on data from <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code></h1>
+    <h1>Explore model results</h1>
     
     <div class="hidden name"><code>explore.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function takes the data based on <code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code> results to
-launch a Shiny app.</p>
+    <p><code><a href='https://generics.r-lib.org/reference/explore.html'>explore()</a></code> launches a Shiny application to interact with results from some
+tidymodels functions.</p>
+<p>To investigate model fit(s), <code><a href='https://generics.r-lib.org/reference/explore.html'>explore()</a></code> can be used on objects produced by</p><ul>
+<li><p><code><a href='https://tune.tidymodels.org/reference/fit_resamples.html'>tune::fit_resamples()</a></code></p></li>
+<li><p><code><a href='https://tune.tidymodels.org/reference/tune_grid.html'>tune::tune_grid()</a></code></p></li>
+<li><p><code><a href='https://tune.tidymodels.org/reference/tune_bayes.html'>tune::tune_bayes()</a></code></p></li>
+<li><p><code>finetune::tune_sim_anneal()</code></p></li>
+<li><p><code><a href='https://tune.tidymodels.org/reference/last_fit.html'>tune::last_fit()</a></code></p></li>
+</ul>
+
+<p>The application starts in a new window and allows users to see how
+predicted values align with the true, observed data. There are 2-3 tabs in
+the application (depending on the object):</p><ul>
+<li><p><strong>Tuning Parameters</strong> enables users to choose a specific set of tuning
+parameters. These results are shown in the <strong>Plots</strong> tab. The default
+configuration is based on the <em>optimal value</em> of the first performance
+metric used during the creation of the object.</p></li>
+<li><p><strong>Plots</strong> shows various panels that can visualize how well the model fits.
+Specific points can be highlighted by clicking on them (as long as the
+<code>hover_only = FALSE</code> option was used). To reset the highlighted points,
+double on the graph background.</p></li>
+<li><p><strong>About</strong> gives information on the application as well as links to get
+help or file bug reports/feature requests.</p></li>
+</ul>
+
+<p>To quit the Shiny application, use the <code>Esc</code> key.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for default</span>
@@ -137,7 +185,7 @@ launch a Shiny app.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>The <code><a href='organize_data.html'>organize_data()</a></code> result.</p></td>
+      <td><p>An object with class <code>tune_results</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -145,18 +193,39 @@ launch a Shiny app.</p>
     </tr>
     <tr>
       <th>hover_cols</th>
-      <td><p>The columns to display while hovering in the Shiny app.</p></td>
+      <td><p>The columns to display while hovering in the Shiny app.
+This argument can be:</p><ul>
+<li><p>A <code>dplyr</code> selector (such as <code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>dplyr::starts_with()</a></code>) or a set of selector
+if they are enclosed with in <code><a href='https://rdrr.io/r/base/c.html'>c()</a></code>.</p></li>
+<li><p>A character vector.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>hover_only</th>
-      <td><p>A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.</p></td>
+      <td><p>A logical to determine if interactive highlighting of
+points is enabled (the default) or not. This can be helpful for very large
+data sets.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The default configuration is based on <strong>the optimal value</strong> of the first metric.</p>
+    <p>For resampling methods that produce more than one hold-out prediction per
+row (e.g. the bootstrap, repeated V-fold cross-validation), the predicted
+values shown in the plots are averages of the predictions for that specific
+row.</p>
+<p>The ggplot2 theme used in the Shiny application corresponds to the current
+theme in the R session. Run <code><a href='https://ggplot2.tidyverse.org/reference/theme_get.html'>ggplot2::theme_set()</a></code> to change the theme for
+the plots in the Shiny application.</p>
+<p>For classification models, there is a toggle on the bottom left of
+the application to choose between "Unscaled (i.e. linear)" and
+"Logit scaled" probability scaling. The first options plots the raw
+probabilities while the logit scaling uses <code><a href='https://scales.r-lib.org/reference/probability_trans.html'>scales::logit_trans()</a></code> to rescale
+the axis. This can be helpful when a model with a linear predictor is used
+(e.g. logistic or multinomial regression) since it can show linear effects
+from a feature more easily.</p>
+<p>When using the application, there may be warnings printed in the console
+about "event tied a source ID ... not registered". These can be ignored.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -169,7 +238,7 @@ plots; the default option is FALSE, it is recommended to use TRUE for a big data
 
       <footer>
       <div class="copyright">
-  <p>Developed by Shisham Adhikari, Max Kuhn, Julia Silge.</p>
+  <p>Developed by Max Kuhn, Shisham Adhikari, Julia Silge.</p>
 </div>
 
 <div class="pkgdown">
