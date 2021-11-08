@@ -84,9 +84,7 @@ explore(reg_res)
 
 Use the Shiny app to explore the model results and detect any outliers or problematic observations. In the image below, the observed and predicted values are visualized, with one sample selected and highlighted. The residuals are also plotted against `x1` and the quadratic pattern shows that a nonlinear term should be added.  
 
-```{r example, fig.align='center', echo = FALSE}
-knitr::include_graphics(system.file(package = "shinymodels", "example.png"))
-```
+![](man/figures/example.png)
 
 The `explore()` function can be used with objects produced by `fit_resamples()`, `last_fit()`, or any of the `tune_*()` functions. 
 
