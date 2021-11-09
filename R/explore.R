@@ -15,6 +15,8 @@ generics::explore
 #' * [tune::tune_grid()]
 #' * [tune::tune_bayes()]
 #' * [finetune::tune_sim_anneal()]
+#' * [finetune::tune_race_anova()]
+#' * [finetune::tune_race_win_loss()]
 #' * [tune::last_fit()]
 #'
 #' The application starts in a new window and allows users to see how
@@ -57,7 +59,16 @@ generics::explore
 #' When using the application, there may be warnings printed in the console
 #' about "event tied a source ID ... not registered". These can be ignored.
 #'
+#' When racing results are explored, the shiny application will only allow
+#' tuning parameter combinations that were fully resampled. As a result,
+#' parameter combinations that were discarded during the race will now be able
+#' to be selected.
+#' @examples
+#' data(ames_mlp_itr)
 #'
+#' if (interactive()) {
+#'   explore(ames_mlp_itr, hover_cols = dplyr::contains("tude"))
+#' }
 #' @export
 #' @rdname explore
 explore.default <- function(x, ...) {

@@ -1,0 +1,27 @@
+url: https://shinymodels.tidymodels.org
+
+template:
+  bootstrap: 5
+  bslib:
+    danger: "#CA225E"
+    primary: "#CA225E"
+  package: tidytemplate
+
+development:
+  mode: auto
+
+figures:
+  fig.width: 8
+  fig.height: 5.75
+
+reference:
+  - title: Launch the shiny app
+    contents:
+      - explore.tune_results
+  - title: Example objects
+    contents:
+      - ames_mlp_itr
+      - cars_bag_vfld
+      - cell_race
+      - scat_fda_bt
+      - two_class_final

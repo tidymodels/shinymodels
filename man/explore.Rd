@@ -36,6 +36,8 @@ To investigate model fit(s), \code{explore()} can be used on objects produced by
 \item \code{\link[tune:tune_grid]{tune::tune_grid()}}
 \item \code{\link[tune:tune_bayes]{tune::tune_bayes()}}
 \item \code{\link[finetune:tune_sim_anneal]{finetune::tune_sim_anneal()}}
+\item \code{\link[finetune:tune_race_anova]{finetune::tune_race_anova()}}
+\item \code{\link[finetune:tune_race_win_loss]{finetune::tune_race_win_loss()}}
 \item \code{\link[tune:last_fit]{tune::last_fit()}}
 }
 
@@ -77,4 +79,16 @@ from a feature more easily.
 
 When using the application, there may be warnings printed in the console
 about "event tied a source ID ... not registered". These can be ignored.
+
+When racing results are explored, the shiny application will only allow
+tuning parameter combinations that were fully resampled. As a result,
+parameter combinations that were discarded during the race will now be able
+to be selected.
+}
+\examples{
+data(ames_mlp_itr)
+
+if (interactive()) {
+  explore(ames_mlp_itr, hover_cols = dplyr::contains("tude"))
+}
 }
