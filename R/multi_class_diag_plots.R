@@ -7,7 +7,7 @@
 #'  variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
 #' @param prob_bins The desired `binwidth` for histogram.
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -41,7 +41,7 @@ plot_multiclass_obs_pred <-
 #'
 #' This function plots the confusion matrix for a classification model.
 #' @inheritParams plot_multiclass_obs_pred
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -66,7 +66,7 @@ plot_multiclass_conf_mat <- function(dat) {
 #' in event_data().
 #' @param prob_scaling The boolean to turn on or off the logit scale for probability.
 #' @param prob_eps A small numerical constant to prevent division by zero.
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -142,7 +142,7 @@ plot_multiclass_pred_numcol <-
 #' @inheritParams plot_multiclass_obs_pred
 #' @inheritParams plot_multiclass_pred_numcol
 #' @param factorcol The factor column to plot against the predicted probabilities.
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -212,7 +212,7 @@ plot_multiclass_pred_factorcol <-
 #'
 #' This function plots the ROC curve for a classification model.
 #' @inheritParams plot_multiclass_obs_pred
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.
@@ -231,7 +231,7 @@ plot_multiclass_roc <-
 #'
 #' This function plots the full precision recall curve.
 #' @inheritParams plot_multiclass_obs_pred
-#' @keywords models, classes, classif, graphs
+#' @keywords internal
 #' @export
 #' @return
 #' A [plotly::ggplotly()] object.

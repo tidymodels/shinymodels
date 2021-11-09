@@ -35,6 +35,4 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 This function plots the residuals against a numeric column based on
 {tidymodels} results for a regression model.
 }
-\keyword{graphs}
-\keyword{models,}
-\keyword{regression,}
+\keyword{internal}

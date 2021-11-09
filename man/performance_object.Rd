@@ -17,3 +17,4 @@ A dataframe.
 This function takes result of \link{organize_data} to calculate and reformat
 performance metrics for each candidate model.
 }
+\keyword{internal}

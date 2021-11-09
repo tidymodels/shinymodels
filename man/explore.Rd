@@ -3,26 +3,78 @@
 \name{explore.default}
 \alias{explore.default}
 \alias{explore.tune_results}
-\title{Launches shiny application based on data from \code{\link[tune:fit_resamples]{tune::fit_resamples()}}}
+\title{Explore model results}
 \usage{
 \method{explore}{default}(x, ...)
 
 \method{explore}{tune_results}(x, hover_cols = NULL, hover_only = FALSE, ...)
 }
 \arguments{
-\item{x}{The \code{\link[=organize_data]{organize_data()}} result.}
+\item{x}{An object with class \code{tune_results}.}
 
 \item{...}{Other parameters not currently used.}
 
-\item{hover_cols}{The columns to display while hovering in the Shiny app.}
+\item{hover_cols}{The columns to display while hovering in the Shiny app.
+This argument can be:
+\itemize{
+\item A \code{dplyr} selector (such as \code{\link[dplyr:reexports]{dplyr::starts_with()}}) or a set of selector
+if they are enclosed with in \code{c()}.
+\item A character vector.
+}}
 
-\item{hover_only}{A Boolean to turn on and off hovering in the interactive
-plots; the default option is FALSE, it is recommended to use TRUE for a big data.}
+\item{hover_only}{A logical to determine if interactive highlighting of
+points is enabled (the default) or not. This can be helpful for very large
+data sets.}
 }
 \description{
-This function takes the data based on \code{\link[tune:fit_resamples]{tune::fit_resamples()}} results to
-launch a Shiny app.
+\code{explore()} launches a Shiny application to interact with results from some
+tidymodels functions.
+
+To investigate model fit(s), \code{explore()} can be used on objects produced by
+\itemize{
+\item \code{\link[tune:fit_resamples]{tune::fit_resamples()}}
+\item \code{\link[tune:tune_grid]{tune::tune_grid()}}
+\item \code{\link[tune:tune_bayes]{tune::tune_bayes()}}
+\item \code{\link[finetune:tune_sim_anneal]{finetune::tune_sim_anneal()}}
+\item \code{\link[tune:last_fit]{tune::last_fit()}}
+}
+
+The application starts in a new window and allows users to see how
+predicted values align with the true, observed data. There are 2-3 tabs in
+the application (depending on the object):
+\itemize{
+\item \strong{Tuning Parameters} enables users to choose a specific set of tuning
+parameters. These results are shown in the \strong{Plots} tab. The default
+configuration is based on the \emph{optimal value} of the first performance
+metric used during the creation of the object.
+\item \strong{Plots} shows various panels that can visualize how well the model fits.
+Specific points can be highlighted by clicking on them (as long as the
+\code{hover_only = FALSE} option was used). To reset the highlighted points,
+double on the graph background.
+\item \strong{About} gives information on the application as well as links to get
+help or file bug reports/feature requests.
+}
+
+To quit the Shiny application, use the \code{Esc} key.
 }
 \details{
-The default configuration is based on \strong{the optimal value} of the first metric.
+For resampling methods that produce more than one hold-out prediction per
+row (e.g. the bootstrap, repeated V-fold cross-validation), the predicted
+values shown in the plots are averages of the predictions for that specific
+row.
+
+The ggplot2 theme used in the Shiny application corresponds to the current
+theme in the R session. Run \code{\link[ggplot2:theme_get]{ggplot2::theme_set()}} to change the theme for
+the plots in the Shiny application.
+
+For classification models, there is a toggle on the bottom left of
+the application to choose between "Unscaled (i.e. linear)" and
+"Logit scaled" probability scaling. The first options plots the raw
+probabilities while the logit scaling uses \code{\link[scales:probability_trans]{scales::logit_trans()}} to rescale
+the axis. This can be helpful when a model with a linear predictor is used
+(e.g. logistic or multinomial regression) since it can show linear effects
+from a feature more easily.
+
+When using the application, there may be warnings printed in the console
+about "event tied a source ID ... not registered". These can be ignored.
 }
