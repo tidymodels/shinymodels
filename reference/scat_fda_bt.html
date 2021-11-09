@@ -136,8 +136,8 @@ tuned over the interaction degree parameters.</p>
     <p>To reduce the object size, five bootstraps were used for resampling
 and missing data were removed.</p>
 <p>The code used to produce this object:</p><pre>  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>discrim</span><span class='op'>)</span>
-  <span class='fu'><a href='https://tidymodels.tidymodels.org/reference/tidymodels_prefer.html'>tidymodels_prefer</a></span><span class='op'>(</span><span class='op'>)</span>
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://discrim.tidymodels.org'>discrim</a></span><span class='op'>)</span>
+  <span class='fu'>tidymodels_prefer</span><span class='op'>(</span><span class='op'>)</span>
 
   <span class='co'># ------------------------------------------------------------------------------</span>
 
@@ -154,7 +154,7 @@ and missing data were removed.</p>
   <span class='va'>scat_rs</span> <span class='op'>&lt;-</span> <span class='fu'>bootstraps</span><span class='op'>(</span><span class='va'>scat</span>, times <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
 
   <span class='va'>scat_fda_bt</span> <span class='op'>&lt;-</span>
-    <span class='fu'>discrim_flexible</span><span class='op'>(</span>prod_degree <span class='op'>=</span> <span class='fu'>tune</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>discrim_flexible</span><span class='op'>(</span>prod_degree <span class='op'>=</span> <span class='fu'>tune</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='%>%.html'>%&gt;%</a></span>
     <span class='fu'>tune_grid</span><span class='op'>(</span>
       <span class='va'>Species</span> <span class='op'>~</span> <span class='va'>.</span>,
       resamples <span class='op'>=</span> <span class='va'>scat_rs</span>,
