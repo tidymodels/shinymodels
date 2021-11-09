@@ -55,7 +55,7 @@ jobs:
       - name: Install shinytest (so that phantomJS can be installed)
         shell: Rscript {0}
         run: |
-          pak::local_install("shinytest")
+          pak::pak("shinytest")
 
       - name: Install PhantomJS
         shell: Rscript {0}
