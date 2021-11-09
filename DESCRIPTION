@@ -1,5 +1,5 @@
 Package: shinymodels
-Title: shinymodels
+Title: Interactive Assessments of Models
 Version: 0.0.0.9000
 Authors@R: c(
     person("Max", "Kuhn", , "max@rstudio.com", role = c("aut", "cre"),
@@ -10,7 +10,9 @@ Authors@R: c(
     person("RStudio", role = "cph")
   )
 Description: A package that launches a 'shiny' application for
-    'tidymodels' results.
+    'tidymodels' results. For classification or regression models, the 
+    app can be used to determine if there is lack of fit or poorly predicted
+    points. 
 License: MIT + file LICENSE
 Depends: 
     ggplot2,
