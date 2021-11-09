@@ -535,7 +535,7 @@
           "zeroline": false,
           "anchor": "x",
           "title": {
-            "text": ".residual",
+            "text": "Residual",
             "font": {
               "color": "rgba(0,0,0,1)",
               "family": "",
@@ -675,7 +675,7 @@
           "t": 25.7412480974125,
           "r": 7.30593607305936,
           "b": 39.6955859969559,
-          "l": 253.51598173516
+          "l": 238.904109589041
         },
         "plot_bgcolor": "rgba(235,235,235,1)",
         "paper_bgcolor": "rgba(255,255,255,1)",
@@ -716,7 +716,7 @@
           "zeroline": false,
           "anchor": "y",
           "title": {
-            "text": ".residual",
+            "text": "Residual",
             "font": {
               "color": "rgba(0,0,0,1)",
               "family": "",
@@ -757,7 +757,7 @@
           "zeroline": false,
           "anchor": "x",
           "title": {
-            "text": "stats::reorder(Neighborhood, .residual)",
+            "text": "",
             "font": {
               "color": "rgba(0,0,0,1)",
               "family": "",
