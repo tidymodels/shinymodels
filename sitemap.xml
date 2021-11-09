@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://shinymodels.tidymodels.org/404.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/authors.html</loc>
+  </url>
+  <url>
     <loc>https://shinymodels.tidymodels.org/index.html</loc>
   </url>
   <url>
@@ -26,6 +44,9 @@
   </url>
   <url>
     <loc>https://shinymodels.tidymodels.org/reference/format_hover.html</loc>
+  </url>
+  <url>
+    <loc>https://shinymodels.tidymodels.org/reference/index.html</loc>
   </url>
   <url>
     <loc>https://shinymodels.tidymodels.org/reference/organize_data.html</loc>
