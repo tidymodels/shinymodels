@@ -14,6 +14,8 @@ Description: A package that launches a 'shiny' application for
     app can be used to determine if there is lack of fit or poorly predicted
     points. 
 License: MIT + file LICENSE
+URL: https://shinymodels.tidymodels.org, https://github.com/tidymodels/shinymodels
+BugReports: https://github.com/tidymodels/shinymodels/issues
 Depends: 
     ggplot2,
     R (>= 2.10)
