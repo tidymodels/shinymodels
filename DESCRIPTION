@@ -1,6 +1,6 @@
 Package: shinymodels
 Title: shinymodels
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     c(person(given = "Shisham",
              family = "Adhikari",
@@ -18,7 +18,9 @@ Authors@R:
              comment = c(ORCID = "0000-0002-3671-836X")),
       person(given = "RStudio",
              role = "cph"))
-Description: A package that launches a Shiny app for 'tidymodels' results.
+Description: Launch a 'shiny' application for 'tidymodels' results. For 
+    classification or regression models, the app can be used to determine if 
+    there is lack of fit or poorly predicted points. 
 License: MIT + file LICENSE
 Depends: 
     ggplot2,
