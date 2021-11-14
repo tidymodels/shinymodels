@@ -2147,7 +2147,7 @@
           "t": 37.4307458143075,
           "r": 18.9954337899543,
           "b": 39.6955859969559,
-          "l": 78.1735159817352
+          "l": 63.5616438356165
         },
         "plot_bgcolor": "rgba(235,235,235,1)",
         "paper_bgcolor": "rgba(255,255,255,1)",
@@ -2210,26 +2210,6 @@
             "yanchor": "top",
             "annotationType": "axis",
             "yshift": -21.9178082191781
-          },
-          {
-            "text": "Month",
-            "x": 0,
-            "y": 0.5,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -90,
-            "xanchor": "right",
-            "yanchor": "center",
-            "annotationType": "axis",
-            "xshift": -62.8310502283105
           },
           {
             "text": "Truth: bobcat",

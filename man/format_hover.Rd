@@ -19,4 +19,4 @@ A character vector.
 This function takes \code{.hover} argument and returns the output that can
 be used as a test aesthetics in a \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object to customize tooltip.
 }
-\keyword{models}
+\keyword{internal}

@@ -25,3 +25,4 @@ This function takes result of \link{organize_data}, predictions across all model
 and the names of the tuning parameters to return a sentence with the default
 parameter values.
 }
+\keyword{internal}

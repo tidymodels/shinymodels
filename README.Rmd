@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -18,11 +16,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/shinymodels)](https://CRAN.R-project.org/package=shinymodels)
-[![Codecov test coverage](https://codecov.io/gh/tidymodels/shinymodels/branch/main/graph/badge.svg)](https://codecov.io/gh/tidymodels/shinymodels?branch=main)
+[![Codecov test coverage](https://codecov.io/gh/tidymodels/shinymodels/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidymodels/shinymodels?branch=main)
 [![R-CMD-check](https://github.com/tidymodels/shinymodels/workflows/R-CMD-check/badge.svg)](https://github.com/tidymodels/shinymodels/actions)
 <!-- badges: end -->
 
-The goal of shinymodels is to launch a Shiny app given tidymodels' tuning or resampling results. The main goal is to make it easier to explore tidymodels results.
+The goal of shinymodels is to launch a Shiny app given tidymodels' tuning or resampling results, to make it easier to explore the modeling results.
 
 ## Installation
 
@@ -43,42 +41,51 @@ devtools::install_github("tidymodels/shinymodels")
 
 Start by tuning or fitting to resampling folds, using tune functions like `fit_resamples()` or `tune_bayes()`.
 
-```{r example}
+As an example, we will simulate a simple relationship:
+
+```{r load, include = FALSE}
 library(shinymodels)
 library(tidymodels)
 tidymodels_prefer()
-library(doMC)
-registerDoMC(cores = 8)
-
-set.seed(6735)
-folds <- vfold_cv(mtcars, v = 5)
-
-car_rec <-
-  recipe(mpg ~ ., data = mtcars) %>%
-  step_normalize(all_predictors())
-
-svm_mod <-
-  svm_rbf(cost = tune(), rbf_sigma = tune()) %>%
-  set_engine("kernlab") %>%
-  set_mode("regression")
-
-# Use a space-filling design with 7 points
-set.seed(3254)
-svm_res <- tune_bayes(svm_mod, car_rec, resamples = folds, initial = 7, iter = 3,
-                     control = control_bayes(save_pred = TRUE, verbose = TRUE))
-svm_res
 ```
 
-Apply the launcher function `explore()` on the `tune_` object to launch a Shiny app with the plots related to the model. 
+```{r}
+library(shinymodels)
+library(tidymodels)
+tidymodels_prefer()
+
+set.seed(1)
+n <- 100
+simulated <-
+  data.frame(x1 = runif(n, min = -1), x2 = runif(n)) %>% 
+  mutate(y = 3 - 5 * x1 + 15 * x1^2 +  + 10 * x2 + rnorm(n, sd = 5))
+```
+
+Let's resample a linear regression model that is missing an important nonlinear term (i.e., `poly(x1, 2)`):
+
+```{r}
+set.seed(2)
+folds <- vfold_cv(simulated)
+
+reg_res <-
+  linear_reg() %>%
+  fit_resamples(y ~ .,
+                resamples = folds,
+                control = control_resamples(save_pred = TRUE))
+```
+
+To interactively assess the model fit, we can use the  `explore()` function: 
+
 ```r
-explore(svm_res)
+explore(reg_res)
 ```
-You should see a Shiny app that looks like this:
 
-![](https://media.giphy.com/media/MJQBGHVZmGzFiMqWMs/giphy.gif)
+Use the Shiny app to explore the model results and detect any outliers or problematic observations. In the image below, the observed and predicted values are visualized, with one sample selected and highlighted. The residuals are also plotted against `x1` and the quadratic pattern shows that a nonlinear term should be added.  
 
+![](man/figures/example.png)
 
-Use the Shiny app to explore the model and detect any outliers or problematic observations. 
+The `explore()` function can be used with objects produced by `fit_resamples()`, `last_fit()`, or any of the `tune_*()` functions. 
+
 
 ## Contributing
 
