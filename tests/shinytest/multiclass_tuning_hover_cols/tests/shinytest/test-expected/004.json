@@ -1,7 +1,7 @@
 {
   "input": {
     "alpha": 0.7,
-    "factor_value_col": "Location",
+    "factor_value_col": "Site",
     "metrics_cell_clicked": {
 
     },
@@ -29,7 +29,7 @@
       ""
     ],
     "metrics_state": null,
-    "num_value_col": "Year",
+    "num_value_col": "Number",
     "prob_scaling": "FALSE",
     "sidebarCollapsed": false,
     "sidebarid": "interactive",

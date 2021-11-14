@@ -1,13 +1,13 @@
 {
   "input": {
-    "alpha": 0.7,
-    "factor_value_col": "",
-    "num_value_col": "",
+    "alpha": 0.3,
+    "factor_value_col": "Class",
+    "num_value_col": "B",
     "prob_scaling": "FALSE",
     "sidebarCollapsed": false,
-    "sidebarid": "static",
+    "sidebarid": "interactive",
     "sidebarItemExpanded": null,
-    "size": 1
+    "size": 1.6
   },
   "output": {
 

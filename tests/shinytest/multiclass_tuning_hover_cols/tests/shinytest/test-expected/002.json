@@ -1,7 +1,7 @@
 {
   "input": {
     "alpha": 0.7,
-    "factor_value_col": "Location",
+    "factor_value_col": "",
     "metrics_cell_clicked": {
 
     },
@@ -29,10 +29,10 @@
       ""
     ],
     "metrics_state": null,
-    "num_value_col": "Year",
-    "prob_scaling": "TRUE",
+    "num_value_col": "",
+    "prob_scaling": "FALSE",
     "sidebarCollapsed": false,
-    "sidebarid": "interactive",
+    "sidebarid": "tuning",
     "sidebarItemExpanded": null,
     "size": 1
   },
@@ -162,9 +162,7 @@
           "all_files": true
         }
       ]
-    },
-    "selected_perf": "Selected model: prod_degree = 2",
-    "selected_plots": "Selected model: prod_degree = 2"
+    }
   },
   "export": {
 

@@ -1,11 +1,11 @@
 {
   "input": {
-    "alpha": 0.7,
-    "num_value_col": "",
+    "alpha": 0.4,
+    "num_value_col": "cyl",
     "sidebarCollapsed": false,
-    "sidebarid": "plot",
+    "sidebarid": "about",
     "sidebarItemExpanded": null,
-    "size": 1
+    "size": 1.7
   },
   "output": {
     "selected_config": ""
