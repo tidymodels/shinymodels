@@ -1,0 +1,18 @@
+{
+  "input": {
+    "alpha": 0.3,
+    "factor_value_col": "Class",
+    "num_value_col": "B",
+    "prob_scaling": "FALSE",
+    "sidebarCollapsed": false,
+    "sidebarid": "interactive",
+    "sidebarItemExpanded": null,
+    "size": 1.6
+  },
+  "output": {
+
+  },
+  "export": {
+
+  }
+}

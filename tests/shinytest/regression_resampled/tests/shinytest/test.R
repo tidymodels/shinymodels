@@ -1,0 +1,12 @@
+app <- ShinyDriver$new("../../")
+app$snapshotInit("test")
+
+app$setInputs(sidebarCollapsed = FALSE)
+app$setInputs(num_value_col = "cyl")
+app$setInputs(alpha = 0.4)
+app$setInputs(size = 1.4)
+app$setInputs(size = 1.7)
+app$snapshot()
+app$setInputs(sidebarid = "about")
+app$snapshot()
+app$snapshot()

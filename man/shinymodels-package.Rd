@@ -6,7 +6,16 @@
 \alias{shinymodels-package}
 \title{shinymodels: Interactive Assessments of Models}
 \description{
-A package that launches a 'shiny' application for 'tidymodels' results. For classification or regression models, the app can be used to determine if there is lack of fit or poorly predicted points.
+Launch a 'shiny' application for 'tidymodels' results. For classification or regression models, the app can be used to determine if there is lack of fit or poorly predicted points.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://shinymodels.tidymodels.org}
+  \item \url{https://github.com/tidymodels/shinymodels}
+  \item Report bugs at \url{https://github.com/tidymodels/shinymodels/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Max Kuhn \email{max@rstudio.com} (\href{https://orcid.org/0000-0003-2402-136X}{ORCID})
