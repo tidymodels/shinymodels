@@ -63,6 +63,7 @@ generics::explore
 #' tuning parameter combinations that were fully resampled. As a result,
 #' parameter combinations that were discarded during the race will now be able
 #' to be selected.
+#' @return A shiny application.
 #' @examples
 #' data(ames_mlp_itr)
 #'
