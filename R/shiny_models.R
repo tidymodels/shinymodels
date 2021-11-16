@@ -14,6 +14,7 @@
 #' data sets.
 #' @param original_data Original dataset.
 #' @param ... Other parameters not currently used.
+#' @return A shiny application.
 #' @export
 #' @keywords internal
 
