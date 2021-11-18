@@ -18,11 +18,11 @@ results.
 
 ## Installation
 
-~~You can install the released version of shinymodels from
-[CRAN](https://CRAN.R-project.org) with:~~
+You can install the released version of shinymodels from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
-install.packages("shinymodels") ## not yet
+install.packages("shinymodels") 
 ```
 
 And the development version from [GitHub](https://github.com/) with:

@@ -38,6 +38,9 @@ data sets.}
 
 \item{original_data}{Original dataset.}
 }
+\value{
+A shiny application.
+}
 \description{
 This function takes the \code{\link[=organize_data]{organize_data()}} result to shiny_models a Shiny app.
 }

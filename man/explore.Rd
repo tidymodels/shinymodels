@@ -26,6 +26,9 @@ if they are enclosed with in \code{c()}.
 points is enabled (the default) or not. This can be helpful for very large
 data sets.}
 }
+\value{
+A shiny application.
+}
 \description{
 \code{explore()} launches a Shiny application to interact with results from some
 tidymodels functions.

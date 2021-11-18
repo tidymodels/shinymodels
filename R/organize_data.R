@@ -134,7 +134,8 @@ get_app_type <- function(y) {
 #'
 #' This is a print method for a shiny_data class
 #' @param x an object of class shiny_data
-#' @param ... Other parameters not currently used
+#' @param ... Other parameters not currently used.
+#' @return `x` invisibly.
 #' @keywords internal
 #' @export
 print.shiny_data <- function(x, ...) {
@@ -146,5 +147,5 @@ print.shiny_data <- function(x, ...) {
     paste("tuning parameters:", .get_tune_parameter_names(x$tune_results)),
     sep = "\n"
   )
-  cat(string)
+  invisible(x)
 }

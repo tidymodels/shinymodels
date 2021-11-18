@@ -10,7 +10,10 @@
 \arguments{
 \item{x}{an object of class shiny_data}
 
-\item{...}{Other parameters not currently used}
+\item{...}{Other parameters not currently used.}
+}
+\value{
+\code{x} invisibly.
 }
 \description{
 This is a print method for a shiny_data class
