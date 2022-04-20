@@ -1,8 +1,8 @@
-pandoc: 2.7.3
-pkgdown: 1.9000.9000.9000
-pkgdown_sha: 0462500144f5d684633d665cd3c9180c14f47f23
+pandoc: 2.14.2
+pkgdown: 2.0.2
+pkgdown_sha: ~
 articles: {}
-last_built: 2021-11-30T17:43Z
+last_built: 2022-04-20T14:20Z
 urls:
   reference: https://shinymodels.tidymodels.org/reference
   article: https://shinymodels.tidymodels.org/articles
