@@ -18,17 +18,18 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Max Kuhn \email{max@rstudio.com} (\href{https://orcid.org/0000-0003-2402-136X}{ORCID})
+\strong{Maintainer}: Simon Couch \email{simonpatrickcouch@gmail.com} (\href{https://orcid.org/0000-0001-5676-5107}{ORCID})
 
 Authors:
 \itemize{
-  \item Shisham Adhikari \email{shisham.adhikari@rstudio.com}
+  \item Max Kuhn \email{max@rstudio.com} (\href{https://orcid.org/0000-0003-2402-136X}{ORCID})
+  \item Shisham Adhikari \email{shadhikari@ucdavis.edu}
   \item Julia Silge \email{julia.silge@rstudio.com} (\href{https://orcid.org/0000-0002-3671-836X}{ORCID})
 }
 
 Other contributors:
 \itemize{
-  \item RStudio [copyright holder]
+  \item RStudio [copyright holder, funder]
 }
 
 }
