@@ -61,7 +61,7 @@ generics::explore
 #'
 #' When racing results are explored, the shiny application will only allow
 #' tuning parameter combinations that were fully resampled. As a result,
-#' parameter combinations that were discarded during the race will now be able
+#' parameter combinations that were discarded during the race will not be able
 #' to be selected.
 #' @return A shiny application.
 #' @examples
