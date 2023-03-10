@@ -103,6 +103,9 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
 })
 
 test_that("can accurately plot the ROC curve", {
+  # Remove with yardstick version >1.1.0.9000
+  withr::local_options(lifecycle_verbosity = "quiet")
+
   skip_on_cran()
   data(cell_race)
 
@@ -122,6 +125,9 @@ test_that("can accurately plot the ROC curve", {
 })
 
 test_that("can accurately plot the PR curve", {
+  # Remove with yardstick version >1.1.0.9000
+  withr::local_options(lifecycle_verbosity = "quiet")
+
   skip_on_cran()
   data(cell_race)
 

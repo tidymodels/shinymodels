@@ -90,6 +90,9 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
 })
 
 test_that("can accurately plot the ROC curve", {
+  # Remove with yardstick version >1.1.0.9000
+  withr::local_options(lifecycle_verbosity = "quiet")
+
   skip_on_cran()
   data(scat_fda_bt)
 
@@ -104,11 +107,15 @@ test_that("can accurately plot the ROC curve", {
     plot_multiclass_roc(),
     'argument "dat" is missing, with no default'
   )
+
   e <- plot_multiclass_roc(org$predictions, org$y_name)
   expect_snapshot_output(make_clean_snapshot(e))
 })
 
 test_that("can accurately plot the PR curve", {
+  # Remove with yardstick version >1.1.0.9000
+  withr::local_options(lifecycle_verbosity = "quiet")
+
   skip_on_cran()
   data(scat_fda_bt)
 
