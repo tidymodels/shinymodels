@@ -1541,7 +1541,7 @@
             }
           },
           "scaleanchor": "y",
-          "scaleratio": 1.33333333333333,
+          "scaleratio": 1,
           "hoverformat": ".2f"
         },
         "yaxis": {
@@ -1584,7 +1584,7 @@
             }
           },
           "scaleanchor": "x",
-          "scaleratio": 0.75,
+          "scaleratio": 1,
           "hoverformat": ".2f"
         },
         "shapes": [
