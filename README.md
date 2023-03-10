@@ -78,7 +78,10 @@ predicted values are visualized, with one sample selected and
 highlighted. The residuals are also plotted against `x1` and the
 quadratic pattern shows that a nonlinear term should be added.
 
-![](man/figures/example.png)
+![screenshot of shiny app. Options are shown in a column to the left. In
+the main area 3 tabs are shown; Observed vs. Predicted, Residuals
+vs. Predicted, and Residals vs. A numeric
+predictor.](man/figures/example.png)
 
 The `explore()` function can be used with objects produced by
 `fit_resamples()`, `last_fit()`, or any of the `tune_*()` functions.
