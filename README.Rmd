@@ -33,8 +33,8 @@ install.packages("shinymodels")
 And the development version from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("tidymodels/shinymodels")
+# install.packages("pak")
+pak::pak("tidymodels/shinymodels")
 ```
 
 ## Example
