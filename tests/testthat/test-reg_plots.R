@@ -69,7 +69,7 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
 
 test_that("can accurately plot numeric residuals vs. a factor column plot", {
   skip_on_cran()
-  data("reg_ames_rf_res")
+  data(ames_mlp_itr)
 
   org <- organize_data(ames_mlp_itr)
   org$predictions$.color <- "black"
