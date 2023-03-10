@@ -28,16 +28,13 @@ test_that("can accurately organize data", {
   expect_equal(is.character(org$default_config), TRUE)
   expect_equal(org$default_config %in% org$predictions$.config, TRUE)
   expect_equal(org$default_config, "Preprocessor1_Model1")
-  expect_error(
-    organize_data(lin_mod),
-    "No `organize_data\\(\\)` exists for this type of object."
+  expect_snapshot(
+    error = TRUE,
+    organize_data(lin_mod)
   )
-  expect_error(
-    organize_data(dplyr::select(cars_bag_vfld, -.predictions)),
-    paste0(
-      "The `.predictions` column does not exist. ",
-      "Refit with the control argument `save_pred = TRUE` to save predictions."
-    )
+  expect_snapshot(
+    error = TRUE,
+    organize_data(dplyr::select(cars_bag_vfld, -.predictions))
   )
 })
 
@@ -52,9 +49,9 @@ test_that("can add hover column", {
   expect_equal(is.character(org$predictions$.hover), TRUE)
   expect_equal(length(org$predictions$.hover), 32)
   expect_equal(org$predictions$.hover[[1]], "mpg: 21.0<br>.pred: 19.9")
-  expect_error(
-    organize_data(cars_bag_vfld, hover_cols = c("mpg", "mpl")),
-    "Column `mpl` doesn't exist."
+  expect_snapshot(
+    error = TRUE,
+    organize_data(cars_bag_vfld, hover_cols = c("mpg", "mpl"))
   )
   expect_equal(org_null$predictions$.hover[[1]], "mpg: 21.0")
 })

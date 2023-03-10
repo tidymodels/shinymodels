@@ -1,5 +1,21 @@
 # can accurately plot numeric observed vs. predicted plot
 
+    Code
+      plot_numeric_obs_pred(org, org$y_name)
+    Error <rlang_error>
+      `data` must be a <data.frame>, or an object coercible by `fortify()`, not an S3 object with class <reg_shiny_data>/<shiny_data>.
+
+---
+
+    Code
+      plot_numeric_obs_pred(org$predictions, y_name)
+    Warning <rlang_warning>
+      Ignoring unknown aesthetics: customdata and text
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
     {
       "data": [
         {
@@ -203,6 +219,13 @@
 
 # can accurately plot numeric residuals vs. predicted plot
 
+    Code
+      plot_numeric_obs_pred(org, org$y_name)
+    Error <rlang_error>
+      `data` must be a <data.frame>, or an object coercible by `fortify()`, not an S3 object with class <reg_shiny_data>/<shiny_data>.
+
+---
+
     {
       "data": [
         {
@@ -402,6 +425,22 @@
 
 # can accurately plot numeric residuals vs. a numeric column plot
 
+    Code
+      plot_numeric_obs_pred(org, org$y_name)
+    Error <rlang_error>
+      `data` must be a <data.frame>, or an object coercible by `fortify()`, not an S3 object with class <reg_shiny_data>/<shiny_data>.
+
+---
+
+    Code
+      plot_numeric_res_numcol(org$predictions, "Sale_Price", "Class")
+    Warning <rlang_warning>
+      Ignoring unknown aesthetics: customdata and text
+    Error <simpleError>
+      object 'Class' not found
+
+---
+
     {
       "data": [
         {
@@ -600,6 +639,22 @@
     } 
 
 # can accurately plot numeric residuals vs. a factor column plot
+
+    Code
+      plot_numeric_obs_pred(org, org$y_name)
+    Error <rlang_error>
+      `data` must be a <data.frame>, or an object coercible by `fortify()`, not an S3 object with class <reg_shiny_data>/<shiny_data>.
+
+---
+
+    Code
+      plot_numeric_res_factorcol(org$predictions, org$y_name, "St")
+    Warning <rlang_warning>
+      Ignoring unknown aesthetics: customdata and text
+    Error <simpleError>
+      object 'St' not found
+
+---
 
     {
       "data": [

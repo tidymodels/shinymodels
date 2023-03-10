@@ -9,13 +9,13 @@ test_that("can accurately plot predicted probabilities vs true class plot", {
   org <- organize_data(cell_race)
   org$predictions$.color <- "black"
 
-  expect_error(
-    plot_twoclass_obs_pred(org, org$y_name),
-    "'class' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_obs_pred(org, org$y_name)
   )
-  expect_error(
-    plot_twoclass_obs_pred(org$predictions, y_name),
-    "object 'y_name' not found"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_obs_pred(org$predictions, y_name)
   )
   a <- plot_twoclass_obs_pred(org$predictions, org$y_name)
   expect_snapshot_output(make_clean_snapshot(a))
@@ -28,9 +28,9 @@ test_that("can accurately plot confusion matrix plot", {
   org <- organize_data(cell_race)
   org$predictions$.color <- "black"
 
-  expect_error(
-    plot_twoclass_conf_mat(org),
-    "no applicable method for 'conf_mat' applied to an object of class"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_conf_mat(org)
   )
   b <- plot_twoclass_conf_mat(org$predictions)
   expect_snapshot_output(make_clean_snapshot(b))
@@ -43,20 +43,17 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
   org <- organize_data(cell_race)
   org$predictions$.color <- "black"
 
-  expect_error(
-    plot_twoclass_pred_numcol(org, org$y_name, "AXL"),
-    "'class' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_numcol(org, org$y_name, "AXL")
   )
-  expect_error(
-    plot_twoclass_pred_numcol(org$predictions, y_name, "AXL"),
-    "object 'y_name' not found"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_numcol(org$predictions, y_name, "AXL")
   )
-  expect_warning(
-    expect_error(
-      plot_twoclass_pred_numcol(org$predictions, org$y_name, "potato"),
-      "object 'potato' not found"
-    ),
-    "Ignoring unknown aesthetics"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_numcol(org$predictions, org$y_name, "potato")
   )
   expect_warning(
     c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "angle_ch_1"),
@@ -80,20 +77,17 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
       .color = "black"
     )
 
-  expect_error(
-    plot_twoclass_pred_factorcol(org, org$y_name, "fact_col"),
-    "'class' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_factorcol(org, org$y_name, "fact_col")
   )
-  expect_error(
-    plot_twoclass_pred_factorcol(org$predictions, y_name, "fact_col"),
-    "object 'y_name' not found"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_factorcol(org$predictions, y_name, "fact_col")
   )
-  expect_warning(
-    expect_error(
-      plot_twoclass_pred_factorcol(org$predictions, org$y_name, "potato"),
-      "object 'potato' not found"
-    ),
-    "Ignoring unknown aesthetics"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pred_factorcol(org$predictions, org$y_name, "potato")
   )
   expect_warning(
     d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "fact_col"),
@@ -112,13 +106,13 @@ test_that("can accurately plot the ROC curve", {
   org <- organize_data(cell_race)
   org$predictions$.color <- "black"
 
-  expect_error(
-    plot_twoclass_roc(org, org$y_name),
-    "'class' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_roc(org, org$y_name)
   )
-  expect_error(
-    plot_twoclass_roc(org$predictions, y_name),
-    "object 'y_name' not found"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_roc(org$predictions, y_name)
   )
   e <- plot_twoclass_roc(org$predictions, org$y_name)
   expect_snapshot_output(make_clean_snapshot(e))
@@ -134,17 +128,17 @@ test_that("can accurately plot the PR curve", {
   org <- organize_data(cell_race)
   org$predictions$.color <- "black"
 
-  expect_error(
-    plot_twoclass_pr(org, org$y_name),
-    "'class' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pr(org, org$y_name)
   )
-  expect_error(
-    plot_twoclass_pr(org$predictions, y_name),
-    "object 'y_name' not found"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pr(org$predictions, y_name)
   )
-  expect_error(
-    plot_twoclass_pr(org$predictions, "mpg"),
-    "'mpg' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    plot_twoclass_pr(org$predictions, "mpg")
   )
   f <- plot_twoclass_pr(org$predictions, org$y_name)
   expect_snapshot_output(make_clean_snapshot(f))

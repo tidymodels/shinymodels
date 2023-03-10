@@ -40,16 +40,16 @@ test_that("can display the selected model correctly", {
     display_selected(org, performance, preds, tuning_param, input2),
     "Selected model: hidden_units = NA, penalty = NA, epochs = NA"
   )
-  expect_error(
-    display_selected(org, performance, preds, "foo", input),
-    "Column `foo` doesn't exist"
+  expect_snapshot(
+    error = TRUE,
+    display_selected(org, performance, preds, "foo", input)
   )
-  expect_error(
-    display_selected(org, performance, preds, tuning_param),
-    'argument "input" is missing, with no default'
+  expect_snapshot(
+    error = TRUE,
+    display_selected(org, performance, preds, tuning_param)
   )
-  expect_error(
-    display_selected(org, performance, tuning_param, input),
-    'argument "input" is missing, with no default'
+  expect_snapshot(
+    error = TRUE,
+    display_selected(org, performance, tuning_param, input)
   )
 })

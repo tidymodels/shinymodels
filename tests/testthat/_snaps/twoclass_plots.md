@@ -1,5 +1,19 @@
 # can accurately plot predicted probabilities vs true class plot
 
+    Code
+      plot_twoclass_obs_pred(org, org$y_name)
+    Error <rlang_error>
+      'class' is not a column in the dataset
+
+---
+
+    Code
+      plot_twoclass_obs_pred(org$predictions, y_name)
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
     {
       "data": [
         {
@@ -347,6 +361,13 @@
 
 # can accurately plot confusion matrix plot
 
+    Code
+      plot_twoclass_conf_mat(org)
+    Error <simpleError>
+      no applicable method for 'conf_mat' applied to an object of class "c('two_cls_shiny_data', 'shiny_data')"
+
+---
+
     {
       "data": [
         {
@@ -519,6 +540,29 @@
     } 
 
 # can accurately plot predicted probabilities vs. a numeric column plot
+
+    Code
+      plot_twoclass_pred_numcol(org, org$y_name, "AXL")
+    Error <rlang_error>
+      'class' is not a column in the dataset
+
+---
+
+    Code
+      plot_twoclass_pred_numcol(org$predictions, y_name, "AXL")
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
+    Code
+      plot_twoclass_pred_numcol(org$predictions, org$y_name, "potato")
+    Warning <rlang_warning>
+      Ignoring unknown aesthetics: customdata and text
+    Error <simpleError>
+      object 'potato' not found
+
+---
 
     {
       "data": [
@@ -874,6 +918,29 @@
 
 # can accurately plot predicted probabilities vs. a factor column plot
 
+    Code
+      plot_twoclass_pred_factorcol(org, org$y_name, "fact_col")
+    Error <rlang_error>
+      'class' is not a column in the dataset
+
+---
+
+    Code
+      plot_twoclass_pred_factorcol(org$predictions, y_name, "fact_col")
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
+    Code
+      plot_twoclass_pred_factorcol(org$predictions, org$y_name, "potato")
+    Warning <rlang_warning>
+      Ignoring unknown aesthetics: customdata and text
+    Error <simpleError>
+      object 'potato' not found
+
+---
+
     {
       "data": [
         {
@@ -1228,6 +1295,20 @@
 
 # can accurately plot the ROC curve
 
+    Code
+      plot_twoclass_roc(org, org$y_name)
+    Error <rlang_error>
+      'class' is not a column in the dataset
+
+---
+
+    Code
+      plot_twoclass_roc(org$predictions, y_name)
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
     {
       "data": [
         {
@@ -1443,6 +1524,27 @@
     } 
 
 # can accurately plot the PR curve
+
+    Code
+      plot_twoclass_pr(org, org$y_name)
+    Error <rlang_error>
+      'class' is not a column in the dataset
+
+---
+
+    Code
+      plot_twoclass_pr(org$predictions, y_name)
+    Error <simpleError>
+      object 'y_name' not found
+
+---
+
+    Code
+      plot_twoclass_pr(org$predictions, "mpg")
+    Error <rlang_error>
+      'mpg' is not a column in the dataset
+
+---
 
     {
       "data": [

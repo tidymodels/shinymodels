@@ -10,16 +10,13 @@ test_that("can accurately plot numeric observed vs. predicted plot", {
   org$predictions$.color <- "black"
   org$predictions$.alpha <- 1
 
-  expect_error(
-    plot_numeric_obs_pred(org, org$y_name),
-    "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_obs_pred(org, org$y_name)
   )
-  expect_warning(
-    expect_error(
-      plot_numeric_obs_pred(org$predictions, y_name),
-      "object 'y_name' not found"
-    ),
-    "Ignoring unknown aesthetics"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_obs_pred(org$predictions, y_name)
   )
   expect_warning(
     a <- plot_numeric_obs_pred(org$predictions, org$y_name),
@@ -36,9 +33,9 @@ test_that("can accurately plot numeric residuals vs. predicted plot", {
   org$predictions$.color <- "black"
   org$predictions$.alpha <- 1
 
-  expect_error(
-    plot_numeric_obs_pred(org, org$y_name),
-    "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_obs_pred(org, org$y_name)
   )
   expect_warning(
     b <- plot_numeric_res_pred(org$predictions, org$y_name),
@@ -55,16 +52,13 @@ test_that("can accurately plot numeric residuals vs. a numeric column plot", {
   org$predictions$.color <- "black"
   org$predictions$.alpha <- 1
 
-  expect_error(
-    plot_numeric_obs_pred(org, org$y_name),
-    "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_obs_pred(org, org$y_name)
   )
-  expect_warning(
-    expect_error(
-      plot_numeric_res_numcol(org$predictions, "Sale_Price", "Class"),
-      "object 'Class' not found"
-    ),
-    "Ignoring unknown aesthetics"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_res_numcol(org$predictions, "Sale_Price", "Class")
   )
   expect_warning(
     c <- plot_numeric_res_numcol(org$predictions, org$y_name, "Longitude"),
@@ -81,16 +75,13 @@ test_that("can accurately plot numeric residuals vs. a factor column plot", {
   org$predictions$.color <- "black"
   org$predictions$.alpha <- 1
 
-  expect_error(
-    plot_numeric_obs_pred(org, org$y_name),
-    "`data` must be a data frame, or other object coercible by `fortify\\(\\)`, not an S3 object with class reg_shiny_data/shiny_data"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_obs_pred(org, org$y_name)
   )
-  expect_warning(
-    expect_error(
-      plot_numeric_res_factorcol(org$predictions, org$y_name, "St"),
-      "object 'St' not found"
-    ),
-    "Ignoring unknown aesthetics"
+  expect_snapshot(
+    error = TRUE,
+    plot_numeric_res_factorcol(org$predictions, org$y_name, "St")
   )
   expect_warning(
     d <- plot_numeric_res_factorcol(org$predictions, org$y_name, "Neighborhood"),
