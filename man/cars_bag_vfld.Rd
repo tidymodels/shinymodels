@@ -12,7 +12,9 @@ This object has the results when a bagged regression tree was resampled using
 10-fold cross-validation.
 }
 \details{
-The code used to produce this object:\preformatted{  library(tidymodels)
+The code used to produce this object:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  library(tidymodels)
   library(baguette)
   tidymodels_prefer()
 
@@ -34,6 +36,6 @@ The code used to produce this object:\preformatted{  library(tidymodels)
       resamples = cars_rs,
       control = ctrl_rs
     )
-}
+}\if{html}{\out{</div>}}
 }
 \keyword{datasets}

@@ -14,7 +14,9 @@ tuned over the cost-complexity parameter using racing.
 \details{
 To reduce the object size, a smaller subset of the data were used.
 
-The code used to produce this object:\preformatted{  library(tidymodels)
+The code used to produce this object:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  library(tidymodels)
   library(finetune)
   tidymodels_prefer()
 
@@ -47,6 +49,6 @@ The code used to produce this object:\preformatted{  library(tidymodels)
       grid = tibble(cost_complexity = 10^seq(-2, -1, by = 0.2)),
       control = ctrl_rc
     )
-}
+}\if{html}{\out{</div>}}
 }
 \keyword{datasets}
