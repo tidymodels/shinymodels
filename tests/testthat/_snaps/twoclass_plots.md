@@ -14,350 +14,353 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "orientation": "v",
-          "width": [null, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, null],
-          "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "x": [null, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, null],
-          "y": [0, 1, 17, 39, 33, 0, 24, 4, 0, 1, 0, 9, 5, 2, 17, 12, 32, 20, 0, 366, 6],
-          "text": ["count:   0<br />.pred_PS: 0.00", "count:   1<br />.pred_PS: 0.05", "count:  17<br />.pred_PS: 0.10", "count:  39<br />.pred_PS: 0.15", "count:  33<br />.pred_PS: 0.20", "count:   0<br />.pred_PS: 0.25", "count:  24<br />.pred_PS: 0.30", "count:   4<br />.pred_PS: 0.35", "count:   0<br />.pred_PS: 0.40", "count:   1<br />.pred_PS: 0.45", "count:   0<br />.pred_PS: 0.50", "count:   9<br />.pred_PS: 0.55", "count:   5<br />.pred_PS: 0.60", "count:   2<br />.pred_PS: 0.65", "count:  17<br />.pred_PS: 0.70", "count:  12<br />.pred_PS: 0.75", "count:  32<br />.pred_PS: 0.80", "count:  20<br />.pred_PS: 0.85", "count:   0<br />.pred_PS: 0.90", "count: 366<br />.pred_PS: 0.95", "count:   6<br />.pred_PS: 1.00"],
-          "type": "bar",
-          "textposition": "none",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(89,89,89,1)",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(255,255,255,1)"
-            }
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "orientation": "v",
-          "width": [null, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, null],
-          "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "x": [null, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, null],
-          "y": [12, 2, 43, 47, 94, 0, 25, 5, 3, 0, 0, 0, 7, 2, 14, 0, 19, 24, 0, 28, 7],
-          "text": ["count:  12<br />.pred_PS: 0.00", "count:   2<br />.pred_PS: 0.05", "count:  43<br />.pred_PS: 0.10", "count:  47<br />.pred_PS: 0.15", "count:  94<br />.pred_PS: 0.20", "count:   0<br />.pred_PS: 0.25", "count:  25<br />.pred_PS: 0.30", "count:   5<br />.pred_PS: 0.35", "count:   3<br />.pred_PS: 0.40", "count:   0<br />.pred_PS: 0.45", "count:   0<br />.pred_PS: 0.50", "count:   0<br />.pred_PS: 0.55", "count:   7<br />.pred_PS: 0.60", "count:   2<br />.pred_PS: 0.65", "count:  14<br />.pred_PS: 0.70", "count:   0<br />.pred_PS: 0.75", "count:  19<br />.pred_PS: 0.80", "count:  24<br />.pred_PS: 0.85", "count:   0<br />.pred_PS: 0.90", "count:  28<br />.pred_PS: 0.95", "count:   7<br />.pred_PS: 1.00"],
-          "type": "bar",
-          "textposition": "none",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(89,89,89,1)",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(255,255,255,1)"
-            }
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y2",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 37.4307458143075,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 43.1050228310502
-        },
-        "plot_bgcolor": "rgba(235,235,235,1)",
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "tickvals": [0, 0.25, 0.5, 0.75, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y2",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "annotations": [
+    Code
+      make_clean_snapshot(a)
+    Output
+      {
+        "data": [
           {
-            "text": "Probability of  PS",
-            "x": 0.5,
-            "y": 0,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+            "orientation": "v",
+            "width": [null, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, null],
+            "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "x": [null, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, null],
+            "y": [0, 1, 17, 39, 33, 0, 24, 4, 0, 1, 0, 9, 5, 2, 17, 12, 32, 20, 0, 366, 6],
+            "text": ["count:   0<br />.pred_PS: 0.00", "count:   1<br />.pred_PS: 0.05", "count:  17<br />.pred_PS: 0.10", "count:  39<br />.pred_PS: 0.15", "count:  33<br />.pred_PS: 0.20", "count:   0<br />.pred_PS: 0.25", "count:  24<br />.pred_PS: 0.30", "count:   4<br />.pred_PS: 0.35", "count:   0<br />.pred_PS: 0.40", "count:   1<br />.pred_PS: 0.45", "count:   0<br />.pred_PS: 0.50", "count:   9<br />.pred_PS: 0.55", "count:   5<br />.pred_PS: 0.60", "count:   2<br />.pred_PS: 0.65", "count:  17<br />.pred_PS: 0.70", "count:  12<br />.pred_PS: 0.75", "count:  32<br />.pred_PS: 0.80", "count:  20<br />.pred_PS: 0.85", "count:   0<br />.pred_PS: 0.90", "count: 366<br />.pred_PS: 0.95", "count:   6<br />.pred_PS: 1.00"],
+            "type": "bar",
+            "textposition": "none",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(89,89,89,1)",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(255,255,255,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "top",
-            "annotationType": "axis",
-            "yshift": -21.9178082191781
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           },
           {
-            "text": "count",
-            "x": 0,
-            "y": 0.5,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+            "orientation": "v",
+            "width": [null, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, 0.05, 0.05, 0.0499999999999998, 0.05, 0.0499999999999998, null],
+            "base": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "x": [null, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, null],
+            "y": [12, 2, 43, 47, 94, 0, 25, 5, 3, 0, 0, 0, 7, 2, 14, 0, 19, 24, 0, 28, 7],
+            "text": ["count:  12<br />.pred_PS: 0.00", "count:   2<br />.pred_PS: 0.05", "count:  43<br />.pred_PS: 0.10", "count:  47<br />.pred_PS: 0.15", "count:  94<br />.pred_PS: 0.20", "count:   0<br />.pred_PS: 0.25", "count:  25<br />.pred_PS: 0.30", "count:   5<br />.pred_PS: 0.35", "count:   3<br />.pred_PS: 0.40", "count:   0<br />.pred_PS: 0.45", "count:   0<br />.pred_PS: 0.50", "count:   0<br />.pred_PS: 0.55", "count:   7<br />.pred_PS: 0.60", "count:   2<br />.pred_PS: 0.65", "count:  14<br />.pred_PS: 0.70", "count:   0<br />.pred_PS: 0.75", "count:  19<br />.pred_PS: 0.80", "count:  24<br />.pred_PS: 0.85", "count:   0<br />.pred_PS: 0.90", "count:  28<br />.pred_PS: 0.95", "count:   7<br />.pred_PS: 1.00"],
+            "type": "bar",
+            "textposition": "none",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(89,89,89,1)",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(255,255,255,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -90,
-            "xanchor": "right",
-            "yanchor": "center",
-            "annotationType": "axis",
-            "xshift": -27.7625570776256
-          },
-          {
-            "text": ".outcome: PS",
-            "x": 0.5,
-            "y": 1,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
-          },
-          {
-            "text": ".outcome: WS",
-            "x": 0.5,
-            "y": 0.470319634703196,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y2",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "yaxis": {
-          "domain": [0.529680365296804, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-18.3, 384.3],
-          "tickmode": "array",
-          "ticktext": ["0", "100", "200", "300"],
-          "tickvals": [0, 100, 200, 300],
-          "categoryorder": "array",
-          "categoryarray": ["0", "100", "200", "300"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
+        "layout": {
+          "margin": {
+            "t": 37.4307458143075,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 43.1050228310502
           },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "shapes": [
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0.529680365296804,
-            "y1": 1
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 1,
-            "ysizemode": "pixel"
-          },
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 0.470319634703196
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 0.470319634703196,
-            "ysizemode": "pixel"
-          }
-        ],
-        "yaxis2": {
-          "type": "linear",
-          "autorange": false,
-          "range": [-18.3, 384.3],
-          "tickmode": "array",
-          "ticktext": ["0", "100", "200", "300"],
-          "tickvals": [0, 100, 200, 300],
-          "categoryorder": "array",
-          "categoryarray": ["0", "100", "200", "300"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "domain": [0, 0.470319634703196],
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+          "plot_bgcolor": "rgba(235,235,235,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y2",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "annotations": [
+            {
+              "text": "Probability of  PS",
+              "x": 0.5,
+              "y": 0,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "top",
+              "annotationType": "axis",
+              "yshift": -21.9178082191781
+            },
+            {
+              "text": "count",
+              "x": 0,
+              "y": 0.5,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -90,
+              "xanchor": "right",
+              "yanchor": "center",
+              "annotationType": "axis",
+              "xshift": -27.7625570776256
+            },
+            {
+              "text": ".outcome: PS",
+              "x": 0.5,
+              "y": 1,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            },
+            {
+              "text": ".outcome: WS",
+              "x": 0.5,
+              "y": 0.470319634703196,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            }
+          ],
+          "yaxis": {
+            "domain": [0.529680365296804, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-18.3, 384.3],
+            "tickmode": "array",
+            "ticktext": ["0", "100", "200", "300"],
+            "tickvals": [0, 100, 200, 300],
+            "categoryorder": "array",
+            "categoryarray": ["0", "100", "200", "300"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0.529680365296804,
+              "y1": 1
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 1,
+              "ysizemode": "pixel"
+            },
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 0.470319634703196
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 0.470319634703196,
+              "ysizemode": "pixel"
+            }
+          ],
+          "yaxis2": {
+            "type": "linear",
+            "autorange": false,
+            "range": [-18.3, 384.3],
+            "tickmode": "array",
+            "ticktext": ["0", "100", "200", "300"],
+            "tickvals": [0, 100, 200, 300],
+            "categoryorder": "array",
+            "categoryarray": ["0", "100", "200", "300"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "domain": [0, 0.470319634703196],
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": "A",
-      "cur_data": "env-name",
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": "A",
+        "cur_data": "env-name",
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 
 # can accurately plot confusion matrix plot
 
@@ -368,176 +371,179 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "x": [0, 0, 588, 588, 0, null, 0, 0, 588, 588, 0, null, 592.6, 592.6, 924.6, 924.6, 592.6, null, 592.6, 592.6, 924.6, 924.6, 592.6],
-          "y": [-0, -0.797619047619048, -0.797619047619048, -0, -0, null, -0.807619047619048, -1.01, -1.01, -0.807619047619048, -0.807619047619048, null, -0, -0.30421686746988, -0.30421686746988, -0, -0, null, -0.31421686746988, -1.01, -1.01, -0.31421686746988, -0.31421686746988],
-          "text": "",
-          "type": "scatter",
-          "mode": "lines",
-          "line": {
-            "width": 1.88976377952756,
-            "color": "transparent",
-            "dash": "solid"
-          },
-          "fill": "toself",
-          "fillcolor": "rgba(89,89,89,1)",
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 25.7412480974125,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 37.2602739726027
-        },
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-46.23, 970.83],
-          "tickmode": "array",
-          "ticktext": ["PS", "WS"],
-          "tickvals": [294, 758.6],
-          "categoryorder": "array",
-          "categoryarray": ["PS", "WS"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y",
-          "title": {
-            "text": "Truth",
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "hoverformat": ".2f"
-        },
-        "yaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-1.0605, 0.0505],
-          "tickmode": "array",
-          "ticktext": ["PS", "WS"],
-          "tickvals": [-0.398809523809524, -0.908809523809524],
-          "categoryorder": "array",
-          "categoryarray": ["PS", "WS"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": {
-            "text": "Prediction",
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "hoverformat": ".2f"
-        },
-        "shapes": [
+    Code
+      make_clean_snapshot(b)
+    Output
+      {
+        "data": [
           {
-            "type": "rect",
-            "fillcolor": null,
+            "x": [0, 0, 588, 588, 0, null, 0, 0, 588, 588, 0, null, 592.6, 592.6, 924.6, 924.6, 592.6, null, 592.6, 592.6, 924.6, 924.6, 592.6],
+            "y": [-0, -0.797619047619048, -0.797619047619048, -0, -0, null, -0.807619047619048, -1.01, -1.01, -0.807619047619048, -0.807619047619048, null, -0, -0.30421686746988, -0.30421686746988, -0, -0, null, -0.31421686746988, -1.01, -1.01, -0.31421686746988, -0.31421686746988],
+            "text": "",
+            "type": "scatter",
+            "mode": "lines",
             "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
+              "width": 1.88976377952756,
+              "color": "transparent",
+              "dash": "solid"
             },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 1
+            "fill": "toself",
+            "fillcolor": "rgba(89,89,89,1)",
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+        "layout": {
+          "margin": {
+            "t": 25.7412480974125,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 37.2602739726027
+          },
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-46.23, 970.83],
+            "tickmode": "array",
+            "ticktext": ["PS", "WS"],
+            "tickvals": [294, 758.6],
+            "categoryorder": "array",
+            "categoryarray": ["PS", "WS"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y",
+            "title": {
+              "text": "Truth",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "hoverformat": ".2f"
+          },
+          "yaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-1.0605, 0.0505],
+            "tickmode": "array",
+            "ticktext": ["PS", "WS"],
+            "tickvals": [-0.398809523809524, -0.908809523809524],
+            "categoryorder": "array",
+            "categoryarray": ["PS", "WS"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": {
+              "text": "Prediction",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 1
+            }
+          ],
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": "A",
-      "cur_data": "env-name",
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": "A",
+        "cur_data": "env-name",
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 
 # can accurately plot predicted probabilities vs. a numeric column plot
 
@@ -564,357 +570,360 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "x": [95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 16.587409586318, 16.587409586318, 16.587409586318, 16.587409586318, 134.800828919447, 134.800828919447, 134.800828919447, 134.800828919447, 81.6865372754843, 81.6865372754843, 81.6865372754843, 81.6865372754843, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 39.114862008508, 39.114862008508, 39.114862008508, 39.114862008508, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 27.4770034111898, 27.4770034111898, 27.4770034111898, 27.4770034111898, 101.898263111726, 101.898263111726, 101.898263111726, 101.898263111726, 58.6337445181416, 58.6337445181416, 58.6337445181416, 58.6337445181416, 91.5180895055227, 91.5180895055227, 91.5180895055227, 91.5180895055227, 176.926099163073, 176.926099163073, 176.926099163073, 176.926099163073, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 72.0680917169587, 72.0680917169587, 72.0680917169587, 72.0680917169587, 79.4978852369033, 79.4978852369033, 79.4978852369033, 79.4978852369033, 131.656233816092, 131.656233816092, 131.656233816092, 131.656233816092, 177.795536160504, 177.795536160504, 177.795536160504, 177.795536160504, 55.5907743571749, 55.5907743571749, 55.5907743571749, 55.5907743571749, 114.116803481203, 114.116803481203, 114.116803481203, 114.116803481203, 16.9693013025597, 16.9693013025597, 16.9693013025597, 16.9693013025597, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 70.9782390976665, 70.9782390976665, 70.9782390976665, 70.9782390976665, 98.1759322527105, 98.1759322527105, 98.1759322527105, 98.1759322527105, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 1.62580012516391, 1.62580012516391, 1.62580012516391, 1.62580012516391, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.8994202004492, 88.8994202004492, 88.8994202004492, 88.8994202004492, 51.8451601918686, 51.8451601918686, 51.8451601918686, 51.8451601918686, 52.5922361736322, 52.5922361736322, 52.5922361736322, 52.5922361736322, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 91.0934141003652, 91.0934141003652, 91.0934141003652, 91.0934141003652, 7.62115975614592, 7.62115975614592, 7.62115975614592, 7.62115975614592, 131.973790091276, 131.973790091276, 131.973790091276, 131.973790091276, 103.766976558288, 103.766976558288, 103.766976558288, 103.766976558288, 34.1517678585833, 34.1517678585833, 34.1517678585833, 34.1517678585833, 119.667151767023, 119.667151767023, 119.667151767023, 119.667151767023, 175.505085025677, 175.505085025677, 175.505085025677, 175.505085025677, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 58.5511439063698, 58.5511439063698, 58.5511439063698, 58.5511439063698, 80.5548274096692, 80.5548274096692, 80.5548274096692, 80.5548274096692, 88.94465206529, 88.94465206529, 88.94465206529, 88.94465206529, 54.2477291783614, 54.2477291783614, 54.2477291783614, 54.2477291783614, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 86.6584354739574, 86.6584354739574, 86.6584354739574, 86.6584354739574, 109.000591439423, 109.000591439423, 109.000591439423, 109.000591439423, 86.97260029222, 86.97260029222, 86.97260029222, 86.97260029222, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 111.54476227716, 111.54476227716, 111.54476227716, 111.54476227716, 111.534112213877, 111.534112213877, 111.534112213877, 111.534112213877, 141.402957287269, 141.402957287269, 141.402957287269, 141.402957287269, 154.271230663359, 154.271230663359, 154.271230663359, 154.271230663359, 74.4005178422471, 74.4005178422471, 74.4005178422471, 74.4005178422471, 47.8903616259911, 47.8903616259911, 47.8903616259911, 47.8903616259911, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 142.494797980837, 142.494797980837, 142.494797980837, 142.494797980837, 40.9988881711646, 40.9988881711646, 40.9988881711646, 40.9988881711646, 112.445748799094, 112.445748799094, 112.445748799094, 112.445748799094, 80.1388934493365, 80.1388934493365, 80.1388934493365, 80.1388934493365, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 56.9050641278456, 56.9050641278456, 56.9050641278456, 56.9050641278456, 51.9082491169161, 51.9082491169161, 51.9082491169161, 51.9082491169161, 125.722806723141, 125.722806723141, 125.722806723141, 125.722806723141, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 63.3711236261809, 63.3711236261809, 63.3711236261809, 63.3711236261809, 90.3545470111292, 90.3545470111292, 90.3545470111292, 90.3545470111292, 94.7524581799912, 94.7524581799912, 94.7524581799912, 94.7524581799912, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 139.579580831556, 139.579580831556, 139.579580831556, 139.579580831556, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 1.51240444889553, 1.51240444889553, 1.51240444889553, 1.51240444889553, 2.05581793739078, 2.05581793739078, 2.05581793739078, 2.05581793739078, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 20.5404449841824, 20.5404449841824, 20.5404449841824, 20.5404449841824, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 66.8924053637841, 66.8924053637841, 66.8924053637841, 66.8924053637841, 70.4304638742623, 70.4304638742623, 70.4304638742623, 70.4304638742623, 90.0282668180551, 90.0282668180551, 90.0282668180551, 90.0282668180551, 62.0861592500489, 62.0861592500489, 62.0861592500489, 62.0861592500489, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 3.03006141668336, 3.03006141668336, 3.03006141668336, 3.03006141668336, 110.486376573604, 110.486376573604, 110.486376573604, 110.486376573604, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 96.7659912729992, 96.7659912729992, 96.7659912729992, 96.7659912729992, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 88.4590809105491, 88.4590809105491, 88.4590809105491, 88.4590809105491, 171.568283187282, 171.568283187282, 171.568283187282, 171.568283187282, 163.949804380448, 163.949804380448, 163.949804380448, 163.949804380448, 176.98569438819, 176.98569438819, 176.98569438819, 176.98569438819, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 65.7737478066427, 65.7737478066427, 65.7737478066427, 65.7737478066427, 5.5186848899127, 5.5186848899127, 5.5186848899127, 5.5186848899127, 59.1215123180646, 59.1215123180646, 59.1215123180646, 59.1215123180646, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 109.71515081279, 109.71515081279, 109.71515081279, 109.71515081279, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 112.126988588047, 112.126988588047, 112.126988588047, 112.126988588047, 6.76003351673627, 6.76003351673627, 6.76003351673627, 6.76003351673627, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 99.7009474852712, 99.7009474852712, 99.7009474852712, 99.7009474852712, 10.2848750955344, 10.2848750955344, 10.2848750955344, 10.2848750955344, 127.37824848417, 127.37824848417, 127.37824848417, 127.37824848417, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 88.1372722241022, 88.1372722241022, 88.1372722241022, 88.1372722241022, 110.38984915003, 110.38984915003, 110.38984915003, 110.38984915003, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 133.587956565897, 133.587956565897, 133.587956565897, 133.587956565897, 46.566570379081, 46.566570379081, 46.566570379081, 46.566570379081, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 77.3440903720825, 77.3440903720825, 77.3440903720825, 77.3440903720825, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509],
-          "y": [0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.96, 0.96, 0.96, 0.96, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.9375, 0.9375, 0.9375, 0.9375, 0.571428571428571, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.12, 0.12, 0.12, 0.12, 0.999, 0.999, 0.999, 0.653846153846154, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.96, 0.96, 0.96, 0.96, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.8, 0.8, 0.8, 0.8, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.96, 0.96, 0.96, 0.96, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.596153846153846, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.999, 0.999, 0.999, 0.681818181818182, 0.428571428571429, 0.8, 0.8, 0.8, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.12, 0.12, 0.12, 0.12, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.555555555555556, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.6, 0.6, 0.6, 0.6, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.571428571428571, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.7, 0.7, 0.7, 0.7, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186],
-          "text": "class: PS",
-          "customdata": [2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 5, 5, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 28, 28, 28, 28, 30, 30, 30, 30, 31, 31, 31, 31, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 40, 40, 40, 40, 40, 40, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 44, 44, 44, 44, 46, 46, 46, 46, 47, 47, 47, 47, 47, 47, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 53, 53, 53, 53, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 59, 59, 59, 59, 60, 60, 60, 60, 61, 61, 61, 61, 62, 62, 62, 62, 64, 64, 64, 64, 66, 66, 66, 66, 67, 67, 67, 67, 67, 67, 68, 68, 68, 68, 69, 69, 69, 69, 71, 71, 71, 71, 72, 72, 72, 72, 75, 75, 75, 75, 75, 75, 76, 76, 76, 76, 77, 77, 77, 77, 78, 78, 78, 78, 80, 80, 80, 80, 80, 80, 82, 82, 82, 82, 83, 83, 83, 83, 84, 84, 84, 84, 85, 85, 85, 85, 86, 86, 86, 86, 88, 88, 88, 88, 89, 89, 89, 89, 89, 89, 91, 91, 91, 91, 91, 91, 94, 94, 94, 94, 94, 94, 95, 95, 95, 95, 95, 95, 96, 96, 96, 96, 97, 97, 97, 97, 98, 98, 98, 98, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 102, 102, 102, 102, 103, 103, 103, 103, 104, 104, 104, 104, 105, 105, 105, 105, 105, 105, 107, 107, 107, 107, 111, 111, 111, 111, 112, 112, 112, 112, 114, 114, 114, 114, 114, 114, 117, 117, 117, 117, 117, 117, 118, 118, 118, 118, 119, 119, 119, 119, 119, 119, 120, 120, 120, 120, 121, 121, 121, 121, 123, 123, 123, 123, 123, 123, 124, 124, 124, 124, 126, 126, 126, 126, 126, 126, 127, 127, 127, 127, 127, 127, 128, 128, 128, 128, 129, 129, 129, 129, 130, 130, 130, 130, 131, 131, 131, 131, 132, 132, 132, 132, 132, 132, 137, 137, 137, 137, 138, 138, 138, 138, 139, 139, 139, 139, 139, 139, 140, 140, 140, 140, 140, 140, 141, 141, 141, 141, 141, 141, 143, 143, 143, 143, 143, 143, 144, 144, 144, 144, 145, 145, 145, 145, 145, 145, 149, 149, 149, 149, 150, 150, 150, 150, 151, 151, 151, 151, 152, 152, 152, 152, 153, 153, 153, 153, 153, 153, 154, 154, 154, 154, 155, 155, 155, 155, 157, 157, 157, 157, 159, 159, 159, 159, 159, 159, 162, 162, 162, 162, 162, 162, 164, 164, 164, 164, 166, 166, 166, 166, 166, 166, 167, 167, 167, 167, 167, 167, 168, 168, 168, 168, 170, 170, 170, 170, 172, 172, 172, 172, 172, 172, 173, 173, 173, 173, 174, 174, 174, 174, 175, 175, 175, 175, 178, 178, 178, 178, 178, 178, 181, 181, 181, 181, 186, 186, 186, 186, 187, 187, 187, 187, 187, 187, 190, 190, 190, 190, 193, 193, 193, 193, 194, 194, 194, 194, 194, 194, 195, 195, 195, 195, 196, 196, 196, 196, 196, 196, 200, 200, 200, 200, 200, 200],
-          "type": "scattergl",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 3.77952755905512,
-            "symbol": "circle",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "name": "black",
-          "legendgroup": "black",
-          "showlegend": true,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "x": [63.0454410706556, 63.0454410706556, 63.0454410706556, 63.0454410706556, 157.341270907586, 157.341270907586, 157.341270907586, 157.341270907586, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 79.0785149898345, 79.0785149898345, 79.0785149898345, 79.0785149898345, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 118.577829209323, 118.577829209323, 118.577829209323, 118.577829209323, 107.341343539623, 107.341343539623, 107.341343539623, 107.341343539623, 2.08505226644907, 2.08505226644907, 2.08505226644907, 2.08505226644907, 17.9296729204929, 17.9296729204929, 17.9296729204929, 17.9296729204929, 69.8902585278016, 69.8902585278016, 69.8902585278016, 69.8902585278016, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 135.862172258113, 135.862172258113, 135.862172258113, 135.862172258113, 34.1917337143989, 34.1917337143989, 34.1917337143989, 34.1917337143989, 171.526095174449, 171.526095174449, 171.526095174449, 171.526095174449, 123.826309723181, 123.826309723181, 123.826309723181, 123.826309723181, 83.9762251720198, 83.9762251720198, 83.9762251720198, 83.9762251720198, 47.3776340333754, 47.3776340333754, 47.3776340333754, 47.3776340333754, 111.04703231473, 111.04703231473, 111.04703231473, 111.04703231473, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 133.244030997099, 133.244030997099, 133.244030997099, 133.244030997099, 1.54514654565428, 1.54514654565428, 1.54514654565428, 1.54514654565428, 60.0309861959956, 60.0309861959956, 60.0309861959956, 60.0309861959956, 133.717142729788, 133.717142729788, 133.717142729788, 133.717142729788, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 27.3609492903018, 27.3609492903018, 27.3609492903018, 27.3609492903018, 106.051360423906, 106.051360423906, 106.051360423906, 106.051360423906, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 163.727419613001, 163.727419613001, 163.727419613001, 163.727419613001, 161.116230838402, 161.116230838402, 161.116230838402, 161.116230838402, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 165.682629252045, 165.682629252045, 165.682629252045, 165.682629252045, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 41.739119240782, 41.739119240782, 41.739119240782, 41.739119240782, 105.082465124563, 105.082465124563, 105.082465124563, 105.082465124563, 58.7021026082439, 58.7021026082439, 58.7021026082439, 58.7021026082439, 117.868631267464, 117.868631267464, 117.868631267464, 117.868631267464, 114.361735029025, 114.361735029025, 114.361735029025, 114.361735029025, 164.490629269011, 164.490629269011, 164.490629269011, 164.490629269011, 17.664996886701, 17.664996886701, 17.664996886701, 17.664996886701, 10.4935789099924, 10.4935789099924, 10.4935789099924, 10.4935789099924, 165.372159516889, 165.372159516889, 165.372159516889, 165.372159516889, 118.686005155806, 118.686005155806, 118.686005155806, 118.686005155806, 94.0031460443597, 94.0031460443597, 94.0031460443597, 94.0031460443597, 127.991935450021, 127.991935450021, 127.991935450021, 127.991935450021, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 154.070880994733, 154.070880994733, 154.070880994733, 154.070880994733, 164.779322478274, 164.779322478274, 164.779322478274, 164.779322478274, 64.5186715436787, 64.5186715436787, 64.5186715436787, 64.5186715436787, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 169.73121988248, 169.73121988248, 169.73121988248, 169.73121988248, 74.4931239682689, 74.4931239682689, 74.4931239682689, 74.4931239682689, 176.129536198093, 176.129536198093, 176.129536198093, 176.129536198093, 36.765967968779, 36.765967968779, 36.765967968779, 36.765967968779, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 113.414874708965, 113.414874708965, 113.414874708965, 113.414874708965, 0.479155270307707, 0.479155270307707, 0.479155270307707, 0.479155270307707, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 147.063337446046, 147.063337446046, 147.063337446046, 147.063337446046, 167.857060527709, 167.857060527709, 167.857060527709, 167.857060527709, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 142.583195741513, 142.583195741513, 142.583195741513, 142.583195741513, 151.066971779926, 151.066971779926, 151.066971779926, 151.066971779926, 146.346023442405, 146.346023442405, 146.346023442405, 146.346023442405, 4.51023414094056, 4.51023414094056, 4.51023414094056, 4.51023414094056, 80.2295827119512, 80.2295827119512, 80.2295827119512, 80.2295827119512, 161.465214317349, 161.465214317349, 161.465214317349, 161.465214317349, 5.6087092840173, 5.6087092840173, 5.6087092840173, 5.6087092840173, 77.5957735055867, 77.5957735055867, 77.5957735055867, 77.5957735055867, 20.1349381739137, 20.1349381739137, 20.1349381739137, 20.1349381739137, 41.504304979066, 41.504304979066, 41.504304979066, 41.504304979066, 106.844369325432, 106.844369325432, 106.844369325432, 106.844369325432, 132.486817945392, 132.486817945392, 132.486817945392, 132.486817945392],
-          "y": [0.416666666666667, 0.416666666666667, 0.416666666666667, 0.681818181818182, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.999, 0.999, 0.999, 0.681818181818182, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.999, 0.999, 0.999, 0.653846153846154, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.7, 0.7, 0.7, 0.7, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.12, 0.12, 0.12, 0.12, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.36, 0.596153846153846, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.001, 0.001, 0.001, 0.001, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.7, 0.7, 0.7, 0.7, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.999, 0.8, 0.8, 0.8, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.84, 0.84, 0.84, 0.84, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.001, 0.001, 0.001, 0.001, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.001, 0.001, 0.001, 0.001, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235],
-          "text": "class: WS",
-          "customdata": [1, 1, 1, 1, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 27, 27, 27, 27, 29, 29, 29, 29, 32, 32, 32, 32, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 41, 41, 41, 41, 45, 45, 45, 45, 45, 45, 48, 48, 48, 48, 52, 52, 52, 52, 54, 54, 54, 54, 58, 58, 58, 58, 63, 63, 63, 63, 63, 63, 65, 65, 65, 65, 70, 70, 70, 70, 73, 73, 73, 73, 73, 73, 74, 74, 74, 74, 74, 74, 79, 79, 79, 79, 79, 79, 81, 81, 81, 81, 87, 87, 87, 87, 90, 90, 90, 90, 90, 90, 92, 92, 92, 92, 92, 92, 93, 93, 93, 93, 101, 101, 101, 101, 101, 101, 106, 106, 106, 106, 108, 108, 108, 108, 109, 109, 109, 109, 110, 110, 110, 110, 113, 113, 113, 113, 115, 115, 115, 115, 116, 116, 116, 116, 122, 122, 122, 122, 125, 125, 125, 125, 133, 133, 133, 133, 134, 134, 134, 134, 135, 135, 135, 135, 136, 136, 136, 136, 136, 136, 142, 142, 142, 142, 146, 146, 146, 146, 147, 147, 147, 147, 148, 148, 148, 148, 148, 148, 156, 156, 156, 156, 158, 158, 158, 158, 160, 160, 160, 160, 161, 161, 161, 161, 163, 163, 163, 163, 163, 163, 165, 165, 165, 165, 169, 169, 169, 169, 171, 171, 171, 171, 171, 171, 176, 176, 176, 176, 177, 177, 177, 177, 179, 179, 179, 179, 179, 179, 180, 180, 180, 180, 182, 182, 182, 182, 183, 183, 183, 183, 184, 184, 184, 184, 185, 185, 185, 185, 188, 188, 188, 188, 189, 189, 189, 189, 191, 191, 191, 191, 192, 192, 192, 192, 197, 197, 197, 197, 198, 198, 198, 198, 199, 199, 199, 199],
-          "type": "scattergl",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 3.77952755905512,
-            "symbol": "circle",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "name": "black",
-          "legendgroup": "black",
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y2",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 37.4307458143075,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 43.1050228310502
-        },
-        "plot_bgcolor": "rgba(235,235,235,1)",
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-8.41008518312896, 187.153204792478],
-          "tickmode": "array",
-          "ticktext": ["0", "50", "100", "150"],
-          "tickvals": [0, 50, 100, 150],
-          "categoryorder": "array",
-          "categoryarray": ["0", "50", "100", "150"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y2",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "annotations": [
+    Code
+      make_clean_snapshot(c)
+    Output
+      {
+        "data": [
           {
-            "text": "angle_ch_1",
-            "x": 0.5,
-            "y": 0,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
+            "x": [95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 95.8647288351608, 16.587409586318, 16.587409586318, 16.587409586318, 16.587409586318, 134.800828919447, 134.800828919447, 134.800828919447, 134.800828919447, 81.6865372754843, 81.6865372754843, 81.6865372754843, 81.6865372754843, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 178.048451270602, 39.114862008508, 39.114862008508, 39.114862008508, 39.114862008508, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 138.329801021427, 27.4770034111898, 27.4770034111898, 27.4770034111898, 27.4770034111898, 101.898263111726, 101.898263111726, 101.898263111726, 101.898263111726, 58.6337445181416, 58.6337445181416, 58.6337445181416, 58.6337445181416, 91.5180895055227, 91.5180895055227, 91.5180895055227, 91.5180895055227, 176.926099163073, 176.926099163073, 176.926099163073, 176.926099163073, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 118.468888763644, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 89.3455699743584, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 80.0054949460774, 72.0680917169587, 72.0680917169587, 72.0680917169587, 72.0680917169587, 79.4978852369033, 79.4978852369033, 79.4978852369033, 79.4978852369033, 131.656233816092, 131.656233816092, 131.656233816092, 131.656233816092, 177.795536160504, 177.795536160504, 177.795536160504, 177.795536160504, 55.5907743571749, 55.5907743571749, 55.5907743571749, 55.5907743571749, 114.116803481203, 114.116803481203, 114.116803481203, 114.116803481203, 16.9693013025597, 16.9693013025597, 16.9693013025597, 16.9693013025597, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 77.4381596790226, 70.9782390976665, 70.9782390976665, 70.9782390976665, 70.9782390976665, 98.1759322527105, 98.1759322527105, 98.1759322527105, 98.1759322527105, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 36.2715623454443, 1.62580012516391, 1.62580012516391, 1.62580012516391, 1.62580012516391, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 93.5310863612956, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 85.9942068947223, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.4089233586164, 88.8994202004492, 88.8994202004492, 88.8994202004492, 88.8994202004492, 51.8451601918686, 51.8451601918686, 51.8451601918686, 51.8451601918686, 52.5922361736322, 52.5922361736322, 52.5922361736322, 52.5922361736322, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 57.4068254953302, 91.0934141003652, 91.0934141003652, 91.0934141003652, 91.0934141003652, 7.62115975614592, 7.62115975614592, 7.62115975614592, 7.62115975614592, 131.973790091276, 131.973790091276, 131.973790091276, 131.973790091276, 103.766976558288, 103.766976558288, 103.766976558288, 103.766976558288, 34.1517678585833, 34.1517678585833, 34.1517678585833, 34.1517678585833, 119.667151767023, 119.667151767023, 119.667151767023, 119.667151767023, 175.505085025677, 175.505085025677, 175.505085025677, 175.505085025677, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 78.1022549842739, 58.5511439063698, 58.5511439063698, 58.5511439063698, 58.5511439063698, 80.5548274096692, 80.5548274096692, 80.5548274096692, 80.5548274096692, 88.94465206529, 88.94465206529, 88.94465206529, 88.94465206529, 54.2477291783614, 54.2477291783614, 54.2477291783614, 54.2477291783614, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 159.61500326488, 86.6584354739574, 86.6584354739574, 86.6584354739574, 86.6584354739574, 109.000591439423, 109.000591439423, 109.000591439423, 109.000591439423, 86.97260029222, 86.97260029222, 86.97260029222, 86.97260029222, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 125.154395321196, 111.54476227716, 111.54476227716, 111.54476227716, 111.54476227716, 111.534112213877, 111.534112213877, 111.534112213877, 111.534112213877, 141.402957287269, 141.402957287269, 141.402957287269, 141.402957287269, 154.271230663359, 154.271230663359, 154.271230663359, 154.271230663359, 74.4005178422471, 74.4005178422471, 74.4005178422471, 74.4005178422471, 47.8903616259911, 47.8903616259911, 47.8903616259911, 47.8903616259911, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 108.185064362446, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 111.26058870717, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 161.916245402711, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 25.5210102642454, 142.494797980837, 142.494797980837, 142.494797980837, 142.494797980837, 40.9988881711646, 40.9988881711646, 40.9988881711646, 40.9988881711646, 112.445748799094, 112.445748799094, 112.445748799094, 112.445748799094, 80.1388934493365, 80.1388934493365, 80.1388934493365, 80.1388934493365, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 37.1752295035166, 56.9050641278456, 56.9050641278456, 56.9050641278456, 56.9050641278456, 51.9082491169161, 51.9082491169161, 51.9082491169161, 51.9082491169161, 125.722806723141, 125.722806723141, 125.722806723141, 125.722806723141, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 95.6215761164365, 63.3711236261809, 63.3711236261809, 63.3711236261809, 63.3711236261809, 90.3545470111292, 90.3545470111292, 90.3545470111292, 90.3545470111292, 94.7524581799912, 94.7524581799912, 94.7524581799912, 94.7524581799912, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 67.4077408604419, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 32.252792862491, 139.579580831556, 139.579580831556, 139.579580831556, 139.579580831556, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 123.424716267644, 1.51240444889553, 1.51240444889553, 1.51240444889553, 1.51240444889553, 2.05581793739078, 2.05581793739078, 2.05581793739078, 2.05581793739078, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 84.3632454529366, 20.5404449841824, 20.5404449841824, 20.5404449841824, 20.5404449841824, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 4.26239069738493, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 99.0490102603856, 66.8924053637841, 66.8924053637841, 66.8924053637841, 66.8924053637841, 70.4304638742623, 70.4304638742623, 70.4304638742623, 70.4304638742623, 90.0282668180551, 90.0282668180551, 90.0282668180551, 90.0282668180551, 62.0861592500489, 62.0861592500489, 62.0861592500489, 62.0861592500489, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 150.644459874422, 3.03006141668336, 3.03006141668336, 3.03006141668336, 3.03006141668336, 110.486376573604, 110.486376573604, 110.486376573604, 110.486376573604, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 123.171144154855, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 96.05776694044, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 170.574387438981, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 85.6518552024474, 96.7659912729992, 96.7659912729992, 96.7659912729992, 96.7659912729992, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 5.1418003404236, 88.4590809105491, 88.4590809105491, 88.4590809105491, 88.4590809105491, 171.568283187282, 171.568283187282, 171.568283187282, 171.568283187282, 163.949804380448, 163.949804380448, 163.949804380448, 163.949804380448, 176.98569438819, 176.98569438819, 176.98569438819, 176.98569438819, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 117.950557344877, 65.7737478066427, 65.7737478066427, 65.7737478066427, 65.7737478066427, 5.5186848899127, 5.5186848899127, 5.5186848899127, 5.5186848899127, 59.1215123180646, 59.1215123180646, 59.1215123180646, 59.1215123180646, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 20.7668269025114, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 64.8485074432533, 109.71515081279, 109.71515081279, 109.71515081279, 109.71515081279, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 74.9199979022139, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 113.471668075215, 112.126988588047, 112.126988588047, 112.126988588047, 112.126988588047, 6.76003351673627, 6.76003351673627, 6.76003351673627, 6.76003351673627, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 11.5453353075845, 99.7009474852712, 99.7009474852712, 99.7009474852712, 99.7009474852712, 10.2848750955344, 10.2848750955344, 10.2848750955344, 10.2848750955344, 127.37824848417, 127.37824848417, 127.37824848417, 127.37824848417, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 68.5413576106518, 88.1372722241022, 88.1372722241022, 88.1372722241022, 88.1372722241022, 110.38984915003, 110.38984915003, 110.38984915003, 110.38984915003, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 178.263964339041, 133.587956565897, 133.587956565897, 133.587956565897, 133.587956565897, 46.566570379081, 46.566570379081, 46.566570379081, 46.566570379081, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 144.884188190555, 77.3440903720825, 77.3440903720825, 77.3440903720825, 77.3440903720825, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 174.286203391831, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509, 176.035440558509],
+            "y": [0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.96, 0.96, 0.96, 0.96, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.9375, 0.9375, 0.9375, 0.9375, 0.571428571428571, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.12, 0.12, 0.12, 0.12, 0.999, 0.999, 0.999, 0.653846153846154, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.96, 0.96, 0.96, 0.96, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.8, 0.8, 0.8, 0.8, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.96, 0.96, 0.96, 0.96, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.596153846153846, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.999, 0.999, 0.999, 0.681818181818182, 0.428571428571429, 0.8, 0.8, 0.8, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.12, 0.12, 0.12, 0.12, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.555555555555556, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.6, 0.6, 0.6, 0.6, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.571428571428571, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.7, 0.7, 0.7, 0.7, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186],
+            "text": "class: PS",
+            "customdata": [2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 5, 5, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 28, 28, 28, 28, 30, 30, 30, 30, 31, 31, 31, 31, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 40, 40, 40, 40, 40, 40, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 44, 44, 44, 44, 46, 46, 46, 46, 47, 47, 47, 47, 47, 47, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 53, 53, 53, 53, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 59, 59, 59, 59, 60, 60, 60, 60, 61, 61, 61, 61, 62, 62, 62, 62, 64, 64, 64, 64, 66, 66, 66, 66, 67, 67, 67, 67, 67, 67, 68, 68, 68, 68, 69, 69, 69, 69, 71, 71, 71, 71, 72, 72, 72, 72, 75, 75, 75, 75, 75, 75, 76, 76, 76, 76, 77, 77, 77, 77, 78, 78, 78, 78, 80, 80, 80, 80, 80, 80, 82, 82, 82, 82, 83, 83, 83, 83, 84, 84, 84, 84, 85, 85, 85, 85, 86, 86, 86, 86, 88, 88, 88, 88, 89, 89, 89, 89, 89, 89, 91, 91, 91, 91, 91, 91, 94, 94, 94, 94, 94, 94, 95, 95, 95, 95, 95, 95, 96, 96, 96, 96, 97, 97, 97, 97, 98, 98, 98, 98, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 102, 102, 102, 102, 103, 103, 103, 103, 104, 104, 104, 104, 105, 105, 105, 105, 105, 105, 107, 107, 107, 107, 111, 111, 111, 111, 112, 112, 112, 112, 114, 114, 114, 114, 114, 114, 117, 117, 117, 117, 117, 117, 118, 118, 118, 118, 119, 119, 119, 119, 119, 119, 120, 120, 120, 120, 121, 121, 121, 121, 123, 123, 123, 123, 123, 123, 124, 124, 124, 124, 126, 126, 126, 126, 126, 126, 127, 127, 127, 127, 127, 127, 128, 128, 128, 128, 129, 129, 129, 129, 130, 130, 130, 130, 131, 131, 131, 131, 132, 132, 132, 132, 132, 132, 137, 137, 137, 137, 138, 138, 138, 138, 139, 139, 139, 139, 139, 139, 140, 140, 140, 140, 140, 140, 141, 141, 141, 141, 141, 141, 143, 143, 143, 143, 143, 143, 144, 144, 144, 144, 145, 145, 145, 145, 145, 145, 149, 149, 149, 149, 150, 150, 150, 150, 151, 151, 151, 151, 152, 152, 152, 152, 153, 153, 153, 153, 153, 153, 154, 154, 154, 154, 155, 155, 155, 155, 157, 157, 157, 157, 159, 159, 159, 159, 159, 159, 162, 162, 162, 162, 162, 162, 164, 164, 164, 164, 166, 166, 166, 166, 166, 166, 167, 167, 167, 167, 167, 167, 168, 168, 168, 168, 170, 170, 170, 170, 172, 172, 172, 172, 172, 172, 173, 173, 173, 173, 174, 174, 174, 174, 175, 175, 175, 175, 178, 178, 178, 178, 178, 178, 181, 181, 181, 181, 186, 186, 186, 186, 187, 187, 187, 187, 187, 187, 190, 190, 190, 190, 193, 193, 193, 193, 194, 194, 194, 194, 194, 194, 195, 195, 195, 195, 196, 196, 196, 196, 196, 196, 200, 200, 200, 200, 200, 200],
+            "type": "scattergl",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+              "opacity": 1,
+              "size": 3.77952755905512,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "top",
-            "annotationType": "axis",
-            "yshift": -21.9178082191781
+            "name": "black",
+            "legendgroup": "black",
+            "showlegend": true,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           },
           {
-            "text": "Probability of  PS",
-            "x": 0,
-            "y": 0.5,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
+            "x": [63.0454410706556, 63.0454410706556, 63.0454410706556, 63.0454410706556, 157.341270907586, 157.341270907586, 157.341270907586, 157.341270907586, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 68.9615140234231, 79.0785149898345, 79.0785149898345, 79.0785149898345, 79.0785149898345, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 22.8897066061615, 118.577829209323, 118.577829209323, 118.577829209323, 118.577829209323, 107.341343539623, 107.341343539623, 107.341343539623, 107.341343539623, 2.08505226644907, 2.08505226644907, 2.08505226644907, 2.08505226644907, 17.9296729204929, 17.9296729204929, 17.9296729204929, 17.9296729204929, 69.8902585278016, 69.8902585278016, 69.8902585278016, 69.8902585278016, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 122.530670561623, 135.862172258113, 135.862172258113, 135.862172258113, 135.862172258113, 34.1917337143989, 34.1917337143989, 34.1917337143989, 34.1917337143989, 171.526095174449, 171.526095174449, 171.526095174449, 171.526095174449, 123.826309723181, 123.826309723181, 123.826309723181, 123.826309723181, 83.9762251720198, 83.9762251720198, 83.9762251720198, 83.9762251720198, 47.3776340333754, 47.3776340333754, 47.3776340333754, 47.3776340333754, 111.04703231473, 111.04703231473, 111.04703231473, 111.04703231473, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 83.4321366025385, 133.244030997099, 133.244030997099, 133.244030997099, 133.244030997099, 1.54514654565428, 1.54514654565428, 1.54514654565428, 1.54514654565428, 60.0309861959956, 60.0309861959956, 60.0309861959956, 60.0309861959956, 133.717142729788, 133.717142729788, 133.717142729788, 133.717142729788, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 68.7377372133653, 27.3609492903018, 27.3609492903018, 27.3609492903018, 27.3609492903018, 106.051360423906, 106.051360423906, 106.051360423906, 106.051360423906, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 138.878905675769, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 103.13519986098, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 160.135509256871, 163.727419613001, 163.727419613001, 163.727419613001, 163.727419613001, 161.116230838402, 161.116230838402, 161.116230838402, 161.116230838402, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 49.2201639922047, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 64.5585557022993, 165.682629252045, 165.682629252045, 165.682629252045, 165.682629252045, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 53.0651694130057, 41.739119240782, 41.739119240782, 41.739119240782, 41.739119240782, 105.082465124563, 105.082465124563, 105.082465124563, 105.082465124563, 58.7021026082439, 58.7021026082439, 58.7021026082439, 58.7021026082439, 117.868631267464, 117.868631267464, 117.868631267464, 117.868631267464, 114.361735029025, 114.361735029025, 114.361735029025, 114.361735029025, 164.490629269011, 164.490629269011, 164.490629269011, 164.490629269011, 17.664996886701, 17.664996886701, 17.664996886701, 17.664996886701, 10.4935789099924, 10.4935789099924, 10.4935789099924, 10.4935789099924, 165.372159516889, 165.372159516889, 165.372159516889, 165.372159516889, 118.686005155806, 118.686005155806, 118.686005155806, 118.686005155806, 94.0031460443597, 94.0031460443597, 94.0031460443597, 94.0031460443597, 127.991935450021, 127.991935450021, 127.991935450021, 127.991935450021, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 120.750002736555, 154.070880994733, 154.070880994733, 154.070880994733, 154.070880994733, 164.779322478274, 164.779322478274, 164.779322478274, 164.779322478274, 64.5186715436787, 64.5186715436787, 64.5186715436787, 64.5186715436787, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 147.772616760133, 169.73121988248, 169.73121988248, 169.73121988248, 169.73121988248, 74.4931239682689, 74.4931239682689, 74.4931239682689, 74.4931239682689, 176.129536198093, 176.129536198093, 176.129536198093, 176.129536198093, 36.765967968779, 36.765967968779, 36.765967968779, 36.765967968779, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 95.291355089948, 113.414874708965, 113.414874708965, 113.414874708965, 113.414874708965, 0.479155270307707, 0.479155270307707, 0.479155270307707, 0.479155270307707, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 143.542373501692, 147.063337446046, 147.063337446046, 147.063337446046, 147.063337446046, 167.857060527709, 167.857060527709, 167.857060527709, 167.857060527709, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 158.406289816577, 142.583195741513, 142.583195741513, 142.583195741513, 142.583195741513, 151.066971779926, 151.066971779926, 151.066971779926, 151.066971779926, 146.346023442405, 146.346023442405, 146.346023442405, 146.346023442405, 4.51023414094056, 4.51023414094056, 4.51023414094056, 4.51023414094056, 80.2295827119512, 80.2295827119512, 80.2295827119512, 80.2295827119512, 161.465214317349, 161.465214317349, 161.465214317349, 161.465214317349, 5.6087092840173, 5.6087092840173, 5.6087092840173, 5.6087092840173, 77.5957735055867, 77.5957735055867, 77.5957735055867, 77.5957735055867, 20.1349381739137, 20.1349381739137, 20.1349381739137, 20.1349381739137, 41.504304979066, 41.504304979066, 41.504304979066, 41.504304979066, 106.844369325432, 106.844369325432, 106.844369325432, 106.844369325432, 132.486817945392, 132.486817945392, 132.486817945392, 132.486817945392],
+            "y": [0.416666666666667, 0.416666666666667, 0.416666666666667, 0.681818181818182, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.999, 0.999, 0.999, 0.681818181818182, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.999, 0.999, 0.999, 0.653846153846154, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.7, 0.7, 0.7, 0.7, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.12, 0.12, 0.12, 0.12, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.36, 0.596153846153846, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.001, 0.001, 0.001, 0.001, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.7, 0.7, 0.7, 0.7, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.999, 0.8, 0.8, 0.8, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.84, 0.84, 0.84, 0.84, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.001, 0.001, 0.001, 0.001, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.001, 0.001, 0.001, 0.001, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235],
+            "text": "class: WS",
+            "customdata": [1, 1, 1, 1, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 27, 27, 27, 27, 29, 29, 29, 29, 32, 32, 32, 32, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 41, 41, 41, 41, 45, 45, 45, 45, 45, 45, 48, 48, 48, 48, 52, 52, 52, 52, 54, 54, 54, 54, 58, 58, 58, 58, 63, 63, 63, 63, 63, 63, 65, 65, 65, 65, 70, 70, 70, 70, 73, 73, 73, 73, 73, 73, 74, 74, 74, 74, 74, 74, 79, 79, 79, 79, 79, 79, 81, 81, 81, 81, 87, 87, 87, 87, 90, 90, 90, 90, 90, 90, 92, 92, 92, 92, 92, 92, 93, 93, 93, 93, 101, 101, 101, 101, 101, 101, 106, 106, 106, 106, 108, 108, 108, 108, 109, 109, 109, 109, 110, 110, 110, 110, 113, 113, 113, 113, 115, 115, 115, 115, 116, 116, 116, 116, 122, 122, 122, 122, 125, 125, 125, 125, 133, 133, 133, 133, 134, 134, 134, 134, 135, 135, 135, 135, 136, 136, 136, 136, 136, 136, 142, 142, 142, 142, 146, 146, 146, 146, 147, 147, 147, 147, 148, 148, 148, 148, 148, 148, 156, 156, 156, 156, 158, 158, 158, 158, 160, 160, 160, 160, 161, 161, 161, 161, 163, 163, 163, 163, 163, 163, 165, 165, 165, 165, 169, 169, 169, 169, 171, 171, 171, 171, 171, 171, 176, 176, 176, 176, 177, 177, 177, 177, 179, 179, 179, 179, 179, 179, 180, 180, 180, 180, 182, 182, 182, 182, 183, 183, 183, 183, 184, 184, 184, 184, 185, 185, 185, 185, 188, 188, 188, 188, 189, 189, 189, 189, 191, 191, 191, 191, 192, 192, 192, 192, 197, 197, 197, 197, 198, 198, 198, 198, 199, 199, 199, 199],
+            "type": "scattergl",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+              "opacity": 1,
+              "size": 3.77952755905512,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -90,
-            "xanchor": "right",
-            "yanchor": "center",
-            "annotationType": "axis",
-            "xshift": -27.7625570776256
-          },
-          {
-            "text": "Truth: PS",
-            "x": 0.5,
-            "y": 1,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
-          },
-          {
-            "text": "Truth: WS",
-            "x": 0.5,
-            "y": 0.470319634703196,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
+            "name": "black",
+            "legendgroup": "black",
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y2",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "yaxis": {
-          "domain": [0.529680365296804, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
+        "layout": {
+          "margin": {
+            "t": 37.4307458143075,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 43.1050228310502
           },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "shapes": [
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0.529680365296804,
-            "y1": 1
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 1,
-            "ysizemode": "pixel"
-          },
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 0.470319634703196
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 0.470319634703196,
-            "ysizemode": "pixel"
-          }
-        ],
-        "yaxis2": {
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "domain": [0, 0.470319634703196],
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+          "plot_bgcolor": "rgba(235,235,235,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-8.41008518312896, 187.153204792478],
+            "tickmode": "array",
+            "ticktext": ["0", "50", "100", "150"],
+            "tickvals": [0, 50, 100, 150],
+            "categoryorder": "array",
+            "categoryarray": ["0", "50", "100", "150"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y2",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "annotations": [
+            {
+              "text": "angle_ch_1",
+              "x": 0.5,
+              "y": 0,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "top",
+              "annotationType": "axis",
+              "yshift": -21.9178082191781
+            },
+            {
+              "text": "Probability of  PS",
+              "x": 0,
+              "y": 0.5,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -90,
+              "xanchor": "right",
+              "yanchor": "center",
+              "annotationType": "axis",
+              "xshift": -27.7625570776256
+            },
+            {
+              "text": "Truth: PS",
+              "x": 0.5,
+              "y": 1,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            },
+            {
+              "text": "Truth: WS",
+              "x": 0.5,
+              "y": 0.470319634703196,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            }
+          ],
+          "yaxis": {
+            "domain": [0.529680365296804, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0.529680365296804,
+              "y1": 1
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 1,
+              "ysizemode": "pixel"
+            },
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 0.470319634703196
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 0.470319634703196,
+              "ysizemode": "pixel"
+            }
+          ],
+          "yaxis2": {
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "domain": [0, 0.470319634703196],
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": null,
-      "cur_data": "env-name",
-      ".plotlyWebGl": true,
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": null,
+        "cur_data": "env-name",
+        ".plotlyWebGl": true,
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 
 # can accurately plot predicted probabilities vs. a factor column plot
 
@@ -941,357 +950,360 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "x": [0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.96, 0.96, 0.96, 0.96, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.9375, 0.9375, 0.9375, 0.9375, 0.571428571428571, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.12, 0.12, 0.12, 0.12, 0.999, 0.999, 0.999, 0.653846153846154, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.96, 0.96, 0.96, 0.96, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.8, 0.8, 0.8, 0.8, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.96, 0.96, 0.96, 0.96, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.596153846153846, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.999, 0.999, 0.999, 0.681818181818182, 0.428571428571429, 0.8, 0.8, 0.8, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.12, 0.12, 0.12, 0.12, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.555555555555556, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.6, 0.6, 0.6, 0.6, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.571428571428571, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.7, 0.7, 0.7, 0.7, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186],
-          "y": [2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1],
-          "text": "class: PS",
-          "customdata": [2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 5, 5, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 28, 28, 28, 28, 30, 30, 30, 30, 31, 31, 31, 31, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 40, 40, 40, 40, 40, 40, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 44, 44, 44, 44, 46, 46, 46, 46, 47, 47, 47, 47, 47, 47, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 53, 53, 53, 53, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 59, 59, 59, 59, 60, 60, 60, 60, 61, 61, 61, 61, 62, 62, 62, 62, 64, 64, 64, 64, 66, 66, 66, 66, 67, 67, 67, 67, 67, 67, 68, 68, 68, 68, 69, 69, 69, 69, 71, 71, 71, 71, 72, 72, 72, 72, 75, 75, 75, 75, 75, 75, 76, 76, 76, 76, 77, 77, 77, 77, 78, 78, 78, 78, 80, 80, 80, 80, 80, 80, 82, 82, 82, 82, 83, 83, 83, 83, 84, 84, 84, 84, 85, 85, 85, 85, 86, 86, 86, 86, 88, 88, 88, 88, 89, 89, 89, 89, 89, 89, 91, 91, 91, 91, 91, 91, 94, 94, 94, 94, 94, 94, 95, 95, 95, 95, 95, 95, 96, 96, 96, 96, 97, 97, 97, 97, 98, 98, 98, 98, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 102, 102, 102, 102, 103, 103, 103, 103, 104, 104, 104, 104, 105, 105, 105, 105, 105, 105, 107, 107, 107, 107, 111, 111, 111, 111, 112, 112, 112, 112, 114, 114, 114, 114, 114, 114, 117, 117, 117, 117, 117, 117, 118, 118, 118, 118, 119, 119, 119, 119, 119, 119, 120, 120, 120, 120, 121, 121, 121, 121, 123, 123, 123, 123, 123, 123, 124, 124, 124, 124, 126, 126, 126, 126, 126, 126, 127, 127, 127, 127, 127, 127, 128, 128, 128, 128, 129, 129, 129, 129, 130, 130, 130, 130, 131, 131, 131, 131, 132, 132, 132, 132, 132, 132, 137, 137, 137, 137, 138, 138, 138, 138, 139, 139, 139, 139, 139, 139, 140, 140, 140, 140, 140, 140, 141, 141, 141, 141, 141, 141, 143, 143, 143, 143, 143, 143, 144, 144, 144, 144, 145, 145, 145, 145, 145, 145, 149, 149, 149, 149, 150, 150, 150, 150, 151, 151, 151, 151, 152, 152, 152, 152, 153, 153, 153, 153, 153, 153, 154, 154, 154, 154, 155, 155, 155, 155, 157, 157, 157, 157, 159, 159, 159, 159, 159, 159, 162, 162, 162, 162, 162, 162, 164, 164, 164, 164, 166, 166, 166, 166, 166, 166, 167, 167, 167, 167, 167, 167, 168, 168, 168, 168, 170, 170, 170, 170, 172, 172, 172, 172, 172, 172, 173, 173, 173, 173, 174, 174, 174, 174, 175, 175, 175, 175, 178, 178, 178, 178, 178, 178, 181, 181, 181, 181, 186, 186, 186, 186, 187, 187, 187, 187, 187, 187, 190, 190, 190, 190, 193, 193, 193, 193, 194, 194, 194, 194, 194, 194, 195, 195, 195, 195, 196, 196, 196, 196, 196, 196, 200, 200, 200, 200, 200, 200],
-          "type": "scattergl",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 3.77952755905512,
-            "symbol": "circle",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "name": "black",
-          "legendgroup": "black",
-          "showlegend": true,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "x": [0.416666666666667, 0.416666666666667, 0.416666666666667, 0.681818181818182, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.999, 0.999, 0.999, 0.681818181818182, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.999, 0.999, 0.999, 0.653846153846154, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.7, 0.7, 0.7, 0.7, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.12, 0.12, 0.12, 0.12, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.36, 0.596153846153846, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.001, 0.001, 0.001, 0.001, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.7, 0.7, 0.7, 0.7, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.999, 0.8, 0.8, 0.8, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.84, 0.84, 0.84, 0.84, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.001, 0.001, 0.001, 0.001, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.001, 0.001, 0.001, 0.001, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235],
-          "y": [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2],
-          "text": "class: WS",
-          "customdata": [1, 1, 1, 1, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 27, 27, 27, 27, 29, 29, 29, 29, 32, 32, 32, 32, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 41, 41, 41, 41, 45, 45, 45, 45, 45, 45, 48, 48, 48, 48, 52, 52, 52, 52, 54, 54, 54, 54, 58, 58, 58, 58, 63, 63, 63, 63, 63, 63, 65, 65, 65, 65, 70, 70, 70, 70, 73, 73, 73, 73, 73, 73, 74, 74, 74, 74, 74, 74, 79, 79, 79, 79, 79, 79, 81, 81, 81, 81, 87, 87, 87, 87, 90, 90, 90, 90, 90, 90, 92, 92, 92, 92, 92, 92, 93, 93, 93, 93, 101, 101, 101, 101, 101, 101, 106, 106, 106, 106, 108, 108, 108, 108, 109, 109, 109, 109, 110, 110, 110, 110, 113, 113, 113, 113, 115, 115, 115, 115, 116, 116, 116, 116, 122, 122, 122, 122, 125, 125, 125, 125, 133, 133, 133, 133, 134, 134, 134, 134, 135, 135, 135, 135, 136, 136, 136, 136, 136, 136, 142, 142, 142, 142, 146, 146, 146, 146, 147, 147, 147, 147, 148, 148, 148, 148, 148, 148, 156, 156, 156, 156, 158, 158, 158, 158, 160, 160, 160, 160, 161, 161, 161, 161, 163, 163, 163, 163, 163, 163, 165, 165, 165, 165, 169, 169, 169, 169, 171, 171, 171, 171, 171, 171, 176, 176, 176, 176, 177, 177, 177, 177, 179, 179, 179, 179, 179, 179, 180, 180, 180, 180, 182, 182, 182, 182, 183, 183, 183, 183, 184, 184, 184, 184, 185, 185, 185, 185, 188, 188, 188, 188, 189, 189, 189, 189, 191, 191, 191, 191, 192, 192, 192, 192, 197, 197, 197, 197, 198, 198, 198, 198, 199, 199, 199, 199],
-          "type": "scattergl",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 3.77952755905512,
-            "symbol": "circle",
-            "line": {
-              "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "name": "black",
-          "legendgroup": "black",
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y2",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 37.4307458143075,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 31.4155251141553
-        },
-        "plot_bgcolor": "rgba(235,235,235,1)",
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y2",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "annotations": [
+    Code
+      make_clean_snapshot(d)
+    Output
+      {
+        "data": [
           {
-            "text": "Probability of  PS",
-            "x": 0.5,
-            "y": 0,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
+            "x": [0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.96, 0.96, 0.96, 0.96, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.9375, 0.9375, 0.9375, 0.9375, 0.571428571428571, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.12, 0.12, 0.12, 0.12, 0.999, 0.999, 0.999, 0.653846153846154, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.9375, 0.9375, 0.9375, 0.9375, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.777777777777778, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.176470588235294, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.96, 0.96, 0.96, 0.96, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.714285714285714, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.8, 0.8, 0.8, 0.8, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.96, 0.96, 0.96, 0.96, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.814814814814815, 0.596153846153846, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.999, 0.999, 0.999, 0.681818181818182, 0.428571428571429, 0.8, 0.8, 0.8, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.12, 0.12, 0.12, 0.12, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.9375, 0.9375, 0.9375, 0.9375, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.84, 0.84, 0.84, 0.84, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.846153846153846, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.96, 0.96, 0.96, 0.96, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.555555555555556, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.761904761904762, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.6, 0.6, 0.6, 0.6, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.571428571428571, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.7, 0.7, 0.7, 0.7, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.571428571428571, 0.571428571428571, 0.571428571428571, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.970588235294118, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.9375, 0.9375, 0.9375, 0.9375, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.958333333333333, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.957142857142857, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.958904109589041, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.955882352941177, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186],
+            "y": [2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 2, 2, 1, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1],
+            "text": "class: PS",
+            "customdata": [2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 5, 5, 5, 5, 7, 7, 7, 7, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 19, 19, 19, 19, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 28, 28, 28, 28, 30, 30, 30, 30, 31, 31, 31, 31, 33, 33, 33, 33, 34, 34, 34, 34, 35, 35, 35, 35, 36, 36, 36, 36, 40, 40, 40, 40, 40, 40, 42, 42, 42, 42, 43, 43, 43, 43, 44, 44, 44, 44, 44, 44, 46, 46, 46, 46, 47, 47, 47, 47, 47, 47, 49, 49, 49, 49, 49, 49, 50, 50, 50, 50, 50, 50, 51, 51, 51, 51, 53, 53, 53, 53, 55, 55, 55, 55, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 59, 59, 59, 59, 60, 60, 60, 60, 61, 61, 61, 61, 62, 62, 62, 62, 64, 64, 64, 64, 66, 66, 66, 66, 67, 67, 67, 67, 67, 67, 68, 68, 68, 68, 69, 69, 69, 69, 71, 71, 71, 71, 72, 72, 72, 72, 75, 75, 75, 75, 75, 75, 76, 76, 76, 76, 77, 77, 77, 77, 78, 78, 78, 78, 80, 80, 80, 80, 80, 80, 82, 82, 82, 82, 83, 83, 83, 83, 84, 84, 84, 84, 85, 85, 85, 85, 86, 86, 86, 86, 88, 88, 88, 88, 89, 89, 89, 89, 89, 89, 91, 91, 91, 91, 91, 91, 94, 94, 94, 94, 94, 94, 95, 95, 95, 95, 95, 95, 96, 96, 96, 96, 97, 97, 97, 97, 98, 98, 98, 98, 99, 99, 99, 99, 100, 100, 100, 100, 100, 100, 102, 102, 102, 102, 103, 103, 103, 103, 104, 104, 104, 104, 105, 105, 105, 105, 105, 105, 107, 107, 107, 107, 111, 111, 111, 111, 112, 112, 112, 112, 114, 114, 114, 114, 114, 114, 117, 117, 117, 117, 117, 117, 118, 118, 118, 118, 119, 119, 119, 119, 119, 119, 120, 120, 120, 120, 121, 121, 121, 121, 123, 123, 123, 123, 123, 123, 124, 124, 124, 124, 126, 126, 126, 126, 126, 126, 127, 127, 127, 127, 127, 127, 128, 128, 128, 128, 129, 129, 129, 129, 130, 130, 130, 130, 131, 131, 131, 131, 132, 132, 132, 132, 132, 132, 137, 137, 137, 137, 138, 138, 138, 138, 139, 139, 139, 139, 139, 139, 140, 140, 140, 140, 140, 140, 141, 141, 141, 141, 141, 141, 143, 143, 143, 143, 143, 143, 144, 144, 144, 144, 145, 145, 145, 145, 145, 145, 149, 149, 149, 149, 150, 150, 150, 150, 151, 151, 151, 151, 152, 152, 152, 152, 153, 153, 153, 153, 153, 153, 154, 154, 154, 154, 155, 155, 155, 155, 157, 157, 157, 157, 159, 159, 159, 159, 159, 159, 162, 162, 162, 162, 162, 162, 164, 164, 164, 164, 166, 166, 166, 166, 166, 166, 167, 167, 167, 167, 167, 167, 168, 168, 168, 168, 170, 170, 170, 170, 172, 172, 172, 172, 172, 172, 173, 173, 173, 173, 174, 174, 174, 174, 175, 175, 175, 175, 178, 178, 178, 178, 178, 178, 181, 181, 181, 181, 186, 186, 186, 186, 187, 187, 187, 187, 187, 187, 190, 190, 190, 190, 193, 193, 193, 193, 194, 194, 194, 194, 194, 194, 195, 195, 195, 195, 196, 196, 196, 196, 196, 196, 200, 200, 200, 200, 200, 200],
+            "type": "scattergl",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+              "opacity": 1,
+              "size": 3.77952755905512,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "top",
-            "annotationType": "axis",
-            "yshift": -21.9178082191781
+            "name": "black",
+            "legendgroup": "black",
+            "showlegend": true,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           },
           {
-            "text": "fact_col",
-            "x": 0,
-            "y": 0.5,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
+            "x": [0.416666666666667, 0.416666666666667, 0.416666666666667, 0.681818181818182, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.999, 0.999, 0.999, 0.681818181818182, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.833333333333333, 0.27906976744186, 0.27906976744186, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.999, 0.999, 0.999, 0.653846153846154, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.7, 0.7, 0.7, 0.7, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.363636363636364, 0.652173913043478, 0.303370786516854, 0.12, 0.12, 0.12, 0.12, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.692307692307692, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.0833333333333333, 0.36, 0.596153846153846, 0.0909090909090909, 0.3, 0.3, 0.3, 0.27906976744186, 0.27906976744186, 0.9375, 0.9375, 0.9375, 0.9375, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.148148148148148, 0.27906976744186, 0.27906976744186, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.307692307692308, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.927710843373494, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.787878787878788, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.001, 0.001, 0.001, 0.001, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.145161290322581, 0.625, 0.625, 0.625, 0.191176470588235, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.963414634146341, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.106382978723404, 0.7, 0.7, 0.7, 0.7, 0.108695652173913, 0.108695652173913, 0.108695652173913, 0.216666666666667, 0.216666666666667, 0.216666666666667, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.999, 0.8, 0.8, 0.8, 0.135593220338983, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.181818181818182, 0.303370786516854, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.0909090909090909, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.857142857142857, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.209677419354839, 0.84, 0.84, 0.84, 0.84, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.222222222222222, 0.001, 0.001, 0.001, 0.001, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.80952380952381, 0.001, 0.001, 0.001, 0.001, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.12, 0.0652173913043478, 0.132075471698113, 0.132075471698113, 0.132075471698113, 0.133333333333333, 0.133333333333333, 0.133333333333333, 0.191176470588235],
+            "y": [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 1, 1, 2, 1, 2, 2, 2, 1, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1, 2, 2, 1, 1, 1, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2, 2, 1, 1, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 2, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 1, 2, 1, 2, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 2, 2, 1, 1, 2, 1, 1, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2],
+            "text": "class: WS",
+            "customdata": [1, 1, 1, 1, 3, 3, 3, 3, 6, 6, 6, 6, 6, 6, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 13, 13, 13, 13, 14, 14, 14, 14, 15, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25, 25, 26, 26, 26, 26, 26, 26, 27, 27, 27, 27, 29, 29, 29, 29, 32, 32, 32, 32, 37, 37, 37, 37, 38, 38, 38, 38, 39, 39, 39, 39, 41, 41, 41, 41, 45, 45, 45, 45, 45, 45, 48, 48, 48, 48, 52, 52, 52, 52, 54, 54, 54, 54, 58, 58, 58, 58, 63, 63, 63, 63, 63, 63, 65, 65, 65, 65, 70, 70, 70, 70, 73, 73, 73, 73, 73, 73, 74, 74, 74, 74, 74, 74, 79, 79, 79, 79, 79, 79, 81, 81, 81, 81, 87, 87, 87, 87, 90, 90, 90, 90, 90, 90, 92, 92, 92, 92, 92, 92, 93, 93, 93, 93, 101, 101, 101, 101, 101, 101, 106, 106, 106, 106, 108, 108, 108, 108, 109, 109, 109, 109, 110, 110, 110, 110, 113, 113, 113, 113, 115, 115, 115, 115, 116, 116, 116, 116, 122, 122, 122, 122, 125, 125, 125, 125, 133, 133, 133, 133, 134, 134, 134, 134, 135, 135, 135, 135, 136, 136, 136, 136, 136, 136, 142, 142, 142, 142, 146, 146, 146, 146, 147, 147, 147, 147, 148, 148, 148, 148, 148, 148, 156, 156, 156, 156, 158, 158, 158, 158, 160, 160, 160, 160, 161, 161, 161, 161, 163, 163, 163, 163, 163, 163, 165, 165, 165, 165, 169, 169, 169, 169, 171, 171, 171, 171, 171, 171, 176, 176, 176, 176, 177, 177, 177, 177, 179, 179, 179, 179, 179, 179, 180, 180, 180, 180, 182, 182, 182, 182, 183, 183, 183, 183, 184, 184, 184, 184, 185, 185, 185, 185, 188, 188, 188, 188, 189, 189, 189, 189, 191, 191, 191, 191, 192, 192, 192, 192, 197, 197, 197, 197, 198, 198, 198, 198, 199, 199, 199, 199],
+            "type": "scattergl",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
+              "opacity": 1,
+              "size": 3.77952755905512,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
             },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -90,
-            "xanchor": "right",
-            "yanchor": "center",
-            "annotationType": "axis",
-            "xshift": -16.0730593607306
-          },
-          {
-            "text": "Truth: PS",
-            "x": 0.5,
-            "y": 1,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
-          },
-          {
-            "text": "Truth: WS",
-            "x": 0.5,
-            "y": 0.470319634703196,
-            "showarrow": false,
-            "ax": 0,
-            "ay": 0,
-            "font": {
-              "color": "rgba(26,26,26,1)",
-              "family": "",
-              "size": 11.689497716895
-            },
-            "xref": "paper",
-            "yref": "paper",
-            "textangle": -0,
-            "xanchor": "center",
-            "yanchor": "bottom"
+            "name": "black",
+            "legendgroup": "black",
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y2",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "yaxis": {
-          "domain": [0.529680365296804, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [0.4, 2.6],
-          "tickmode": "array",
-          "ticktext": ["a", "b"],
-          "tickvals": [1, 2],
-          "categoryorder": "array",
-          "categoryarray": ["a", "b"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
+        "layout": {
+          "margin": {
+            "t": 37.4307458143075,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 31.4155251141553
           },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "shapes": [
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0.529680365296804,
-            "y1": 1
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 1,
-            "ysizemode": "pixel"
-          },
-          {
-            "type": "rect",
-            "fillcolor": null,
-            "line": {
-              "color": null,
-              "width": 0,
-              "linetype": []
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 0.470319634703196
-          },
-          {
-            "type": "rect",
-            "fillcolor": "rgba(217,217,217,1)",
-            "line": {
-              "color": "transparent",
-              "width": 0.66417600664176,
-              "linetype": "solid"
-            },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 23.37899543379,
-            "yanchor": 0.470319634703196,
-            "ysizemode": "pixel"
-          }
-        ],
-        "yaxis2": {
-          "type": "linear",
-          "autorange": false,
-          "range": [0.4, 2.6],
-          "tickmode": "array",
-          "ticktext": ["a", "b"],
-          "tickvals": [1, 2],
-          "categoryorder": "array",
-          "categoryarray": ["a", "b"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "domain": [0, 0.470319634703196],
-          "gridcolor": "rgba(255,255,255,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": "",
-          "hoverformat": ".2f"
-        },
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+          "plot_bgcolor": "rgba(235,235,235,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "tickvals": [0, 0.2, 0.4, 0.6, 0.8, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.0", "0.2", "0.4", "0.6", "0.8", "1.0"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y2",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "annotations": [
+            {
+              "text": "Probability of  PS",
+              "x": 0.5,
+              "y": 0,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "top",
+              "annotationType": "axis",
+              "yshift": -21.9178082191781
+            },
+            {
+              "text": "fact_col",
+              "x": 0,
+              "y": 0.5,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -90,
+              "xanchor": "right",
+              "yanchor": "center",
+              "annotationType": "axis",
+              "xshift": -16.0730593607306
+            },
+            {
+              "text": "Truth: PS",
+              "x": 0.5,
+              "y": 1,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            },
+            {
+              "text": "Truth: WS",
+              "x": 0.5,
+              "y": 0.470319634703196,
+              "showarrow": false,
+              "ax": 0,
+              "ay": 0,
+              "font": {
+                "color": "rgba(26,26,26,1)",
+                "family": "",
+                "size": 11.689497716895
+              },
+              "xref": "paper",
+              "yref": "paper",
+              "textangle": -0,
+              "xanchor": "center",
+              "yanchor": "bottom"
+            }
+          ],
+          "yaxis": {
+            "domain": [0.529680365296804, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [0.4, 2.6],
+            "tickmode": "array",
+            "ticktext": ["a", "b"],
+            "tickvals": [1, 2],
+            "categoryorder": "array",
+            "categoryarray": ["a", "b"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0.529680365296804,
+              "y1": 1
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 1,
+              "ysizemode": "pixel"
+            },
+            {
+              "type": "rect",
+              "fillcolor": null,
+              "line": {
+                "color": null,
+                "width": 0,
+                "linetype": []
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 0.470319634703196
+            },
+            {
+              "type": "rect",
+              "fillcolor": "rgba(217,217,217,1)",
+              "line": {
+                "color": "transparent",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 23.37899543379,
+              "yanchor": 0.470319634703196,
+              "ysizemode": "pixel"
+            }
+          ],
+          "yaxis2": {
+            "type": "linear",
+            "autorange": false,
+            "range": [0.4, 2.6],
+            "tickmode": "array",
+            "ticktext": ["a", "b"],
+            "tickvals": [1, 2],
+            "categoryorder": "array",
+            "categoryarray": ["a", "b"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "domain": [0, 0.470319634703196],
+            "gridcolor": "rgba(255,255,255,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": "",
+            "hoverformat": ".2f"
+          },
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": null,
-      "cur_data": "env-name",
-      ".plotlyWebGl": true,
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": null,
+        "cur_data": "env-name",
+        ".plotlyWebGl": true,
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 
 # can accurately plot the ROC curve
 
@@ -1309,219 +1321,222 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "x": [1, 1, 0.963855421686747, 0.957831325301205, 0.94578313253012, 0.91566265060241, 0.891566265060241, 0.864457831325301, 0.828313253012048, 0.810240963855422, 0.783132530120482, 0.771084337349398, 0.710843373493976, 0.686746987951807, 0.686746987951807, 0.63855421686747, 0.623493975903614, 0.515060240963855, 0.487951807228916, 0.403614457831325, 0.373493975903614, 0.355421686746988, 0.340361445783133, 0.328313253012048, 0.325301204819277, 0.313253012048193, 0.30421686746988, 0.30421686746988, 0.30421686746988, 0.30421686746988, 0.301204819277108, 0.301204819277108, 0.283132530120482, 0.280120481927711, 0.27710843373494, 0.271084337349398, 0.259036144578313, 0.234939759036145, 0.234939759036145, 0.234939759036145, 0.234939759036145, 0.198795180722892, 0.189759036144578, 0.177710843373494, 0.177710843373494, 0.16566265060241, 0.153614457831325, 0.153614457831325, 0.141566265060241, 0.105421686746988, 0.0933734939759037, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0210843373493976, 0.0210843373493976, 0],
-          "y": [1, 1, 1, 0.998299319727891, 0.998299319727891, 0.994897959183674, 0.988095238095238, 0.982993197278912, 0.969387755102041, 0.959183673469388, 0.938775510204082, 0.937074829931973, 0.916666666666667, 0.903061224489796, 0.896258503401361, 0.88265306122449, 0.875850340136054, 0.869047619047619, 0.853741496598639, 0.846938775510204, 0.826530612244898, 0.811224489795918, 0.806122448979592, 0.806122448979592, 0.806122448979592, 0.799319727891156, 0.799319727891156, 0.797619047619048, 0.795918367346939, 0.782312925170068, 0.780612244897959, 0.773809523809524, 0.773809523809524, 0.772108843537415, 0.770408163265306, 0.768707482993197, 0.755102040816326, 0.748299319727891, 0.741496598639456, 0.72108843537415, 0.707482993197279, 0.693877551020408, 0.681972789115646, 0.675170068027211, 0.666666666666667, 0.659863945578231, 0.646258503401361, 0.63265306122449, 0.63265306122449, 0.63265306122449, 0.585034013605442, 0.523809523809524, 0.401360544217687, 0.299319727891156, 0.244897959183673, 0.125850340136054, 0.0918367346938776, 0.0578231292517007, 0.0102040816326531, 0],
-          "text": ["1 - specificity: 1.00000000<br />sensitivity: 1.00000000", "1 - specificity: 1.00000000<br />sensitivity: 1.00000000", "1 - specificity: 0.96385542<br />sensitivity: 1.00000000", "1 - specificity: 0.95783133<br />sensitivity: 0.99829932", "1 - specificity: 0.94578313<br />sensitivity: 0.99829932", "1 - specificity: 0.91566265<br />sensitivity: 0.99489796", "1 - specificity: 0.89156627<br />sensitivity: 0.98809524", "1 - specificity: 0.86445783<br />sensitivity: 0.98299320", "1 - specificity: 0.82831325<br />sensitivity: 0.96938776", "1 - specificity: 0.81024096<br />sensitivity: 0.95918367", "1 - specificity: 0.78313253<br />sensitivity: 0.93877551", "1 - specificity: 0.77108434<br />sensitivity: 0.93707483", "1 - specificity: 0.71084337<br />sensitivity: 0.91666667", "1 - specificity: 0.68674699<br />sensitivity: 0.90306122", "1 - specificity: 0.68674699<br />sensitivity: 0.89625850", "1 - specificity: 0.63855422<br />sensitivity: 0.88265306", "1 - specificity: 0.62349398<br />sensitivity: 0.87585034", "1 - specificity: 0.51506024<br />sensitivity: 0.86904762", "1 - specificity: 0.48795181<br />sensitivity: 0.85374150", "1 - specificity: 0.40361446<br />sensitivity: 0.84693878", "1 - specificity: 0.37349398<br />sensitivity: 0.82653061", "1 - specificity: 0.35542169<br />sensitivity: 0.81122449", "1 - specificity: 0.34036145<br />sensitivity: 0.80612245", "1 - specificity: 0.32831325<br />sensitivity: 0.80612245", "1 - specificity: 0.32530120<br />sensitivity: 0.80612245", "1 - specificity: 0.31325301<br />sensitivity: 0.79931973", "1 - specificity: 0.30421687<br />sensitivity: 0.79931973", "1 - specificity: 0.30421687<br />sensitivity: 0.79761905", "1 - specificity: 0.30421687<br />sensitivity: 0.79591837", "1 - specificity: 0.30421687<br />sensitivity: 0.78231293", "1 - specificity: 0.30120482<br />sensitivity: 0.78061224", "1 - specificity: 0.30120482<br />sensitivity: 0.77380952", "1 - specificity: 0.28313253<br />sensitivity: 0.77380952", "1 - specificity: 0.28012048<br />sensitivity: 0.77210884", "1 - specificity: 0.27710843<br />sensitivity: 0.77040816", "1 - specificity: 0.27108434<br />sensitivity: 0.76870748", "1 - specificity: 0.25903614<br />sensitivity: 0.75510204", "1 - specificity: 0.23493976<br />sensitivity: 0.74829932", "1 - specificity: 0.23493976<br />sensitivity: 0.74149660", "1 - specificity: 0.23493976<br />sensitivity: 0.72108844", "1 - specificity: 0.23493976<br />sensitivity: 0.70748299", "1 - specificity: 0.19879518<br />sensitivity: 0.69387755", "1 - specificity: 0.18975904<br />sensitivity: 0.68197279", "1 - specificity: 0.17771084<br />sensitivity: 0.67517007", "1 - specificity: 0.17771084<br />sensitivity: 0.66666667", "1 - specificity: 0.16566265<br />sensitivity: 0.65986395", "1 - specificity: 0.15361446<br />sensitivity: 0.64625850", "1 - specificity: 0.15361446<br />sensitivity: 0.63265306", "1 - specificity: 0.14156627<br />sensitivity: 0.63265306", "1 - specificity: 0.10542169<br />sensitivity: 0.63265306", "1 - specificity: 0.09337349<br />sensitivity: 0.58503401", "1 - specificity: 0.06927711<br />sensitivity: 0.52380952", "1 - specificity: 0.06927711<br />sensitivity: 0.40136054", "1 - specificity: 0.06927711<br />sensitivity: 0.29931973", "1 - specificity: 0.06927711<br />sensitivity: 0.24489796", "1 - specificity: 0.06927711<br />sensitivity: 0.12585034", "1 - specificity: 0.06927711<br />sensitivity: 0.09183673", "1 - specificity: 0.02108434<br />sensitivity: 0.05782313", "1 - specificity: 0.02108434<br />sensitivity: 0.01020408", "1 - specificity: 0.00000000<br />sensitivity: 0.00000000"],
-          "type": "scatter",
-          "mode": "lines",
-          "line": {
-            "width": 1.88976377952756,
-            "color": "rgba(0,0,0,1)",
-            "dash": "solid"
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "x": [-0.05, 1.05],
-          "y": [-0.05, 1.05],
-          "text": "intercept: 0<br />slope: 1",
-          "type": "scatter",
-          "mode": "lines",
-          "line": {
-            "width": 1.88976377952756,
-            "color": "rgba(0,0,0,1)",
-            "dash": "dot"
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "x": [0.30421686746988],
-          "y": [0.797619047619048],
-          "text": "1 - specificity: 0.3042169<br />sensitivity: 0.797619",
-          "type": "scatter",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 5.66929133858268,
-            "symbol": "circle",
+    Code
+      make_clean_snapshot(e)
+    Output
+      {
+        "data": [
+          {
+            "x": [1, 1, 0.963855421686747, 0.957831325301205, 0.94578313253012, 0.91566265060241, 0.891566265060241, 0.864457831325301, 0.828313253012048, 0.810240963855422, 0.783132530120482, 0.771084337349398, 0.710843373493976, 0.686746987951807, 0.686746987951807, 0.63855421686747, 0.623493975903614, 0.515060240963855, 0.487951807228916, 0.403614457831325, 0.373493975903614, 0.355421686746988, 0.340361445783133, 0.328313253012048, 0.325301204819277, 0.313253012048193, 0.30421686746988, 0.30421686746988, 0.30421686746988, 0.30421686746988, 0.301204819277108, 0.301204819277108, 0.283132530120482, 0.280120481927711, 0.27710843373494, 0.271084337349398, 0.259036144578313, 0.234939759036145, 0.234939759036145, 0.234939759036145, 0.234939759036145, 0.198795180722892, 0.189759036144578, 0.177710843373494, 0.177710843373494, 0.16566265060241, 0.153614457831325, 0.153614457831325, 0.141566265060241, 0.105421686746988, 0.0933734939759037, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0692771084337349, 0.0210843373493976, 0.0210843373493976, 0],
+            "y": [1, 1, 1, 0.998299319727891, 0.998299319727891, 0.994897959183674, 0.988095238095238, 0.982993197278912, 0.969387755102041, 0.959183673469388, 0.938775510204082, 0.937074829931973, 0.916666666666667, 0.903061224489796, 0.896258503401361, 0.88265306122449, 0.875850340136054, 0.869047619047619, 0.853741496598639, 0.846938775510204, 0.826530612244898, 0.811224489795918, 0.806122448979592, 0.806122448979592, 0.806122448979592, 0.799319727891156, 0.799319727891156, 0.797619047619048, 0.795918367346939, 0.782312925170068, 0.780612244897959, 0.773809523809524, 0.773809523809524, 0.772108843537415, 0.770408163265306, 0.768707482993197, 0.755102040816326, 0.748299319727891, 0.741496598639456, 0.72108843537415, 0.707482993197279, 0.693877551020408, 0.681972789115646, 0.675170068027211, 0.666666666666667, 0.659863945578231, 0.646258503401361, 0.63265306122449, 0.63265306122449, 0.63265306122449, 0.585034013605442, 0.523809523809524, 0.401360544217687, 0.299319727891156, 0.244897959183673, 0.125850340136054, 0.0918367346938776, 0.0578231292517007, 0.0102040816326531, 0],
+            "text": ["1 - specificity: 1.00000000<br />sensitivity: 1.00000000", "1 - specificity: 1.00000000<br />sensitivity: 1.00000000", "1 - specificity: 0.96385542<br />sensitivity: 1.00000000", "1 - specificity: 0.95783133<br />sensitivity: 0.99829932", "1 - specificity: 0.94578313<br />sensitivity: 0.99829932", "1 - specificity: 0.91566265<br />sensitivity: 0.99489796", "1 - specificity: 0.89156627<br />sensitivity: 0.98809524", "1 - specificity: 0.86445783<br />sensitivity: 0.98299320", "1 - specificity: 0.82831325<br />sensitivity: 0.96938776", "1 - specificity: 0.81024096<br />sensitivity: 0.95918367", "1 - specificity: 0.78313253<br />sensitivity: 0.93877551", "1 - specificity: 0.77108434<br />sensitivity: 0.93707483", "1 - specificity: 0.71084337<br />sensitivity: 0.91666667", "1 - specificity: 0.68674699<br />sensitivity: 0.90306122", "1 - specificity: 0.68674699<br />sensitivity: 0.89625850", "1 - specificity: 0.63855422<br />sensitivity: 0.88265306", "1 - specificity: 0.62349398<br />sensitivity: 0.87585034", "1 - specificity: 0.51506024<br />sensitivity: 0.86904762", "1 - specificity: 0.48795181<br />sensitivity: 0.85374150", "1 - specificity: 0.40361446<br />sensitivity: 0.84693878", "1 - specificity: 0.37349398<br />sensitivity: 0.82653061", "1 - specificity: 0.35542169<br />sensitivity: 0.81122449", "1 - specificity: 0.34036145<br />sensitivity: 0.80612245", "1 - specificity: 0.32831325<br />sensitivity: 0.80612245", "1 - specificity: 0.32530120<br />sensitivity: 0.80612245", "1 - specificity: 0.31325301<br />sensitivity: 0.79931973", "1 - specificity: 0.30421687<br />sensitivity: 0.79931973", "1 - specificity: 0.30421687<br />sensitivity: 0.79761905", "1 - specificity: 0.30421687<br />sensitivity: 0.79591837", "1 - specificity: 0.30421687<br />sensitivity: 0.78231293", "1 - specificity: 0.30120482<br />sensitivity: 0.78061224", "1 - specificity: 0.30120482<br />sensitivity: 0.77380952", "1 - specificity: 0.28313253<br />sensitivity: 0.77380952", "1 - specificity: 0.28012048<br />sensitivity: 0.77210884", "1 - specificity: 0.27710843<br />sensitivity: 0.77040816", "1 - specificity: 0.27108434<br />sensitivity: 0.76870748", "1 - specificity: 0.25903614<br />sensitivity: 0.75510204", "1 - specificity: 0.23493976<br />sensitivity: 0.74829932", "1 - specificity: 0.23493976<br />sensitivity: 0.74149660", "1 - specificity: 0.23493976<br />sensitivity: 0.72108844", "1 - specificity: 0.23493976<br />sensitivity: 0.70748299", "1 - specificity: 0.19879518<br />sensitivity: 0.69387755", "1 - specificity: 0.18975904<br />sensitivity: 0.68197279", "1 - specificity: 0.17771084<br />sensitivity: 0.67517007", "1 - specificity: 0.17771084<br />sensitivity: 0.66666667", "1 - specificity: 0.16566265<br />sensitivity: 0.65986395", "1 - specificity: 0.15361446<br />sensitivity: 0.64625850", "1 - specificity: 0.15361446<br />sensitivity: 0.63265306", "1 - specificity: 0.14156627<br />sensitivity: 0.63265306", "1 - specificity: 0.10542169<br />sensitivity: 0.63265306", "1 - specificity: 0.09337349<br />sensitivity: 0.58503401", "1 - specificity: 0.06927711<br />sensitivity: 0.52380952", "1 - specificity: 0.06927711<br />sensitivity: 0.40136054", "1 - specificity: 0.06927711<br />sensitivity: 0.29931973", "1 - specificity: 0.06927711<br />sensitivity: 0.24489796", "1 - specificity: 0.06927711<br />sensitivity: 0.12585034", "1 - specificity: 0.06927711<br />sensitivity: 0.09183673", "1 - specificity: 0.02108434<br />sensitivity: 0.05782313", "1 - specificity: 0.02108434<br />sensitivity: 0.01020408", "1 - specificity: 0.00000000<br />sensitivity: 0.00000000"],
+            "type": "scatter",
+            "mode": "lines",
             "line": {
               "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 25.7412480974125,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 48.9497716894977
-        },
-        "plot_bgcolor": "rgba(255,255,255,1)",
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "tickvals": [0, 0.25, 0.5, 0.75, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(235,235,235,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y",
-          "title": {
-            "text": "1 - specificity",
-            "font": {
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "scaleanchor": "y",
-          "scaleratio": 1,
-          "hoverformat": ".2f"
-        },
-        "yaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "tickvals": [0, 0.25, 0.5, 0.75, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(235,235,235,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": {
-            "text": "sensitivity",
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "scaleanchor": "x",
-          "scaleratio": 1,
-          "hoverformat": ".2f"
-        },
-        "shapes": [
-          {
-            "type": "rect",
-            "fillcolor": "transparent",
-            "line": {
-              "color": "rgba(51,51,51,1)",
-              "width": 0.66417600664176,
-              "linetype": "solid"
+              "dash": "solid"
             },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 1
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          },
+          {
+            "x": [-0.05, 1.05],
+            "y": [-0.05, 1.05],
+            "text": "intercept: 0<br />slope: 1",
+            "type": "scatter",
+            "mode": "lines",
+            "line": {
+              "width": 1.88976377952756,
+              "color": "rgba(0,0,0,1)",
+              "dash": "dot"
+            },
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          },
+          {
+            "x": [0.30421686746988],
+            "y": [0.797619047619048],
+            "text": "1 - specificity: 0.3042169<br />sensitivity: 0.797619",
+            "type": "scatter",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(0,0,0,1)",
+              "opacity": 1,
+              "size": 5.66929133858268,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
+            },
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+        "layout": {
+          "margin": {
+            "t": 25.7412480974125,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 48.9497716894977
+          },
+          "plot_bgcolor": "rgba(255,255,255,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(235,235,235,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y",
+            "title": {
+              "text": "1 - specificity",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "scaleanchor": "y",
+            "scaleratio": 1,
+            "hoverformat": ".2f"
+          },
+          "yaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(235,235,235,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": {
+              "text": "sensitivity",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "scaleanchor": "x",
+            "scaleratio": 1,
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": "transparent",
+              "line": {
+                "color": "rgba(51,51,51,1)",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 1
+            }
+          ],
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": "A",
-      "cur_data": "env-name",
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": "A",
+        "cur_data": "env-name",
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 
 # can accurately plot the PR curve
 
@@ -1546,200 +1561,203 @@
 
 ---
 
-    {
-      "data": [
-        {
-          "x": [0, 0.0102040816326531, 0.0578231292517007, 0.0918367346938776, 0.125850340136054, 0.244897959183673, 0.299319727891156, 0.401360544217687, 0.523809523809524, 0.585034013605442, 0.63265306122449, 0.63265306122449, 0.63265306122449, 0.646258503401361, 0.659863945578231, 0.666666666666667, 0.675170068027211, 0.681972789115646, 0.693877551020408, 0.707482993197279, 0.72108843537415, 0.741496598639456, 0.748299319727891, 0.755102040816326, 0.768707482993197, 0.770408163265306, 0.772108843537415, 0.773809523809524, 0.773809523809524, 0.780612244897959, 0.782312925170068, 0.795918367346939, 0.797619047619048, 0.799319727891156, 0.799319727891156, 0.806122448979592, 0.806122448979592, 0.806122448979592, 0.811224489795918, 0.826530612244898, 0.846938775510204, 0.853741496598639, 0.869047619047619, 0.875850340136054, 0.88265306122449, 0.896258503401361, 0.903061224489796, 0.916666666666667, 0.937074829931973, 0.938775510204082, 0.959183673469388, 0.969387755102041, 0.982993197278912, 0.988095238095238, 0.994897959183674, 0.998299319727891, 0.998299319727891, 1, 1],
-          "y": [1, 0.461538461538462, 0.829268292682927, 0.701298701298701, 0.762886597938144, 0.862275449101796, 0.884422110552764, 0.911196911196911, 0.930513595166163, 0.917333333333333, 0.914004914004914, 0.887828162291169, 0.879432624113475, 0.881670533642691, 0.875846501128668, 0.869179600886918, 0.870614035087719, 0.864224137931034, 0.860759493670886, 0.842105263157895, 0.844621513944223, 0.848249027237354, 0.849420849420849, 0.837735849056604, 0.833948339483395, 0.831192660550459, 0.829981718464351, 0.828779599271403, 0.81981981981982, 0.821109123434705, 0.819964349376114, 0.822495606326889, 0.82280701754386, 0.823117338003503, 0.818815331010453, 0.814432989690722, 0.81303602058319, 0.807495741056218, 0.801680672268908, 0.79672131147541, 0.787974683544304, 0.756024096385542, 0.749266862170088, 0.713296398891967, 0.709986320109439, 0.698013245033113, 0.699604743083004, 0.695483870967742, 0.68277571251549, 0.679802955665025, 0.677070828331333, 0.674556213017751, 0.668208092485549, 0.66248574686431, 0.658042744656918, 0.65149833518313, 0.648618784530387, 0.647577092511013, 0.639130434782609],
-          "text": ["recall: 0.00000000<br />precision: 1.0000000", "recall: 0.01020408<br />precision: 0.4615385", "recall: 0.05782313<br />precision: 0.8292683", "recall: 0.09183673<br />precision: 0.7012987", "recall: 0.12585034<br />precision: 0.7628866", "recall: 0.24489796<br />precision: 0.8622754", "recall: 0.29931973<br />precision: 0.8844221", "recall: 0.40136054<br />precision: 0.9111969", "recall: 0.52380952<br />precision: 0.9305136", "recall: 0.58503401<br />precision: 0.9173333", "recall: 0.63265306<br />precision: 0.9140049", "recall: 0.63265306<br />precision: 0.8878282", "recall: 0.63265306<br />precision: 0.8794326", "recall: 0.64625850<br />precision: 0.8816705", "recall: 0.65986395<br />precision: 0.8758465", "recall: 0.66666667<br />precision: 0.8691796", "recall: 0.67517007<br />precision: 0.8706140", "recall: 0.68197279<br />precision: 0.8642241", "recall: 0.69387755<br />precision: 0.8607595", "recall: 0.70748299<br />precision: 0.8421053", "recall: 0.72108844<br />precision: 0.8446215", "recall: 0.74149660<br />precision: 0.8482490", "recall: 0.74829932<br />precision: 0.8494208", "recall: 0.75510204<br />precision: 0.8377358", "recall: 0.76870748<br />precision: 0.8339483", "recall: 0.77040816<br />precision: 0.8311927", "recall: 0.77210884<br />precision: 0.8299817", "recall: 0.77380952<br />precision: 0.8287796", "recall: 0.77380952<br />precision: 0.8198198", "recall: 0.78061224<br />precision: 0.8211091", "recall: 0.78231293<br />precision: 0.8199643", "recall: 0.79591837<br />precision: 0.8224956", "recall: 0.79761905<br />precision: 0.8228070", "recall: 0.79931973<br />precision: 0.8231173", "recall: 0.79931973<br />precision: 0.8188153", "recall: 0.80612245<br />precision: 0.8144330", "recall: 0.80612245<br />precision: 0.8130360", "recall: 0.80612245<br />precision: 0.8074957", "recall: 0.81122449<br />precision: 0.8016807", "recall: 0.82653061<br />precision: 0.7967213", "recall: 0.84693878<br />precision: 0.7879747", "recall: 0.85374150<br />precision: 0.7560241", "recall: 0.86904762<br />precision: 0.7492669", "recall: 0.87585034<br />precision: 0.7132964", "recall: 0.88265306<br />precision: 0.7099863", "recall: 0.89625850<br />precision: 0.6980132", "recall: 0.90306122<br />precision: 0.6996047", "recall: 0.91666667<br />precision: 0.6954839", "recall: 0.93707483<br />precision: 0.6827757", "recall: 0.93877551<br />precision: 0.6798030", "recall: 0.95918367<br />precision: 0.6770708", "recall: 0.96938776<br />precision: 0.6745562", "recall: 0.98299320<br />precision: 0.6682081", "recall: 0.98809524<br />precision: 0.6624857", "recall: 0.99489796<br />precision: 0.6580427", "recall: 0.99829932<br />precision: 0.6514983", "recall: 0.99829932<br />precision: 0.6486188", "recall: 1.00000000<br />precision: 0.6475771", "recall: 1.00000000<br />precision: 0.6391304"],
-          "type": "scatter",
-          "mode": "lines",
-          "line": {
-            "width": 1.88976377952756,
-            "color": "rgba(0,0,0,1)",
-            "dash": "solid"
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        },
-        {
-          "x": [0.202380952380952],
-          "y": [0.82280701754386],
-          "text": "1 - recall: 0.202381<br />precision: 0.822807",
-          "type": "scatter",
-          "mode": "markers",
-          "marker": {
-            "autocolorscale": false,
-            "color": "rgba(0,0,0,1)",
-            "opacity": 1,
-            "size": 5.66929133858268,
-            "symbol": "circle",
+    Code
+      make_clean_snapshot(f)
+    Output
+      {
+        "data": [
+          {
+            "x": [0, 0.0102040816326531, 0.0578231292517007, 0.0918367346938776, 0.125850340136054, 0.244897959183673, 0.299319727891156, 0.401360544217687, 0.523809523809524, 0.585034013605442, 0.63265306122449, 0.63265306122449, 0.63265306122449, 0.646258503401361, 0.659863945578231, 0.666666666666667, 0.675170068027211, 0.681972789115646, 0.693877551020408, 0.707482993197279, 0.72108843537415, 0.741496598639456, 0.748299319727891, 0.755102040816326, 0.768707482993197, 0.770408163265306, 0.772108843537415, 0.773809523809524, 0.773809523809524, 0.780612244897959, 0.782312925170068, 0.795918367346939, 0.797619047619048, 0.799319727891156, 0.799319727891156, 0.806122448979592, 0.806122448979592, 0.806122448979592, 0.811224489795918, 0.826530612244898, 0.846938775510204, 0.853741496598639, 0.869047619047619, 0.875850340136054, 0.88265306122449, 0.896258503401361, 0.903061224489796, 0.916666666666667, 0.937074829931973, 0.938775510204082, 0.959183673469388, 0.969387755102041, 0.982993197278912, 0.988095238095238, 0.994897959183674, 0.998299319727891, 0.998299319727891, 1, 1],
+            "y": [1, 0.461538461538462, 0.829268292682927, 0.701298701298701, 0.762886597938144, 0.862275449101796, 0.884422110552764, 0.911196911196911, 0.930513595166163, 0.917333333333333, 0.914004914004914, 0.887828162291169, 0.879432624113475, 0.881670533642691, 0.875846501128668, 0.869179600886918, 0.870614035087719, 0.864224137931034, 0.860759493670886, 0.842105263157895, 0.844621513944223, 0.848249027237354, 0.849420849420849, 0.837735849056604, 0.833948339483395, 0.831192660550459, 0.829981718464351, 0.828779599271403, 0.81981981981982, 0.821109123434705, 0.819964349376114, 0.822495606326889, 0.82280701754386, 0.823117338003503, 0.818815331010453, 0.814432989690722, 0.81303602058319, 0.807495741056218, 0.801680672268908, 0.79672131147541, 0.787974683544304, 0.756024096385542, 0.749266862170088, 0.713296398891967, 0.709986320109439, 0.698013245033113, 0.699604743083004, 0.695483870967742, 0.68277571251549, 0.679802955665025, 0.677070828331333, 0.674556213017751, 0.668208092485549, 0.66248574686431, 0.658042744656918, 0.65149833518313, 0.648618784530387, 0.647577092511013, 0.639130434782609],
+            "text": ["recall: 0.00000000<br />precision: 1.0000000", "recall: 0.01020408<br />precision: 0.4615385", "recall: 0.05782313<br />precision: 0.8292683", "recall: 0.09183673<br />precision: 0.7012987", "recall: 0.12585034<br />precision: 0.7628866", "recall: 0.24489796<br />precision: 0.8622754", "recall: 0.29931973<br />precision: 0.8844221", "recall: 0.40136054<br />precision: 0.9111969", "recall: 0.52380952<br />precision: 0.9305136", "recall: 0.58503401<br />precision: 0.9173333", "recall: 0.63265306<br />precision: 0.9140049", "recall: 0.63265306<br />precision: 0.8878282", "recall: 0.63265306<br />precision: 0.8794326", "recall: 0.64625850<br />precision: 0.8816705", "recall: 0.65986395<br />precision: 0.8758465", "recall: 0.66666667<br />precision: 0.8691796", "recall: 0.67517007<br />precision: 0.8706140", "recall: 0.68197279<br />precision: 0.8642241", "recall: 0.69387755<br />precision: 0.8607595", "recall: 0.70748299<br />precision: 0.8421053", "recall: 0.72108844<br />precision: 0.8446215", "recall: 0.74149660<br />precision: 0.8482490", "recall: 0.74829932<br />precision: 0.8494208", "recall: 0.75510204<br />precision: 0.8377358", "recall: 0.76870748<br />precision: 0.8339483", "recall: 0.77040816<br />precision: 0.8311927", "recall: 0.77210884<br />precision: 0.8299817", "recall: 0.77380952<br />precision: 0.8287796", "recall: 0.77380952<br />precision: 0.8198198", "recall: 0.78061224<br />precision: 0.8211091", "recall: 0.78231293<br />precision: 0.8199643", "recall: 0.79591837<br />precision: 0.8224956", "recall: 0.79761905<br />precision: 0.8228070", "recall: 0.79931973<br />precision: 0.8231173", "recall: 0.79931973<br />precision: 0.8188153", "recall: 0.80612245<br />precision: 0.8144330", "recall: 0.80612245<br />precision: 0.8130360", "recall: 0.80612245<br />precision: 0.8074957", "recall: 0.81122449<br />precision: 0.8016807", "recall: 0.82653061<br />precision: 0.7967213", "recall: 0.84693878<br />precision: 0.7879747", "recall: 0.85374150<br />precision: 0.7560241", "recall: 0.86904762<br />precision: 0.7492669", "recall: 0.87585034<br />precision: 0.7132964", "recall: 0.88265306<br />precision: 0.7099863", "recall: 0.89625850<br />precision: 0.6980132", "recall: 0.90306122<br />precision: 0.6996047", "recall: 0.91666667<br />precision: 0.6954839", "recall: 0.93707483<br />precision: 0.6827757", "recall: 0.93877551<br />precision: 0.6798030", "recall: 0.95918367<br />precision: 0.6770708", "recall: 0.96938776<br />precision: 0.6745562", "recall: 0.98299320<br />precision: 0.6682081", "recall: 0.98809524<br />precision: 0.6624857", "recall: 0.99489796<br />precision: 0.6580427", "recall: 0.99829932<br />precision: 0.6514983", "recall: 0.99829932<br />precision: 0.6486188", "recall: 1.00000000<br />precision: 0.6475771", "recall: 1.00000000<br />precision: 0.6391304"],
+            "type": "scatter",
+            "mode": "lines",
             "line": {
               "width": 1.88976377952756,
-              "color": "rgba(0,0,0,1)"
-            }
-          },
-          "showlegend": false,
-          "xaxis": "x",
-          "yaxis": "y",
-          "hoverinfo": "text",
-          "frame": null
-        }
-      ],
-      "layout": {
-        "margin": {
-          "t": 25.7412480974125,
-          "r": 7.30593607305936,
-          "b": 39.6955859969559,
-          "l": 48.9497716894977
-        },
-        "plot_bgcolor": "rgba(255,255,255,1)",
-        "paper_bgcolor": "rgba(255,255,255,1)",
-        "font": {
-          "color": "rgba(0,0,0,1)",
-          "family": "",
-          "size": 14.6118721461187
-        },
-        "xaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "tickvals": [0, 0.25, 0.5, 0.75, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(235,235,235,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "y",
-          "title": {
-            "text": "recall",
-            "font": {
               "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "scaleanchor": "y",
-          "scaleratio": 1,
-          "hoverformat": ".2f"
-        },
-        "yaxis": {
-          "domain": [0, 1],
-          "automargin": true,
-          "type": "linear",
-          "autorange": false,
-          "range": [-0.05, 1.05],
-          "tickmode": "array",
-          "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "tickvals": [0, 0.25, 0.5, 0.75, 1],
-          "categoryorder": "array",
-          "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
-          "nticks": null,
-          "ticks": "outside",
-          "tickcolor": "rgba(51,51,51,1)",
-          "ticklen": 3.65296803652968,
-          "tickwidth": 0.66417600664176,
-          "showticklabels": true,
-          "tickfont": {
-            "color": "rgba(77,77,77,1)",
-            "family": "",
-            "size": 11.689497716895
-          },
-          "tickangle": -0,
-          "showline": false,
-          "linecolor": null,
-          "linewidth": 0,
-          "showgrid": true,
-          "gridcolor": "rgba(235,235,235,1)",
-          "gridwidth": 0.66417600664176,
-          "zeroline": false,
-          "anchor": "x",
-          "title": {
-            "text": "precision",
-            "font": {
-              "color": "rgba(0,0,0,1)",
-              "family": "",
-              "size": 14.6118721461187
-            }
-          },
-          "scaleanchor": "x",
-          "scaleratio": 1,
-          "hoverformat": ".2f"
-        },
-        "shapes": [
-          {
-            "type": "rect",
-            "fillcolor": "transparent",
-            "line": {
-              "color": "rgba(51,51,51,1)",
-              "width": 0.66417600664176,
-              "linetype": "solid"
+              "dash": "solid"
             },
-            "yref": "paper",
-            "xref": "paper",
-            "x0": 0,
-            "x1": 1,
-            "y0": 0,
-            "y1": 1
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
+          },
+          {
+            "x": [0.202380952380952],
+            "y": [0.82280701754386],
+            "text": "1 - recall: 0.202381<br />precision: 0.822807",
+            "type": "scatter",
+            "mode": "markers",
+            "marker": {
+              "autocolorscale": false,
+              "color": "rgba(0,0,0,1)",
+              "opacity": 1,
+              "size": 5.66929133858268,
+              "symbol": "circle",
+              "line": {
+                "width": 1.88976377952756,
+                "color": "rgba(0,0,0,1)"
+              }
+            },
+            "showlegend": false,
+            "xaxis": "x",
+            "yaxis": "y",
+            "hoverinfo": "text",
+            "frame": null
           }
         ],
-        "showlegend": false,
-        "legend": {
-          "bgcolor": "rgba(255,255,255,1)",
-          "bordercolor": "transparent",
-          "borderwidth": 1.88976377952756,
+        "layout": {
+          "margin": {
+            "t": 25.7412480974125,
+            "r": 7.30593607305936,
+            "b": 39.6955859969559,
+            "l": 48.9497716894977
+          },
+          "plot_bgcolor": "rgba(255,255,255,1)",
+          "paper_bgcolor": "rgba(255,255,255,1)",
           "font": {
             "color": "rgba(0,0,0,1)",
             "family": "",
-            "size": 11.689497716895
-          }
+            "size": 14.6118721461187
+          },
+          "xaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(235,235,235,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "y",
+            "title": {
+              "text": "recall",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "scaleanchor": "y",
+            "scaleratio": 1,
+            "hoverformat": ".2f"
+          },
+          "yaxis": {
+            "domain": [0, 1],
+            "automargin": true,
+            "type": "linear",
+            "autorange": false,
+            "range": [-0.05, 1.05],
+            "tickmode": "array",
+            "ticktext": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "tickvals": [0, 0.25, 0.5, 0.75, 1],
+            "categoryorder": "array",
+            "categoryarray": ["0.00", "0.25", "0.50", "0.75", "1.00"],
+            "nticks": null,
+            "ticks": "outside",
+            "tickcolor": "rgba(51,51,51,1)",
+            "ticklen": 3.65296803652968,
+            "tickwidth": 0.66417600664176,
+            "showticklabels": true,
+            "tickfont": {
+              "color": "rgba(77,77,77,1)",
+              "family": "",
+              "size": 11.689497716895
+            },
+            "tickangle": -0,
+            "showline": false,
+            "linecolor": null,
+            "linewidth": 0,
+            "showgrid": true,
+            "gridcolor": "rgba(235,235,235,1)",
+            "gridwidth": 0.66417600664176,
+            "zeroline": false,
+            "anchor": "x",
+            "title": {
+              "text": "precision",
+              "font": {
+                "color": "rgba(0,0,0,1)",
+                "family": "",
+                "size": 14.6118721461187
+              }
+            },
+            "scaleanchor": "x",
+            "scaleratio": 1,
+            "hoverformat": ".2f"
+          },
+          "shapes": [
+            {
+              "type": "rect",
+              "fillcolor": "transparent",
+              "line": {
+                "color": "rgba(51,51,51,1)",
+                "width": 0.66417600664176,
+                "linetype": "solid"
+              },
+              "yref": "paper",
+              "xref": "paper",
+              "x0": 0,
+              "x1": 1,
+              "y0": 0,
+              "y1": 1
+            }
+          ],
+          "showlegend": false,
+          "legend": {
+            "bgcolor": "rgba(255,255,255,1)",
+            "bordercolor": "transparent",
+            "borderwidth": 1.88976377952756,
+            "font": {
+              "color": "rgba(0,0,0,1)",
+              "family": "",
+              "size": 11.689497716895
+            }
+          },
+          "hovermode": "closest",
+          "barmode": "relative"
         },
-        "hovermode": "closest",
-        "barmode": "relative"
-      },
-      "config": {
-        "doubleClick": "reset",
-        "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
-        "showSendToCloud": false
-      },
-      "source": "A",
-      "cur_data": "env-name",
-      "attrs": [],
-      "highlight": {
-        "on": "plotly_click",
-        "persistent": false,
-        "dynamic": false,
-        "selectize": false,
-        "opacityDim": 0.2,
-        "selected": {
-          "opacity": 1
+        "config": {
+          "doubleClick": "reset",
+          "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+          "showSendToCloud": false
         },
-        "debounce": 0
-      },
-      "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
-      "base_url": "https://plot.ly"
-    } 
+        "source": "A",
+        "cur_data": "env-name",
+        "attrs": [],
+        "highlight": {
+          "on": "plotly_click",
+          "persistent": false,
+          "dynamic": false,
+          "selectize": false,
+          "opacityDim": 0.2,
+          "selected": {
+            "opacity": 1
+          },
+          "debounce": 0
+        },
+        "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+        "base_url": "https://plot.ly"
+      } 
 

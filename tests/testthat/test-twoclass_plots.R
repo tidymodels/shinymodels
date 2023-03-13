@@ -18,7 +18,7 @@ test_that("can accurately plot predicted probabilities vs true class plot", {
     plot_twoclass_obs_pred(org$predictions, y_name)
   )
   a <- plot_twoclass_obs_pred(org$predictions, org$y_name)
-  expect_snapshot_output(make_clean_snapshot(a))
+  expect_snapshot(make_clean_snapshot(a))
 })
 
 test_that("can accurately plot confusion matrix plot", {
@@ -33,7 +33,7 @@ test_that("can accurately plot confusion matrix plot", {
     plot_twoclass_conf_mat(org)
   )
   b <- plot_twoclass_conf_mat(org$predictions)
-  expect_snapshot_output(make_clean_snapshot(b))
+  expect_snapshot(make_clean_snapshot(b))
 })
 
 test_that("can accurately plot predicted probabilities vs. a numeric column plot", {
@@ -59,7 +59,7 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "angle_ch_1"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot_output(make_clean_snapshot(c))
+  expect_snapshot(make_clean_snapshot(c))
 })
 
 test_that("can accurately plot predicted probabilities vs. a factor column plot", {
@@ -93,7 +93,7 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "fact_col"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot_output(make_clean_snapshot(d))
+  expect_snapshot(make_clean_snapshot(d))
 })
 
 test_that("can accurately plot the ROC curve", {
@@ -115,7 +115,7 @@ test_that("can accurately plot the ROC curve", {
     plot_twoclass_roc(org$predictions, y_name)
   )
   e <- plot_twoclass_roc(org$predictions, org$y_name)
-  expect_snapshot_output(make_clean_snapshot(e))
+  expect_snapshot(make_clean_snapshot(e))
 })
 
 test_that("can accurately plot the PR curve", {
@@ -141,5 +141,5 @@ test_that("can accurately plot the PR curve", {
     plot_twoclass_pr(org$predictions, "mpg")
   )
   f <- plot_twoclass_pr(org$predictions, org$y_name)
-  expect_snapshot_output(make_clean_snapshot(f))
+  expect_snapshot(make_clean_snapshot(f))
 })
