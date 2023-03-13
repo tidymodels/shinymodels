@@ -15,7 +15,9 @@ tuned over the interaction degree parameters.
 To reduce the object size, five bootstraps were used for resampling
 and missing data were removed.
 
-The code used to produce this object:\preformatted{  library(tidymodels)
+The code used to produce this object:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  library(tidymodels)
   library(discrim)
   tidymodels_prefer()
 
@@ -40,6 +42,6 @@ The code used to produce this object:\preformatted{  library(tidymodels)
       resamples = scat_rs,
       control = ctrl_gr
     )
-}
+}\if{html}{\out{</div>}}
 }
 \keyword{datasets}

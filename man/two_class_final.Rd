@@ -12,7 +12,9 @@ This object has the results when a logistic regression model is fit to the
 training set and is evaluated on the test set.
 }
 \details{
-The code used to produce this object:\preformatted{  library(tidymodels)
+The code used to produce this object:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  library(tidymodels)
   tidymodels_prefer()
 
   # ------------------------------------------------------------------------------
@@ -33,6 +35,6 @@ The code used to produce this object:\preformatted{  library(tidymodels)
       Class  ~ .,
       split = two_class_split
     )
-}
+}\if{html}{\out{</div>}}
 }
 \keyword{datasets}

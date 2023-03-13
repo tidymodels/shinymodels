@@ -12,7 +12,9 @@ This object has the results when a neural network was tuned using Bayesian
 optimization and a validation set.
 }
 \details{
-The code used to produce this object:\preformatted{  data(ames)
+The code used to produce this object:
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{  data(ames)
 
   ames <-
     ames \%>\%
@@ -44,6 +46,6 @@ The code used to produce this object:\preformatted{  data(ames)
       iter = 4,
       control = control_bayes(save_pred = TRUE)
     )
-}
+}\if{html}{\out{</div>}}
 }
 \keyword{datasets}

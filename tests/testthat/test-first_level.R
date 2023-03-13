@@ -18,32 +18,32 @@ test_that("can find first level", {
 
   expect_equal(first_level(preds, "first", "Class"), "Class1")
   expect_equal(first_level(preds, "second", "Class"), "Class2")
-  expect_error(
-    first_level(preds, "second", "fact_col"),
-    "can only be used for a two-class variable"
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, "second", "fact_col")
   )
-  expect_error(
-    first_level(preds, "Potato", "Class"),
-    '`event_level` must be one of "first" or "second"'
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, "Potato", "Class")
   )
-  expect_error(
-    first_level(preds, "first", "Potato"),
-    "'Potato' is not a column in the dataset"
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, "first", "Potato")
   )
-  expect_error(
-    first_level(preds, first, "Class"),
-    "`event_level` must be a character vector."
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, first, "Class")
   )
-  expect_error(
-    first_level(preds, 1, "Class"),
-    "`event_level` must be a character vector"
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, 1, "Class")
   )
-  expect_error(
-    first_level(preds, "first", Class),
-    "object 'Class' not found"
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, "first", Class)
   )
-  expect_error(
-    first_level(preds, "first", "fact_col"),
-    "can only be used for a two-class variable"
+  expect_snapshot(
+    error = TRUE,
+    first_level(preds, "first", "fact_col")
   )
 })
