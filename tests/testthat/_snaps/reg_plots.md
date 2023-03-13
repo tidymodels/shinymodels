@@ -194,7 +194,13 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative"
+          "barmode": "relative",
+          "xaxis2": {
+            "scaleratio": 1
+          },
+          "xaxis3": {
+            "scaleratio": 1
+          }
         },
         "config": {
           "doubleClick": "reset",
@@ -405,7 +411,13 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative"
+          "barmode": "relative",
+          "xaxis2": {
+            "scaleratio": 1
+          },
+          "xaxis3": {
+            "scaleratio": 1
+          }
         },
         "config": {
           "doubleClick": "reset",
@@ -625,7 +637,13 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative"
+          "barmode": "relative",
+          "xaxis2": {
+            "scaleratio": 1
+          },
+          "xaxis3": {
+            "scaleratio": 1
+          }
         },
         "config": {
           "doubleClick": "reset",
@@ -868,7 +886,13 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative"
+          "barmode": "relative",
+          "xaxis2": {
+            "scaleratio": 1
+          },
+          "xaxis3": {
+            "scaleratio": 1
+          }
         },
         "config": {
           "doubleClick": "reset",

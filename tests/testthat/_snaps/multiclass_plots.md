@@ -724,7 +724,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "xaxis3": {
             "type": "linear",
@@ -757,7 +758,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "yaxis2": {
             "type": "linear",
@@ -1022,7 +1024,13 @@
             }
           },
           "hovermode": "closest",
-          "barmode": "relative"
+          "barmode": "relative",
+          "xaxis2": {
+            "scaleratio": 1
+          },
+          "xaxis3": {
+            "scaleratio": 1
+          }
         },
         "config": {
           "doubleClick": "reset",
@@ -1816,7 +1824,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "xaxis3": {
             "type": "linear",
@@ -1849,7 +1858,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "yaxis2": {
             "type": "linear",
@@ -2704,7 +2714,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "xaxis3": {
             "type": "linear",
@@ -2737,7 +2748,8 @@
             "zeroline": false,
             "anchor": "y3",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "yaxis2": {
             "type": "linear",

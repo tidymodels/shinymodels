@@ -12,6 +12,8 @@ make_clean_snapshot <- function(x) {
   )
 
   x$layout$xaxis$scaleratio <- 1
+  x$layout$xaxis2$scaleratio <- 1
+  x$layout$xaxis3$scaleratio <- 1
   x$layout$yaxis$scaleratio <- 1
   x$attrs <- NULL
   x$visdat <- NULL
