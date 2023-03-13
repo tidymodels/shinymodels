@@ -112,7 +112,8 @@
             "zeroline": false,
             "anchor": "y2",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "annotations": [
             {
@@ -224,7 +225,8 @@
             "zeroline": false,
             "anchor": "x",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "shapes": [
             {
@@ -448,7 +450,8 @@
                 "size": 14.6118721461187
               }
             },
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "yaxis": {
             "domain": [0, 1],
@@ -489,7 +492,8 @@
                 "size": 14.6118721461187
               }
             },
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "shapes": [
             {
@@ -674,7 +678,8 @@
             "zeroline": false,
             "anchor": "y2",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "annotations": [
             {
@@ -786,7 +791,8 @@
             "zeroline": false,
             "anchor": "x",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "shapes": [
             {
@@ -1054,7 +1060,8 @@
             "zeroline": false,
             "anchor": "y2",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "annotations": [
             {
@@ -1166,7 +1173,8 @@
             "zeroline": false,
             "anchor": "x",
             "title": "",
-            "hoverformat": ".2f"
+            "hoverformat": ".2f",
+            "scaleratio": 1
           },
           "shapes": [
             {
