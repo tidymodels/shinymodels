@@ -75,7 +75,7 @@ the plots in the Shiny application.
 For classification models, there is a toggle on the bottom left of
 the application to choose between "Unscaled (i.e. linear)" and
 "Logit scaled" probability scaling. The first options plots the raw
-probabilities while the logit scaling uses \code{\link[scales:probability_trans]{scales::logit_trans()}} to rescale
+probabilities while the logit scaling uses \code{\link[scales:transform_probability]{scales::logit_trans()}} to rescale
 the axis. This can be helpful when a model with a linear predictor is used
 (e.g. logistic or multinomial regression) since it can show linear effects
 from a feature more easily.
