@@ -40,11 +40,7 @@
 
 ---
 
-    Code
-      first_level(preds, "first", Class)
-    Condition
-      Error:
-      ! object 'Class' not found
+    object 'Class' not found
 
 ---
 

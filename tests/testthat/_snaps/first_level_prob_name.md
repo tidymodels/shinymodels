@@ -24,9 +24,5 @@
 
 ---
 
-    Code
-      first_class_prob_name(preds, "first", Class)
-    Condition
-      Error:
-      ! object 'Class' not found
+    object 'Class' not found
 

@@ -24,21 +24,11 @@
 
 ---
 
-    Code
-      plot_multiclass_pred_numcol(org$predictions, y_name)
-    Condition
-      Error:
-      ! argument "numcol" is missing, with no default
+    argument "numcol" is missing, with no default
 
 ---
 
-    Code
-      plot_multiclass_pred_numcol(org$predictions, org$y_name, "AXL")
-    Condition
-      Warning in `ggplot2::geom_point()`:
-      Ignoring unknown aesthetics: customdata and text
-      Error:
-      ! object 'AXL' not found
+    object 'AXL' not found
 
 # can accurately plot predicted probabilities vs. a factor column plot
 
@@ -50,21 +40,11 @@
 
 ---
 
-    Code
-      plot_multiclass_pred_factorcol(org$predictions, y_name)
-    Condition
-      Error:
-      ! argument "factorcol" is missing, with no default
+    argument "factorcol" is missing, with no default
 
 ---
 
-    Code
-      plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Genotype")
-    Condition
-      Warning in `ggplot2::geom_point()`:
-      Ignoring unknown aesthetics: customdata and text
-      Error:
-      ! object 'Genotype' not found
+    object 'Genotype' not found
 
 # can accurately plot the ROC curve
 
@@ -76,11 +56,7 @@
 
 ---
 
-    Code
-      plot_multiclass_roc()
-    Condition
-      Error in `plot_multiclass_roc()`:
-      ! argument "dat" is missing, with no default
+    argument "dat" is missing, with no default
 
 # can accurately plot the PR curve
 
@@ -92,9 +68,5 @@
 
 ---
 
-    Code
-      plot_multiclass_pr()
-    Condition
-      Error in `plot_multiclass_pr()`:
-      ! argument "dat" is missing, with no default
+    argument "dat" is missing, with no default
 
