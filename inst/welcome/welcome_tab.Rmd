@@ -5,9 +5,9 @@ output: html_document
 
 ###  Welcome to Shinymodels
 
-{shiny} + {tidymodels} = {shinymodels} 
+shiny + tidymodels = shinymodels
 
-The {shinymodels} app is designed to explore a {tidymodels} object. Our aim is to visualize the modeled data and help detect any problematic observations while modeling. 
+The shinymodels app is designed to explore a tidymodels object. Our aim is to visualize the modeled data and help detect any problematic observations while modeling. 
 
 ### General purpose
 
@@ -25,7 +25,7 @@ There are mainly two categories of tabs in the app:
 
 This package was built by Shisham Adhikari (UC Davis) under the supervision of Max Kuhn (RStudio) and Julia Silge (RStudio) as a part of the RStudio summer internship 2021. Your suggestions, feedback, complaints, or compliments are highly valued and will guide us to improve the package continuously. To give feedback, file a bug report, or ask a question, go to the [GitHub issues page](https://github.com/tidymodels/shinymodels/issues) or go to [RStudio Community](https://community.rstudio.com/) and create a post with the tag `tidymodels`. 
  
-For more information on {tidymodels}: 
+For more information on tidymodels: 
 
  * [`tidymodels.org`](https://www.tidymodels.org/)
 

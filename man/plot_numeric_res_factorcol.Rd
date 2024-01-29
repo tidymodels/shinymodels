@@ -33,6 +33,6 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the residuals against a factor column based on
-{tidymodels} results for a regression model.
+tidymodels results for a regression model.
 }
 \keyword{internal}

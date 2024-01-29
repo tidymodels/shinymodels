@@ -2,7 +2,7 @@
 #' model
 #'
 #' This function plots the predicted probabilities against the observed class based on
-#' {tidymodels} results for a multi-class classification model.
+#' tidymodels results for a multi-class classification model.
 #' @param dat The predictions data frame in the [organize_data()] result. Following
 #'  variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
@@ -57,7 +57,7 @@ plot_multiclass_conf_mat <- function(dat) {
 #' classification model
 #'
 #' This function plots the predicted probabilities against a numeric column based
-#' on {tidymodels} results for a multi-class classification model.
+#' on tidymodels results for a multi-class classification model.
 #' @inheritParams plot_multiclass_obs_pred
 #' @param numcol The numerical column to plot against the predicted probabilities.
 #' @param alpha The opacity for the geom points.
@@ -138,7 +138,7 @@ plot_multiclass_pred_numcol <-
 #' model
 #'
 #' This function plots the predicted probabilities against a factor column based on
-#' {tidymodels} results for a multi-class classification model.
+#' tidymodels results for a multi-class classification model.
 #' @inheritParams plot_multiclass_obs_pred
 #' @inheritParams plot_multiclass_pred_numcol
 #' @param factorcol The factor column to plot against the predicted probabilities.

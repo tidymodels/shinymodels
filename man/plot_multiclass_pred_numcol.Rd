@@ -40,6 +40,6 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted probabilities against a numeric column based
-on {tidymodels} results for a multi-class classification model.
+on tidymodels results for a multi-class classification model.
 }
 \keyword{internal}
