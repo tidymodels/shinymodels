@@ -42,6 +42,7 @@ Imports:
     yardstick
 Suggests: 
     covr,
+    finetune,
     knitr,
     markdown,
     modeldata,
