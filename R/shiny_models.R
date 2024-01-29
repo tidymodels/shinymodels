@@ -12,7 +12,6 @@
 #' @param hover_only A logical to determine if interactive highlighting of
 #' points is enabled (the default) or not. This can be helpful for very large
 #' data sets.
-#' @param original_data Original dataset.
 #' @param ... Other parameters not currently used.
 #' @return A shiny application.
 #' @export
