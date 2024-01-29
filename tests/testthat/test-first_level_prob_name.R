@@ -24,8 +24,7 @@ test_that("can find the correct first level .pred name", {
     error = TRUE,
     first_class_prob_name(preds, first, "Class")
   )
-  expect_snapshot(
-    error = TRUE,
+  expect_snapshot_error(
     first_class_prob_name(preds, "first", Class)
   )
 })

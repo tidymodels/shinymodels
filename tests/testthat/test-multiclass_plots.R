@@ -15,7 +15,7 @@ test_that("can accurately plot predicted probabilities vs true class plot", {
   )
 
   a <- plot_multiclass_obs_pred(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(a))
+  expect_doppelganger("plot_multiclass_obs_pred", a)
 })
 
 test_that("can accurately plot confusion matrix plot", {
@@ -30,7 +30,7 @@ test_that("can accurately plot confusion matrix plot", {
     plot_multiclass_conf_mat(org)
   )
   b <- plot_multiclass_conf_mat(org$predictions)
-  expect_snapshot(make_clean_snapshot(b))
+  expect_doppelganger("plot_multiclass_conf_mat", b)
 })
 
 test_that("can accurately plot predicted probabilities vs. a numeric column plot", {
@@ -44,21 +44,19 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     error = TRUE,
     plot_multiclass_pred_numcol(org, org$y_name, "Diameter")
   )
-  expect_snapshot(
-    error = TRUE,
+  expect_snapshot_error(
     plot_multiclass_pred_numcol(org$predictions, y_name)
   )
-  expect_snapshot(
-    error = TRUE,
-    plot_multiclass_pred_numcol(org$predictions, org$y_name, "AXL"),
+  suppressWarnings(
+    expect_snapshot_error(
+      plot_multiclass_pred_numcol(org$predictions, org$y_name, "AXL")
+    )
   )
   expect_warning(
     c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "Diameter"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(
-    make_clean_snapshot(c)
-  )
+  expect_doppelganger("plot_multiclass_pred_numcol", c)
 })
 
 test_that("can accurately plot predicted probabilities vs. a factor column plot", {
@@ -72,19 +70,19 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     error = TRUE,
     plot_multiclass_pred_factorcol(org, org$y_name, "tectonic_settings")
   )
-  expect_snapshot(
-    error = TRUE,
+  expect_snapshot_error(
     plot_multiclass_pred_factorcol(org$predictions, y_name)
   )
-  expect_snapshot(
-    error = TRUE,
-    plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Genotype"),
+  suppressWarnings(
+    expect_snapshot_error(
+      plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Genotype"),
+    )
   )
   expect_warning(
     d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Month"),
     "Ignoring unknown aesthetics"
   )
-  expect_snapshot(make_clean_snapshot(d))
+  expect_doppelganger("plot_multiclass_pred_factorcol", d)
 })
 
 test_that("can accurately plot the ROC curve", {
@@ -101,13 +99,12 @@ test_that("can accurately plot the ROC curve", {
     error = TRUE,
     plot_multiclass_roc(org, org$y_name)
   )
-  expect_snapshot(
-    error = TRUE,
+  expect_snapshot_error(
     plot_multiclass_roc()
   )
 
   e <- plot_multiclass_roc(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(e))
+  expect_doppelganger("plot_multiclass_roc", e)
 })
 
 test_that("can accurately plot the PR curve", {
@@ -124,10 +121,9 @@ test_that("can accurately plot the PR curve", {
     error = TRUE,
     plot_multiclass_pr(org, org$y_name)
   )
-  expect_snapshot(
-    error = TRUE,
+  expect_snapshot_error(
     plot_multiclass_pr()
   )
   f <- plot_multiclass_pr(org$predictions, org$y_name)
-  expect_snapshot(make_clean_snapshot(f))
+  expect_doppelganger("plot_multiclass_pr", f)
 })
