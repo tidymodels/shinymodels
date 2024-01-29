@@ -50,6 +50,7 @@ Suggests:
     shinytest,
     spelling,
     testthat (>= 3.0.0),
+    vdiffr,
     withr
 Config/Needs/website: tidyverse/tidytemplate
 Config/testthat/edition: 3
