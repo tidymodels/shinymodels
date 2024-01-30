@@ -35,8 +35,6 @@ points is enabled (the default) or not. This can be helpful for very large
 data sets.}
 
 \item{...}{Other parameters not currently used.}
-
-\item{original_data}{Original dataset.}
 }
 \value{
 A shiny application.

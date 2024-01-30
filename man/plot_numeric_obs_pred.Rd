@@ -24,6 +24,6 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted values against the observed values based on
-{tidymodels} results for a regression model.
+tidymodels results for a regression model.
 }
 \keyword{internal}

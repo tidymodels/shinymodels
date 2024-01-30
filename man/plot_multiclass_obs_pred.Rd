@@ -20,6 +20,6 @@ A \code{\link[plotly:ggplotly]{plotly::ggplotly()}} object.
 }
 \description{
 This function plots the predicted probabilities against the observed class based on
-{tidymodels} results for a multi-class classification model.
+tidymodels results for a multi-class classification model.
 }
 \keyword{internal}

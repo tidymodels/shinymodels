@@ -1,7 +1,7 @@
 #' Visualizing observed vs. predicted values for a regression model
 #'
 #' This function plots the predicted values against the observed values based on
-#'  {tidymodels} results for a regression model.
+#'  tidymodels results for a regression model.
 #' @param dat The predictions data frame in the [organize_data()] result. Following
 #' variables are required: `.outcome`, `.pred`, `.color`, and `.hover`.
 #' @param y_name The y/response variable for the model.
@@ -38,7 +38,7 @@ plot_numeric_obs_pred <- function(dat, y_name, alpha = 1, size = 1, source = NUL
 #' Visualizing residuals vs. predicted values for a regression model
 #'
 #' This function plots the predicted values against the residuals based on
-#' {tidymodels} results for a regression model.
+#' tidymodels results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @keywords internal
 #' @export
@@ -68,7 +68,7 @@ plot_numeric_res_pred <- function(dat, y_name, size = 1, source = NULL) {
 #' Visualizing residuals vs. a numeric column for a regression model
 #'
 #' This function plots the residuals against a numeric column based on
-#'  {tidymodels} results for a regression model.
+#'  tidymodels results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param numcol The numerical column to plot against the residuals.
 #' @keywords internal
@@ -99,7 +99,7 @@ plot_numeric_res_numcol <-
 #' Visualizing residuals vs. a factor column for a regression model
 #'
 #' This function plots the residuals against a factor column based on
-#'  {tidymodels} results for a regression model.
+#'  tidymodels results for a regression model.
 #' @inheritParams plot_numeric_obs_pred
 #' @param factorcol The factor column to plot against the residuals.
 #' @keywords internal
