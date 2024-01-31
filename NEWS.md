@@ -1,4 +1,4 @@
-# shinymodels (development version)
+# shinymodels 0.1.1
 
 * Resolved a number of CRAN NOTEs related to documentation formatting.
 
