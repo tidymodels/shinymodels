@@ -1,6 +1,6 @@
 Package: shinymodels
 Title: Interactive Assessments of Models
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
     person("Max", "Kuhn", , "max@posit.co", role = c("aut"),
            comment = c(ORCID = "0000-0003-2402-136X")),
