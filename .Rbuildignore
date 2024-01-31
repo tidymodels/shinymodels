@@ -2,7 +2,6 @@
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
-^cran-comments\.md$
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
 ^codecov\.yml$
@@ -13,3 +12,4 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^cran-comments\.md$
