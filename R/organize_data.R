@@ -67,7 +67,7 @@ organize_data.tune_results <-
     }
     preds$.hover <- format_hover(var, ...)
     app_type <- get_app_type(original_data[[y_name]])
-    default_config <- tune::select_best(x, tune::.get_tune_metric_names(x)[1])$.config
+    default_config <- tune::select_best(x, metric = tune::.get_tune_metric_names(x)[1])$.config
     new_shiny_data(preds, y_name, app_type, num_col_names, fac_col_names, x, default_config)
   }
 # ------------------------------------------------------------------------------
