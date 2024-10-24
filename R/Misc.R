@@ -10,7 +10,7 @@
 first_level <- function(dat, event_level = c("first", "second"), y_name) {
   event_level <- rlang::arg_match(event_level)
   if (!y_name %in% colnames(dat)) {
-    rlang::abort(glue::glue("'{y_name}' is not a column in the dataset"))
+    cli::cli_abort("{.field {y_name}} is not a column in the dataset.")
   }
   our_factor <- dat[[y_name]]
   our_levels <- levels(our_factor)
@@ -23,7 +23,7 @@ first_level <- function(dat, event_level = c("first", "second"), y_name) {
     return(prob_name)
   }
   else {
-    rlang::abort("first_level() can only be used for a two-class variable")
+    cli::cli_abort("{.fn first_level} can only be used for a two-class variable.")
   }
 }
 

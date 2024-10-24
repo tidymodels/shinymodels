@@ -73,7 +73,7 @@ generics::explore
 #' @export
 #' @rdname explore
 explore.default <- function(x, ...) {
-  rlang::abort("No `explore()` exists for this type of object.")
+  cli::cli_abort("No {.fn explore} exists for this type of object.")
 }
 
 #' @export

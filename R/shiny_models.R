@@ -24,5 +24,5 @@ shiny_models <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
 #' @export
 #' @rdname shiny_models
 shiny_models.default <- function(x, hover_cols = NULL, hover_only = NULL, ...) {
-  rlang::abort("No `shiny_models()` method exists for this type of object.")
+  cli::cli_abort("No {.fn shiny_models} method exists for this type of object.")
 }

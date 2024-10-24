@@ -19,7 +19,7 @@ organize_data <- function(x, hover_cols = NULL, ...) {
 #' @export
 #' @rdname organize_data
 organize_data.default <- function(x, hover_cols = NULL, ...) {
-  rlang::abort("No `organize_data()` exists for this type of object.")
+  cli::cli_abort("No {.fn organize_data} exists for this type of object.")
 }
 
 #' @export
@@ -31,16 +31,16 @@ organize_data.tune_results <-
     hover_expr <- rlang::enquo(hover_cols)
     original_data <- x$splits[[1]]$data
     if (!(".predictions" %in% colnames(x))) {
-      rlang::abort(
-        paste0(
-          "The `.predictions` column does not exist. ",
-          "Refit with the control argument `save_pred = TRUE` to save predictions."
+      cli::cli_abort(
+        c(
+          "The {.code .predictions} column does not exist.",
+          "i" = "Refit with the control argument {.code save_pred = TRUE} to save predictions."
         )
       )
     }
     y_name <- tune::.get_tune_outcome_names(x)
     if (!(y_name %in% names(original_data))) {
-      rlang::abort(glue::glue("'{y_name}' is not a column in the orignal data"))
+      cli::cli_abort("{.field {y_name}} is not a column in the original data.")
     }
     rn_lst <- list(.outcome = y_name)
     sample_predictions <-
@@ -74,28 +74,28 @@ organize_data.tune_results <-
 
 new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x, default_config) {
   if (!inherits(predictions, "data.frame")) {
-    rlang::abort("predictions should be a data frame")
+    cli::cli_abort("{.arg predictions} should be a data frame.")
   }
   if (nrow(predictions) == 0) {
-    rlang::abort("there should be at least one row of predictions")
+    cli::cli_abort("There should be at least one row of predictions.")
   }
   if (!(y_name %in% names(predictions))) {
-    rlang::abort(glue::glue("'{y_name}' should be a column in the predictions"))
+    cli::cli_abort("{.field {y_name}} should be a column in the predictions.")
   }
   if (!is.character(y_name)) {
-    rlang::abort("y_name should be a character string")
+    cli::cli_abort("{.arg y_name} should be a character string.")
   }
   if (!is.character(numeric_cols)) {
-    rlang::abort("numeric_cols should be a character string")
+    cli::cli_abort("{.arg numeric_cols} should be a character string.")
   }
   if (!is.character(factor_cols)) {
-    rlang::abort("factor_cols should be a character string")
+    cli::cli_abort("{.arg factor_cols} should be a character string.")
   }
   if (!is.character(default_config)) {
-    rlang::abort("default_config should be a character string")
+    cli::cli_abort("{.arg default_config} should be a character string.")
   }
   if (!(default_config %in% predictions$.config)) {
-    rlang::abort("default_config should be a character string in predictions")
+    cli::cli_abort("{.arg default_config} should be a character string in predictions.")
   }
   res <- list(
     predictions = predictions,
@@ -123,7 +123,7 @@ get_app_type <- function(y) {
     }
   }
   else {
-    rlang::abort("outcome should be factor or numeric")
+    cli::cli_abort("The outcome variable should be {.cls factor} or {.cls numeric}.")
   }
   res
 }
