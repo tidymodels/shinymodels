@@ -2,7 +2,7 @@ pandoc: 3.1.11
 pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-10-24T16:04Z
+last_built: 2024-10-24T16:45Z
 urls:
   reference: https://shinymodels.tidymodels.org/reference
   article: https://shinymodels.tidymodels.org/articles
