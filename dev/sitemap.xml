@@ -1,126 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/CONTRIBUTING.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/ames_mlp_itr.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/cars_bag_vfld.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/cell_race.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/display_selected.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/explore.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/first_class_prob_name.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/first_level.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/format_hover.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/organize_data.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/performance_object.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_conf_mat.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_obs_pred.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pr.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pred_factorcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pred_numcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_roc.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_obs_pred.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_factorcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_numcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_pred.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_conf_mat.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_obs_pred.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pr.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pred_factorcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pred_numcol.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_roc.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/print.shiny_data.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/scat_fda_bt.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/shiny_models.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/shinymodels-package.html</loc>
-  </url>
-  <url>
-    <loc>https://shinymodels.tidymodels.org/dev/reference/two_class_final.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://shinymodels.tidymodels.org/dev/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/CONTRIBUTING.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/LICENSE-text.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/LICENSE.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/authors.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/index.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/news/index.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/ames_mlp_itr.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/cars_bag_vfld.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/cell_race.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/display_selected.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/explore.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/first_class_prob_name.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/first_level.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/format_hover.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/index.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/organize_data.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/performance_object.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/pipe.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_conf_mat.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_obs_pred.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pr.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pred_factorcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_pred_numcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_multiclass_roc.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_obs_pred.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_factorcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_numcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_numeric_res_pred.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_conf_mat.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_obs_pred.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pr.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pred_factorcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_pred_numcol.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/plot_twoclass_roc.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/print.shiny_data.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/reexports.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/scat_fda_bt.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/shiny_models.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/shinymodels-package.html</loc></url>
+<url><loc>https://shinymodels.tidymodels.org/dev/reference/two_class_final.html</loc></url>
 </urlset>
+
