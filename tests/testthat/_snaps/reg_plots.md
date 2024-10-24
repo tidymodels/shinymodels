@@ -4,11 +4,9 @@
       plot_numeric_obs_pred(org, org$y_name)
     Condition
       Error in `fortify()`:
-      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, not a <reg_shiny_data/shiny_data> object.
-
----
-
-    object 'y_name' not found
+      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, or a valid <data.frame>-like object coercible by `as.data.frame()`.
+      Caused by error in `.prevalidate_data_frame_like_object()`:
+      ! `dim(data)` must return an <integer> of length 2.
 
 # can accurately plot numeric residuals vs. predicted plot
 
@@ -16,7 +14,9 @@
       plot_numeric_obs_pred(org, org$y_name)
     Condition
       Error in `fortify()`:
-      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, not a <reg_shiny_data/shiny_data> object.
+      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, or a valid <data.frame>-like object coercible by `as.data.frame()`.
+      Caused by error in `.prevalidate_data_frame_like_object()`:
+      ! `dim(data)` must return an <integer> of length 2.
 
 # can accurately plot numeric residuals vs. a numeric column plot
 
@@ -24,11 +24,9 @@
       plot_numeric_obs_pred(org, org$y_name)
     Condition
       Error in `fortify()`:
-      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, not a <reg_shiny_data/shiny_data> object.
-
----
-
-    object 'Class' not found
+      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, or a valid <data.frame>-like object coercible by `as.data.frame()`.
+      Caused by error in `.prevalidate_data_frame_like_object()`:
+      ! `dim(data)` must return an <integer> of length 2.
 
 # can accurately plot numeric residuals vs. a factor column plot
 
@@ -36,9 +34,7 @@
       plot_numeric_obs_pred(org, org$y_name)
     Condition
       Error in `fortify()`:
-      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, not a <reg_shiny_data/shiny_data> object.
-
----
-
-    object 'St' not found
+      ! `data` must be a <data.frame>, or an object coercible by `fortify()`, or a valid <data.frame>-like object coercible by `as.data.frame()`.
+      Caused by error in `.prevalidate_data_frame_like_object()`:
+      ! `dim(data)` must return an <integer> of length 2.
 

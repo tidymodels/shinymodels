@@ -4,11 +4,7 @@
       plot_twoclass_obs_pred(org, org$y_name)
     Condition
       Error in `first_level()`:
-      ! 'class' is not a column in the dataset
-
----
-
-    object 'y_name' not found
+      ! class is not a column in the dataset.
 
 # can accurately plot confusion matrix plot
 
@@ -24,15 +20,7 @@
       plot_twoclass_pred_numcol(org, org$y_name, "AXL")
     Condition
       Error in `first_level()`:
-      ! 'class' is not a column in the dataset
-
----
-
-    object 'y_name' not found
-
----
-
-    object 'potato' not found
+      ! class is not a column in the dataset.
 
 # can accurately plot predicted probabilities vs. a factor column plot
 
@@ -40,15 +28,7 @@
       plot_twoclass_pred_factorcol(org, org$y_name, "fact_col")
     Condition
       Error in `first_level()`:
-      ! 'class' is not a column in the dataset
-
----
-
-    object 'y_name' not found
-
----
-
-    object 'potato' not found
+      ! class is not a column in the dataset.
 
 # can accurately plot the ROC curve
 
@@ -56,11 +36,7 @@
       plot_twoclass_roc(org, org$y_name)
     Condition
       Error in `first_level()`:
-      ! 'class' is not a column in the dataset
-
----
-
-    object 'y_name' not found
+      ! class is not a column in the dataset.
 
 # can accurately plot the PR curve
 
@@ -68,11 +44,7 @@
       plot_twoclass_pr(org, org$y_name)
     Condition
       Error in `first_level()`:
-      ! 'class' is not a column in the dataset
-
----
-
-    object 'y_name' not found
+      ! class is not a column in the dataset.
 
 ---
 
@@ -80,5 +52,5 @@
       plot_twoclass_pr(org$predictions, "mpg")
     Condition
       Error in `first_level()`:
-      ! 'mpg' is not a column in the dataset
+      ! mpg is not a column in the dataset.
 

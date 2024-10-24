@@ -22,14 +22,6 @@
       Error in `UseMethod()`:
       ! no applicable method for 'select' applied to an object of class "c('multi_cls_shiny_data', 'shiny_data')"
 
----
-
-    argument "numcol" is missing, with no default
-
----
-
-    object 'AXL' not found
-
 # can accurately plot predicted probabilities vs. a factor column plot
 
     Code
@@ -37,14 +29,6 @@
     Condition
       Error in `UseMethod()`:
       ! no applicable method for 'select' applied to an object of class "c('multi_cls_shiny_data', 'shiny_data')"
-
----
-
-    argument "factorcol" is missing, with no default
-
----
-
-    object 'Genotype' not found
 
 # can accurately plot the ROC curve
 
@@ -54,10 +38,6 @@
       Error in `UseMethod()`:
       ! no applicable method for 'roc_curve' applied to an object of class "c('multi_cls_shiny_data', 'shiny_data')"
 
----
-
-    argument "dat" is missing, with no default
-
 # can accurately plot the PR curve
 
     Code
@@ -65,8 +45,4 @@
     Condition
       Error in `UseMethod()`:
       ! no applicable method for 'pr_curve' applied to an object of class "c('multi_cls_shiny_data', 'shiny_data')"
-
----
-
-    argument "dat" is missing, with no default
 

@@ -4,7 +4,7 @@
       first_level(preds, "second", "fact_col")
     Condition
       Error in `first_level()`:
-      ! first_level() can only be used for a two-class variable
+      ! `first_level()` can only be used for a two-class variable.
 
 ---
 
@@ -20,7 +20,7 @@
       first_level(preds, "first", "Potato")
     Condition
       Error in `first_level()`:
-      ! 'Potato' is not a column in the dataset
+      ! Potato is not a column in the dataset.
 
 ---
 
@@ -40,13 +40,9 @@
 
 ---
 
-    object 'Class' not found
-
----
-
     Code
       first_level(preds, "first", "fact_col")
     Condition
       Error in `first_level()`:
-      ! first_level() can only be used for a two-class variable
+      ! `first_level()` can only be used for a two-class variable.
 
