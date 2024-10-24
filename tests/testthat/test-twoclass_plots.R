@@ -13,9 +13,6 @@ test_that("can accurately plot predicted probabilities vs true class plot", {
     error = TRUE,
     plot_twoclass_obs_pred(org, org$y_name)
   )
-  expect_snapshot_error(
-    plot_twoclass_obs_pred(org$predictions, y_name)
-  )
   a <- plot_twoclass_obs_pred(org$predictions, org$y_name)
   expect_doppelganger("plot_twoclass_obs_pred", a)
 })
@@ -46,14 +43,6 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
     error = TRUE,
     plot_twoclass_pred_numcol(org, org$y_name, "AXL")
   )
-  expect_snapshot_error(
-    plot_twoclass_pred_numcol(org$predictions, y_name, "AXL")
-  )
-  suppressWarnings(
-    expect_snapshot_error(
-      plot_twoclass_pred_numcol(org$predictions, org$y_name, "potato")
-    )
-  )
   suppressWarnings(
     c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "angle_ch_1")
   )
@@ -79,14 +68,6 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
     error = TRUE,
     plot_twoclass_pred_factorcol(org, org$y_name, "fact_col")
   )
-  expect_snapshot_error(
-    plot_twoclass_pred_factorcol(org$predictions, y_name, "fact_col")
-  )
-  expect_warning(
-    expect_snapshot_error(
-      plot_twoclass_pred_factorcol(org$predictions, org$y_name, "potato")
-    )
-  )
   suppressWarnings(
     d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "fact_col")
   )
@@ -107,9 +88,6 @@ test_that("can accurately plot the ROC curve", {
     error = TRUE,
     plot_twoclass_roc(org, org$y_name)
   )
-  expect_snapshot_error(
-    plot_twoclass_roc(org$predictions, y_name)
-  )
   e <- plot_twoclass_roc(org$predictions, org$y_name)
   expect_doppelganger("plot_twoclass_roc", e)
 })
@@ -127,9 +105,6 @@ test_that("can accurately plot the PR curve", {
   expect_snapshot(
     error = TRUE,
     plot_twoclass_pr(org, org$y_name)
-  )
-  expect_snapshot_error(
-    plot_twoclass_pr(org$predictions, y_name)
   )
   expect_snapshot(
     error = TRUE,

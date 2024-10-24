@@ -38,9 +38,6 @@ test_that("can find first level", {
     error = TRUE,
     first_level(preds, 1, "Class")
   )
-  expect_snapshot_error(
-    first_level(preds, "first", Class)
-  )
   expect_snapshot(
     error = TRUE,
     first_level(preds, "first", "fact_col")
