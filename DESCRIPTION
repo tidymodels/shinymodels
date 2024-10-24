@@ -31,7 +31,7 @@ Imports:
     parsnip,
     plotly,
     purrr,
-    rlang,
+    rlang (>= 1.1.0),
     scales,
     shiny,
     shinydashboard,
