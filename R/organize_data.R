@@ -72,30 +72,38 @@ organize_data.tune_results <-
   }
 # ------------------------------------------------------------------------------
 
-new_shiny_data <- function(predictions, y_name, subclass, numeric_cols, factor_cols, x, default_config) {
-  if (!inherits(predictions, "data.frame")) {
-    cli::cli_abort("{.arg predictions} should be a data frame.")
-  }
+new_shiny_data <- function(predictions,
+                           y_name,
+                           subclass,
+                           numeric_cols,
+                           factor_cols,
+                           x,
+                           default_config,
+                           call = caller_env()) {
+  check_inherits(predictions, "data.frame", call = call)
   if (nrow(predictions) == 0) {
-    cli::cli_abort("There should be at least one row of predictions.")
+    cli::cli_abort(
+      "There should be at least one row of predictions.",
+      call = call
+    )
   }
+  check_string(y_name, allow_empty = FALSE, call = call)
   if (!(y_name %in% names(predictions))) {
-    cli::cli_abort("{.field {y_name}} should be a column in the predictions.")
+    cli::cli_abort(
+      "{.field {y_name}} should be a column in the predictions.",
+      call = call
+    )
   }
-  if (!is.character(y_name)) {
-    cli::cli_abort("{.arg y_name} should be a character string.")
-  }
-  if (!is.character(numeric_cols)) {
-    cli::cli_abort("{.arg numeric_cols} should be a character string.")
-  }
-  if (!is.character(factor_cols)) {
-    cli::cli_abort("{.arg factor_cols} should be a character string.")
-  }
-  if (!is.character(default_config)) {
-    cli::cli_abort("{.arg default_config} should be a character string.")
-  }
+
+  check_inherits(numeric_cols, "character", call = call)
+  check_inherits(factor_cols, "character", call = call)
+  check_inherits(default_config, "character", call = call)
+
   if (!(default_config %in% predictions$.config)) {
-    cli::cli_abort("{.arg default_config} should be a character string in predictions.")
+    cli::cli_abort(
+      "{.arg default_config} should be a character string in predictions.",
+      call = call
+    )
   }
   res <- list(
     predictions = predictions,

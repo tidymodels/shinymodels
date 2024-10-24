@@ -185,3 +185,20 @@ ggplotly2 <- function(x, ...) {
   })
   gg
 }
+
+# ad-hoc check functions ----------------------------------------------------
+check_inherits <- function(x, cls, allow_null = FALSE, arg = caller_arg(x), call = caller_env()) {
+  if (!allow_null && is.null(x)) {
+    return(invisible(x))
+  }
+
+  if (!inherits(x, cls)) {
+    stop_input_type(
+      x,
+      glue::glue("a {cls}"),
+      arg = arg,
+      call = call
+    )
+  }
+}
+
