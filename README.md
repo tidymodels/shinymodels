@@ -10,6 +10,7 @@ status](https://www.r-pkg.org/badges/version/shinymodels)](https://CRAN.R-projec
 [![Codecov test
 coverage](https://codecov.io/gh/tidymodels/shinymodels/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tidymodels/shinymodels?branch=main)
 [![R-CMD-check](https://github.com/tidymodels/shinymodels/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/tidymodels/shinymodels/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check-no-suggests](https://github.com/tidymodels/shinymodels/actions/workflows/R-CMD-check-no-suggests.yaml/badge.svg)](https://github.com/tidymodels/shinymodels/actions/workflows/R-CMD-check-no-suggests.yaml)
 <!-- badges: end -->
 
 The goal of shinymodels is to launch a Shiny app given tidymodels’
