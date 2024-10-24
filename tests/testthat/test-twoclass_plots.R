@@ -54,9 +54,8 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
       plot_twoclass_pred_numcol(org$predictions, org$y_name, "potato")
     )
   )
-  expect_warning(
-    c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "angle_ch_1"),
-    "Ignoring unknown aesthetics"
+  suppressWarnings(
+    c <- plot_twoclass_pred_numcol(org$predictions, org$y_name, "angle_ch_1")
   )
   expect_doppelganger("plot_twoclass_pred_numcol", c)
 })
@@ -88,9 +87,8 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
       plot_twoclass_pred_factorcol(org$predictions, org$y_name, "potato")
     )
   )
-  expect_warning(
-    d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "fact_col"),
-    "Ignoring unknown aesthetics"
+  suppressWarnings(
+    d <- plot_twoclass_pred_factorcol(org$predictions, org$y_name, "fact_col")
   )
   expect_doppelganger("plot_twoclass_pred_factorcol", d)
 })

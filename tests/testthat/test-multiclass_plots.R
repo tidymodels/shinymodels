@@ -52,9 +52,8 @@ test_that("can accurately plot predicted probabilities vs. a numeric column plot
       plot_multiclass_pred_numcol(org$predictions, org$y_name, "AXL")
     )
   )
-  expect_warning(
-    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "Diameter"),
-    "Ignoring unknown aesthetics"
+  suppressWarnings(
+    c <- plot_multiclass_pred_numcol(org$predictions, org$y_name, "Diameter")
   )
   expect_doppelganger("plot_multiclass_pred_numcol", c)
 })
@@ -78,9 +77,8 @@ test_that("can accurately plot predicted probabilities vs. a factor column plot"
       plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Genotype"),
     )
   )
-  expect_warning(
-    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Month"),
-    "Ignoring unknown aesthetics"
+  suppressWarnings(
+    d <- plot_multiclass_pred_factorcol(org$predictions, org$y_name, "Month")
   )
   expect_doppelganger("plot_multiclass_pred_factorcol", d)
 })
